@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<script type="text/javascript" src="../Public/js/jquery-1.4.2.min.js"></script>
+<title>管理区域</title>
+<style>
+* {
+	font-size: 12px;
+	font-family: "宋体";
+}
+
+td { line-height: 1.5; }
+
+body {
+	font-size: 12px;
+	line-height: 1.5;
+	font-family: "宋体";
+}
+.dlg {
+	border: 2px solid #749F4D;
+	background-color: #F0FAEB;
+	padding: 2px;
+	width: 360px;
+	line-height:160%;
+}
+
+a{ color:#666; text-decoration:none; line-height:25px;}
+.w{font-size:12px; text-align:left;}/*模拟灰色阴影背景层*/
+.x{ width:300px; position:relative; background:#ff9;  border:1px solid #F96; padding:0 10px; left:-4px; top:-4px;}/*内容div*/
+.y , .z{position:absolute; left:30px;}
+.y{ color:#ff9;  bottom:-9px;}/*模拟小三角*/
+.z{ color:#f96;  bottom:-10px;}/*模拟小三角*/
+</style>
+<script language="javascript">
+var myajax;
+var newobj;
+var posLeft = 300;
+var posTop = 80;
+function LoadUrl(surl){
+  $.get("{:U('database')}?"+surl,function(data){
+	var scrollTop=parseInt(getScrollTop());
+    $('#_mydatainfo').css('top',scrollTop+100).html(data).show();
+  })
+}
+function HideObj(objname){
+	$('#_mydatainfo').hide(); 
+}
+
+//获得选中文件的数据表
+
+function getCheckboxItem(){
+	 var myform = document.form2;
+	 var allSel="";
+	 if(myform.tables.value) return myform.tables.value;
+	 for(i=0;i<myform.tables.length;i++)
+	 {
+		 if(myform.tables[i].checked){
+			 if(allSel=="")
+				 allSel=myform.tables[i].value;
+			 else
+				 allSel=allSel+","+myform.tables[i].value;
+		 }
+	 }
+	 return allSel;
+}
+
+//反选
+function ReSel(){
+	var myform = document.form2;
+	for(i=0;i<myform.tables.length;i++){
+		if(myform.tables[i].checked) myform.tables[i].checked = false;
+		else myform.tables[i].checked = true;
+	}
+}
+
+//全选
+function SelAll(){
+	var myform = document.form2;
+	for(i=0;i<myform.tables.length;i++){
+		myform.tables[i].checked = true;
+	}
+}
+
+//取消
+function NoneSel(){
+	var myform = document.form2;
+	for(i=0;i<myform.tables.length;i++){
+		myform.tables[i].checked = false;
+	}
+}
+
+function checkSubmit()
+{
+	var myform = document.form2;
+	myform.tablearr.value = getCheckboxItem(); 
+	return true;
+}
+
+function getScrollTop()
+{
+  var scrollTop=0;
+  if(document.documentElement&&document.documentElement.scrollTop)
+  {
+  scrollTop=document.documentElement.scrollTop;
+  }
+  else if(document.body)
+  {
+  scrollTop=document.body.scrollTop;
+  }
+  return scrollTop;
+}
+
+</script>  
+</head>
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>数据库管理</h3>
+      <ul class="tab-base"> 
+         <li><a href="javascript:void(0)" class="current"><span>数据库维护</span></a></li>   
+         <li>（<font size="4" color="red"><b>系统友情提示：请定期对数据库进行备份，以防万一</b></font>）</li> 
+      </ul>
+    </div>
+  </div>
+<div id="waiwei" style="position:relative"><div class="dlg" id="_mydatainfo" style="position:absolute;top:100px; left:300px; display:none"></div></div>
+<table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#D1DDAA">
+    <tr>
+    <td height="" colspan="4">
+    	<table width="96%" border="0" cellspacing="1" cellpadding="1">
+        <tr>
+          <td width="24%"><strong>数据库管理</strong></td>
+          <td width="76%" align="right"> 
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr> 
+  <form name="form2" onSubmit="checkSubmit()" action="{:U('dbbak')}" method="post" target="stafrm">
+  <input type='hidden' name='tablearr' value='' />
+  <tr bgcolor="#F7F8ED">
+    <td height="24" colspan="4"><strong>默认系统表：</strong></td>
+  </tr>
+  <tr bgcolor="#F2FFB5" align="center">
+    <td height="24" width="5%">选择</td>
+    <td width="20%">表名</td>
+    <td width="20%">记录数</td> 
+    <td width="35%">操作</td> 
+  </tr> 
+  <foreach name="duoduoSysTables" item="table">
+  		<tr align='center'  bgcolor='#FFFFFF' height='24'>
+		    <td>
+		    	<input type="checkbox" name="tables" value="{$table['tablename']}" class="np" checked />
+		    </td>	
+		    	<td>{$table['tablename_n']} </td>	
+		     	<td>{$table['counts']}</td>    	 
+		    <td>
+		    	<a href="javascript:" onClick="LoadUrl('dopost=opimize&tablename={$table['tablename_n']}');">优化</a> |
+		    	<a href="javascript:" onClick="LoadUrl('dopost=repair&tablename={$table['tablename_n']}');">修复</a> 
+ 		    </td>	      
+		</tr>	
+  </foreach>
+ 
+  <tr bgcolor="#F7F8ED">
+    <td height="24" colspan="4"><strong>其它数据表：</strong></td>
+  </tr>
+  <tr bgcolor="#F9FEE2" align="center">
+    <td height="24" width="5%">选择</td>
+    <td width="20%">表名</td>
+    <td width="20%">记录数</td> 
+    <td width="35%">操作</td> 
+  </tr>
+    <foreach name="otherTables" item="table">
+  		<tr align='center'  bgcolor='#FFFFFF' height='24'>
+		    <td>
+		    	<input type="checkbox" name="tables" value="{$table['tablename']}" class="np" checked />
+		    </td>	
+		    	<td>{$table['tablename_n']} </td>	
+		     	<td>{$table['counts']}</td>  
+		    <td>
+		    	<a href="javascript:" onClick="LoadUrl('dopost=opimize&tablename={$table['tablename_n']}');">优化</a> |
+		    	<a href="javascript:" onClick="LoadUrl('dopost=repair&tablename={$table['tablename_n']}');">修复</a> 
+ 		    </td>	      
+		</tr>	
+  </foreach>
+    <tr bgcolor="#FDFDEA">
+      <td height="24" colspan="4">
+      	&nbsp;
+        <input name="b1" type="button" id="b1" class="coolbg np" onClick="SelAll()" value="全选" />
+        &nbsp;
+        <input name="b2" type="button" id="b2" class="coolbg np" onClick="ReSel()" value="反选" />
+        &nbsp;
+        <input name="b3" type="button" id="b3" class="coolbg np" onClick="NoneSel()" value="取消" />
+      </td>
+  </tr>
+  <tr bgcolor="#F7F8ED">
+    <td height="24" colspan="4"><strong>数据备份选项：</strong></td>
+  </tr>
+  <tr align="center" bgcolor="#FFFFFF">
+    <td height="50" colspan="4">
+    	  <table width="90%" border="0" cellspacing="0" cellpadding="0">
+          <tr align="left">
+            <td height="30">当前数据库版本：{$mysql_version['VERSION()']}</td>
+          </tr>
+          <tr align="left">
+            <td height="30">
+            	指定备份数据格式：
+              <input name="datatype" type="radio" class="np" value="4.0"   <if condition="$mysql_version['VERSION()'] lt 4.1">checked</if> />
+              MySQL3.x/4.0.x 版本
+              <input type="radio" name="datatype" value="4.1" class="np"  <if condition="$mysql_version['VERSION()'] egt 4.1">checked</if> />
+              MySQL4.1.x/5.x 版本
+              </td>
+          </tr>
+          <tr align="left">
+            <td height="30">
+            	分卷大小：
+              <input name="fsize" type="text" id="fsize" value="1024" size="6" />
+              K&nbsp;，
+              <input name="isstruct" type="checkbox" class="np" id="isstruct" value="1" checked='1' />
+              备份表结构信息
+              <?php  if(@function_exists('gzcompress') && false) {  ?>
+              <input name="iszip" type="checkbox" class="np" id="iszip" value="1" checked='1' />
+              完成后压缩成ZIP
+              <?php } ?>
+              <input type="hidden" name="date" value="{$date}" />
+              <input type="submit" name="sub" value="提交" class="coolbg np myself" />
+             </td>
+          </tr>
+        </table>
+      </td>
+   </tr>
+   </form>
+  <tr bgcolor="#F7F8ED">
+    <td height="24" colspan="4"><strong>备份文件列表：</strong></td>
+  </tr>
+  <tr bgcolor="#FFFFFF">
+ 		  <td height="auto"  colspan="4" >
+		    	<table width="96%" border="0" cellspacing="1" cellpadding="1">
+		        <tr>
+		          <td width="20%"><strong>备份文件</strong></td>
+		          <td width=""><strong>文件路径</strong></td>
+		          <td width="15%"><strong>文件大小</strong></td>
+		          <td width="15%" align="right">操作
+		          </td>
+		        </tr>
+		        <foreach name="filelists" item="file">
+		        	<tr>
+		        		<td>{$file['filename']}</td>
+		        		<td>{$file['filepath']}</td>
+		        		<td>{$file['filesize']}</td>
+		        		<td><a href="{:U('delfile',array('file'=>$file['filename']))}">删除</a>|
+		        				<a href="{:U('downfile',array('file'=>$file['filename']))}">下载</a></td>
+		        	</tr>
+		        </foreach>
+		      </table>
+		    </td>  	 	
+  </tr>
+  <tr bgcolor="#F7F8ED">
+    <td height="24" colspan="4"><strong>进行状态：</strong></td>
+  </tr>
+  <tr bgcolor="#FFFFFF">
+    <td height="180" colspan="4">
+	<iframe name="stafrm" frameborder="0" id="stafrm" width="100%" height="100%"></iframe>
+	</td>
+  </tr>
+</table> 
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<script type="text/javascript" src="../Public/js/jquery-1.4.2.min.js"></script>
+<title>管理区域</title>
+<style type="text/css">
+<!--
+#man_zone .table_style tr .search {
+	margin-left: 10px;
+}
+-->
+</style>
+<script type="text/javascript">
+	$(function()
+{
+    	$('.checkall').click(function(){
+		$('.checkall').attr('checked',$(this).attr('checked'));
+		$('.checkitem').each(function(){
+			$(this).attr('checked',$('.checkall').attr('checked'));
+		});
+	});
+}) 
+ function confirm_del()
+{
+  if(!confirm('确认要删除该笔交易吗？')) return false;
+}
+
+</script>
+</head>
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>会员订单</h3>
+      <ul class="tab-base"> 
+         <li><a href="{:U('buy_order')}"><span>购买订单</span></a></li>  
+         <li><a href="javascript:void(0)" class="current" ><span>充值订单</span></a></li> 
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+  <table width="97%" border="0" align="center" cellpadding="3" cellspacing="1" class="table_style">
+    <tr>
+      <td colspan="9" class="left_title_2">
+        <form class="search" action="__URL__/pay_order" method="post">
+          <div align="left">筛选： 
+              <select name="ftype">
+                 <option value="username" <eq name="_POST.ftype" value="username">selected</eq>>用户名</option>  
+              	 <option value="user_id" <eq name="_POST.ftype" value="user_id">selected</eq>>用户ID</option>
+                 <option value="order_no" <eq name="_POST.ftype" value="order_no">selected</eq>>订单编号</option>
+              </select>  
+              <input type="text" name="keyword" value="{:I('keyword')}" />
+              <select name="user_type">
+              	   <option value="">请选择用户级别</option>
+                  <foreach name="type_list" item="type">
+                  	    <option value="{$type['id']}"  <if condition="I('user_type')==$type['id']">selected</if> >{$type['title']}</option>
+                  </foreach>
+              </select>
+              <select name="status">
+              	  <option value="">请选择订单状态</option>
+              	  <option value="0" <if condition="I('status','')=='0'">selected</if> >待审核</option>
+              	  <option value="1" <if condition="I('status','')=='1'">selected</if> >已支付</option>
+              </select>
+              <select name="order_type">
+              	  <option value="">请选择订单类型</option>
+              	  <option value="0" <if condition="I('status','')=='0'">selected</if> >支付宝</option>
+              	  <option value="1" <if condition="I('status','')=='1'">selected</if> >财付通</option>
+              </select>              
+              <input name="submit" type="submit" value="查询" /> 
+              <span style="float:right"><font color="red">{$count}</font>条数据符合条件</span>
+           </div>
+        </form>        
+      </td> 
+    </tr>
+    <tr>
+     <th width="4%" align="center"><input type="checkbox"  class="checkall" id="checkallBottom"></th> 
+      <td width="13%" class="left_title_1"><div align="center">用户ID<br/>用户名</div></td> 
+      <td width="17%" class="left_title_1"><div align="center">交易号</div></td>
+      <td width="10%" class="left_title_1"><div align="center">订单金额</div></td> 
+      <td width="8%" class="left_title_1"><div align="center">订单类型</div></td>   
+      <td width="8%" class="left_title_1"><div align="center">订单状态</div></td>   
+      <td width="17%" class="left_title_1"><div align="center">下单时间</div></td>
+      <td width="10%" class="left_title_1"><div align="center">订单详情</div></td>
+      <td width="10%" class="left_title_1"><div align="center">操作</div></td>  
+    </tr>
+     <form method="post" action="{:U('order_del')}" id="form" >
+     <tbody>
+		    <foreach name="order_list" item='order'> 
+		      <tr> 
+		      	<td align="center" >
+		      		<if condition="$order['status']==0">
+		      			<input type="checkbox" name='id[]' value="{$order['id']}" class="checkitem">
+		      		</if> 
+		      	 </td>
+		        <td><div align="center"><a href="{:U('User/index',array('ftype'=>'id','keyword'=>$order['user_id']))}">{$order['user_id']}/{$order['username']}</a></div></td>
+ 		         <td><div align="center">{$order['outer_order_no']}</div></td>
+		         <td><div align="center">{$order['pay_money']}</div></td> 
+				<td><div align="center">
+				         	<switch name="order.order_type">
+				         		<case value="1"  >财付通</case>
+				         		<case value="0"><font color="red">支付宝</font></case>
+				         		<default />支付宝
+				         	</switch> 
+		         	 </div> 
+		        </td> 		         
+		         <td><div align="center">
+				         	<switch name="order.status">
+				         		<case value="1"  >已支付</case>
+				         		<case value="0"><font color="red">待审核</font></case>
+				         		<default />已支付
+				         	</switch> 
+		         	 </div> 
+		        </td> 
+		        <td><div align="center">{$order['addtime']}</div></td>
+		        <td><div align="center"><a href="javascript:void(0)" onclick="alert('{$order['comm']}')">点击查看</a></div> </td>
+				<td><div align="center">
+		        	    <div style="margin:0 0 0 5px;float:left"><a href="{:U('order_edit',array('id'=>$order['id']))}"><img src="../Public/images/set2.gif" alt="查看及处理支付订单" /></a></div>
+		        	    <if condition="$order['status']==0">
+			            		<div style="float:right"><a title="删除此条未支付订单信息"   href="__URL__/order_del/id/{$order['id']}" onclick="return confirm_del()" ><img src="../Public/images/pic12.gif" alt="删除此条未支付订单信息" /></a></div>        	    	
+		        	    </if>
+					</div>
+				</td>
+		      </tr>
+		    </foreach> 
+    </tbody>
+    <tfoot>
+	    <tr>
+		     <td colspan="9">
+		      <a href="JavaScript:void(0);" class="btn" onclick="if(confirm('确定要删除吗？')){$('#form').submit();}"><span>删除</span></a>
+		       {$show} </td>
+	    </tr>
+    </tfoot>    
+  </table>
+</div>
+</body>
+</html>

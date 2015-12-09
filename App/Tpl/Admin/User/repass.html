@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<title>管理区域</title>
+</head>
+
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>会员管理</h3>
+      <ul class="tab-base"> 
+         <li><a href="{:U('index')}"><span>会员列表</span></a></li>  
+         <li><a href="{:U('add')}" ><span>会员新增</span></a></li>  
+         <li><a href="javascript:void(0)" class="current"><span>密码修改</span></a></li>  
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+<form action="__URL__/passsave" method="post">
+  <table width="99%" border="0" align="center"  cellpadding="3" cellspacing="1" class="table_style">   
+    <tr>
+      <td class="left_title_2">会员用户名</td>
+      <td>{$data['username']}</td>
+    </tr>
+    <tr>
+      <td class="left_title_2">会员昵称</td>
+      <td>{$data['nickname']}</td>
+    </tr>
+    <tr>
+      <td class="left_title_1">登陆密码</td>
+      <td><input type="text" name="password" size="31"></td>
+    </tr>
+    <tr>
+      <td class="left_title_2">确认密码</td>
+      <td><input type="text" name="re_user_pass" size="31"></td>
+    </tr>
+    
+    <tr bgcolor="#FFFFFF">
+      <td colspan="2" class="left_title_2"><div align="center">
+        <input type="hidden" name="id" value="{$data['id']}" />
+        <input type="submit" value="保存" /> 
+        <input class="button" type="button" onclick="history.go(-1);" value="取消" /></div></td>
+    </tr>
+  </table>
+</form>
+</div>
+</body>
+</html>

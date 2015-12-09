@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<title>管理区域</title>
+</head> 
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>空包管理</h3>
+      <ul class="tab-base"> 
+         <li><a href="{:U('index')}"><span>未使用空包</span></a></li>  
+         <li><a href="{:U('add')}" ><span>空包单新增</span></a></li> 
+         <li><a href="{:U('used_index')}" ><span>已使用空包</span></a></li>
+         <li><a href="javascript:void(0)" class="current"><span>空包单编辑</span></a></li>  
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+<form action="__URL__/update" method="post">
+  <table width="99%" border="0" align="center"  cellpadding="3" cellspacing="1" class="table_style">
+     <tr>
+      <td class="left_title_1">空包单号</td>
+      <td><input type="text"  name="note_no" size="31" value="{$kongbao['note_no']}"></td>
+    </tr>
+    <tr>
+      <td class="left_title_2">空包类型</td> 
+      <td>
+      	    <select name="type_id">
+      	    	<foreach name="type_list" item="type">
+      	    		<option value="{$type['id']}" <if condition="$type['id']==$kongbao['type_id']">selected</if> >{$type['name']}</option>
+      	    	</foreach>
+      	    </select> 
+      </td>
+    </tr>
+    <tr>
+    	 <td class="left_title_1">添加方式</td> 
+          <td>
+          	   <input type="radio" value="0" disabled="true"  <eq name="kongbao.type" value="0">checked</eq>    />单条录入
+          	   <input type="radio" value="1" disabled="true" <eq name="kongbao.type" value="1">checked</eq> />批量录入
+          </td>
+    </tr>
+    <tr>
+    	 <td class="left_title_1">是否已用</td> 
+          <td>
+          	   <input type="radio" value="0" disabled="true" <eq name="kongbao.isused" value="0">checked</eq>    />未使用
+          	   <input type="radio" value="1" disabled="true" <eq name="kongbao.isused" value="1">checked</eq> />已使用
+          </td>
+    </tr>
+    <tr>
+      <td class="left_title_2">订单编号</td>
+      <td><input type="text" disabled="true"  size="31" value="{$kongbao['order_no']}"></td>
+    </tr>
+    <tr>
+      <td class="left_title_1">订单类型</td>
+      <td>
+          	   <input type="radio" value="0" disabled="true"  <eq name="kongbao.order_type" value="0">checked</eq>   />购买订单
+          	   <input type="radio" value="1" disabled="true" <eq name="kongbao.order_type" value="1">checked</eq> />批发订单
+       </td>
+    </tr>
+    <tr>
+      <td class="left_title_2"> 添加时间</td>
+      <td><input type="text" disabled="true"  size="31" value="{$kongbao['addtime']}"></td>
+    </tr> 
+    <tr bgcolor="#FFFFFF">
+      <td colspan="2" class="left_title_2"><div align="center">
+        <input type="hidden" name="id" value="{$kongbao['id']}" /> 
+        <input type="submit" value="保存" />
+        <input class="button" type="button" onclick="history.go(-1);" value="返回" /></div></td>
+    </tr>
+  </table>
+</form>
+</div>
+</body>
+</html>

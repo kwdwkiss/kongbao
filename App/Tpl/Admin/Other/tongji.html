@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<link href="../Public/js/lhgcalendar/_doc/prettify/prettify.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="../Public/js/lhgcalendar/_doc/prettify/prettify.js"></script>
+<script type="text/javascript" src="../Public/js/lhgcalendar/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../Public/js/lhgcalendar/lhgcalendar.min.js"></script>
+<title>管理区域</title>
+<style type="text/css"> 
+body{font-size:12px;font-weight:400}
+</style> 
+	<script type="text/javascript">
+		 $(function(){   
+		    $('#starttime').calendar({ format:'yyyy-MM-dd' });
+		    $('#endtime').calendar({ format:'yyyy-MM-dd' }); 
+		});
+	</script>
+</head>
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>网站统计</h3>
+      <ul class="tab-base">  
+         <li><a href="javascript:void(0)" class="current" ><span>网站统计</span></a></li> 
+         <li><a href="{:U('cwgk')}" ><span>财务概况</span></a></li> 
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+  <table width="97%" border="0" align="center" cellpadding="3" cellspacing="1" class="table_style">
+    <tr>
+      <td  class="left_title_2">
+        <form class="search" action="__URL__/tongji" method="post">
+          <div align="left">选择统计项目：  
+              <select name="yw_type">
+              	  	 <option value="all_tongji">全部统计项目</option> 
+                   	 <option value="yw_tongji"  <if condition="I('yw_type')=='yw_tongji'">selected</if> >业务统计</option> 
+                   	 <option value="hy_tongji"  <if condition="I('yw_type')=='hy_tongji'">selected</if> >会员统计</option> 
+              </select> 
+              选择统计时间段：
+               <input class="prettyprint"  id="starttime" readonly="true"  name="starttime" value="{:I('starttime')}"  style="width:70px;"/>至
+		       <input class="prettyprint"   id="endtime" readonly="true" name="endtime"  value="{:I('endtime')}" style="width:70px;"/> 
+               <input type="hidden" name="form_submit" value="ok" />
+               <input name="submit" type="submit" value="统计" />  
+           </div>
+        </form>        
+      </td> 
+    </tr> 
+     <tbody> 
+     	<if condition="$have_result==0">
+     		<tr><td colspan="20" align="center"><font color="red">请选择好统计时间段后再点击统计！<br/>如果选择的时间段过长，系统运行起来速度相对比较慢哦。请耐心等待</font></td></tr>
+     	<else/>
+		 <tr><td > 
+		     	   <table width="100%" >
+		     	   	   <tr><td colspan="9" align="center"><font size="3" color="red"><b>{:I('starttime')}~{:I('endtime')} 时间段内的统计结果</b></font></td></tr>		     	   	  
+		     	   	   <tr><td colspan="9" align="center" >业务统计</td></tr>
+		     	   	   <tr>  
+		     	   	   	     <td align="center" width="6%">业务类型</td>
+		     	   	   	     <td align="center" width="15%">空包类型</td>
+		     	   	   	     <td align="center" width="7%">进货价</td>
+			     	   	  	 <td align="center">会员类型</td>
+			     	   	  	 <td align="center">会员购买价<br/>(元/个)</td>
+			     	   	  	 <td align="center">购买数量<br/>(个)</td>
+			     	   	  	 <td align="center">收入金额<br/>(元)</td>
+			     	   	  	 <td align="center">佣金支出<br/>(元)</td>
+			     	   	  	 <td align="center">纯利润<br/>(元)</td>
+		     	   	  </tr>
+		     	   	  <if condition="$kb_visible==1">
+					     	   	  <div style="display: none">{$j=0}</div>
+					     	   	  <foreach name="type_list" item="type" key="tid">   
+					     	   	  	    <div style="display: none">{$i=0}</div>
+					     	   	  	    <foreach name="level_list" item="level" key="utid" >  
+					     	   	  	    	 <div style="display: none">{$i++}</div>
+					     	   	  	    	 <div style="display: none">{$j++}</div>
+					     	   	  	    	 <tr> 
+					     	   	  	    	 	  <if condition="$j==1"> <td align="center" rowspan="{$kb_rows}">空包</td> </if> 
+					     	   	  	    	 	  <if condition="$i==1"> 
+					     	   	  	    	 	  	 <td align="center" rowspan="{$utype_rows}">{$type}</td> 
+					     	   	  	    	 	  	 <td align="right" rowspan="{$utype_rows}">{$yw_result['kb'][$tid]['in_price']|number_format=###,2}元/个</td> 
+					     	   	  	    	 	  </if>
+					     	   	  	    	 	  <td align="center">{$level}</td>
+					     	   	  	    	 	  <td align="right">{$yw_result['kb'][$tid][$utid]['price']|number_format=###,2}元/个</td>
+					     	   	  	    	 	  <td align="center">{$yw_result['kb'][$tid][$utid]['counts']}</td>
+					     	   	  	    	 	  <td align="right">{$yw_result['kb'][$tid][$utid]['money']|number_format=###,2}</td>
+					     	   	  	    	 	  <td align="right">{$yw_result['kb'][$tid][$utid]['refer_money']|number_format=###,2}</td>
+					     	   	  	    	 	  <td align="right">{$yw_result['kb'][$tid][$utid]['lirun']|number_format=###,2}</td>
+					     	   	  	    	 </tr>
+					     	   	  	    </foreach>
+					     	   	  	    <tr style="background-color:#AADD6A;font-size: 14px;font-weight:600;" >
+					     	   	  	    	<td colspan="2" align="center"  >合计</td>
+					     	   	  	    	<td  align="center"><font color="red">{$yw_result['kb'][$tid]['count_sum']}</font></td>
+					     	   	  	    	<td  align="right"><font color="red">{$yw_result['kb'][$tid]['money_sum']|number_format=###,2}</font></td>
+					     	   	  	    	<td align="right"><font color="red">{$yw_result['kb'][$tid]['refer_money_sum']|number_format=###,2}</font></td>
+					     	   	  	    	<td align="right"><font color="red">{$yw_result['kb'][$tid]['lirun_sum']|number_format=###,2}</font></td>
+					     	   	  	    </tr>
+					     	   	  </foreach>
+					     	   	  <tr style="background-color: #B8E4FF;font-size: 14px;font-weight:600;">
+					      	   	  	    	<td colspan="4" align="center">合计</td>
+					     	   	  	    	<td  align="center"><font color="red">{$yw_result['kb']['count_sum']}</font></td>
+					     	   	  	    	<td align="right"><font color="red">{$yw_result['kb']['money_sum']|number_format=###,2}</font></td>
+					     	   	  	    	<td align="right"><font color="red">{$yw_result['kb']['refer_money_sum']|number_format=###,2}</font></td>
+					     	   	  	    	<td align="right"><font color="red">{$yw_result['kb']['lirun_sum']|number_format=###,2}</font></td>    	   	  	
+					     	   	  </tr>       	   	  	
+		     	   	  </if>
+		     	   	  <if condition="$dh_visible==1">
+					     	   	  <div style="display: none">{$j=0}</div>
+					     	   	  <foreach name="dhtype_list" item="type" key="tid">   
+					     	   	  	    <div style="display: none">{$i=0}</div>
+					     	   	  	    <foreach name="level_list" item="level" key="utid" >  
+					     	   	  	    	 <div style="display: none">{$i++}</div>
+					     	   	  	    	 <div style="display: none">{$j++}</div>
+					     	   	  	    	 <tr> 
+					     	   	  	    	 	  <if condition="$j==1"> <td align="center" rowspan="{$dh_rows}">单号</td> </if> 
+					     	   	  	    	 	  <if condition="$i==1"> 
+					     	   	  	    	 	  	<td align="center" rowspan="{$utype_rows}">{$type}</td> 
+					     	   	  	    	 	  	<td align="right" rowspan="{$utype_rows}">{$yw_result['dh'][$tid]['in_price']|number_format=###,2}元/个</td>
+					     	   	  	    	 	  </if>
+					     	   	  	    	 	  <td align="center">{$level}</td>
+					     	   	  	    	 	  <td align="right">{$yw_result['dh'][$tid][$utid]['price']|number_format=###,2}元/个</td>
+					     	   	  	    	 	  <td align="center">{$yw_result['dh'][$tid][$utid]['counts']}</td>
+					     	   	  	    	 	  <td align="right">{$yw_result['dh'][$tid][$utid]['money']|number_format=###,2}</td>
+					     	   	  	    	 	  <td align="right">{$yw_result['dh'][$tid][$utid]['refer_money']|number_format=###,2}</td>
+					     	   	  	    	 	  <td align="right">{$yw_result['dh'][$tid][$utid]['lirun']|number_format=###,2}</td>
+					     	   	  	    	 </tr>
+					     	   	  	    </foreach>
+					     	   	  	    <tr style="background-color:#AADD6A;font-size: 14px;font-weight:600;" >
+					     	   	  	    	<td colspan="2" align="center"  >合计</td>
+					     	   	  	    	<td  align="center"><font color="red">{$yw_result['dh'][$tid]['count_sum']}</font></td>
+					     	   	  	    	<td  align="right"><font color="red">{$yw_result['dh'][$tid]['money_sum']|number_format=###,2}</font></td>
+					     	   	  	    	<td align="right"><font color="red">{$yw_result['dh'][$tid]['refer_money_sum']|number_format=###,2}</font></td>
+					     	   	  	    	<td align="right"><font color="red">{$yw_result['dh'][$tid]['lirun_sum']|number_format=###,2}</font></td>
+					     	   	  	    </tr>
+					     	   	  </foreach>
+					     	   	  <tr style="background-color: #B8E4FF;font-size: 14px;font-weight:600;">
+					      	   	  	    	<td colspan="4" align="center">合计</td>
+					     	   	  	    	<td  align="center"><font color="red">{$yw_result['dh']['count_sum']}</font></td>
+					     	   	  	    	<td align="right"><font color="red">{$yw_result['dh']['money_sum']|number_format=###,2}</font></td>
+					     	   	  	    	<td align="right"><font color="red">{$yw_result['dh']['refer_money_sum']|number_format=###,2}</font></td>
+					     	   	  	    	<td align="right"><font color="red">{$yw_result['dh']['lirun_sum']|number_format=###,2}</font></td>    	   	  	
+					     	   	  </tr>       	   	  	
+		     	   	  </if> 
+		      	   	  <if condition="$xh_visible==1">
+					     	   	  <div style="display: none">{$j=0}</div>
+					     	   	  <foreach name="xhtype_list" item="type" key="tid">   
+					     	   	  	    <div style="display: none">{$i=0}</div>
+					     	   	  	    <foreach name="level_list" item="level" key="utid" >  
+					     	   	  	    	 <div style="display: none">{$i++}</div>
+					     	   	  	    	 <div style="display: none">{$j++}</div>
+					     	   	  	    	 <tr> 
+					     	   	  	    	 	  <if condition="$j==1"> <td align="center" rowspan="{$xh_rows}">小号</td> </if> 
+					     	   	  	    	 	  <if condition="$i==1"> 
+					     	   	  	    	 	  	    <td align="center" rowspan="{$utype_rows}">{$type}</td>
+					     	   	  	    	 	  	    <td align="right" rowspan="{$utype_rows}">{$yw_result['xh'][$tid]['in_price']|number_format=###,2}元/个</td> 
+					     	   	  	    	 	  </if>
+					     	   	  	    	 	  <td align="center">{$level}</td>
+					     	   	  	    	 	  <td align="right">{$yw_result['xh'][$tid][$utid]['price']|number_format=###,2}元/个</td>
+					     	   	  	    	 	  <td align="center">{$yw_result['xh'][$tid][$utid]['counts']}</td>
+					     	   	  	    	 	  <td align="right">{$yw_result['xh'][$tid][$utid]['money']|number_format=###,2}</td>
+					     	   	  	    	 	  <td align="right">{$yw_result['xh'][$tid][$utid]['refer_money']|number_format=###,2}</td>
+					     	   	  	    	 	  <td align="right">{$yw_result['xh'][$tid][$utid]['lirun']|number_format=###,2}</td>
+					     	   	  	    	 </tr>
+					     	   	  	    </foreach>
+					     	   	  	    <tr style="background-color:#AADD6A;font-size: 14px;font-weight:600;" >
+					     	   	  	    	<td colspan="2" align="center"  >合计</td>
+					     	   	  	    	<td  align="center"><font color="red">{$yw_result['xh'][$tid]['count_sum']}</font></td>
+					     	   	  	    	<td  align="right"><font color="red">{$yw_result['xh'][$tid]['money_sum']|number_format=###,2}</font></td>
+					     	   	  	    	<td align="right"><font color="red">{$yw_result['xh'][$tid]['refer_money_sum']|number_format=###,2}</font></td>
+					     	   	  	    	<td align="right"><font color="red">{$yw_result['xh'][$tid]['lirun_sum']|number_format=###,2}</font></td>
+					     	   	  	    </tr>
+					     	   	  </foreach>
+					     	   	  <tr  style="background-color: #B8E4FF;font-size: 14px;font-weight:600;">
+					      	   	  	    	<td colspan="4" align="center">合计</td>
+					     	   	  	    	<td  align="center"><font color="red">{$yw_result['xh']['count_sum']}</font></td>
+					     	   	  	    	<td  align="right"><font color="red">{$yw_result['xh']['money_sum']|number_format=###,2}</font></td>
+					     	   	  	    	<td  align="right"><font color="red">{$yw_result['xh']['refer_money_sum']|number_format=###,2}</font></td>
+					     	   	  	    	<td  align="right"><font color="red">{$yw_result['xh']['lirun_sum']|number_format=###,2}</font></td>    	   	  	
+					     	   	  </tr>       	   	  	
+		     	   	  </if>   
+		     	   	  <tr style="background-color: #AECFE1;font-size: 14px;font-weight:600;">
+		      	   	  	    	<td colspan="5" align="center">合计</td>
+		     	   	  	    	<td  align="center"><font color="red">{$yw_result['count_sum']}</font></td>
+		     	   	  	    	<td align="right"><font color="red">{$yw_result['money_sum']|number_format=###,2}</font></td>
+		     	   	  	    	<td align="right"><font color="red">{$yw_result['refer_money_sum']|number_format=###,2}</font></td>
+		     	   	  	    	<td align="right"><font color="red">{$yw_result['lirun_sum']|number_format=###,2}</font></td>    	   	  	
+		     	   	  </tr>      	   	    	   	   
+		      </table>  
+     	   <br/> 
+     	      <if condition="$hy_visible==1">
+		     	    <table width="100%" >
+		 		     	   	  <tr><td colspan="15" align="center" ><font size="3" color="red"><b>会员统计(部分信息为截止到当前的数据)</b></font></td></tr>
+				     	   	   <tr>   
+				     	   	   	     <td align="center" width="15%">会员类型</td> 
+					     	   	  	 <td align="center" width="6%">升级费用</td>
+					     	   	  	 <td align="center" width="5%">人数(总)</td>
+					     	   	  	 <td align="center" width="8%">可用余额</td>
+					     	   	  	 <td align="center" width="8%">可用佣金</td>
+					     	   	  	 <td align="center" width="8%">冻结金额</td>
+					     	   	  	 <td align="center" width="5%">统计事项</td>
+					     	   	  	 <td align="center">笔数</td>
+					     	   	  	 <td align="center">金额</td>
+					     	   	  	 <td colspan="2"  align="center">成功<br/>(笔数/金额)</td>
+					     	   	  	 <td colspan="2"  align="center">待审核<br/>(笔数/金额)</td>
+					     	   	  	 <td colspan="2"  align="center">失败<br/>(笔数/金额)</td>
+				     	   	  </tr> 
+				     	   	   <tr>   
+				     	   	   	     <td align="center" colspan="6"><font size="2" color="blue"><b>(截止到当前的信息)</b></font></td>  
+					     	   	  	 <td align="center" colspan="9"><font size="2" color="blue"><b>{:I('starttime')}~{:I('endtime')} 时间段内的统计结果</b></font></td> 
+				     	   	  </tr> 				     	   	  
+					     	  <foreach name="level_list" item="level" key="ukey">   
+					     	   	   <div style="display: none">{$i=0}</div>
+					     	   	    <foreach name="hy_type" item="type" key="hkey">
+					     	   	    	 <div style="display: none">{$i++}</div> 
+					     	   	    	  <tr> 
+					     	   	    	  	  <if condition="$i==1">
+					     	   	    	  	      <td align="center" rowspan="2">{$level}</td>
+						     	   	    	  	  <td align="right" rowspan="2">{$hy_result[$ukey]['uplevel_fee']|number_format=###,2}</td>
+						     	   	    	  	  <td align="center" rowspan="2">{$hy_result[$ukey]['counts']}</td>
+						     	   	    	  	  <td align="right" rowspan="2">{$hy_result[$ukey]['money']|number_format=###,2}</td>
+						     	   	    	  	  <td align="right" rowspan="2">{$hy_result[$ukey]['refer_money']|number_format=###,2}</td>
+						     	   	    	  	  <td align="right" rowspan="2">{$hy_result[$ukey]['invalid_money']|number_format=###,2}</td>					     	   	    	  	  	
+					     	   	    	  	  </if> 
+					     	   	    	  	  <td align="center">{$type}</td>
+					     	   	    	  	  <td  align="center"><font color="blue">{$hy_result[$ukey][$hkey]['counts']}</font></td>
+					     	   	    	  	  <td  align="right" ><font color="red">{$hy_result[$ukey][$hkey]['money']|number_format=###,2}</font></td>
+					     	   	    	  	  <td  align="center" width="5%" ><font color="blue">{$hy_result[$ukey][$hkey]['counts_s']}</font></td>
+					     	   	    	  	  <td  align="right"><font color="red">{$hy_result[$ukey][$hkey]['money_s']|number_format=###,2}</font></td>
+					     	 				  <td  align="center" width="5%" ><font color="blue">{$hy_result[$ukey][$hkey]['counts_w']}</font></td>
+					     	   	    	  	  <td  align="right"><font color="red">{$hy_result[$ukey][$hkey]['money_w']|number_format=###,2}</font></td>
+					     	   	    	  	  <td  align="center" width="5%" ><font color="blue">{$hy_result[$ukey][$hkey]['counts_f']}</font></td>
+					     	   	    	  	  <td  align="right"><font color="red">{$hy_result[$ukey][$hkey]['money_f']|number_format=###,2}</font></td>
+  					     	   	    	  </tr>
+					     	   	    </foreach>
+					     	  </foreach>
+					     	  <tr  style="background-color: #AECFE1;font-size: 14px;font-weight:600;">
+					     	  	    <td colspan="2" align="center">合计</td>
+					     	  	    <td align="center"><font color="red">{$hy_result['counts']}</font></td>
+					     	  	    <td align="right"><font color="red">{$hy_result['money']|number_format=###,2}</font></td>
+					     	  	    <td align="right"><font color="red">{$hy_result['refer_money']|number_format=###,2}</font></td>
+					     	  	    <td align="right"><font color="red">{$hy_result['invalid_money']|number_format=###,2}</font></td>
+					     	  	    <td colspan="9"></td>
+					     	  </tr>
+			      </table> 
+		        </if>	      
+     	  </td>
+     	</tr> 
+     	</if>
+    </tbody>   
+  </table>
+   <div style="height:200px"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<include file="Public:header" />	 
+<style>
+.data_list,.simple_style .data_list .data_table{border:none}
+.data_list .data_table tbody{background-color:#fff;}
+.data_list .data_table tbody td{height:40px;line-height:20px;border-top:1px solid #e9e9e9;border-color:#E9E9E9;}
+.data_list .data_table thead{height:60px;line-height:30px;background:#F4F4F4;color:#666;border:1px solid #E9E9E9;}
+.data_list .data_table thead th{_border-top:1px solid #e9e9e9;_border-bottom:1px solid #e9e9e9;}
+.data_list .data_table tfoot{height:60px;line-height:30px;background:#F4F4F4;color:#666;border:1px solid #E9E9E9;}
+.data_list .data_table tfoot tr{_border-top:1px solid #e9e9e9;background:#F4F4F4;color:#666;border:1px solid #E9E9E9;}
+</style> 
+<script type="text/javascript">
+	function export_log()
+	{
+ 	   var count = $("#count").val(); 
+	    if(count<=0) 
+	    {
+	    	alert('无数据可导出！'); 	
+	    	return false;
+	    }
+	   $("#export_form").submit();
+	}
+</script>
+<link rel="stylesheet" type="text/css" href="../Public/css/css.css"><!--公用样式-->
+ <section class="clearfix section" style="width:1000px;margin:10px auto">
+ 	<include file="User:left_nav" />
+ 	<div class="show_panel "> 
+            	 <include file="Public:quick_nav"/> 
+                <!--main content-->
+                 <div class=" clearfix box default">
+                            <!--header内容头部 start-->
+                        <header class="clearfix box_header">
+                                <h2 class="box_title">空包下单记录</h2> 
+                        </header>   
+				             <table cellpadding="0" cellspacing="0" class="table1" width="800px">   
+								   <thead>
+								        	<tr>
+											      <td class="left_title_2" colspan="7">
+											        <form class="search" action="__URL__/kb_log" method="post">
+											          <div align="left">筛选： 
+									              <select name="ftype">
+									                <option value="note_no" <eq name="_POST.ftype" value="note_no">selected</eq>>空包单号</option>  
+									                 <option value="order_no" <eq name="_POST.ftype" value="order_no">selected</eq>>订单编号</option>
+									              </select>  
+									              <input type="text" name="keyword" value="{:I('keyword')}" />		          	
+											              <select name="type_id"> 
+											              	  <option value="">空包类型</option>
+											              	  <foreach name="type_list" item="type">
+											              	  	<option value="{$type['id']}"  <if condition="I('type_id','')==$type['id']" >selected</if> >{$type['name']}</option>
+											              	  </foreach>
+									 		              </select>   
+									 		              <input type="hidden" id="count" value="{$count}"/> 
+											              <input name="submit" type="submit" class="btn_query" value="查询" />
+											              <input type="button" value="导出全部数据" onclick="return export_log()"/> 
+											              <span style="float:right;margin-right:20px"><font color="red">{$count}</font>条数据符合条件</span>
+											           </div>
+											        </form> 
+											        <form id="export_form" action="{:U('log_export')}" method="post"> 
+							       	       					<input type="hidden" name="ftype" value="{:I('ftype')}" /> 
+							       	       					<input type="hidden" name="keyword" value="{:I('keyword')}" /> 
+							       	       					<input type="hidden" name="type_id" value="{:I('type_id')}" /> 	                                 	
+	                                 				</form>            
+											      </td> 
+									    	 </tr>   			    	
+						                   	<tr style="border-top:#A7A6AA 1px dashed ">
+												    <th width="15%">类型</th>
+													<th width="10%" align="center">下单时间</th> 
+													<th width="15%" align="center">单号</th>
+													<th width="16%" align="center"  >发货城市</th>
+													<th width="16%" align="center"  >收货城市</th>
+													<th width="8%" align="center">收货人</th> 
+													<th width="12%" align="center">操作</th>
+											 </tr>
+						             </thead>
+						              <tbody>
+							              	<foreach name="log_list" key="key" item='log'>
+							                     <tr style="border-top: 1px dashed #A7A6AA"> 
+							                     	<td >{$kb_type[$log['type_id']]}</td>
+							                     	<td align="center">{$log['order_time']}</td>
+							                     	<td align="center">{$log['note_no']}</td>
+							                     	<td align="center" title="{$log['address_send']}" >{$log['send_province']}-{$log['send_city']}-{$log['send_district']}</td>
+							                     	<td align="center" title="{$log['address_rec']}" >{$log['rec_province']}-{$log['rec_city']}-{$log['rec_district']}</td>
+							                     	<td align="center">{$log['rec_name']}</td> 
+							                     	<td align="center"> 
+														 <if condition="$log['exp_status']==0 && $log['order_status']==1">
+							                     		  	   <a href= "{:U('log_update',array('id'=>$log['id']))}"><span style="height:25px;line-height:25px;width:60px"><font color="red">修改</font></span></a>
+							                     		 <elseif condition="$log['order_status']==2"/>
+							                     		 		 <span style="height:25px;line-height:25px;width:60px"><font color="blue">已取消</font></span>
+							                     		 <else />
+							                     		         <span style="height:25px;line-height:25px;width:60px">已完成</span>
+							                     		  </if>							                     		  
+							                     	</td>
+												 </tr> 
+											</foreach>
+										</tbody>
+										<tfoot>
+											<tr><td colspan="7" rowspan="2" valign="middle" align="center">{$show}</td></tr> 
+										</tfoot>
+				        </table>  
+				 </div>
+			 </div>
+	 </section>  
+  <!--脚注--> 
+<include file="Public:footer" />	

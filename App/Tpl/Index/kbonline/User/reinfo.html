@@ -1,0 +1,43 @@
+<include file="Public:header"/>
+<div class="container">
+<include file="User:top_menu" />
+<!--left start-->
+<include file="User:user_left" />
+<!--left end--> 
+ <div class="member_right fr">
+            <div class="member_right_tit">
+            	<span class="fl"><strong>基本信息修改</strong></span>
+             </div>
+             <div class="member_border">
+ 						 <form action="{:U('saveuserinfo')}" method="POST" name="frmLogin">
+						 <div class="myclass_pay_card">
+								  <table width="100%" id="mytab"  border="1" class="t1">
+										   <tr>
+										    <td width="130" height="33"><div align="right">用户登陆名：</div></td>
+										    <td > {$user['username']}</td>
+										   </tr>
+										   <tr>
+										    <td width="130" height="33"><div align="right">用户姓名：</div></td>
+										    <td><input type="text" name="nickname" value="{$user['nickname']}"></td>
+										   </tr>
+										  <tr>
+										    <td height="33"><div align="right">电子邮件：</div></td>
+										    <td><input type="text" name="email" value="{$user['email']}"></td>
+										  </tr> 
+										  <tr>
+										    <td height="33"><div align="right">联系电话：</div></td>
+										    <td><input type="text" name="telphone" value="{$user['telphone']}"></td>
+										  </tr>
+										  <tr>
+										    <td height="33"><div align="right">常用QQ：</div></td>
+										    <td><input type="text"  disabled="true" value="{$user['user_qq']}"/><font color="red">为了您的账户安全，QQ号码修改需联系客服</font></td>
+										  </tr> 
+								</table>
+						        <input type="hidden" name="id" value="{$user['id']}">
+						        <input type="submit" class="submit" value="" /></div>
+						</form> 				
+             </div>
+    </div>
+ </div>
+</div>  
+<include file="Public:footer"/>

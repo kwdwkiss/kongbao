@@ -1,0 +1,26 @@
+<include file="Public:header" />	
+<link rel="stylesheet" href="../Public/css/news.css">
+<link rel="stylesheet" href="../Public/css/news_1.css">
+<div class="wrapper">
+   <div class="bodier clearfix pt_10"  >
+	<!--左边部分 start-->
+		<div class="main bor2">
+			<div class="aboutZone commission">
+				<dl>
+					<dt><div class="aboutZoneHD"><a href="__APP__">首页</a><span> > </span><a href="{:U('About/index')}">关于我们</a> >  列表</div></dt>
+					<dd class="clearfix">
+							 <ul class="clearfix">
+							 	<foreach name="about_list" item="about">
+								 	  <li><span class="rt">{$about["time"]}</span>·<a href="{:U('about',array('id'=>$about['id']))}" target="_blank" style="color:#CC0000;" >{$about["title"]}</a></li>
+							 	 </foreach> 
+						       </ul>
+							   <div class="page_count fl_r ml_10 mt_10 mb_10 clearfix">{$show}</div>
+					</dd>
+				</dl>
+			</div>
+		</div> 
+	   <include file="Public:article_cat" />
+	<div class="clear"></div>
+ </div> 
+</div>  
+<include file="Public:footer" />	

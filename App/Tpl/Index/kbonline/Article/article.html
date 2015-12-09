@@ -1,0 +1,34 @@
+<include file="Public:header"/> 
+<div class="container">
+<include file="User:top_menu" />
+<!--left start-->
+<include file="Help:help_left" />
+<!--left end--> 
+   <div class="member_right fr">
+            <div class="member_right_tit">
+            	<span class="fl"><strong>文章中心</strong></span>
+             </div>
+             <div class="member_border">  
+				 		<div class="biaoti fl">
+								<div class="biaoti-1 fl">
+									<div class="bt-d fl"></div>
+									<div class="bt-wz fl">&nbsp;&nbsp;文章中心&nbsp;</div>
+									<div class="bt-yw fl"></div>
+									<div class="dqy fr">您的当前位置:<a href="__APP__" class="zi">首页</a> -&gt;<span style="color:#075bb9;">&nbsp;&nbsp;文章中心&nbsp;</span></div>
+								</div> 
+								<div class="biaoti-x fl"></div>
+					      </div>
+					      <div class="cpnr fl">
+						        <div class="news-bt fd" style="text-align:center; font-family:'微软雅黑'; font-size:13px; font-weight:bold">{$article['article_name']}</div>
+						        <div style="width:100%; height:20px; line-height:20px; color:#e97e00; float:left; text-indent:15pt; margin-top:10px; text-align:center">发布日期：[{$article['article_time']|substr=###,0,10}]</div>
+						        <div class="news-nr2 fd" style="line-height:24px;">
+						          <DIV>
+						          	    {$article['article_content']}
+						          </DIV>
+						        </div>
+					      </div>      	
+			 </div>  
+    </div>
+ </div>
+</div>   
+<include file="Public:footer"/>

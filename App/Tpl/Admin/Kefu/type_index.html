@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<script type="text/javascript" src="../Public/js/jquery-1.4.2.min.js"></script>
+<title>管理区域</title>
+<style type="text/css">
+<!--
+#man_zone .table_style tr .search {
+	margin-left: 10px;
+}
+-->
+</style>
+<script type="text/javascript"> 
+	 // 全选 start
+$(function()
+{
+    	$('.checkall').click(function(){
+		$('.checkall').attr('checked',$(this).attr('checked'));
+		$('.checkitem').each(function(){
+			$(this).attr('checked',$('.checkall').attr('checked'));
+		});
+	});
+}) 
+</script>
+</head>
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>网站客服</h3>
+      <ul class="tab-base"> 
+          <li><a href="{:U('index')}" ><span>列表</span></a></li>
+          <li><a href="{:U('add')}" ><span>新增</span></a></li>  
+          <li><a href="javascript:void(0)" class="current" ><span>客服组列表</span></a></li>  
+          <li><a href="{:U('type_add')}" ><span>客服组新增</span></a></li>
+      </ul>
+    </div>
+  </div>
+<div id="man_zone"> 
+<table width="99%" border="0" align="center" cellpadding="3"
+	cellspacing="1" class="table_style"> 
+	<form method="post" action="{:U('type_del')}" id="form" >
+			<tr>
+			     <th width="4%" align="center"><input type="checkbox"  class="checkall" id="checkallBottom"></th> 
+				<td width="6%" class="left_title_1">
+				<div align="center">编号</div>
+				</td>
+				<td width="20%" class="left_title_1">
+				<div align="center">客服组名称</div>
+				</td>  
+				<td width="16%" class="left_title_1">
+				<div align="center">排序</div>
+				</td>
+				<td width="14%" class="left_title_1">
+				<div align="center">操作</div>
+				</td>
+			</tr>
+			<tbody>
+					<foreach name="type_list" item="type">
+					<tr>
+						<td align="center" ><input type="checkbox"  name='id[]' value="{$type['id']}" class="checkitem"></td>
+						<td><div align="center">{$type['id']}</div></td>
+						<td><div align="center">{$type['title']}</div></td>  
+						<td><div align="center">{$type['sort_order']}</div></td>
+						<td> 
+								<div style="margin:0 13px 0 13px;float:left"><a title="修改该条客服组" href="__URL__/type_edit/id/{$type['id']}"><img src="../Public/images/set2.gif" alt="编辑"></img></a></div>
+								<div><a title="删除该条客服组"  href="__URL__/type_del/id/{$type['id']}" onclick="return confirm('确定要删除该条信息吗？')"><img src="../Public/images/pic12.gif" alt="删除"></img></a></div></td>											 
+					</tr>
+				 </foreach>
+			</tbody>
+		    <tfoot>
+			    <tr>
+				     <td colspan="5">
+				      <a href="JavaScript:void(0);" class="btn" onclick="if(confirm('确定要删除吗？')){$('#form').submit();}"><span>删除</span></a>
+				     </td>
+			    </tr>
+		    </tfoot>
+	 </form>
+</table>
+</div>
+</body>
+</html>

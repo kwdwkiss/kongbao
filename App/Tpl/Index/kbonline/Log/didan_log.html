@@ -1,0 +1,77 @@
+<include file="Public:header"/>
+<div class="container">
+<include file="User:top_menu" />
+<!--left start-->
+<include file="Order:order_left" />
+<!--left end--> 
+ <div class="member_right fr">
+            <div class="member_right_tit">
+            	<span class="fl"><strong>底单申请记录</strong></span>
+             </div> 
+ 				 		   <table class="table1" style="width: 100%" align="left"  >
+						    <tr>
+						      <td colspan="6" class="left_title_2">
+						        <form class="search" action="__URL__/didan_log" method="post">
+						          <div align="left">筛选： 
+				              <select name="ftype">
+				                <option value="note_no" <eq name="_POST.ftype" value="note_no">selected</eq>>空包单号</option>  
+				               </select>  
+				              <input type="text" name="keyword" value="{:I('keyword')}" />		          	
+						              <select name="type_id"> 
+						              	  <option value="">空包类型</option>
+						              	  <foreach name="type_list" item="type">
+						              	  	<option value="{$type['id']}"  <if condition="I('type_id','')==$type['id']" >selected</if> >{$type['name']}</option>
+						              	  </foreach>
+				 		              </select> 
+				 		              <select name="status">
+				 		                  <option value="">状态</option>
+				 		              	  <option value="1" <if condition="I('status','')==1" >selected</if>>申请中</option>
+				 		              	  <option value="2" <if condition="I('status','')==2" >selected</if>>已完成</option>
+				 		              </select>  
+						              <input name="submit" type="submit" value="查询" /> 
+						              <span style="float:right"><font color="red">{$count}</font>条数据符合条件</span>
+						           </div>
+						        </form>        
+						      </td> 
+						    </tr> 
+						    <foreach name="log_list" key="key" item='log'>
+							    	  <if condition="$key%2==0">
+							    	  	   <tr style="background-color:#CCCCCC ;"> 
+							    	  <else/>
+							    	       <tr style="background-color:#FFCC00 ;" > 
+							    	  </if> 
+							    	          <td width="100" align="center">空包单号&nbsp;</td>
+											  <td width="" height="20">{$log['address_send']}</td>
+											 <td width="80" rowspan="2" align="center">{$log['order_time']}</td>  
+											 <td width="100" align="center">空包类型&nbsp;</td> 
+											 <td width="100" align="center">状态&nbsp;</td>
+											 <td width="50px" rowspan="2"> 
+											 	 <if condition="$log['status']==2"> 
+											 	 	<a href="{$log['didan_image']}" target="_blank" title="底单截图">底单</a>  
+											 	 </if> 
+											 </td>
+										 </tr>
+							    	  <if condition="$key%2==0">
+							    	  	   <tr style="background-color:#CCCCCC ;"> 
+							    	  <else/>
+							    	       <tr style="background-color:#FFCC00 ;" > 
+							    	  </if> 
+							    	                <td width="100" align="center">{$log['note_no']}</td>
+												    <td height="20">{$log['address_rec']}</td> 
+												    <td width="100" align="center">{$kb_type[$log['type_id']]}</td>
+												    <td width="100" align="center">
+												    	<switch name="log.status">
+												    		<case value="1"><font color="red">申请中</font></case>
+												    		<case value="2"><font color="blue">已完成</font></case>
+												    	</switch>
+				                                   </td>
+										 </tr>	 
+						     </foreach> 
+						     <tr>
+						      <td height="20" colspan="6"><div align="center">{$show}</div></td>
+						    </tr>
+						  </table>
+    </div>
+ </div>
+</div>   
+<include file="Public:footer"/>

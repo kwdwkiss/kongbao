@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<title>管理区域</title>
+</head> 
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>模板设置</h3>
+      <ul class="tab-base"> 
+         <li><a href="javascript:void(0)" class="current" ><span>模板设置</span></a></li>  
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+<form action="__URL__/mobansave" method="post" >
+     <ul style="margin: 5px; width: 100%;">
+      <foreach name="moban_list" item="moban" key="key">
+      	   <div style="display: none">{$i++}</div>
+	       <li style="float: left; text-align: center; margin: 5px;"> 
+	       	   <a target="_blank" href="{$moban['image']}">
+	       	   	  <img width="200" height="200" src="{$img_path}{$moban['image']}" style="border: 1px solid #ccc;">
+	       	   </a>
+	       	  <br/> 
+	       	  <if condition="$key==$current_moban">
+	       	   			<input type="radio" value="{$key}" name="site_template" checked="checked">	        	
+	       	  <else />
+	       	   			<input type="radio" value="{$key}" name="site_template" >
+	       	  </if>
+	           {$moban['name']}
+	      </li>     	
+      </foreach> 
+    </ul>
+    <div class="clear"></div>
+    <table class="table tb-type2 nobdb">
+      <tbody>
+        <tr>
+              <td><input class="btn btn-green big" name="submit" value="确定" type="submit">
+              	<font color="red"><b>系统内置{$i}套前台模板，选中上边模板，然后点击确定即可切换到相应模板</b></font>
+              </td>
+        </tr>
+      </tfoot>
+    </table>
+  </form>
+</div>
+</body>
+</html>

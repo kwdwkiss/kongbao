@@ -1,0 +1,78 @@
+<include file="Public:header" />
+<div class="header_adv">
+  <a href="{$header_adv['pic_url']}" target="_blank"><img src="{$header_adv['pic']}" alt="{$header_adv['ad_brief']}" ></a>
+</div>
+<div class="userbox clearfix">
+  <div class="userleft">
+    <include file="User:left_nav" />
+  </div>
+  <div class="userright">
+    <div class="mynow"><div>财务日志</div></div>
+    <div class="myled" style="margin-top:15px;">
+      <iframe align="center" border="0"  marginWidth=0 marginHeight=0 src="{:U('Index/Index/led')}"  frameBorder=0 width="100%" height="35px" scrolling="no"></iframe>
+    </div>
+    <table border="0" cellSpacing="1" cellPadding="5" width="768" style="margin-top:20px;">
+    <form class="search" action="__URL__/cw_log" method="post">
+      <tr>
+        <td width="7%">筛选：</td>
+        <td width="15%">
+          <select name="stage" style="height:22px;">
+          <option value="">日志类型</option>
+          <option value="admin" <eq name="_POST.stage" value="admin">selected</eq>>后台</option>
+          <option value="refund" <eq name="_POST.stage" value="refund">selected</eq>>退款</option>
+          <option value="buy" <eq name="_POST.stage" value="buy">selected</eq>>下单</option>
+          <option value="cash" <eq name="_POST.stage" value="cash">selected</eq>>提现</option>
+          <option value="recharge" <eq name="_POST.stage" value="recharge">selected</eq>>充值</option>
+          <option value="return" <eq name="_POST.stage" value="return">selected</eq>>提现失败充回</option>
+          <option value="refer" <eq name="_POST.stage" value="refer">selected</eq>>佣金</option>
+          <option value="upgrade" <eq name="_POST.stage" value="upgrade">selected</eq>>会员升级</option>
+          <option value="change" <eq name="_POST.stage" value="change">selected</eq>>佣金转换</option>
+          </select> 
+        </td>
+        <td align="left"><input name="submit" type="submit" value="查询" /> </td>
+        <td align="right">
+          <font color="red">{$count}</font>条数据符合条件
+        </td>
+      </tr>
+    </form>  
+    </table>
+    <table  border="0" cellSpacing="1" cellPadding="5" width="768" class="table1">
+      <tr>
+        <th width="20%" class="left_title_1"><div align="center">日志时间</div></td>
+        <th width="10%" class="left_title_1"><div align="center">动作</div></td>
+        <th width="10%" class="left_title_1"><div align="center">调整金额</div></td> 
+        <th width="10%" class="left_title_1"><div align="center">账户余额</div></td>
+        <th width="10%" class="left_title_1"><div align="center">佣金余额</div></td>      
+        <th width="" class="left_title_1"><div align="center">详情</div></td> 
+      </tr>
+      <foreach name="log_list" item='log'> 
+      <tr>
+        <td><div align="center">{$log['addtime']}</div></td>
+        <td><div align="center">
+        <switch name="log.stage" >
+        <case value="admin">后台</case>
+        <case value="refund">退款</case>
+        <case value="buy">下单</case>
+        <case value="cash">提现</case>
+        <case value="recharge">充值</case>
+        <case value="return">提现失败充回</case>
+        <case value="refer">佣金</case>
+        <case value="upgrade">会员升级</case>
+        <case value="change">佣金转换</case>
+        <default />其他
+        </switch>
+        </div>
+        </td>
+        <td><div align="center">{$log['money']}</div></td>
+        <td><div align="center">{$log['remain_money']}</div></td>
+        <td><div align="center">{$log['remain_refer_money']}</div></td>
+        <td><div align="left">{$log['comm']}</div> </td>
+      </tr>
+      </foreach>
+      <tr>
+        <td height="30" colspan="10"><div align="center">{$show}</div></td>
+      </tr>
+    </table>
+  </div>
+</div>    
+<include file="Public:footer" />	

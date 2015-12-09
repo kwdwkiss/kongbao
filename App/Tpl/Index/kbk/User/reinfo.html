@@ -1,0 +1,53 @@
+<include file="Public:header" />
+<div class="header_adv">
+  <a href="{$header_adv['pic_url']}" target="_blank"><img src="{$header_adv['pic']}" alt="{$header_adv['ad_brief']}" ></a>
+</div>
+<div class="userbox clearfix">
+  <div class="userleft">
+    <include file="User:left_nav" />
+  </div>
+  <div class="userright">
+    <div class="mynow"><div>资料修改</div></div>
+    <div class="myled" style="margin-top:15px;">
+      <iframe align="center" border="0"  marginWidth=0 marginHeight=0 src="{:U('Index/Index/led')}"  frameBorder=0 width="100%" height="35px" scrolling="no"></iframe>
+    </div>
+	<form action="{:U('saveuserinfo')}" method="POST" name="frmLogin">
+	<div class="myclass_pay_card">
+	  <table border="0" cellSpacing="1" cellPadding="5" width="768">
+        <tr>
+		  <td colspan="3" height="20"></td>
+        </tr>
+	    <tr>
+		  <td width="130"><div align="right">用户登陆名：</div></td>
+		  <td colspan="2">{$user['username']}</td>
+        </tr>
+        <tr>
+          <td width="130"><div align="right">用户姓名：</div></td>
+          <td colspan="2"><input type="text" name="nickname" value="{$user['nickname']}" class="myinputbox01"></td>
+        </tr>
+        <tr>
+          <td><div align="right">电子邮件：</div></td>
+          <td colspan="2"><input type="text" name="email" value="{$user['email']}" class="myinputbox01"></td>
+        </tr>
+        <tr>
+          <td><div align="right">联系电话：</div></td>
+          <td colspan="2"><input type="text" name="telphone" value="{$user['telphone']}" class="myinputbox01"></td>
+        </tr>
+        <tr>
+          <td><div align="right">常用QQ：</div></td>
+		  <td width="160"><input type="text"  disabled="true" value="{$user['user_qq']}" class="myinputbox01"/></td>
+          <td><font color="red">为了您的账户安全，QQ号码修改需联系客服</font></td>
+        </tr>
+        <tr>
+          <td height="50"></td>
+          <td colspan="2"><input type="hidden" name="id" value="{$user['id']}"><input type="submit" class="submit" value="确定修改" /></td>
+        </tr>
+        <tr>
+          <td colspan="3" height="30">
+        </tr>
+      </table>
+    </div>
+    </form> 				    	
+  </div>
+</div>   
+<include file="Public:footer" />	

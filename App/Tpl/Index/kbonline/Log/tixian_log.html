@@ -1,0 +1,73 @@
+<include file="Public:header"/> 
+<div class="container">
+<include file="User:top_menu" />
+<!--left start-->
+<include file="Log:log_left" />
+<!--left end--> 
+ <div class="member_right fr">
+            <div class="member_right_tit">
+            	<span class="fl"><strong>充值记录</strong></span>
+             </div>
+             <div >
+  					   <table class="table1" style="width: 100%" align="left"  >
+					    <tr>
+					      <td colspan="9" class="left_title_2">
+					        <form class="search" action="__URL__/tixian_log" method="post">
+					          <div align="left">筛选： 
+					              <select name="status"> 
+					              	  <option value="">提现状态</option>
+					                  <option value="1" <eq name="_POST.status" value="1">selected</eq>>申请</option>
+						              <option value="2" <eq name="_POST.status" value="2">selected</eq>>成功</option>
+						              <option value="3" <eq name="_POST.status" value="3">selected</eq>>失败</option>
+			 		              </select>   
+					              <input name="submit" type="submit" value="查询" /> 
+					              <span style="float:right"><font color="red">{$count}</font>条数据符合条件</span>
+					           </div>
+					        </form>        
+					      </td> 
+					    </tr>
+					    <tr> 
+					    	 <td width="20%" class="left_title_1"><div align="center">提现时间</div></td> 
+					         <td width="10%" class="left_title_1"><div align="center">金额</div></td> 
+					         <td width="10%" class="left_title_1"><div align="center">账号类型</div></td>
+					         <td width="5%" class="left_title_1"><div align="center">状态</div></td>   
+					         <td width="15%" class="left_title_1"><div align="center">账号</div></td> 
+					         <td width="10%" class="left_title_1"><div align="center">姓名</div></td>  
+					         <td width="" class="left_title_1"><div align="center">详情</div></td> 
+					    </tr>
+					    <foreach name="tixian_list" item='tixian'> 
+					      <tr>  
+					         <td><div align="center">{$tixian['addtime']}</div></td>
+					         <td><div align="center">{$tixian['money']}</div></td>
+					         <td><div align="center">
+					         	      <switch name="tixian.cwsz_config.type" >
+					         	      	   <case value="1">支付宝</case>
+					         	      	   <case value="2">财付通</case>
+					         	      	   <case value="3">银行转账</case> 
+					         	      	   <default />其他
+					         	      </switch>
+					         	      </div> 
+					          </td>  
+					         <td><div align="center">
+					         	      <switch name="tixian.status" >
+					         	      	   <case value="1">申请</case>
+					         	      	   <case value="2"><font color="green">成功</font></case>
+					         	      	   <case value="3"><font color="red">失败</font></case>  
+					         	      	   <default />其他
+					         	      </switch>
+					         	      </div> 
+					          </td> 		          
+					          <td><div align="center">{$tixian.cwsz_config.account_no}</div></td>
+					          <td><div align="center">{$tixian.cwsz_config.account_name}</div></td>
+					          <td><div align="left">{$tixian['comm']}</div> </td> 
+					      </tr>
+					    </foreach>
+					    <tr>
+					      <td height="30" colspan="9"><div align="center">{$show}</div></td>
+					    </tr>
+					  </table>
+             </div>
+    </div>
+ </div>
+</div>   
+<include file="Public:footer"/>

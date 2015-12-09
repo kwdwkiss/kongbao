@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<title>管理区域</title>
+</head>
+
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>网站设置</h3>
+      <ul class="tab-base">  
+         <li><a href="{:U('config')}" ><span>基本设置</span></a></li> 
+         <li><a href="javascript:void(0)" class="current" ><span>支付设置</span></a></li>
+         <li><a href="{:U('bindip')}" ><span>IP绑定设置</span></a></li> 
+         <li><a href="{:U('fetion_setting')}" ><span>飞信提醒设置</span></a></li>
+         <li><a href="{:U('Shuoming/config')}" ><span>说明及注意事项</span></a></li>  
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+<form action="__URL__/payonline_save" method="post">
+  <table width="97%" border="0" align="center"  cellpadding="3" cellspacing="1" class="table_style">
+   	<tr>
+  		<td colspan="2" bgcolor="#abcdef" >支付宝转账相关设置</td>
+  	</tr> 
+    <tr>
+      <td class="left_title_1">收款人账号</td> 
+      <td><input type="text" name="payonline_setting[alipay_zz][receiver]" size="40" value="{$config['payonline_setting']['alipay_zz']['receiver']}"></td>
+    </tr> 
+    <tr>
+      <td class="left_title_2">收款人姓名</td> 
+      <td><input type="text" name="payonline_setting[alipay_zz][name]" size="40" value="{$config['payonline_setting']['alipay_zz']['name']}"></td>
+    </tr> 
+    <tr>
+      <td class="left_title_1">收款地址</td> 
+      <td><input type="text" name="payonline_setting[alipay_zz][url]" size="40" value="{$config['payonline_setting']['alipay_zz']['url']}"></td>
+    </tr>      	
+    <tr>
+      <td class="left_title_2">收款备注</td> 
+      <td><input type="text" name="payonline_setting[alipay_zz][comm]" size="40" value="{$config['payonline_setting']['alipay_zz']['comm']}"></td>
+    </tr> 
+    <tr>
+      <td class="left_title_1">最低充值金额</td> 
+      <td><input type="text" name="payonline_setting[alipay_zz][min_money]" size="40" value="{$config['payonline_setting']['alipay_zz']['min_money']}"></td>
+    </tr>     
+    <tr>
+      <td class="left_title_2">软件识别密钥</td> 
+      <td><input type="text" name="alipay_Key" size="40" value="{$config['alipay_Key']}">
+      	用于自动充值到账软件安全key
+      </td>
+    </tr> 
+   	<tr>
+  		<td colspan="2" bgcolor="#abcdef" >财付通转账相关设置</td>
+  	</tr>
+    <tr>
+    	<td class="left_title_2">是否启用财付通</td>
+    	<td class="" align="left"  >
+       	  		<input type="radio" name="payonline_setting[tenpay_zz][tenpay_valid]"  value="0"  <eq name="config['payonline_setting']['tenpay_zz']['tenpay_valid']" value='0'>checked</eq> />否
+      	  		<input type="radio" name="payonline_setting[tenpay_zz][tenpay_valid]"  value="1"  <eq name="config['payonline_setting']['tenpay_zz']['tenpay_valid']" value='1'>checked</eq> />是     	
+      			<font color='red'>(如果选"是"则在前台充值页面显示财付通收款选项)</font>
+    	</td> 
+    </tr>   	  
+    <tr>
+      <td class="left_title_1">收款人账号</td> 
+      <td><input type="text" name="payonline_setting[tenpay_zz][receiver]" size="40" value="{$config['payonline_setting']['tenpay_zz']['receiver']}"></td>
+    </tr> 
+    <tr>
+      <td class="left_title_2">收款人姓名</td> 
+      <td><input type="text" name="payonline_setting[tenpay_zz][name]" size="40" value="{$config['payonline_setting']['tenpay_zz']['name']}"></td>
+    </tr> 
+    <tr>
+  		<td colspan="2" bgcolor="#abcdef" >官方支付宝即时到账接口设置<font color="red"><b>(只用于支付宝官方即时到账接口)</b></font></td>
+  	</tr>   
+     <tr>
+    	<td class="left_title_2">启用即时到账接口</td>
+    	<td class="" align="left"  >
+       	  		<input type="radio" name="payonline_setting[alipay_zz][alipay_jsdz_valid]"  value="0"  <eq name="config['payonline_setting']['alipay_zz']['alipay_jsdz_valid']" value='0'>checked</eq> />否
+      	  		<input type="radio" name="payonline_setting[alipay_zz][alipay_jsdz_valid]"  value="1"  <eq name="config['payonline_setting']['alipay_zz']['alipay_jsdz_valid']" value='1'>checked</eq> />是     	
+      			<font color='red'>(如果选"是"则在前台充值页面直接调用支付宝即时到账接口)</font>
+    	</td> 
+    </tr> 
+     <tr>
+	      <td class="left_title_1">商家支付宝账号</td> 
+	      <td><input type="text" name="payonline_setting[alipay_zz][seller_email]" size="40" value="{$config['payonline_setting']['alipay_zz']['seller_email']}"></td>
+    </tr>
+     <tr>
+	      <td class="left_title_2">商家名称</td> 
+	      <td><input type="text" name="payonline_setting[alipay_zz][seller_name]" size="40" value="{$config['payonline_setting']['alipay_zz']['seller_name']}"></td>
+    </tr>
+     <tr>
+	      <td class="left_title_1">合作者身份（PID）</td> 
+	      <td><input type="text" name="payonline_setting[alipay_zz][partner_id]" size="40" value="{$config['payonline_setting']['alipay_zz']['partner_id']}"></td>
+    </tr>
+     <tr>
+	      <td class="left_title_2">安全校验码（Key）</td> 
+	      <td><input type="text" name="payonline_setting[alipay_zz][key]" size="40" value="{$config['payonline_setting']['alipay_zz']['key']}"></td>
+    </tr>  
+    
+    <tr>
+		<td colspan="2" class="left_title_1">
+		<div align="center"> 
+		 <input type="submit" value="保存" /> 
+		 <input type="reset"  value="取消" /></div>
+		</td>
+	</tr>
+	<tr  >
+		<td colspan="2"  bgcolor="#abcdef"  align="left">转账页面示例图 </td> 
+	</tr>
+	<tr>
+		<td colspan="2"> <img src="../Public/images/zhifubao_zhuanzhang_jietu.jpg"> </td>
+	</tr>
+  </table>
+  </form>
+</div>
+</body>
+</html>

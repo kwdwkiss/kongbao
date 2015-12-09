@@ -1,0 +1,31 @@
+<include file="Public:header" />	
+<tr>  
+    <include file="Public:left" />			
+    <td class="td_right" valign="top">  
+		<div class="content2 fl"> 
+			 <div class="left fd">
+							<div class="biaoti fl">
+									<div class="biaoti-1 fl">
+											<div class="bt-d fl"></div>
+											<div class="bt-wz fl">&nbsp;&nbsp;文章中心<span style="float:right;margin-right:10px"><a href="javascript:history.go(-1)">[返回]</a></span></div>
+											<div class="bt-yw fl"></div>
+									</div>
+									<div class="biaoti-x fl"></div>
+							</div>
+							<div class="cpnr fl">
+									<div class="news-bt fd"><span style="float:left; margin-left:35px;">文章标题</span><span style="float:right; margin-right:25px;">日&nbsp;期</span></div>
+									<div class="news-nr2 fd" style="width: 600px; ">
+										  <ul> 
+										  	    <foreach name="article_list" item="article">
+													<LI class="all-xw">
+														<span style="float:left; width:450px;"><a href="{:U('Article/article',array('id'=>$article['id']))}">{$article["article_name"]}</a></span>
+														<span style="width:113px; float:right; margin-right:7px; font-family:Arial; font-size:11px;">[{$article["article_time"]|substr=###,0,10}]</span>
+												   </LI> 										  	    	
+										  	    </foreach> 
+											</ul>
+									</div>
+							</div> 
+			  </div>    
+	 </td>
+</tr>
+<include file="Public:footer" />		

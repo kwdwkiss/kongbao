@@ -1,0 +1,24 @@
+<include file="Public:header" />
+<div class="header_adv">
+  <a href="{$header_adv['pic_url']}" target="_blank"><img src="{$header_adv['pic']}" alt="{$header_adv['ad_brief']}" ></a>
+</div>
+<div class="userbox">
+  <div class="content2 clearfix">
+    <include file="Public:article_cat" />	 
+    <div class="right fr">
+      <div class="biaoti">网站公告</div>
+      <div class="mylist">
+        <ul>
+        <foreach name="gonggao_list" item="gonggao">
+		  <li class="clearfix">
+            <span style="float:left;width:500px;"><a href="{:U('gonggao',array('id'=>$gonggao['id']))}">{$gonggao['title']}</a></span>
+            <span style="float:right;margin-right:5px;font-family:Arial;font-size:11px;">[{$gonggao['time']|substr=###,0,10}]</span>
+		  </li>
+		</foreach> 		
+		  <li style="text-align:center;border:0;">{$show}</li>						
+        </ul>
+      </div>
+    </div>
+  </div> 
+</div>
+<include file="Public:footer" />	

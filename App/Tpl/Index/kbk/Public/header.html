@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="Generator" content="{$config['sitename']} " />
+<title>{$seo_title} </title>
+<meta name="Keywords" content="{$seo_keyword}">
+<meta name="Description" content="{$seo_desc}">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta content="text/html; charset=utf-8" http-equiv=Content-Type>
+<link rel=stylesheet type=text/css href="../Public/css/css.css">
+<meta name=GENERATOR content="MSHTML 8.00.6001.23536">
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery-ui/jquery.ui.js"></script>
+<script src="__PUBLIC__/js/jquery.KinSlideshow-1.1.js" type="text/javascript"></script>
+<script src="../Public/js/showList.js" type="text/javascript"></script>
+{$config['kefu_javascript']}
+<script type="text/javascript">
+$(function()
+  {
+	  $("#KinSlideshow").KinSlideshow();
+	  });
+</script>
+</head>
+<body>
+  <div class="mytop clearfix">
+    <div class="userbox">
+      <div class="fl">您好，欢迎访问最专业的快递单号自助系统！</div>
+      <div class="fr">
+        <if condition="$_SESSION['IS_LOGIN']==1">
+        欢迎您：<a href="{:U('User/home')}" style="margin:0;">{$user['username']}</a>&nbsp;({$user['type_name']})&nbsp;&nbsp;|<a href="{:U('Order/kb')}">我要发货</a>|<a href="{:U('User/logout')}">退出</a>
+        <else />
+        <a href="{:U('User/reg')}">免费注册</a>|<a href="javascript:void(0)" onclick="alert('忘记密码，请联系官方客服！')">忘记密码</a>
+        </if>
+      </div>
+    </div>
+  </div>
+  <div class="top">
+    <div class="userbox">
+      <div class=" top-1 fl">
+        <div class="logo fd">
+          <a href="__APP__"><IMG border=0 alt={$config['sitename']} src="__ROOT__/{$config['site_logo']}"></a>
+        </div>
+      </div>
+      <div class="top-2 fr">
+        <div class="menu">
+          <UL class="clearfix">
+            <!--<if condition="$config['tuiguang_valid']==1">
+            <li><a href="{:U('Index/Index/tuiguang')}">定制网站</a></li>-->
+            </if>
+            <li><a href="{:U('Help/index')}">帮助中心</a></li>
+            <if condition="$xiaohao_config['valid']==1">
+            <li><a href="{:U('Order/xh')}">小号下单</a></li>
+            </if>
+            <if condition="$danhao_config['valid']==1">
+            <li><a href="{:U('Order/dh')}">单号下单</a></li>
+            </if>
+            <!--<li><a href="{:U('Tg/uplevel')}">升级会员</a></li>-->
+            <!--<li><a href="{:U('Order/dd_apply')}">底单申请</a></li>-->
+            <li><a href="{:U('User/home')}">会员中心</a></li>
+            <if condition="$kongbao_config['pf_valid']==1">
+            <li><a href="{:U('Order/kb_pf')}">单号批发</a></li>
+            </if>
+            <if condition="$kongbao_config['true_valid']==1">
+            <li><a href="{:U('Order/true_kb')}">真实发货下单</a></li>
+            </if>
+            <li><a href="{:U('Order/kb')}">我要发货</a></li>
+            <li><a href="__APP__" >首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+          </UL>
+        </div>
+      </div>
+    </div>  
+  </div>

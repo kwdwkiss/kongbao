@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<script type="text/javascript" src="../Public/js/jquery-1.4.2.min.js"></script> 
+ <link rel="stylesheet" href="__PUBLIC__/kindeditor/themes/default/default.css" />
+<script src="__PUBLIC__/kindeditor/kindeditor.js"></script>
+<script src="__PUBLIC__/kindeditor/lang/zh_CN.js"></script>
+<script type="text/javascript">
+  	KindEditor.ready(function(K) {
+  		 window.editor = K.create('#input_content'); 
+         window.editor = K.create('#outer_content');  
+	}); 	
+	function btn_submit(type)
+	{
+		$("#type").val(type); 
+		if(type==3)
+		{
+			 var comm = $("#comm").val();
+			 if($comm =='')
+			 {
+			 	alert('请填写失败原因！');
+			 	return false;
+			 }
+		}
+	}
+</script>
+<title>管理区域</title>
+</head> 
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>底单管理</h3>
+      <ul class="tab-base"> 
+         <li><a href="{:U('dd_index')}"><span>底单申请</span></a></li>    
+          <li><a href="{:U('dd_exp')}"><span>底单导出</span></a></li>  
+         <li><a href="{:U('dd_uploads')}"><span>表格底单申请</span></a></li>
+         <li><a href="javascript:void(0)" class="current"><span>表格底单处理</span></a></li>  
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+<form action="__URL__/dd_uploads_update" method="post">
+  <table width="99%" border="0" align="center"  cellpadding="3" cellspacing="1" class="table_style">
+    <tr>
+      <td class="left_title_1">申请会员ID</td>
+      <td><input type="text"  disabled="true"  size="31" value="{$didan['user_id']}"></td>
+    </tr>
+    <tr>
+      <td class="left_title_2">会员用户名</td>
+      <td><input type="text"  disabled="true" size="31" value="{$didan['username']}"></td>
+    </tr>       
+    <tr>
+      <td class="left_title_1">底单处理状态</td>
+       <td>
+          	   <input type="radio" value="1" disabled="true"  <eq name="didan.status" value="1">checked</eq>   />申请中
+          	   <input type="radio" value="2" disabled="true" <eq name="didan.status" value="2">checked</eq> />已完成
+          	   <input type="radio" value="3" disabled="true" <eq name="didan.status" value="3">checked</eq> />失败
+       </td>
+    </tr>
+    <tr>
+      <td class="left_title_2"> 申请时间</td>
+      <td><input type="text" disabled="true"  size="31" value="{$didan['addtime']}"></td>
+    </tr>  
+    <tr>
+      <td class="left_title_1">表格底单申请内容</td>
+      	<td><textarea name="input_content" readonly="true" rows="5" id="input_content" >{$didan['input_content']}</textarea></td>
+     </tr>      
+     <tr>
+      <td class="left_title_2">表格底单处理结果</td>
+       <td><textarea name="outer_content" rows="5" id="outer_content" >{$didan['outer_content']}</textarea></td>
+     </tr>  
+     <tr>
+      <td class="left_title_2">失败原因</td>
+       <td><textarea name="comm" rows="5" id="comm" >{$didan['comm']}</textarea></td>
+     </tr>           
+    <tr bgcolor="#FFFFFF">
+      <td colspan="2" class="left_title_1"><div align="center">
+        <input type="hidden" name="id" value="{$didan['id']}" />  
+        <input type="hidden" name="type" id="type" value="" /> 
+        <if condition="$didan['status']==1"> 
+        	<input type="submit" value="处理完成" onclick="btn_submit(2)" /> 
+        	<input type="submit" value="失败" onclick="btn_submit(3)" /> 
+        </if> 
+        <if condition="$didan['status']==1"> 
+        	<input type="submit" value="处理完成" onclick="btn_submit(2)" /> 
+        </if>
+        <input class="button" type="button" onclick="history.go(-1);" value="返回" /></div></td>
+    </tr>
+  </table>
+</form>
+</div>
+</body>
+</html>

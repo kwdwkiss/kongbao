@@ -1,0 +1,29 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+    <title>管理区域</title>
+</head>
+<body>
+<div class="fixed-bar">
+    <div class="item-title">
+        <h3>前台首页修改</h3>
+        <ul class="tab-base">
+            <li><a href="javascript:void(0)" class="current" ><span>首页修改</span></a></li>
+        </ul>
+    </div>
+</div>
+<div id="man_zone">
+    <form action="__URL__/customsave" method="post" >
+        <div style="margin: 2px 10px;">
+            <textarea rows="26" cols="100" name="content">{$content}</textarea>
+        </div>
+        <div>
+            <input class="btn btn-green big" name="submit" value="确定" type="submit">
+        </div>
+    </form>
+</div>
+</body>
+</html>

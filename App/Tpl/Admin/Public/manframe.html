@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" /> 
+<script charset="utf-8" src="../Public/js/jquery-1.4.2.min.js"></script>
+<title>管理区域</title>
+<style>
+		table{border-collapse:collapse;border-spacing:0;border-left:1px dashed #888;border-top:1px dashed #888;background:#efefef;}
+		tr,td{border-right:1px dashed #888;border-bottom:1px dashed #888;padding:2px 2px;font-family:Arial}
+		tr{background:#ccc;font-size:larger}
+</style>
+<script  type="text/javascript">
+	function btn_close(obj)
+	{ 
+		var str = "#"+obj; 
+		$(str).css('display','none');
+	}
+</script>
+</head>
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>系统信息</h3> 
+    </div>
+  </div>
+<div id="man_zone">
+  <table width="99%" border="0" align="center"  cellpadding="3" cellspacing="1" class="table_style">
+     <if condition="$tixing_text_kb!='' " >
+     		<tr  id="kongbao"><td></td><td colspan="4" style="border-left:0 dashed" ><font color="red"><b> {$tixing_text_kb}</b></font></td></tr>
+     </if>
+     <if condition="$danhao_config['valid']==1 && $tixing_text_dh!='' " >
+     	    <tr  id="danhao"><td></td><td colspan="4" style="border-left:0  dashed" ><font color="red"><b>{$tixing_text_dh}</b></font></td></tr>
+     </if>
+     <if condition="$xiaohao_config['valid']==1 && $tixing_text_xh!='' ">
+     	    <tr  id="xiaohao"><td></td><td colspan="4" style="border-left:0  dashed" ><font color="red"><b>{$tixing_text_xh}</b></font></td></tr>
+     </if>      
+     <tr>
+     	 <td width="150px" class="left_title_2">当前版本</td> 
+     	  <if condition="$config['auth_code']==''">
+     	  	    <td colspan="3"><font color="red">3.2</font></td>
+     	  <else/>
+     	         <td colspan="3">&nbsp;&nbsp;开始时间：{$auth_code[1]|date='Y-m-d',###}&nbsp;&nbsp;截止时间：&nbsp;&nbsp;{$auth_code[2]|date='Y-m-d',###}</td>
+     	  </if>
+     	 	<td width="40%" rowspan="14" valign="top">
+				    <table width="100%" style="border:0;border-right:0 dashed #AAAAAA;">
+				    	 <tr> <td width="100px"  align="right">运行环境&nbsp;&nbsp;</td> <td>{$osinfo}</td> </tr>
+				    	 <tr> <td width="100px"  align="right">操作系统&nbsp;&nbsp;</td> <td>{$serverinfo}</td> </tr>
+				    	 <tr> <td width="100px"  align="right">MySQL版本&nbsp;&nbsp;</td> <td>{$sqlinfo}</td> </tr>
+				    	 <tr> <td align="right">服务器IP&nbsp;&nbsp;</td> <td>{$serverip}</td> </tr>
+				    	 <tr> <td align="right">服务器时间&nbsp;&nbsp;</td> <td>{$servertime}</td> </tr>
+				    	 <tr> <td align="right"><font color="red">版权所有&nbsp;&nbsp;</font></td> <td><a href="http://www.92fkongbao.com" target="_blank"><font color="red">圣鹰空包网</font></a></td></tr>
+				    	 <tr> <td align="right"><font color="blue">联系信息&nbsp;&nbsp;</font></td> <td><font color="blue">QQ:2851518918</font></td> </tr>
+ 				    	 <tr> <td align="right"><font color="blue">官方网站&nbsp;&nbsp;</font></td> <td><a href="http://www.92fkongbao.com" target="_blank"><font color="blue">www.92fkongbao.com</font></a></td> </tr>
+
+				    </table> 
+     		 </td>
+     </tr>
+      <tr><td colspan="4" align="center" bgcolor=#abcdef>会员信息</td></tr>
+     <tr>
+     	 <td width="150px" class="left_title_1">会员总数&nbsp;&nbsp;</td>
+     	 <td colspan="3" >&nbsp;&nbsp;{$user_array['user_counts']}</td>
+     </tr>
+     <tr>
+     	 <td class="left_title_2"> 其中&nbsp;&nbsp;</td>
+     	 <td colspan="3">
+     	 	  <foreach name="user_array.user_detail" item="user">
+     	 	  	  &nbsp;&nbsp;{$user['type_name']}：{$user['counts']}&nbsp;<br/>
+     	 	  </foreach> 
+     	  </td>
+     </tr>    
+     <tr><td colspan="4" align="center" bgcolor=#abcdef>订单信息</td></tr>
+     <tr> 
+     	 <td class="left_title_1"><font color="red">未处理充值订单&nbsp;&nbsp;</font></td>
+     	 <td><font color="red">&nbsp;&nbsp;{$recharge['n']['counts']}&nbsp;&nbsp;笔</font></td>
+     	 <td align="right"><font color="red">订单总额&nbsp;&nbsp;</font></td>
+     	 <td><font color="red">&nbsp;&nbsp;{$recharge['n']['money']}元</font></td> 
+     </tr>    
+     <tr>
+     	 <td class="left_title_2"> 累计充值订单&nbsp;&nbsp;</td>
+     	 <td>&nbsp;&nbsp;{$recharge['a']['counts']}&nbsp;&nbsp;笔</td>
+     	 <td align="right">订单总额&nbsp;&nbsp;</td>
+     	 <td>&nbsp;&nbsp;{$recharge['a']['money']}元</td> 
+     </tr>   
+     <tr> 
+     	 <td class="left_title_1"><font color="green">累计购买订单&nbsp;&nbsp;</font></td>
+     	 <td><font color="green">&nbsp;&nbsp;{$buy_order['y']['counts']}&nbsp;&nbsp;笔</font></td>
+     	 <td align="right"><font color="green">累计订单总额&nbsp;&nbsp;</font></td>
+     	 <td><font color="green">&nbsp;&nbsp;{$buy_order['y']['money']}元</font></td> 
+     </tr>          
+     <tr><td colspan="4" align="center" bgcolor=#abcdef>提现信息</td></tr>
+     <tr>
+     	 <td class="left_title_2"><font color="blue">未处理提现&nbsp;&nbsp;</font></td>
+      	 <td><font color="blue">&nbsp;&nbsp;{$tixian['n']['counts']}&nbsp;&nbsp;笔</font></td>
+     	 <td align="right"><font color="blue">提现未处理总额&nbsp;&nbsp;</font></td>
+     	 <td><font color="blue">&nbsp;&nbsp;{$tixian['n']['money']}元</font></td>     	  
+     </tr>    
+     <tr>
+     	 <td class="left_title_1"><font color="red">提现失败&nbsp;&nbsp;</font></td>
+     	 <td><font color="red">&nbsp;&nbsp;{$tixian['f']['counts']}&nbsp;&nbsp;笔</font></td>
+     	 <td align="right"><font color="red">提现失败总额&nbsp;&nbsp;</font></td>
+     	 <td><font color="red">&nbsp;&nbsp;{$tixian['f']['money']}元</font></td> 
+     </tr>
+     <tr>
+     	 <td class="left_title_2"><font color="green">提现成功&nbsp;&nbsp;</font></td>
+     	 <td><font color="green">&nbsp;&nbsp;{$tixian['y']['counts']}&nbsp;&nbsp;笔</font></td>
+     	 <td align="right"><font color="green">提现成功总额&nbsp;&nbsp;</font></td>
+     	 <td><font color="green">&nbsp;&nbsp;{$tixian['y']['money']}元</font></td> 
+     </tr>     
+     <tr>
+     	 <td class="left_title_1">累计提现&nbsp;&nbsp;</td>
+     	 <td>&nbsp;&nbsp;{$tixian['a']['counts']}&nbsp;&nbsp;笔</td>
+     	 <td align="right">累计提现总额&nbsp;&nbsp;</td>
+     	 <td>&nbsp;&nbsp;{$tixian['a']['money']}元</td> 
+     </tr>
+     <tr><td colspan="4" align="center" bgcolor=#abcdef>业务信息</td></tr>
+     <tr>
+     	 <td class="left_title_2"><font color="red">未使用空包单&nbsp;&nbsp;</font></td>
+     	 <td colspan="4"><font color="red">&nbsp;&nbsp;{$kongbao['n']}&nbsp;&nbsp;个</font></td>     	
+     </tr>    
+     <tr>
+     	 <td class="left_title_1">其中&nbsp;&nbsp;</td>
+     	 <td colspan="4">
+     	 	   <foreach name="kongbao.detail" item="kb">
+     	 	   	   &nbsp;&nbsp; {$kb['name']}：{$kb['counts']}&nbsp;&nbsp;个<br/>
+     	 	   </foreach>
+     	 </td>     	
+     </tr>  
+     <if condition="$danhao_config['valid']==1">
+		      <tr>
+		     	 <td class="left_title_2"><font color="red">未使用单号&nbsp;&nbsp;</font></td>
+		     	 <td colspan="4"><font color="red">&nbsp;&nbsp;{$danhao['n']}&nbsp;&nbsp;个</font></td>     	
+		     </tr>    
+		     <tr>
+		     	 <td class="left_title_1">其中&nbsp;&nbsp;</td>
+		     	 <td colspan="4">
+		     	 	   <foreach name="danhao.detail" item="dh">
+		     	 	   	   &nbsp;&nbsp; {$dh['name']}：{$dh['counts']}&nbsp;&nbsp;个<br/>
+		     	 	   </foreach>
+		     	 </td>     	
+		     </tr>    	
+     </if>        
+      <if condition="$xiaohao_config['valid']==1">
+		      <tr>
+		     	 <td class="left_title_2"><font color="red">未使用小号&nbsp;&nbsp;</font></td>
+		     	 <td colspan="4"><font color="red">&nbsp;&nbsp;{$xiaohao['n']}&nbsp;&nbsp;个</font></td>     	
+		     </tr>    
+		     <tr>
+		     	 <td class="left_title_1">其中&nbsp;&nbsp;</td>
+		     	 <td colspan="4">
+		     	 	   <foreach name="xiaohao.detail" item="xh">
+		     	 	   	   &nbsp;&nbsp; {$xh['name']}：{$xh['counts']}&nbsp;&nbsp;个<br/>
+		     	 	   </foreach>
+		     	 </td>     	
+		     </tr>    	
+     </if>           
+  </table>
+</div>
+</body>
+</html>

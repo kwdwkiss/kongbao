@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$seo_title} </title>
+<meta name="Keywords" content="{$seo_keyword}">
+<meta name="Description" content="{$seo_desc}">
+<link href="../Public/css/common.css" type="text/css" rel="stylesheet">
+<link href="../Public/css/index.css" type="text/css" rel="stylesheet">
+<link href="../Public/css/page.css" type="text/css" rel="stylesheet">
+<link href="../Public/css/index2.css" type="text/css" rel="stylesheet">  
+<link href="../Public/css/layout.css" type="text/css" rel="stylesheet">  
+<link rel="stylesheet" href="../Public/css/dialog.css" type="text/css">
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/js/jquery-ui/jquery.ui.js"></script>
+<script language="javascript" src="__PUBLIC__/js/dialog.js"></script>  
+<script type="text/javascript" src="__PUBLIC__/js/jquery.validation.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/common2.2.js"></script> 
+<link href="../Public/css/box.css" rel="stylesheet" type="text/css" /> 
+<script type="text/javascript" src="__PUBLIC__/js/jquery.XYTipsWindow.min.2.8.js"></script>
+{$config['kefu_javascript']} 
+</head>
+<body>
+    <table class="all_table" cellpadding="0" cellspacing="0">
+       <tbody>
+         <tr>
+                <td colspan="2" class="top_menu">
+                    <div id="AgentLogo" class="logo" style="background:url(__ROOT__/{$config.site_logo}) no-repeat 10px 50%;;"></div>
+	                <div class="header_adv" >
+							 <a href="{$header_adv['pic_url']}" target="_blank">
+								 <img src="{$header_adv['pic']}" width="450px" height="80px" alt="{$header_adv['ad_brief']}" >
+							</a>  						
+					</div>  
+                    <div id="bannerid" class="banner">
+ 						   <a href="{$header_adv1['pic_url']}" target="_blank">
+								 <img src="{$header_adv1['pic']}" width="450px" height="80px" alt="{$header_adv1['ad_brief']}" >
+							</a>  	
+                    </div>
+                    <div id="public_top_menu_ctn" class="public_top_menu_ctn" onmouseover="ShowKeFu()" onmouseout="HideKeFu()">
+                        <div class="public_top_menu_ctn_bg">
+                        <ul>
+	                        <li>客服电话：{$config.phone}</li>
+	                        <li class='qq'>客服QQ1:<a target='_blank' href='http://wpa.qq.com/msgrd?v=3&uin={$config.qq1}&site=qq&menu=yes'><img border='0' src='http://wpa.qq.com/pa?p=2:{$config.qq1}:41' alt='业务咨询' title='业务咨询'/></a></li>
+	                        <li class='qq'>客服QQ2:<a target='_blank' href='http://wpa.qq.com/msgrd?v=3&uin={$config.qq2}&site=qq&menu=yes'><img border='0' src='http://wpa.qq.com/pa?p=2:{$config.qq2}:41' alt='诚招代理' title='诚招代理'/></a></li>
+	                        <li>工作时间：9:00—23:00</li>
+                        </ul>
+                        </div>
+                    </div>
+                    <script language="javascript" type="text/javascript" src="__PUBLIC__/js/getElementPos.js"></script>
+                    <script language="javascript" type="text/javascript">
+                        function ShowKeFu()
+                        {
+                            var obj = document.getElementById("KF");
+                            var pos = getElementPos("KF");
+                            var detail = document.getElementById("public_top_menu_ctn");
+                            detail.style.display = "block";
+                            detail.style.left = pos.x + obj.offsetWidth - detail.offsetWidth - 2 + "px";
+                            detail.style.top = pos.y + obj.offsetHeight - 8  + "px";
+                        }
+                        function HideKeFu()
+                        {
+                            var detail = document.getElementById("public_top_menu_ctn");
+                            detail.style.display = "none";
+                        }
+                        
+                        function ShowMenu()
+                        {
+                            var obj = document.getElementById("mainmenu2");
+                            var pos = getElementPos("mainmenu2");
+                            var detail = document.getElementById("mainmenu1");
+                            detail.style.display = "block";
+                            detail.style.left = pos.x + 58 + "px";
+                            detail.style.top = pos.y + obj.offsetHeight - 15  + "px";
+                        }
+                        function HideMenu()
+                        {
+                            var detail = document.getElementById("mainmenu1");
+                            detail.style.display = "none";
+                        }
+                    </script> 
+                    <div class="clear"> </div>
+                    <div class="menu">
+                        <ul> 
+                            <li style="width: 130px"><a href="__APP__" style="width: 130px;">首页</a></li><li class="li2"></li>
+                            <li><a href="{:U('Order/kb')}">空包下单<img width="23" height="19" src="../Public/images/top_new_ico3.gif"></a></li><li class="li2"></li>
+                            <if condition="$kongbao_config['true_valid']==1">
+                            	<li><a href="{:U('Order/true_kb')}">真实空包下单<img width="23" height="19" src="../Public/images/top_new_ico3.gif"></a></li><li class="li2"></li>                            	
+                            </if>
+                            <if condition="$kongbao_config['pf_valid']==1">
+                            	<li><a href="{:U('Order/kb_pf')}">批发空包</a></li><li class="li2"></li>
+                            </if> 
+                            <if condition="$danhao_config['valid']==1">
+                             		<li><a href="{:U('Order/dh')}" title="各种单号下单购买">单号下单<img width="23" height="19" src="../Public/images/top_new_ico3.gif"></a></li><li class="li2"></li>                           	
+                            </if>
+                             <if condition="$xiaohao_config['valid']==1">
+                             		<li><a href="{:U('Order/xh')}" title="各种小号下单购买">小号下单<img width="23" height="19" src="../Public/images/top_new_ico3.gif"></a></li><li class="li2"></li>                           	
+                            </if>                           
+      						<li><a href="{:U('Tg/uplevel')}" >升级会员<img width="23" height="19" src="../Public/images/ico_tuijian.gif"></a></li><li class="li2"></li> 
+                            <li><a href="{:U('Order/dd_apply')}">底单申请</a></li><li class="li2"></li>
+                            <if condition="$config['tuiguang_valid']==1">
+                             		<li><a href="{:U('Index/Index/tuiguang')}">定制网站<img width="23" height="19" src="../Public/images/ico_tuijian.gif"></a></li><li class="li2"></li>                           	
+                            </if>
+                            <li id="KF" class="kefu" onclick="ShowKeFu()" onmouseover="this.className='kefu1';" onmouseout="this.className='kefu';"></li>
+                        </ul>
+                    </div> 
+       </td>
+</tr>            

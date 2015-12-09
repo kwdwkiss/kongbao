@@ -1,0 +1,84 @@
+<include file="Public:header" />
+<div class="header_adv">
+  <a href="{$header_adv['pic_url']}" target="_blank"><img src="{$header_adv['pic']}" alt="{$header_adv['ad_brief']}" ></a>
+</div>
+<div class="userbox clearfix">
+  <div class="userleft">
+    <include file="User:left_nav" />
+  </div>
+  <div class="userright">
+    <div class="mynow"><div>密码修改</div></div>
+    <div class="myled" style="margin-top:15px;">
+      <iframe align="center" border="0"  marginWidth=0 marginHeight=0 src="{:U('Index/Index/led')}"  frameBorder=0 width="100%" height="35px" scrolling="no"></iframe>
+    </div>
+    <form name="validateForm" name="reg" id="reg" action="{:U('User/savepass')}" method="POST">
+	<div class="myclass_pay_card">
+	  <table border="0" cellSpacing="1" cellPadding="5" width="768">
+        <tr>
+		  <td colspan="3" height="20"></td>
+        </tr>
+        <tr>
+          <td width="130">
+            <div align="right">用户登录名：</div>
+          </td>
+		  <td colspan="2"><input type="text"  readonly="true" name="username" value="{$user['username']}" class="myinputbox01" style="background:#f2f2f2;"></td>
+        </tr>
+        <tr>
+          <td>
+            <div align="right">重设密码：</div>
+          </td>
+          <td width="160"><input type="password" name="password" id="password" onblur="passcheck('password')" class="myinputbox01"></td>
+          <td>*字母有大小写之分,英文、数字。</td>
+        </tr>
+        <tr>
+          <td>
+            <div align="right">确定密码：</div>
+          </td>
+          <td><input type="password" name="repassword" id="repassword" onblur="check()" class="myinputbox01"></td>
+          <td>*再次输入登录密码。</td>
+        </tr>
+        <tr>
+          <td height="50"></td>
+          <td colspan="2"><input type="hidden" name="id" value="{$user['id']}"><input type="submit" class="submit" onclick="return chk_submit()"  value="确定修改" /></td>
+        </tr>
+        <tr>
+          <td colspan="3" height="30">
+        </tr>
+      </table>
+    </div>
+    </form>
+  </div>
+</div>    	
+                        
+ <script language="JavaScript" type="text/JavaScript">
+function check(){
+   if (document.getElementById('repassword').value==""){ //没有再次输入密码的时候
+        document.getElementById('repwd').innerHTML=" <font color=red>请再输入一次密码！</font>";
+        return false;
+      }
+   if(document.getElementById('password').value!=document.getElementById('repassword').value){   //再次输入密码不正确的时候
+      document.getElementById('repwd').innerHTML=" <font color=red>两次输入的密码不一致！</font>";
+        return false;
+     }
+   if(document.getElementById('password').value=document.getElementById('repassword').value){   //再次输入密码不正确的时候
+	   document.getElementById('repwd').innerHTML=" <font color=green>密码可用！</font>";
+	  }
+  return true;
+}
+function chk_submit()
+{  
+  if (document.getElementById('password').value==""){ //没有再次输入密码的时候
+        document.getElementById('pwd').innerHTML=" <font color=red>密码不能为空！</font>";
+        return false;
+      }
+  if (document.getElementById('repassword').value==""){ //没有再次输入密码的时候
+        document.getElementById('repwd').innerHTML=" <font color=red>请再输入一次密码！</font>";
+        return false;
+      }
+  if(document.getElementById('password').value!=document.getElementById('repassword').value){   //再次输入密码不正确的时候
+      document.getElementById('repwd').innerHTML=" <font color=red>两次输入的密码不一致！</font>";
+        return false;
+     }    
+}
+</script>
+<include file="Public:footer" />	

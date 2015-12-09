@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<title>管理区域</title>
+</head> 
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>会员管理</h3>
+      <ul class="tab-base"> 
+         <li><a href="{:U('index')}"><span>会员列表</span></a></li>  
+         <li><a href="{:U('add')}" ><span>会员新增</span></a></li> 
+         <li><a href="javascript:void(0)" class="current"><span>会员编辑</span></a></li>  
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+<form action="__URL__/update" method="post">
+  <table width="99%" border="0" align="center"  cellpadding="3" cellspacing="1" class="table_style">
+     <tr>
+      <td class="left_title_1">会员ID</td>
+      <td><input type="text" disabled="true" size="31" value="{$userdata['id']}"></td>
+    </tr>
+    <tr>
+      <td class="left_title_2">会员用户名</td>
+      <td><input type="text" disabled="true" size="31" value="{$userdata['username']}"></td>
+    </tr>
+    <tr>
+      <td class="left_title_1">会员昵称</td>
+      <td><input type="text" disabled="true"  size="31" value="{$userdata['nickname']}"></td>
+    </tr>
+    <tr>
+      <td class="left_title_2">会员邮箱</td>
+      <td><input type="text" disabled="true"  size="31" value="{$userdata['email']}"></td>
+    </tr>
+    <tr>
+      <td class="left_title_1"> 账户余额</td>
+      <td><input type="text" disabled="true"  size="31" value="{$userdata['money']}"></td>
+    </tr>
+    <tr>
+      <td class="left_title_2">冻结金额</td>
+      <td><input type="text" disabled="true" size="31" value="{$userdata['invalid_money']}"></td>
+    </tr>
+    <tr>
+      <td class="left_title_1">累计消费金额</td>
+      <td><input type="text" disabled="true" size="31" value="{$userdata['used_money']}"></td>
+    </tr>
+    <tr>
+      <td class="left_title_2">可用推广佣金</td>
+      <td><input type="text" disabled="true" size="31" value="{$userdata['refer_money']}"></td>
+    </tr>
+     <tr>
+       <td class="left_title_1">推荐人ID</td>
+       <td><input type="text" name="refer_id" size="31" value="{$userdata['refer_id']}"></td>
+    </tr>   
+    <tr>
+      <td class="left_title_2">会员级别</td>
+      <td> <select name="user_type">
+      	          <foreach name="type_list" item="type">
+      	          	  <option value="{$type['id']}" <if condition="$type['id']==$userdata['user_type']">selected</if>  >{$type[title]}</option>
+      	          </foreach>
+                </select> 
+    </td>
+    </tr> 
+     <tr>
+      <td class="left_title_1">会员状态</td>
+      <td>
+      	    <select name="isvalid">
+      	    	<option value="0" <eq name="userdata.isvalid" value='0'>selected</eq> >锁定</option>
+      	    	<option value="1" <eq name="userdata.isvalid" value='1'>selected</eq> >正常</option>
+      	    </select>
+      </td>
+    </tr>   
+     <tr>
+       <td class="left_title_2">会员电话</td>
+       <td><input type="text" disabled="true" size="31" value="{$userdata['telephone']}"></td>
+    </tr>     
+     <tr>
+       <td class="left_title_1">会员qq</td>
+       <td><input type="text" name="user_qq" size="31" value="{$userdata['user_qq']}"></td>
+    </tr> 
+      <tr>
+       <td class="left_title_1">登录次数</td>
+       <td><input type="text" disabled="true" name="login_counts" size="31" value="{$userdata['login_counts']}"></td>
+    </tr>    
+     <tr>
+       <td class="left_title_1">上次登录时间</td>
+       <td><input type="text" disabled="true" name="last_login_time" size="31" value="{$userdata['last_login_time']}"></td>
+    </tr>   
+      <tr>
+       <td class="left_title_1">上次登录IP</td>
+       <td><input type="text" disabled="true" name="last_login_ip" size="31" value="{$userdata['last_login_ip']}"></td>
+    </tr> 
+	  <tr>
+	    <td width="130" height="25"><div align="right">账号类型：</div></td>
+	    <td>
+	    	<select disabled="true" >
+	    		<option value="1" <eq name="cwsz_config.type" value='1'>selected</eq> >支付宝</option>
+	    		<option value="2" <eq name="cwsz_config.type" value='2'>selected</eq> >财付通</option>
+	    		<option value="3" <eq name="cwsz_config.type" value='3'>selected</eq> >银行转账</option>
+	    	</select>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td width="130" height="25"><div align="right">提现账号：</div></td>
+	    <td><input type="text" disabled="true" value="{$cwsz_config['account_no']}"></td>
+	  </tr>
+	  <tr>
+	    <td width="130" height="25"><div align="right">账户姓名：</div></td>
+	    <td><input type="text" disabled="true" value="{$cwsz_config['account_name']}"></td>
+	  </tr> 
+	  <if condition="$cwsz_config['type']==3">
+		  <tr>
+		    <td width="130" height="25"><div align="right">银行开户行：</div></td>
+		    <td><input type="text" disabled="true" value="{$cwsz_config['account_bank']}"></td>
+		  </tr>
+		  <tr>
+		    <td width="130" height="25"><div align="right">开户行所在地：</div></td>
+		    <td><input type="text" disabled="true" value="{$cwsz_config['account_address']}"></td>
+		  </tr>									  	
+	  </if> 
+    <tr bgcolor="#FFFFFF">
+      <td colspan="2" class="left_title_2"><div align="center">
+      	<input type="submit" value="保存"   /> 
+        <input type="hidden" name="id" value="{$userdata['id']}" /> 
+        <input class="button" type="button" onclick="history.go(-1);" value="返回" /></div></td>
+    </tr>
+  </table>
+</form>
+</div>
+</body>
+</html>

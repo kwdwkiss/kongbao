@@ -1,0 +1,48 @@
+<if condition="$_SESSION['IS_LOGIN']==1">
+			<include file="User:home"/>
+<else/> 
+		<include file="Public:header"/> 
+		<!--header end--> 
+		 <div style="width:100%;height:60px;line-height:60px; MARGIN-TOP: 8px"  >
+						<iframe align=center border="0"   marginWidth=0 marginHeight=0 src="{:U('Index/Index/led')}"  frameBorder=0 width=100%  height=60px scrolling=no></iframe>
+		 </div> 
+		 <!--banner start-->
+		<div class="js_banner" >
+			<div class="container"><img src="../Public/images/banner.jpg" /></div>
+		</div>
+		<!--center start-->
+		<div class="center_bg">
+			<div class="center_bg01"></div>
+			<!--left start-->
+		    <div class="index_left fl">
+		       <div class="index_text"> 
+		      	  {$kongbao_page['index_youshi']}
+		      </div>
+		    </div>
+		    <!--left end-->
+			<!--right start-->
+			<div class="index_right fr">
+		    	<form action="{:U('User/login')}" method="post" novalidate="novalidate">                
+		    		<div class="index_r_tit"><img src="../Public/images/index_login.gif"></div>
+		                <div style="font-size:11px;height:22px;"> 
+		                </div>
+		                <div class="index_r_input">账　号：
+		                    <input data-val="true" data-val-required="请输入用户名" id="username" name="username" type="text" value="" class="valid">        
+		                </div>
+		                <div class="index_r_input">密　码：
+		                    <input data-val="true" data-val-required="请输入密码" id="password" name="password" type="password" value="">
+		                </div> 
+		                <div class="index_r_cheacked"> 
+		                忘记密码，请联系官方客服！ 
+		                </div>
+		               <div class="index_login"><input type="image" src="../Public/images/login_enter.gif">&nbsp;&nbsp; 
+		                
+		                <a href="{:U('User/reg')}" target="_self"><img src="../Public/images/register_btn.gif"></a>
+		              </div>
+		</form>
+		    </div>
+		    <!--right end-->
+		</div>
+		<!--center end-->
+		<include file="Public:footer"/>
+</if>

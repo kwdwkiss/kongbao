@@ -1,0 +1,94 @@
+<include file="Public:header" />	
+<style type="text/css">
+			#cheisnos{display:none;}
+			.addtextstyle{background:#F7F7F7;}
+			.addtextstyle tr td{text-align:center;}
+			.adderror{background:#FC0}
+			.addyes{background:#CCC}
+ </style> 
+<tr>  
+    <include file="Public:left" />			
+    <td class="td_right" valign="top">    
+		<div class="cardpay_center_center_top"></div>
+		<div class="course_center_center_line"></div>  
+		<table width="900px" id="mytab"   class="t1">
+		    <tr><td  height="30px" colspan="9"  align="left">你当前的会员级别：<font color="red"><b>{$user_type}</b></font></td></tr>
+			<tr >    <th width="15%">级别名称</th>
+				  	  	 <th width="6%">允许<br/>推广</th>
+				  	  	 <th width="6%">允许<br/>批发</th>
+				  	  	 <th width="6%">允许<br/>提现</th>
+				  	  	 <th width="6%">购买<br/>佣金</th>
+				  	  	 <th width="6%">升级<br/>佣金</th> 
+				  	  	 <th width="" >升级佣金设置</th> 
+				  	  	 <th width="6%">升级<br/>费用</th>
+				  	  	 <th width="15%"></th> 
+		     </tr> 
+	  	  	  <foreach name="level_list" item="level">
+	  	  	  	<tr align="center" height="70px"> 
+	  	  	  		  <td title="点击查看该级别会员购买佣金详情"><span style="float:left">
+	  	  	  		  	<input type="radio" level_id="{$level['id']}" title="点击查看该级别会员购买佣金详情" name='id[]' value="{$level['id']}" onclick="radioclick($(this))"></span>{$level['title']}</td>
+	  	  	  		  <td><if condition="$level['config']['refer']==1">是<else/>否</if></td>
+	  	  	  		  <td><if condition="$level['config']['pifa']==1">是<else/>否</if></td>
+	  	  	  		  <td><if condition="$level['config']['tixian']==1">是<else/>否</if></td>
+	  	  	  		  <td><if condition="$level['config']['refer_buy']==1">是<else/>否</if></td>
+	  	  	  		  <td><if condition="$level['config']['refer_daili']==1">是<else/>否</if></td>
+	  	  	  		  <td valign="center">
+	  	  	  		  	    <if condition="$level['config']['refer_daili']==1">
+	  	  	  		  	     	<foreach name="dali_refer_mode" item="v" key="k" >
+	  	  	  		  	     	    作为<font color="red" ><b>{$k}</b></font>级上线，获取升级费用的<font color="red"><b>{$level['config']['refer_daili_money'][$v]}</b></font>%佣金 <br/>
+	  	  	  		  	     	</foreach>
+	  	  	  		  	     </if>
+	  	  	  		  </td>
+	  	  	  		  <td><font size=3 color=red>{$level['config']['money']}</font>元</td>
+	  	  	  		  <td>
+	  	  	  		  	  <if condition="$level['config']['money'] gt 0 && $level['up_enabled']">
+	  	  	  		  	   		<input type="button" level_id="{$level['id']}" onclick="uplevel($(this))" style="cursor:hand; background:url(../Public/images/uplevel.gif) no-repeat center;border:0;width:110px; height:40px;" />	  	  	  		  	  	
+	  	  	  		  	  </if>
+	  	  	  		  </td>
+	  	  	  	</tr>
+	  	  	  </foreach>    	  	   
+		   </table>
+	  	    <div id="goumai" style="display: none"> 
+	  	   </div>  
+	</td> 	 
+ </tr>
+ 
+ <script type="text/javascript">
+   $(function()
+	{
+	      var current_type_id="{$current_type_id}";
+	      var obj =  $("input[type=radio][level_id="+current_type_id+"]");	
+	       obj.click();
+	       radioclick(obj);
+	 });
+   function radioclick(obj)
+   {
+   	   var id = obj.val();
+   	    $.post("{:U('getLevelDetail')}",{type_id:id},
+   	    function(data,status)
+   	    {
+   	    	if(data.status==1)
+   	    	{
+   	    		$('#goumai').css('display','block');
+   	    		$('#goumai').html(data.data); 
+   	    	}
+   	    	else
+   	    	{
+    	         $('#goumai').css('display','none');
+   	    		$('#goumai').html('');  	
+   	    	    		
+   	    		alert(data.info);
+   	    	}
+   	    },'json');
+   }
+ 
+   function uplevel(obj) //升级操作
+   {
+   	  var level_id = obj.attr('level_id'); 
+   	    $.post("{:U('deal_uplevel')}",{id:level_id},function(data,status)
+   	    { 
+   	         alert(data.info); 
+   	    },'json');
+   }
+</script>
+  <include file="Public:footer" />		

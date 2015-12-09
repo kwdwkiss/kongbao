@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<title>管理区域</title>
+</head>
+<script charset="utf-8" src="__PUBLIC__/kindeditor/kindeditor.js"></script>
+<script charset="utf-8" src="__PUBLIC__/kindeditor/lang/zh_CN.js"></script>
+<script>
+    KindEditor.ready(function(K) {
+                window.editor = K.create('#article');
+     });
+</script>
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>关于我们</h3>
+      <ul class="tab-base"> 
+         <li><a href="{:U('index')}" ><span>列表</span></a></li> 
+         <li><a href="{:U('add')}" ><span>新增</span></a></li> 
+         <li><a href="javascript:void(0)" class="current" ><span>编辑</span></a></li>
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+<form action="__URL__/update" method="post">
+  <table width="97%" border="0" align="center"  cellpadding="3" cellspacing="1" class="table_style">
+    <tr>
+      <td width="18%" class="left_title_1"><span class="left-title">标题</span></td>
+      <td width="82%"><input type="text" name="title" size="40" value="{$articledata['title']}"></td>
+    </tr>
+    <tr>
+    	<td class="left_title_2">关键词</td>
+    	<td><textarea  name="keyword" cols="40" rows="5" >{$articledata['keyword']}</textarea>用于生成页面的关键词标签便于seo,多个词用,分开</td>
+    </tr> 
+    <tr>
+    	<td class="left_title_1">简述</td>
+    	<td><textarea  name="desc"  cols="40" rows="5" >{$articledata['desc']}</textarea>生成页面的描述标签便于seo,建议小于100个字符</td>
+    </tr>
+    <tr>
+      <td class="left_title_2">内容</td>
+      <td><textarea id="article" name="content" cols="100" rows="30">{$articledata['content']}</textarea></td>
+    </tr> 
+  </table>
+  <div style="height:21px;width:200px;margin-top:20px;margin-left:200px;" >
+          <input type="hidden" name="id" value="{$articledata['id']}" />
+		 <input type="submit" value="保存" /> 
+		 <input class="button" type="button" onclick="history.go(-1);" value="取消" />
+		</div>
+</form>
+</div>
+</body>
+</html>

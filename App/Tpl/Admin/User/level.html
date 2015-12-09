@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<title>管理区域</title>
+<style type="text/css">
+<!--
+#man_zone .table_style tr .search {
+	margin-left: 10px;
+}
+-->
+</style>
+</head>
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>会员设置</h3>
+      <ul class="tab-base"> 
+         <li><a href="{:U('setting')}"><span>会员设置</span></a></li> 
+         <li><a href="javascript:void(0)" class="current" ><span>会员级别</span></a></li> 
+         <li><a href="{:U('level_add')}" ><span>级别新增</span></a></li> 
+      </ul>
+    </div>
+  </div>
+<div id="man_zone"> 
+<table width="99%" border="0" align="center" cellpadding="3"
+	cellspacing="1" class="table_style"> 
+	<tr>
+		<td width="6%" class="left_title_1">
+		<div align="center">排序</div>
+		</td>
+		<td width="20%" class="left_title_1">
+		<div align="center">级别名称</div>
+		</td>
+		<td width="" class="left_title_1">
+		<div align="center">备注</div>
+		</td>
+		<td width="8%" class="left_title_1">
+		<div align="center">操作</div>
+		</td>
+	</tr>
+	<foreach name="level_list" item="level">
+		<tr>
+			<td><div align="center">{$level['sort_order']}</div></td>
+			<td><div align="center">{$level['title']}</div></td>
+			<td><div align="center">{$level['comm']}</div></td>
+			<td>
+				<div style="margin:0 13px 0 13px;float:left"><a title="修改会员级别信息" href="__URL__/level_edit/id/{$level['id']}"><img src="../Public/images/set2.gif" alt="编辑"></img></a> </div>
+				<if condition="$level['is_sys']==0" >
+					<div><a title="删除该条会员级别信息" href="__URL__/level_del/id/{$level['id']}" onclick="return confirm('确定删除该会员级别信息？')"><img src="../Public/images/pic12.gif" alt="删除"></img></a></div>					
+				</if>
+			 </td>
+		</tr>		
+	</foreach> 
+</table>
+</div>
+</body>
+</html>

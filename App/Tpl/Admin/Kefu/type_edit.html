@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<title>管理区域</title>
+</head>
+
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>网站客服</h3>
+      <ul class="tab-base"> 
+          <li><a href="{:U('index')}" ><span>列表</span></a></li>
+          <li><a href="{:U('add')}" ><span>新增</span></a></li>  
+          <li><a href="{:U('type_index')}" ><span>客服组列表</span></a></li>  
+          <li><a href="{:U('type_add')}" ><span>客服组新增</span></a></li>
+          <li><a href="javascript:void(0)" class="current" ><span>客服组编辑</span></a></li>  
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+<form action="__URL__/type_update" method="post">
+  <table width="99%" border="0" align="center"  cellpadding="3" cellspacing="1" class="table_style">
+    <tr>
+      <td width="18%" class="left_title_1"><span class="left-title">客服组名称</span></td>
+      <td width="82%"><input type="text" name="title" size="40" value="{$udata['title']}"></td>
+    </tr> 
+    <tr>
+      <td class="left_title_2">排序</td>
+      <td><input type="text" name="sort_order" size="40" value="{$udata['sort_order']}"></td>
+    </tr>    
+    <tr bgcolor="#FFFFFF">
+      <td colspan="2" class="left_title_2"><div align="center">
+         <input type="hidden" name="id" value="{$udata['id']}" />
+		 <input type="submit" value="保存" /> 
+		 <input class="button" type="reset" value="取消" /></div></td>
+    </tr>
+  </table>
+        
+</form>
+</div>
+</body>
+</html>

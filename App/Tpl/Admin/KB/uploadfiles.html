@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<title>管理区域</title>
+<style type="text/css">
+<!--
+#man_zone .table_style tr .search {
+	margin-left: 10px;
+}
+-->
+</style>
+</head>
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>代理文件</h3>
+      <ul class="tab-base"> 
+         <li><a href="javascript:void(0)" class="current"><span>代理上传文件</span></a></li>   
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+  <table width="97%" border="0" align="center" cellpadding="3" cellspacing="1" class="table_style">
+    <tr>
+      <td colspan="8" class="left_title_2">
+        <form class="search" action="__URL__/uploadfiles" method="post">
+          <div align="left">筛选： 
+              <select name="ftype">
+              	 <option value="user_id" <eq name="_POST.ftype" value="user_id">selected</eq>>用户ID</option>
+                 <option value="username" <eq name="_POST.ftype" value="username">selected</eq>>用户名</option>  
+                 <option value="filename" <eq name="_POST.ftype" value="filename">selected</eq>>文件名称</option>
+              </select>  
+              <input type="text" name="keyword" value="{:I('keyword')}" />
+              <select name="type_id">
+              	   <option value="">请选择空包类型</option>
+                  <foreach name="type_list" item="type">
+                  	    <option value="{$type['id']}"  <if condition="I('type_id')==$type['id']">selected</if> >{$type['name']}</option>
+                  </foreach>
+              </select>  
+              <select name="status">
+              		<option value="">处理状态</option>
+              		<option value="0" <if condition="I('status')==0">selected</if>>待处理</option>
+              		<option value="1" <if condition="I('status')==1">selected</if>>已完成</option>
+              		<option value="2" <if condition="I('status')==2">selected</if>>失败</option>
+              </select>
+              <input name="submit" type="submit" value="查询" /> 
+              <span style="float:right"><font color="red">{$count}</font>条数据符合条件</span>
+           </div>
+        </form>        
+      </td> 
+    </tr>
+    <tr>
+      <td width="5%" class="left_title_1"><div align="center">用户ID</div></td>
+      <td width="15%" class="left_title_1"><div align="center">用户名</div></td>  
+      <td width="10%" class="left_title_1"><div align="center">空包类型</div></td>  
+      <td width="" class="left_title_1"><div align="center">文件名称</div></td> 
+      <td width="16%" class="left_title_1"><div align="center">上传时间</div></td>
+      <td width="10%" class="left_title_1"><div align="center">处理状态</div></td>
+      <td width="12%" class="left_title_1"><div align="center">下载次数</div></td> 
+      <td width="15%" class="left_title_1"><div align="center">操作</div></td> 
+    </tr>
+    <foreach name="order_list" item='order'> 
+      <tr> 
+        <td><div align="center">{$order['user_id']}</div></td>
+        <td><div align="center">{$order['username']}</div></td> 
+          <td><div align="center">{$order['name']} </div> </td> 
+           <td><div align="center">{$order['filename']}</div></td>
+        <td><div align="center">{$order['addtime']}</div></td>
+        <td><div align="center">
+        	    <switch name="order.status">
+        	    	<case value="0"><font color="blue">待处理</font></case>
+        	    	<case value="1">已完成</case>
+        	    	<case value="2"><font color="red">失败</font></case>
+        	    </switch>
+        	 </div></td>
+         	<td><div align="center">{$order['downcounts']}</div></td>
+	        <td>
+	        	  <div align="center">
+	        	  	<a href="{:U('down_daili',array('id'=>$order['id']))}">下载查看</a> &nbsp;&nbsp;
+	        	  	<a href="{:U('file_edit',array('id'=>$order['id']))}">编辑</a> 
+	        	  </div> 
+	        </td>
+      </tr>
+    </foreach>
+    <tr>
+      <td height="30" colspan="8"><div align="center">{$show}</div></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

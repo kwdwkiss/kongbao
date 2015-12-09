@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>财付通充值_自动到账</title>
+<meta name="keywords" content="财付通充值_自动到账" />
+<meta name="description" content="财付通充值_自动到账" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="__PUBLIC__/tenpay/css.css" type="text/css" />
+<script language="javascript">
+	function ChangeStep(n){
+		//检测是否启用跳转功能
+		var IsNotify=1;
+		if(IsNotify==1){
+			if(n==1){
+				document.getElementById('step1').style.display='';
+				document.getElementById('step2').style.display='none';
+			}else if(n==2){
+				document.getElementById('step1').style.display='none';
+				document.getElementById('xiangdao').style.display='none';
+				document.getElementById('right-y').style.display='none';
+				document.getElementById('step2').style.display='';
+			}
+		}
+	}
+	//提交查询
+	function Submit_G(){
+		document.getElementById("g").submit();
+	}	
+</script>	
+</head>
+<body>
+<div class="recharge">
+   <div class="recharge-inner">
+      <div class="recharge-con clearfix">
+         <!-- 左侧表单  -->
+         <div id="step1" name="step1" style="display:;" class="recharge-form">
+			  <form name="f" id="f" action="{$pay_url}" method="post" target="_blank">
+               <ul>
+                  <li class="clearfix">
+                     <label class="label-left">用 户 名：</label>
+                     <span class="txt-price" id="price">{$email}</span>
+                  </li>
+                  <li class="clearfix">
+                     <label class="label-left">充值金额：</label>
+                     <span class="txt-price" id="price">￥{$pay_money}</span>
+                  </li>
+                  <li class="clearfix">
+                     <label class="label-left">交易备注：</label>
+                     <span class="txt-price" id="price">{$subject}</span>
+                  </li>                  
+                  <li class="clearfix" id="li_memo" name="li_memo" style="display:;">
+                     <label class="label-left">警 告：</label>
+                     <span class="txt-price" id="price">请不要更改交易备注，<br>否则不能自动到账</span>
+                  </li>
+                  <li class="clearfix">
+                    <input class="recharge-btn" type="submit" value="下一步" onclick="javascript:ChangeStep(2);" />
+                  </li>
+               </ul>
+               </form>
+        </div>
+         
+		 <div id="step2" name="step2" style="display:none;" class="recharge-form">
+                 <ul class="clearfix">
+                    <li><a href="{:U('recharge')}" target="_parent">支付完毕，点击查看余额</a></li>
+                 </ul>
+        </div>
+		 
+			 <!-- 右侧文字 -->
+         <div class="right-tips" id="right-y">
+<p><STRONG><FONT color=#ff0000>重要提示</FONT></STRONG>：</p>
+			<p>收款账号：<br>{$email}<br>姓名：{$tenpay_name}<STRONG><br>
+			  <FONT color=#0000ff>不要修改</FONT></b>财付通的<b><FONT color=#ff0000>“备注”和“收款人财付通账号”</FONT></b>，否则不能自动到账。</p>
+			<p><input class="recharge-btn-2" type="button" value="查看付款向导" onclick="javascript:window.location='#xd';" /></p>
+		 </div>
+      </div>
+      
+      <!-- 底部链接 -->
+      <div class="recharge-bottom">
+         <ul class="clearfix">
+            <li><a href="{:U('recharge')}" target="_parent">返回充值页面</a></li>
+         </ul>
+      </div>
+   </div>
+</div>
+<div class="xiangdao" id="xiangdao" align="center">
+	<br />
+	<h1 id="xd">↓ 付款向导 ↓</h1>
+	<hr>
+	<p><a href="#">↑ 返回</a></p>
+	<p><img border="0" src="__PUBLIC__/tenpay/XiangDao_1.gif"></p>
+	<p><img border="0" src="__PUBLIC__/tenpay/jt.jpg"> <a href="#">↑ 返回</a></p>
+	<p><img border="0" src="__PUBLIC__/tenpay/XiangDao_2.gif"></p>
+	<p><img border="0" src="__PUBLIC__/tenpay/jt.jpg"> <a href="#">↑ 返回</a></p>
+	<p><img border="0" src="__PUBLIC__/tenpay/XiangDao_3.gif"></p>
+	<h1>完成！付款成功后，全自动到账。</h1>
+	<p> <a href="#">↑ 返回</a></p>
+</div>
+</body>
+</html> 

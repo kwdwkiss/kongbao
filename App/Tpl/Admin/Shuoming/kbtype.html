@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" /> 
+<title>管理区域</title> 
+</head> 
+<body> 
+<div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>业务设置</h3>
+      <ul class="tab-base"> 
+         <li><a href="{:U('KB/type')}" ><span>空包类型</span></a></li>
+         <li><a href="{:U('KB/type_add')}" ><span>类型新增</span></a></li> 
+         <li><a href="javascript:void(0)" class="current" ><span>说明及注意事项</span></a></li> 
+      </ul>
+    </div>
+</div>  
+<div id="man_zone"> 
+	  <table width="97%" border="0" align="center"  cellpadding="3" cellspacing="1" class="table_style">
+	      <tr bgcolor="#abcdef"><td><font size="4" color="red"><b>类型新增及编辑</b></font></td></tr>
+	      <tr>
+	      	    <td align="left">
+	      	    	   空包业务类型新增及编辑页面主要是用于对系统空包类型的相关设置，不过多解释；请注意以下几点：<br/>
+	      	    	   <br/>
+	      	    	   一、底单价格：此项代表，如果会员申请底单需要付费的话，请在此项中输入价格，这样的话，前台申请时会先从<br/>
+	      	    	         会员账户中扣除该金额。<br/>
+	      	    	   二、价格设置：按照各类型会员分别设置；<br/>
+	      	    	   三、购买佣金设置：如果系统启用购买佣金时，根据选择的佣金模式依次设置各级上线所获取佣金比例。
+	      	    	   <br/>佣金的计算方法：（会员购买价格-上线购买价格）*上线对应的佣金比例；<br/>
+	      	    	   四、快递订单导出模板选择；系统内置5种快递类型模板（可根据自身情况定制）<br/>
+	      	    	   五、代理表格模板：上传相应的代理表格模板，以便于在前台-》空包批发-》下载代理表格<br/>
+	      	    	   六、批发模板图片：在前台-》空包批发-》进行展现，如图：<br/>
+	      	    	   <img src="../Public/images/shuoming/kbtype_1.jpg" width="700px" height="400px"/><br/>
+	      	    	   <br/><br/><font size="5" color="red"><b>注：单号业务、小号业务类型新增、编辑与空包类似</b></font> 
+	      	    </td>
+	      </tr> 
+	  </table> 
+  </div>  
+</body>
+</html>

@@ -1,0 +1,26 @@
+<?php
+return array(
+"0"=>array('name'=>'账号',
+                   'field'=>'account'),
+"1"=>array('name'=>'密码',
+                   'field'=>'password'),                  
+"2"=>array('name'=>'邮箱',
+                  'field'=>'email'),
+"3"=>array('name'=>'邮箱密码',
+                  'field'=>"email_pass"),              
+"4"=>array('name'=>'支付密码',
+                  'field'=>'pay_pass'),
+"5"=>array('name'=>'身份证号',
+                  'field'=>"shenfenzheng"),    
+"6"=>array('name'=>'姓名',
+                  'field'=>"truename"),   
+"7"=>array('name'=>'银行卡号',
+                  'field'=>'bank_account'),
+"8"=>array('name'=>'银行卡余额',
+                  'field'=>"bank_yue"),
+ "9"=>array('name'=>'支付账号',
+                  'field'=>"pay_account"),   
+ "10"=>array('name'=>'手机号',
+                   'field'=>"mobile_phone")                                                                                                     
+);
+?>

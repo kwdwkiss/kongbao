@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<script type="text/javascript" src="../Public/js/jquery-1.4.2.min.js"></script> 
+ <link rel="stylesheet" href="__PUBLIC__/kindeditor/themes/default/default.css" />
+<script src="__PUBLIC__/kindeditor/kindeditor.js"></script>
+<script src="__PUBLIC__/kindeditor/lang/zh_CN.js"></script>
+<script type="text/javascript">
+  	KindEditor.ready(function(K) {
+		var editor = K.editor({
+			allowFileManager : true
+		});
+		K('#jietu_i').click(function() {
+				editor.loadPlugin('image', function() {
+					editor.plugin.imageDialog({
+						showRemote : false,
+						imageUrl : K('#jietu').val(),
+						clickFn : function(url, title, width, height, border, align) {
+							K('#jietu').val(url);
+							$('#jietu_save').val(url);
+							editor.hideDialog();
+						}
+					});
+				});
+		});		
+	}); 	
+</script>
+<title>管理区域</title>
+</head> 
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>底单管理</h3>
+      <ul class="tab-base"> 
+         <li><a href="{:U('dd_index')}"><span>底单申请</span></a></li>   
+         <li><a href="javascript:void(0)" class="current"><span>底单处理</span></a></li>
+          <li><a href="{:U('dd_exp')}"><span>底单导出</span></a></li>  
+         <li><a href="{:U('dd_uploads')}"><span>表格形式底单申请</span></a></li>  
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+<form action="__URL__/dd_update" method="post">
+  <table width="99%" border="0" align="center"  cellpadding="3" cellspacing="1" class="table_style">
+    <tr>
+      <td class="left_title_1">申请会员ID</td>
+      <td><input type="text"  disabled="true"  size="31" value="{$didan['user_id']}"></td>
+    </tr>
+    <tr>
+      <td class="left_title_2">会员用户名</td>
+      <td><input type="text"  disabled="true" size="31" value="{$didan['username']}"></td>
+    </tr>    
+     <tr>
+      <td class="left_title_1">空包单号</td>
+      <td><input type="text" disabled="true"   size="31" value="{$didan['note_no']}"></td>
+    </tr>
+    <tr>
+      <td class="left_title_2">空包类型</td> 
+      <td> <input type="text" disabled="true"   size="31" value="{$didan['name']}">  </td>
+    </tr>
+    <tr>
+      <td class="left_title_1">空包价格</td> 
+      <td> <input type="text" disabled="true"   size="31" value="{$didan['dd_price']}">  </td>
+    </tr> 
+    <tr>
+      <td class="left_title_2">降权截图</td> 
+      <td> <input type="text" disabled="true"   size="31" value="{$didan['jietu']}">  </td>
+    </tr>
+    <tr>
+    	   <td class="left_title_1"></td>
+    	  <td colspan="2"><img src="{$didan['jietu']}" width="300px" height="100px" /></td>
+    </tr>     
+    <tr>
+    	 <td class="left_title_2">发货地址</td> 
+         <td>{$didan['send_addr']}，{$didan['send_zipcode']}，{$didan['send_name']}，{$didan['send_shouji']}，{$didan['send_phone']}</td>
+    </tr>
+    <tr>
+    	 <td class="left_title_1">收货地址</td> 
+         <td>{$didan['rec_name']}，{$didan['rec_shouji']}，{$didan['rec_phone']}，{$didan['rec_addr']}，{$didan['rec_zipcode']}</td>
+    </tr>  
+    <tr>
+      <td class="left_title_2">商品名称</td> 
+      <td> <input type="text" disabled="true"   size="31" value="{$didan['goods_name']}">  </td>
+    </tr> 
+    <tr>
+      <td class="left_title_1">运费</td> 
+      <td> <input type="text" disabled="true"   size="31" value="{$didan['yunfei']}">  </td>
+    </tr> 
+    <tr>
+      <td class="left_title_2">货物重量</td> 
+      <td> <input type="text" disabled="true"   size="31" value="{$didan['weight']}">  </td>
+    </tr> 
+    <tr>
+      <td class="left_title_1">发货时间</td> 
+      <td> <input type="text" disabled="true"   size="31" value="{$didan['order_time']}">  </td>
+    </tr> 
+    
+    <tr>
+      <td class="left_title_2">订单编号</td>
+      <td><input type="text" disabled="true"  size="31" value="{$didan['order_no']}"></td>
+    </tr>
+    <tr>
+      <td class="left_title_1">订单状态</td>
+      <td>
+          	   <input type="radio" value="1" disabled="true"  <eq name="didan.status" value="1">checked</eq>   />申请中
+          	   <input type="radio" value="2" disabled="true" <eq name="didan.status" value="2">checked</eq> />已完成
+       </td>
+    </tr>
+    <tr>
+      <td class="left_title_2"> 申请时间</td>
+      <td><input type="text" disabled="true"  size="31" value="{$didan['addtime']}"></td>
+    </tr>
+    <tr>
+      <td class="left_title_1"> 底单图片</td>
+      <td><input type="text"  id="jietu" size="31" value="{$didan['didan_image']}">
+      	<input type="button" id="jietu_i" value="选择图片" />
+      	<input type="hidden" id="jietu_save" value="" name="didan_image" /> 
+      </td>
+    </tr>
+    <tr>
+    	   <td class="left_title_2"></td>
+    	  <td colspan="2"><img src="{$didan['didan_image']}" width="300px" height="100px" /></td>
+    </tr>      
+    <tr bgcolor="#FFFFFF">
+      <td colspan="2" class="left_title_1"><div align="center">
+        <input type="hidden" name="id" value="{$didan['id']}" />   
+        <input type="submit" value="处理完成" />  
+        <input class="button" type="button" onclick="history.go(-1);" value="返回" /></div></td>
+    </tr>
+  </table>
+</form>
+</div>
+</body>
+</html>

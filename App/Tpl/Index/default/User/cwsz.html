@@ -1,0 +1,50 @@
+<include file="Public:header" />	
+<tr>  
+    <include file="Public:left" />			
+    <td class="td_right" valign="top"> 
+       <include file="Public:quick_nav" />	 
+      <div class="reinfo_center_center_top"></div>
+      <div class="course_center_center_line"></div>
+      <form action="{:U('savecwsz')}" method="POST" name="frmLogin">
+      <div class="myclass_pay_card">
+			  <table width="700px" id="mytab"  border="1" class="t1"> 
+			   <tr>
+			    <td width="130px" height="33"><div align="right">用户登陆名：</div></td>
+			    <td > {$user['username']}</td>
+			   </tr> 
+			  <tr>
+			    <td height="33"><div align="right">账号类型：</div></td>
+			    <td>
+			    	<select name="cwsz_config[type]">
+			    		<option value="1" <eq name="cwsz_config.type" value='1'>selected</eq> >支付宝</option>
+			    		<option value="2" <eq name="cwsz_config.type" value='2'>selected</eq> >财付通</option>
+			    		<option value="3" <eq name="cwsz_config.type" value='3'>selected</eq> >银行转账</option>
+			    	</select><font color='red'>*</font>必填项
+			    </td>
+			  </tr>
+			  <tr>
+			    <td height="33"><div align="right">提现账号：</div></td>
+			    <td><input type="text" name="cwsz_config[account_no]" value="{$cwsz_config['account_no']}"><font color='red'>*</font>请务必正确填写</td>
+			  </tr>
+			  <tr>
+			    <td height="33"><div align="right">账户姓名：</div></td>
+			    <td><input type="text" name="cwsz_config[account_name]" value="{$cwsz_config['account_name']}"><font color='red'>*</font>请务必正确填写</td>
+			  </tr> 
+			  <tr>
+			    <td height="33"><div align="right">银行开户行：</div></td>
+			    <td><input type="text" name="cwsz_config[account_bank]" value="{$cwsz_config['account_bank']}">如：中国工商银行、中国农业银行</td>
+			  </tr>
+			  <tr>
+			    <td height="33"><div align="right">开户行所在地：</div></td>
+			    <td><input type="text" name="cwsz_config[account_address]" value="{$cwsz_config['account_address']}">如：沈阳分行南湖支行</td>
+			  </tr>
+			  <tr>
+			  	<td height="33" colspan="2" align="left"><font color="red">注:如果存在尚未结算的提现信息，账户信息不能修改!</font></td>  
+			  </tr>
+			</table>
+		 	<input type="hidden" name="id" value="{$user['id']}">
+			<input type="submit" class="submit" value="" /></div>
+		</form>
+	 </td>
+</tr>
+<include file="Public:footer" />		

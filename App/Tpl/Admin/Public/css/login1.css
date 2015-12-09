@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td { padding:0; margin:0; font-size:12px; line-height:100%; font-family:Arial, sans-serif;}
+
+ul, ol { list-style:none;}
+img { border:0;}
+
+
+
+#login { display:block; width:950px; margin:0 auto; text-align:left;}
+#login_header { display:block; padding-top:40px; height:80px;}
+.login_logo { float:left; margin-top:10px;}
+
+.navList { display:block; overflow:hidden; height:20px; padding-left:28px;}
+.navList ul { float:left; display:block; overflow:hidden;}
+
+.navList a { display:block; white-space:nowrap; line-height:21px; color:#000; text-decoration:none;}
+.navList a:hover { text-decoration:underline;}
+
+
+
+#login_footer { clear:both; display:block; margin-bottom:20px; padding:10px; border-top:solid 1px #e2e5e8; color:#666; text-align:center;}

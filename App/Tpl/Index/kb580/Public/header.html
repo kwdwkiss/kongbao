@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<title>{$seo_title}</title>
+<meta name="keywords" content="{$seo_keyword} ">
+<meta name="description" content="{$seo_desc} ">
+ <meta name="copyright" content="">  
+<link rel="stylesheet" type="text/css" href="../Public/css/import_css.css"><!--公用样式--> 
+<script type="text/javascript" src="../Public/js/jquery-1.8.3.min.js"></script> 
+<script type="text/javascript" src="../Public/js/jquery.switchable.min.js"></script>
+<script type="text/javascript" src="../Public/js/member_common.js"></script> 
+<script type="text/javascript" src="../Public/js/in.js"></script>
+<script type="text/javascript" src="../Public/js/common.js"></script>
+<script type="text/javascript" src="../Public/js/trumpet.js"></script>
+<script type="text/javascript" src="../Public/js/layer/layer.js"></script> 
+<!--[if lt IE 9]>
+<link rel="stylesheet" type="text/css" href="../Public/css/960.min.css" />
+<script type="text/javascript" src="../Public/js/html5.js"></script>
+<![endif]-->
+<script>
+function killerrors() {
+        return true;
+}
+window.onerror = killerrors;
+</script>
+</head>
+<body>
+<div class="simple_style" id="wrapper"> 
+<!--顶部部分 start--> 
+ <div class="message tool clearfix">
+  <div class="container_24">
+   <div class="grid_10"> 
+   	  <if condition="session('IS_LOGIN')==1">
+   	  	  {$config['sitename']} 欢迎您，<a href="{:U('User/home')}" style="color:#F60">{$user['username']}</a>&nbsp;[{$user['id']}]！&nbsp;&nbsp;<a href="{:U('User/home')}">管理中心</a>&nbsp;&nbsp;<a href="{:U('User/logout')}">退出</a>   </div>
+   	  <else/>
+ 			您好，欢迎来到<a href="__APP__" title="{$config['sitename']} - {$seo_title}">{$config['sitename']}</a>！请先<a href="{:U('User/userlog')}" class="blue blue1" title="{$config['sitename']} - {$seo_title}">登录</a>或者<a href="{:U('User/reg')}" class="red" title="{$config['sitename']} - {$seo_title}">免费注册</a>   </div>  	  
+   	  </if>
+  </div>
+  <div class="transprentbg"></div>
+ </div>
+<!--头部 start-->
+<header class="header">
+	<div class="container_24 topserchebox clearfix"> 
+	    <div class="messages m_warn clearfix"  style="width:100%;background-color:#000000; MARGIN-TOP: 8px;margin-left:-1px"> 
+			   <iframe align=center border="0"   marginWidth=0 marginHeight=0 src="{:U('Index/Index/led')}"  frameBorder=0 width=100%  height=40px scrolling=no></iframe>
+	   </div> 	 
+<!--logo start-->
+		<hgroup class="logo"> <a href="__APP__" class="fl_l logoimg"><img width="240px" height="70px" src="__ROOT__/{$config.site_logo}" original-title=""></a>
+			<div class="fl_l line"></div>
+		</hgroup>
+		<div class="clearfix"> 
+			<div class="search clearfix po_re" style="float:right;margin-right:0px">
+				  <a href="{$header_adv['pic_url']}" target="_blank">
+					   <img src="{$header_adv['pic']}" width="550px" height="80px" alt="{$header_adv['ad_brief']}" >
+				  </a>  	 
+ 			</div>
+		</div>
+	<!--logo end--> 
+	</div>
+</header>
+<!--头部 end--> 
+<!--导航 start-->
+<div class="navouterbox">
+	<nav id="mainnavfix" class="mainav">
+		<div class="container_24 clearfix">
+		     <ul id="navlisbox" class="clearfix"> 
+					<li><em><a href="__APP__" >首&nbsp;&nbsp;&nbsp;&nbsp;页</a></em></li>		
+					<li><em><a href="{:U('Cash/recharge')}">资金充值</a></em></li>     	
+		     	    <li><em><a href="{:U('Order/kb')}">空包下单</a></em></li>
+		     	    <if condition="$kongbao_config['true_valid']">
+		     	    	<li><em><a href="{:U('Order/true_kb')}">真实空包下单</a></em></li>
+		     	    </if>
+		     	    <if condition="$kongbao_config['pf_valid']==1">
+		     	    	<li><em><a href="{:U('Order/kb_pf')}">空包批发</a></em></li>
+		     	    </if> 
+		     	    <li><em><a href="{:U('User/home')}">会员中心</a></em></li>
+		     	    <li><em><a href="{:U('Order/dd_apply')}">底单申请</a></em></li>
+		     	    <li><em><a href="{:U('Tg/uplevel')}">升级会员</a></em></li>
+					<if condition="$danhao_config['valid']==1">
+						<li><em><a href="{:U('Order/dh')}">单号下单</a></em></li>
+					</if>				   
+					<if condition="$xiaohao_config['valid']==1">
+						<li><em><a href="{:U('Order/xh')}">小号下单</a></em></li>
+					</if>		
+					<if condition="$config['tuiguang_valid']==1">
+						<li><em><a href="{:U('Index/Index/tuiguang')}">网站定制</a></em></li>
+					</if>
+	 			 </ul>
+		</div>
+	</nav>
+</div>
+<!--导航 end-->

@@ -1,0 +1,42 @@
+<include file="Public:header" /> 
+<link rel="stylesheet" type="text/css" href="../Public/css/css.css"><!--公用样式-->
+ <section class="clearfix section" style="width:1000px;margin:10px auto">
+ 	<include file="User:left_nav" />
+ 	<div class="show_panel "> 
+            	 <include file="Public:quick_nav"/> 
+                <!--main content-->
+                 <div class=" clearfix box default">
+                            <!--header内容头部 start-->
+                            <header class="clearfix box_header">
+                                <h2 class="box_title">用户信息修改</h2> 
+                            </header>  
+							 <form action="{:U('saveuserinfo')}" method="POST" name="frmLogin">                                 	
+                               <table cellpadding="0" cellspacing="0" class="t1">
+										   <tr>
+										    <td width="130" height="33"><div align="right">用户登陆名：</div></td>
+										    <td > {$user['username']}</td>
+										   </tr>
+										   <tr>
+										    <td width="130" height="33"><div align="right">用户姓名：</div></td>
+										    <td><input type="text" name="nickname" value="{$user['nickname']}"></td>
+										   </tr>
+										  <tr>
+										    <td height="33"><div align="right">电子邮件：</div></td>
+										    <td><input type="text" name="email" value="{$user['email']}"></td>
+										  </tr> 
+										  <tr>
+										    <td height="33"><div align="right">联系电话：</div></td>
+										    <td><input type="text" name="telphone" value="{$user['telphone']}"></td>
+										  </tr>
+										  <tr>
+										    <td height="33"><div align="right">常用QQ：</div></td>
+										    <td><input type="text"  disabled="true" value="{$user['user_qq']}"/><font color="red">为了您的账户安全，QQ号码修改需联系客服</font></td>
+										  </tr> 
+								      </table> 
+									    <input type="hidden" name="id" value="{$user['id']}">
+									    <input type="submit"  class="btn_submit" value="提交确认" /> 
+								</form> 
+              </div> <!--main content end --> 
+</div> 
+ </section>  <!--脚注--> 
+<include file="Public:footer" />	

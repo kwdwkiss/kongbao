@@ -1,0 +1,73 @@
+﻿<include file="Public:header" />
+<div class="header_adv">
+  <a href="{$header_adv['pic_url']}" target="_blank"><img src="{$header_adv['pic']}" alt="{$header_adv['ad_brief']}" ></a>
+</div>	 
+<div class="userbox clearfix">
+  <div class="userleft">
+    <include file="User:left_nav" />
+  </div>
+  <div class="userright">
+    <div class="mynow"><div>会员中心</div></div>
+    <div class="myled" style="margin-top:15px;">
+      <iframe align="center" border="0"  marginWidth=0 marginHeight=0 src="{:U('Index/Index/led')}"  frameBorder=0 width="100%" height="35px" scrolling="no"></iframe>
+    </div>
+    <div class="userinfo" style="border:1px solid #dedede;">
+      <table border="0" cellSpacing="1" cellPadding="1" width="768" bgColor="#f2f2f2">
+        <tbody>
+          <tr bgColor="#f6f6f6">
+            <td align=middle height="30" colspan="3">欢迎您：<span style="color:#e53333">{$user['username']} (
+									{$user['email']})</span> 您现在的会员级别：<font color="#e53333" size="2"><b>{$user['type_name']}</b></font>
+			</td>
+		  </tr>
+          <if condition="$user['refer_id'] gt 0 && $reg_setting['view_refer_qq']==1">
+		  <tr bgColor="#ffffff">
+            <td height="20" style="padding-bottom:5px;PADDING-LEFT:20px;PADDING-RIGHT:0px;PADDING-TOP:5px" bgColor="#ffffff" align="left" colspan="3">
+              上线QQ：{$refer_qq}
+            </td>
+          </tr>									
+		  </if> 
+		  <tr bgColor="#ffffff">
+            <td height="20" style="padding-bottom: 5px; PADDING-LEFT: 20px; PADDING-RIGHT: 0px; PADDING-TOP: 5px" bgColor="#ffffff" align="left" colspan="3">
+              账户余额：<b><font color="#e53333">{$user['money']}</font></b>&nbsp;元&nbsp;<a href="{:U('Cash/recharge')}" style="text-decoration: none"><font color="#0088cc">[充值]</font></a> 
+            </td>
+          </tr>
+          <tr bgColor=#ffffff>
+            <td height="20" style="padding-bottom: 5px; PADDING-LEFT: 20px; PADDING-RIGHT: 0px; PADDING-TOP: 5px" bgColor="#ffffff" align="center" width="33%">
+              <font size="3"><a href="{:U('Order/kb')}">空包购买</a></font>
+            </td>
+            <td style="padding-bottom: 5px; PADDING-LEFT: 20px; PADDING-RIGHT: 0px; PADDING-TOP: 5px" bgColor=#ffffff align=center height="20" width="33%">
+              <font size="3"><a href="{:U('Log/kb_log')}">已购买的空包</a></font>
+            </td>
+            <td style="padding-bottom: 5px; PADDING-LEFT: 20px; PADDING-RIGHT: 0px; PADDING-TOP: 5px" bgColor=#ffffff align=center height="20" width="34%">
+              <font size="3"><a href="{:U('Tg/uplevel')}">升级会员</a></font>
+            </td>
+          </tr>
+          <if condition="$config['tuiguang_valid']==1">
+          <tr bgcolor="#ffffff">
+            <td colspan="3" style="padding-bottom: 5px; PADDING-LEFT: 20px; PADDING-RIGHT: 0px; PADDING-TOP: 5px" bgColor="#ffffff" align=center height="20" width="33%">
+                <b><font size="3"><a href="javascript:void(0)" onclick="" style="color:blue;">充值100元后需联系网站客服升级VIP2</a></font></b>
+            </td>
+          </tr> 						        	
+		  </if>
+        </tbody>
+      </table>
+    </div>
+    <div class="mylist2">
+      <div><a href="{:U('Gonggao/index')}"><b>网站公告</b></a></div>
+      <ul>
+        <foreach name="gonggao_list" item="gonggao" key="kg" >
+        <li class="clearfix"><span class="fl"><a href="{:U('Gonggao/gonggao',array('id'=>$gonggao[id]))}"><if condition="$kg%2==0"><font color="red"><else/><font color="blue"></if>{$gonggao['title']}</font></a></span><span class="fr" style="font-size:10px;">{$gonggao['time']|substr=###,0,10} {$help['time']|substr=###,0,10}</span></li>
+        </foreach>
+      </ul>
+    </div>
+    <div class="mylist2">
+      <div><a href="{:U('Help/index')}"><b>常见问题</b></a></div>
+      <ul>
+        <foreach name="help_list" item="help" >
+        <li class="clearfix"><span class="fl"><a href="{:U('Help/help',array('id'=>$help[id]))}">{$help['title']}</a></span><span class="fr" style="font-size:10px;">{$help['time']|substr=###,0,10}</span></li>
+        </foreach>
+      </ul>
+    </div>		         
+  </div>
+</div> <!--脚注-->
+<include file="Public:footer" />	

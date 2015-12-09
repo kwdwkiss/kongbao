@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<title>管理区域</title>
+</head> 
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>文章类型</h3>
+      <ul class="tab-base">
+        <li><a href="{:U('index')}" ><span>文章类型</span></a></li>
+         <li><a href="{:U('add')}" ><span>类型新增</span></a></li>
+         <li><a href="javascript:void(0)" class="current"><span>类型编辑</span></a></li>
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+<form action="__URL__/update" method="post">
+  <table width="99%" border="0" align="center"  cellpadding="3" cellspacing="1" class="table_style">
+    <tr>
+      <td width="18%" class="left_title_1"><span class="left-title">文章类型</span></td>
+      <td width="82%"><input type="text" name="name" size="40" value="{$udata['name']}"></td>
+    </tr>
+    <tr>
+      <td class="left_title_2">类型别名</td>
+      <td><input type="text" name="bieming" size="40" value="{$udata['bieming']}"></td>
+    </tr>
+    <tr>
+      <td class="left_title_1">类型描述</td>
+      <td><textarea name="brief" cols="32" rows="4">{$udata['brief']}</textarea></td>
+    </tr>
+  </table>
+  <div style="height:21px;width:200px;margin-top:20px;margin-left:200px;" >
+         <input type="hidden" name="id" value="{$udata['id']}" />
+		 <input type="submit" value="保存" /> 
+		 <input class="button" type="button" onclick="history.go(-1);" value="取消" />
+		</div>
+</form>
+</div>
+</body>
+</html>

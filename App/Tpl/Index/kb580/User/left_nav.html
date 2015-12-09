@@ -1,0 +1,82 @@
+<div class="second_menu ">
+    <div class="box default">
+	      <div class="inner">
+				<header class="box_header clearfix">
+				      <h2 class="box_title">管理中心</h2>
+				</header>
+            	<div class="box_detail">
+                <nav class="minor_nav clearfix">
+					<a href="javascript:void(0)" original-title="用户管理">
+		 				 <span class="iconsidbar less_list"></span><strong>用户管理</strong>
+					</a>
+					<ul class="clearfix">
+							 <li ><a href="{:U('User/home')}" original-title="用户中心"><font color="red"><b>用户中心</b></font></a></li>
+							 <li ><a href="{:U('User/reinfo')}" original-title="资料修改">资料修改</a></li>
+							 <li ><a href="{:U('User/cwsz')}" original-title="财务设置">财务设置</a></li>
+							 <li ><a href="{:U('User/repass')}" original-title="修改密码">修改密码</a></li> 
+					</ul>
+					     <a href="javascript:void(0)" original-title="账户管理">
+				                 <span class="iconsidbar less_list"></span><strong>账户管理</strong>
+				        </a>
+						<ul class="clearfix">
+				            	<li><a href="{:U('Cash/recharge')}" original-title="在线充值">在线充值</a></li>
+				                 <li><a href="{:U('Cash/change')}" original-title="将佣金转换成账户金额用于购买或升级">佣金转换</a></li>
+								 <li><a href="{:U('Order/dd_apply')}" original-title="我要提现">申请底单</a></li>
+ 					    </ul>
+					    <a href="javascript:void(0)" original-title="业务管理">
+				                 <span class="iconsidbar less_list"></span><strong>业务管理</strong>
+				        </a>
+						<ul class="clearfix">
+								 <li ><a href="{:U('User/address')}">发货地址</a></li>					
+								 <li><a href="{:U('Order/kb')}" original-title="空包下单">空包下单</a></li>
+								  <if condition="$kongbao_config['pf_valid']==1">
+								 		<li><a href="{:U('Order/kb_pf')}" original-title="空包批发">空包批发</a></li>
+								 </if>
+								 <li><a href="{:U('Order/dd_apply')}" original-title="底单申请">底单申请</a></li>
+								 <if condition="$danhao_config['valid']==1">
+								 	 <li><a href="{:U('Order/dh')}" original-title="单号下单">单号下单</a></li>
+								</if>
+								 <if condition="$xiaohao_config['valid']==1">
+								 	 <li><a href="{:U('Order/xh')}" original-title="小号下单">小号下单</a></li>
+								</if>								
+ 						</ul>
+					    <a href="javascript:void(0)" original-title="推广赚钱">
+				                 <span class="iconsidbar less_list"></span><strong>推广赚钱</strong>
+				        </a>
+						<ul class="clearfix">
+								 <li  ><a href="{:U('Tg/index')}">我要推广</a></li>					
+								 <li><a href="{:U('Tg/uplevel')}" original-title="升级会员">升级会员</a></li>
+								 <li><a href="{:U('Log/refer_log')}" original-title="我的下线">我的下线</a></li>
+ 								<if condition="$kongbao_config['pf_valid']==1">								 	 
+ 									<li><a href="{:U('Order/daili_upload')}" original-title="上传代理表格">上传代理表格</a></li>
+								</if> 							
+ 						</ul> 		
+ 					    <a href="javascript:void(0)" original-title="日志信息">
+				                 <span class="iconsidbar less_list"></span><strong>日志信息</strong>
+				        </a>
+						<ul class="clearfix">
+								 <li><a href="{:U('Log/pay_order')}">充值记录</a></li>					
+								 <li><a href="{:U('Log/cw_log')}" original-title="财务日志">财务日志</a></li>
+								 <li><a href="{:U('Log/buy_order')}" original-title="订单记录">订单记录</a></li>
+								 <li><a href="{:U('Log/kb_log')}" original-title="空包下单记录">空包下单记录</a></li>								
+ 								<if condition="$kongbao_config['pf_valid']==1">								 	 
+ 									<li><a href="{:U('Log/kbpf_log')}" original-title="空包批发记录">空包批发记录</a></li>
+								</if> 
+								 <li><a href="{:U('Log/didan_log')}" original-title="底单申请记录">底单申请记录</a></li>
+								  <if condition="$danhao_config['valid']==1">
+									 <li><a href="{:U('Log/dh_log')}" original-title="单号下单记录">单号下单记录</a></li>	
+							      </if>		
+								  <if condition="$xiaohao_config['valid']==1">
+									 <li><a href="{:U('Log/xh_log')}" original-title="小号下单记录">小号下单记录</a></li>	
+							      </if>
+					     <a href="javascript:void(0)" original-title="安全退出">
+				                 <span class="iconsidbar less_list"></span><strong>安全退出</strong>
+				        </a>
+						<ul class="clearfix">
+								 <li><a href="{:U('User/logout')}">安全退出</a></li>														      													
+ 						</ul> 											
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>

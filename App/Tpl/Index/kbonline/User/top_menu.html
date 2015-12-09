@@ -1,0 +1,24 @@
+<div style="height:65px; text-align: left; margin: 0px; padding: 0px; clear: both; overflow: hidden;">
+            <iframe src="{:U('Index/Index/led')}" style="border: none; width: 100%;height:60px; text-align: left; margin: 0px; padding: 0px; clear: both; overflow: hidden;" scrolling ="no" frameborder="0" ></iframe>
+ </div> 
+<div class="menu">
+    <ul>
+        	<li ><a href="{:U('User/home')}" target="_self">我的账户</a></li>        
+        	<li><a href="{:U('Order/kb')}" target="_self">空包下单</a></li> 
+        	<if condition="$kongbao_config['true_valid']==1">
+        		<li><a href="{:U('Order/true_kb')}" target="_self">真实空包下单</a></li> 
+        	</if> 
+        	<if condition="$danhao_config['valid']==1">
+        		<li><a href="{:U('Order/dh')}" target="_self">购买单号</a></li>
+        	</if>
+         	<if condition="$xiaohao_config['valid']==1">
+        		<li><a href="{:U('Order/xh')}" target="_self">购买小号</a></li>
+        	</if>       	
+         	<li><a href="{:U('Tg/uplevel')}" target="_self">推广赚钱</a></li> 
+         	<li><a href="{:U('Log/cw_log')}" target="_self">日志记录</a></li> 
+         	<li><a href="{:U('Help/index')}" target="_self">帮助中心</a></li> 
+         	 <if condition="$config['tuiguang_valid']==1">
+				 <li><a href="{:U('Index/Index/tuiguang')}"  target="_self" >定制网站</a></li>
+			 </if>
+    </ul>
+</div> 

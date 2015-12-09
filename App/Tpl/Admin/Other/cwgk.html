@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<link href="../Public/js/lhgcalendar/_doc/prettify/prettify.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="../Public/js/lhgcalendar/_doc/prettify/prettify.js"></script>
+<script type="text/javascript" src="../Public/js/lhgcalendar/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../Public/js/lhgcalendar/lhgcalendar.min.js"></script>
+<title>管理区域</title>
+<style type="text/css"> 
+body{font-size:12px;font-weight:400}
+</style> 
+	<script type="text/javascript">
+		 $(function(){   
+		    $('#starttime').calendar({ format:'yyyy-MM-dd' });
+		    $('#endtime').calendar({ format:'yyyy-MM-dd' }); 
+		});
+	</script>
+</head>
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>网站统计</h3>
+      <ul class="tab-base">  
+         <li><a href="{:U('tongji')}" ><span>网站统计</span></a></li> 
+         <li><a href="javascript:void(0)" class="current" ><span>财务概况</span></a></li> 
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+  <table width="97%" border="0" align="center" cellpadding="3" cellspacing="1" class="table_style">
+    <tr>
+      <td >  
+                <table width="100%" style="border:0;border-right:0 dashed #AAAAAA;">
+				    	 <tr><td align="center" width="20%">会员库存</td>
+				    	 	<td colspan="4">
+				    	 		 会员可用账户金额：<font style="color:#F00; font-size:15px;font-family:Georgia,Arial; font-weight:700">{$tongji['total']['user']['money']}</font>元<br/>
+				    	 		 会员可用佣金金额：<font style="color:#F00; font-size:15px;font-family:Georgia,Arial; font-weight:700">{$tongji['total']['user']['refer_money']}</font>元<br/>
+								 会员账户冻结金额：<font style="color:#F00; font-size:15px;font-family:Georgia,Arial; font-weight:700">{$tongji['total']['user']['invalid_money']}</font>元<br/>				    	 	 
+							     会员累计消费金额：<font style="color:#F00; font-size:15px;font-family:Georgia,Arial; font-weight:700">{$tongji['total']['user']['used_money']}</font>元
+							</td>
+						 </tr>
+				    	 <tr>
+				    	 	<td rowspan="4" align="center">今日统计</td>
+				    	 	<td align="center" width="15%">会员充值</td>
+				    	 	<td width="25%">
+				    	 		 <font style="color:#F00; font-size:15px;font-family:Georgia,Arial; font-weight:700">{$tongji['today']['recharge']['money']}</font>元/{$tongji['today']['recharge']['counts']}笔
+				    	 	</td>
+				    	 	<td align="center"  width="15%">会员提现</td>
+				    	 	<td width="25%">
+				    	 		<font style="color:#F00; font-size:15px;font-family:Georgia,Arial; font-weight:700">{$tongji['today']['tixian']['money']}</font>元/{$tongji['today']['tixian']['counts']}笔
+				    	 	</td>
+				    	 </tr>
+				    	 <tr>
+				    	 	<td align="center"  width="15%">升级会员</td>
+				    	 	<td width="25%">
+				    	 		<font style="color:#F00; font-size:15px;font-family:Georgia,Arial; font-weight:700">{$tongji['today']['upgrade']['money']}</font>元/{$tongji['today']['upgrade']['counts']}笔
+				    	 	</td>
+				    	 	<td align="center"  width="15%">佣金提成</td>
+				    	 	<td width="25%">
+				    	 		<font style="color:#F00; font-size:15px;font-family:Georgia,Arial; font-weight:700">{$tongji['today']['refer']['money']}</font>元/{$tongji['today']['refer']['counts']}笔
+				    	 	</td>
+				    	 </tr>
+				    	  <tr>
+				    	 	<td align="center"  width="15%">空包购买</td>
+				    	 	<td width="25%">
+				    	 		<font style="color:#F00; font-size:15px;font-family:Georgia,Arial; font-weight:700">{$tongji['today']['kb']['money']}</font>元/{$tongji['today']['kb']['counts']}个<br/>
+				    	 		<font style="color:#F00; font-size:15px;font-family:Georgia,Arial; font-weight:700">{$tongji['today']['kb']['lirun']}</font>元（利润）
+				    	 	</td>
+				    	 	<td align="center"  width="15%">小号购买</td>
+				    	 	<td width="25%">
+				    	 		<font style="color:#F00; font-size:15px;font-family:Georgia,Arial; font-weight:700">{$tongji['today']['xh']['money']}</font>元/{$tongji['today']['xh']['counts']}个<br/>
+				    	 		<font style="color:#F00; font-size:15px;font-family:Georgia,Arial; font-weight:700">{$tongji['today']['xh']['lirun']}</font>元（利润）
+ 				    	 	</td>
+				    	 </tr>
+				    	  <tr>
+				    	 	<td align="center"  width="15%">纯利润</td>
+				    	 	<td colspan="3">
+				    	 		<font style="color:#F00; font-size:15px;font-family:Georgia,Arial; font-weight:700">{$tongji['today']['lirun']}</font>元
+				    	 	</td> 
+				    	 </tr>
+						<tr>
+				    	 	<td rowspan="4" align="center">昨日统计</td>
+				    	 	<td align="center" width="15%">会员充值</td>
+				    	 	<td width="25%">
+				    	 		 <font style="color:#F00; font-size:15px;font-family:Georgia,Arial; font-weight:700">{$tongji['yesterday']['recharge']['money']}</font>元/{$tongji['yesterday']['recharge']['counts']}笔
+				    	 	</td>
+				    	 	<td align="center"  width="15%">会员提现</td>
+				    	 	<td width="25%">
+				    	 		<font style="color:#F00; font-size:15px;font-family:Georgia,Arial; font-weight:700">{$tongji['yesterday']['tixian']['money']}</font>元/{$tongji['yesterday']['tixian']['counts']}笔
+				    	 	</td>
+				    	 </tr>
+				    	 <tr>
+				    	 	<td align="center"  width="15%">升级会员</td>
+				    	 	<td width="25%">
+				    	 		<font style="color:#F00; font-size:15px;font-family:Georgia,Arial; font-weight:700">{$tongji['yesterday']['upgrade']['money']}</font>元/{$tongji['yesterday']['upgrade']['counts']}笔
+				    	 	</td>
+				    	 	<td align="center"  width="15%">佣金提成</td>
+				    	 	<td width="25%">
+				    	 		<font style="color:#F00; font-size:15px;font-family:Georgia,Arial; font-weight:700">{$tongji['yesterday']['refer']['money']}</font>元/{$tongji['yesterday']['refer']['counts']}笔
+				    	 	</td>
+				    	 </tr>
+				    	  <tr>
+				    	 	<td align="center"  width="15%">空包购买</td>
+				    	 	<td width="25%">
+				    	 		<font style="color:#F00; font-size:15px;font-family:Georgia,Arial; font-weight:700">{$tongji['yesterday']['kb']['money']}</font>元/{$tongji['yesterday']['kb']['counts']}个<br/>
+				    	 		<font style="color:#F00; font-size:15px;font-family:Georgia,Arial; font-weight:700">{$tongji['yesterday']['kb']['lirun']}</font>元（利润）
+ 				    	 	</td>
+				    	 	<td align="center"  width="15%">小号购买</td>
+				    	 	<td width="25%">
+				    	 		<font style="color:#F00; font-size:15px;font-family:Georgia,Arial; font-weight:700">{$tongji['yesterday']['xh']['money']}</font>元/{$tongji['yesterday']['xh']['counts']}个<br/>
+				    	 		<font style="color:#F00; font-size:15px;font-family:Georgia,Arial; font-weight:700">{$tongji['yesterday']['xh']['lirun']}</font>元（利润）
+ 				    	 	</td>
+				    	 </tr>
+				    	  <tr>
+				    	 	<td align="center"  width="15%">纯利润</td>
+				    	 	<td colspan="3">
+				    	 		<font style="color:#F00; font-size:15px;font-family:Georgia,Arial; font-weight:700">{$tongji['yesterday']['lirun']}</font>元
+				    	 	</td> 
+				    	 </tr>
+						<tr>
+				    	 	<td rowspan="4" align="center">本月统计</td>
+				    	 	<td align="center" width="15%">会员充值</td>
+				    	 	<td width="25%">
+				    	 		 <font style="color:#F00; font-size:15px;font-family:Georgia,Arial; font-weight:700">{$tongji['month']['recharge']['money']}</font>元/{$tongji['month']['recharge']['counts']}笔
+				    	 	</td>
+				    	 	<td align="center"  width="15%">会员提现</td>
+				    	 	<td width="25%">
+				    	 		<font style="color:#F00; font-size:15px;font-family:Georgia,Arial; font-weight:700">{$tongji['month']['tixian']['money']}</font>元/{$tongji['month']['tixian']['counts']}笔
+				    	 	</td>
+				    	 </tr>
+				    	 <tr>
+				    	 	<td align="center"  width="15%">升级会员</td>
+				    	 	<td width="25%">
+				    	 		<font style="color:#F00; font-size:15px;font-family:Georgia,Arial; font-weight:700">{$tongji['month']['upgrade']['money']}</font>元/{$tongji['month']['upgrade']['counts']}笔
+				    	 	</td>
+				    	 	<td align="center"  width="15%">佣金提成</td>
+				    	 	<td width="25%">
+				    	 		<font style="color:#F00; font-size:15px;font-family:Georgia,Arial; font-weight:700">{$tongji['month']['refer']['money']}</font>元/{$tongji['month']['refer']['counts']}笔
+				    	 	</td>
+				    	 </tr>
+				    	  <tr>
+				    	 	<td align="center"  width="15%">空包购买</td>
+				    	 	<td width="25%">
+				    	 		<font style="color:#F00; font-size:15px;font-family:Georgia,Arial; font-weight:700">{$tongji['month']['kb']['money']}</font>元/{$tongji['month']['kb']['counts']}个<br/>
+				    	 		<font style="color:#F00; font-size:15px;font-family:Georgia,Arial; font-weight:700">{$tongji['month']['kb']['lirun']}</font>元（利润）
+ 				    	 	</td>
+				    	 	<td align="center"  width="15%">小号购买</td>
+				    	 	<td width="25%">
+				    	 		<font style="color:#F00; font-size:15px;font-family:Georgia,Arial; font-weight:700">{$tongji['month']['xh']['money']}</font>元/{$tongji['month']['xh']['counts']}个<br/>
+				    	 		<font style="color:#F00; font-size:15px;font-family:Georgia,Arial; font-weight:700">{$tongji['month']['xh']['lirun']}</font>元（利润）
+ 				    	 	</td>
+				    	 </tr>
+				    	  <tr>
+				    	 	<td align="center"  width="15%">纯利润</td>
+				    	 	<td colspan="3">
+				    	 		<font style="color:#F00; font-size:15px;font-family:Georgia,Arial; font-weight:700">{$tongji['month']['lirun']}</font>元
+				    	 	</td> 
+				    	 </tr>				    	 				    	 
+  			  </table>      	 	      	   
+      </td> 
+    </tr>  
+  </table>
+   <div style="height:200px"></div>
+</div>
+</body>
+</html>

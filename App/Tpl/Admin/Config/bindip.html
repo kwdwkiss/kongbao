@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<script type="text/javascript" src="../Public/js/jquery-1.4.2.min.js"></script>  
+<title>管理区域</title> 
+</head> 
+<body> 
+<div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>网站设置</h3>
+      <ul class="tab-base"> 
+         <li><a href="{:U('config')}" ><span>基本设置</span></a></li> 
+         <li><a href="{:U('payonline_setting')}" ><span>支付设置</span></a></li> 
+         <li><a href="javascript:void(0)" class="current" ><span>IP绑定设置</span></a></li>
+         <li><a href="{:U('fetion_setting')}" ><span>飞信提醒设置</span></a></li> 
+         <li><a href="{:U('Shuoming/config')}" ><span>说明及注意事项</span></a></li> 
+      </ul>
+    </div>
+</div>  
+<div id="man_zone">
+<form action="__URL__/ipsave" method="post" enctype="multipart/form-data">
+  <table width="97%" border="0" align="center"  cellpadding="3" cellspacing="1" class="table_style">
+    <tr>
+      <td width="150px" class="left_title_1">说明</td>
+      <td width=""> 
+      	    一、填写IP地址，只有绑定的IP地址才允许访问您的后台登陆页面；<br/>
+      	    二、如果不绑定，则允许所有IP地址访问您的后台登陆页面<br/>
+      	    三、每行一条数据
+      </td>
+    </tr> 
+    <tr>
+      <td class="left_title_1">绑定IP</td>
+      <td><textarea name="backbind_ip" cols="60" rows="4">{$config['backbind_ip']}</textarea></td>
+    </tr>  
+   <tr>
+		<td colspan="2" class="left_title_2">
+		<div align="center"> 
+		 <input type="submit" value="保存" /> 
+		 <input class="button" type="reset"   value="取消" /></div>
+		</td>
+	</tr>
+  </table>
+  </form>
+  </div>  
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<title>管理区域</title>
+<style type="text/css">
+<!--
+#man_zone .table_style tr .search {
+	margin-left: 10px;
+}
+-->
+</style>
+</head>
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>会员管理</h3>
+      <ul class="tab-base"> 
+         <li><a href="javascript:void(0)" class="current"><span>账户日志</span></a></li>   
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+  <table width="97%" border="0" align="center" cellpadding="3" cellspacing="1" class="table_style">
+    <tr>
+      <td colspan="11" class="left_title_2">
+        <form class="search" action="__URL__/account_log" method="post">
+          <div align="left">筛选： 
+              <select name="ftype">
+                <option value="username" <eq name="_POST.ftype" value="username">selected</eq>>用户名</option>   
+              	<option value="user_id" <eq name="_POST.ftype" value="user_id">selected</eq> >用户ID</option> 
+              </select>
+               <input type="text" name="keyword" value="{:I('keyword')}" />  
+              <select name="stage">
+              	    <option value="">请选择操作类型</option>
+	              	<option value="admin" <eq name="_POST.stage" value="admin">selected</eq> >后台处理</option> 
+	                <option value="return" <eq name="_POST.stage" value="return">selected</eq>>提现失败冲回</option>   
+	                <option value="buy" <eq name="_POST.stage" value="buy">selected</eq>>购买支付</option>  
+	                <option value="cash" <eq name="_POST.stage" value="cash">selected</eq>>提现</option>  
+	                <option value="refund" <eq name="_POST.stage" value="refund">selected</eq>>退款</option>  
+	                <option value="refer" <eq name="_POST.stage" value="refer">selected</eq>>佣金提成</option>  
+	                <option value="recharge" <eq name="_POST.stage" value="recharge">selected</eq>>用户充值</option>  
+	                <option value="upgrade" <eq name="_POST.stage" value="upgrade">selected</eq>>会员升级</option>
+              	    <option value="change" <eq name="_POST.stage" value="change">selected</eq>>佣金转换</option>
+              </select>
+              订单号或下线用户ID
+              <input type="text" name="order_no" value="{:I('order_no')}" />               
+              <input name="submit" type="submit" value="查询" /> 
+              <span style="float:right"><font color="red">{$count}</font>条数据符合条件</span>
+          </div> 
+        </form>        
+      </td> 
+    </tr>
+    <tr> 
+      <td width="6%" class="left_title_1"><div align="center">用户ID</div></td>
+      <td width="10%" class="left_title_1"><div align="center">用户名</div></td> 
+      <td width="10%" class="left_title_1"><div align="center">操作金额</div></td> 
+      <td width="10%" class="left_title_1"><div align="center">账户余额</div></td>
+      <td width="10%" class="left_title_1"><div align="center">佣金余额</div></td>  
+      <td width="14%" class="left_title_1"><div align="center">操作时间</div> </td>
+      <td width="10%" class="left_title_1"><div align="center">操作阶段</div></td> 
+      <td width="10%" class="left_title_1"><div align="center">订单号或<br/>下线ID</div></td> 
+      <td width="%" class="left_title_1"><div align="center">操作原因</div></td>
+    </tr>
+    <foreach name="log_list" item="log"> 
+      <tr>  
+        <td><div align="center"><a href="{:U('index',array('ftype'=>'id','keyword'=>$log['user_id']))}">{$log['user_id']}</a></div></td>
+        <td><div align="left">{$log['username']}</div></td> 
+        <td><div align="left">{$log['tzmoney']}元</div></td>
+        <td><div align="left">{$log['remain_money']}元</div></td>
+        <td><div align="left">{$log['remain_refer_money']}元</div></td>
+        <td><div align="center">{$log['addtime']}</div></td>
+        <td><div align="center">
+	        	<switch name="log.stage">
+	        		<case value="admin">后台操作</case>
+	        		<case value="recharge">用户充值</case>
+	        		<case value="upgrade">会员升级</case>
+	        		<case value="change">佣金转换</case>
+	        		<case value="cash">提现</case>
+	        		<case value="buy">购买支付</case>
+	        		<case value="refer">佣金提成</case>
+	        		<case value="return">提现失败冲回</case>
+	        		<case value="refund">退款</case>
+	        		<default />其他
+	        	</switch> 
+            </div>
+        </td>
+        <td><div align="left">{$log['order_no']}</div></td>
+		<td><div align="left">{$log['comm']}</div></td>
+      </tr>
+     </foreach>
+    <tr>
+      <td height="30" colspan="11"><div align="center">{$show}</div></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

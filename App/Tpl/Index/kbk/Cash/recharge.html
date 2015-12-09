@@ -1,0 +1,264 @@
+<include file="Public:header" />
+<div class="header_adv">
+  <a href="{$header_adv['pic_url']}" target="_blank"><img src="{$header_adv['pic']}" alt="{$header_adv['ad_brief']}" ></a>
+</div>
+<script type="text/javascript" src="__PUBLIC__/js/layer/layer.js"></script><!-- 弹出层 -->
+<div class="userbox clearfix">
+  <div class="userleft">
+    <include file="User:left_nav" />
+  </div>
+  <div class="userright">
+    <div class="mynow"><div>账户充值</div></div>
+    <div class="myled" style="margin-top:15px;">
+      <iframe align="center" border="0"  marginWidth=0 marginHeight=0 src="{:U('Index/Index/led')}"  frameBorder=0 width="100%" height="35px" scrolling="no"></iframe>
+    </div>
+    <div class="clearfix" style="margin-top:20px;">
+      <div class="focus_button"  id="tab01" onclick="DisplayFun('tab01')">支付宝充值</div> 
+      <if condition="$pay_setting['tenpay_zz']['tenpay_valid']==1">
+      <div class="common_button" id="tab02" onclick="DisplayFun('tab02')">财付通充值</div>
+      </if>
+	</div>
+	<div id="tab_Father1">  
+	  <div id="tab01_c"> 			 		  						         					            	
+		<form method="post" id="recharge_form" target="_blank" action="../../pay/pay1.php" accept-charset="GBK" onsubmit="document.charset='GBK';" >
+          <div class="myclass_pay_card" style="margin-top:0;">
+            <table id="mytab" border="0" cellSpacing="1" cellPadding="5" width="768">
+              <tr>
+                <td colspan="3" height="30"></td>
+              </tr>
+              <tr>
+                <td align="right">您的账户余额：</td>
+                <td colspan="2"><b style="color:#e53333;">{$user['money']}</b> 元</td>
+              </tr>
+              <tr>
+                <td width="130px" align="right">官方支付宝账号：</td>
+                <td colspan="2">
+                  <if condition="$pay_setting['alipay_zz']['alipay_jsdz_valid']==1">
+                  <input type="text" name="optEmail" value="{$pay_setting['alipay_zz']['seller_email']}" readonly="readonly" class="myinputbox01" style="border:1px solid #fff;color:blue;font-weight:bold;">
+                  <input type="text" value="{$pay_setting['alipay_zz']['seller_name']}" readonly="readonly" class="myinputbox01" style="border:1px solid #fff;color:blue;font-weight:bold;" size="8">
+                  <else/>
+                  <input type="text" name="optEmail" value="{$pay_setting['alipay_zz']['receiver']}" readonly="readonly" class="myinputbox01" style="border:1px solid #fff;color:blue;font-weight:bold;">
+                  <input type="text" name="optName" value="{$pay_setting['alipay_zz']['name']}" readonly="readonly" class="myinputbox01" size="8" style="border:1px solid #fff;color:blue;font-weight:bold;">
+                  </if>
+                </td>
+              </tr>
+              <tr>
+                <td width="130px" align="right">请输入充值金额：</td>
+                <td width="165">
+                  <input name="payAmount" type="text" id="payAmount" size="20" value="{$pay_setting['alipay_zz']['min_money']}" class="myinputbox01">
+                </td>
+                <td width="473"><font color="#e53333"><if condition="$pay_setting['alipay_zz']['min_money'] gt 0 ">*最低充值{$pay_setting['alipay_zz']['min_money']}元</if>，付款成功系统自动到账</font></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td colspan="2">
+                  <input type="hidden" name="memo" value="{$pay_setting['alipay_zz']['comm']}" /><input type="hidden" name="title" id="title" value="{$title}">
+                  <if condition="$pay_setting['alipay_zz']['alipay_jsdz_valid']==1">
+                  <input type="hidden" name="user_id" value="{$user['id']}" />
+                  <input type="button" value="点击充值" onclick="return chk_submit_jsdz()" class="submit" style="cursor:pointer" >
+                  <else/>
+                  <a id="aPayAlipay" href="#" target="_blank"><input type="submit" value="点击充值"  onclick="return chk_submit(1)" class="submit" style="cursor:pointer;"></a>
+                  </if>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3" height="30"></td>
+              </tr>
+            </table>
+          </div>  
+        </form>        
+      </div>
+	  <div id="tab02_c" style="display:none">
+        <form method="post" id="recharge_form" target="_blank" action="../../pay/pay2.php"  >
+          <div class="myclass_pay_card" style="margin-top:0;">
+            <table id="mytab" border="0" cellSpacing="1" cellPadding="5" width="768">
+              <tr>
+                <td colspan="3" height="30"></td>
+              </tr>
+              <tr>
+                <td align="right">您的账户余额：</td>
+                <td colspan="2"><b style="color:#e53333;">{$user['money']}</b> 元</td>
+              </tr>
+              <tr>
+                <td align="right">官方财付通账号：</td>
+                <td colspan="2">
+                  <input type="text" name="optEmail" value="{$pay_setting['tenpay_zz']['receiver']}" readonly="readonly" class="myinputbox01" style="border:1px solid #fff;color:blue;font-weight:bold;" size="12">
+                  <input type="text" name="tenpay_name" value="{$pay_setting['tenpay_zz']['name']}" readonly="readonly" class="myinputbox01" style="border:1px solid #fff;color:blue;font-weight:bold;" size="8">
+                </td>
+              </tr>
+              <tr>
+                <td width="130" align="right">请输入充值金额：</td>
+                <td width="165">
+                  <input name="payAmount" type="text" id="payAmount1" size="20" value="{$pay_setting['alipay_zz']['min_money']}" class="myinputbox01">
+                </td>
+                <td width="473"><font color="red"><if condition="$pay_setting['alipay_zz']['min_money'] gt 0 ">*最低充值{$pay_setting['alipay_zz']['min_money']}元</if>，付款成功系统自动到账</font></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td colspan="2">
+                  <input type="hidden" name="memo" value="{$pay_setting['alipay_zz']['comm']}" />
+                  <input type="hidden" name="title" id="title_qq" value="{$title_qq}">
+                  <a id="aPayTenpay" href="#" target="_blank"><input type="submit" value="点击充值" onclick="return chk_submit(2)" class="submit"></a>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3" height="30"></td>
+              </tr>
+            </table>
+          </div>  
+        </form>        
+      </div> 
+	</div>
+    <div style="line-height:50px;">{$kongbao_page['recharge_tixing']}{$kongbao_page['recharge_shuoming']}
+    </div>
+    
+    <div style="display:none;">
+       付款后，系统会自动进行充值到账，若5分钟內未到账（机率极少）请提交支付宝或财付通交易号，系统自动通知客服审核处理！
+      <form action="{:U('alipay_save')}" method="post" id="myform" onsubmit="return chongzhi()"  >                  
+      <div>
+        <p>
+          交易编号：<input name="outer_order_no" type="text" id="outer_order_no" size="30"  class="input-text"/>
+          <if condition="$pay_setting['tenpay_zz']['tenpay_valid']==1">
+          选择充值类型：
+          <select name="order_type" style="_height:15px;_line-height:5px;">
+            <option value="0" >支付宝充值</option>
+            <option value="1" >财付通充值</option>
+		  </select>
+          </if>
+        </p>
+        <p>
+          转账金额：
+          <input name="price" type="text" id="price" size="2" value="" class="input-text" onclick="huodongtishi()">&nbsp;元 <font color="red">填写您转账的金额</font>
+        </p>
+      </div>
+      <div style=" margin-top:5px;">
+		<input type="hidden" name="user_id" value="{$user['id']}" /> 
+		<input type="submit" id="dosubmit" value="提交" />
+      </div>
+	  </form>           
+	</div>									  	        
+  </div>
+</div>    
+
+ <script type="text/javascript">
+ var min_money = "{$pay_setting['alipay_zz']['min_money']}";
+ min_money = parseFloat(min_money);
+function chk_submit(type)
+{  
+	var num = /^[0-9]+(.[0-9]{1,2})?$/; //金额的匹配规则 
+	if(type==1)
+	{
+		var money = $('#payAmount').val();
+	}else
+	{
+		var money = $('#payAmount1').val();
+	} 
+	if(money=='')
+	{
+		alert('请填写充值金额!');
+		$('#payAmount').focus();
+		return false;
+	}
+    if(!money.match(num))
+    {
+        	alert('充值金额格式不对!(XXX.XX)');
+        	$('#payAmount').focus();
+        	return false;
+    }
+	if(money<=0)
+	{
+		alert('充值金额必须大于0');
+		$('#payAmount').focus();
+		return false;
+	}  
+	if(min_money>0 && money<min_money)
+	{
+		alert('充值金额不能小于最低充值金额！');
+		$('#payAmount').focus();
+		return false;		
+	} 
+	return true;
+} 
+function chk_submit_jsdz()
+{
+	var jsdz_url="{:U('Alipay/alipayapi')}";
+	 if(chk_submit())
+	 {
+	 	  $("#recharge_form").attr('action',jsdz_url); 
+	 	  $("#recharge_form").submit();
+	 }
+	 else
+	 { 
+	 	return false;
+	 }
+}
+function chongzhi()
+{
+	var tenpay_valid="{$pay_setting['tenpay_zz']['tenpay_valid']}";
+	if(tenpay_valid=="1")
+	{
+		 if(!confirm('充值类型一定要正确选择，以便及早审核！您确定已经选择的充值类型正确？'))
+		 {
+		 	return false;
+		 }
+	}	
+	var num = /^[0-9]+(.[0-9]{1,2})?$/; //金额的匹配规则 
+	var money = $('#price').val();
+	var outer_order_no = $("#outer_order_no").val();
+	var regnum=/^[1-9]\d*$|^0$/;   // 注意：故意限制了 0321 这种格
+	if(outer_order_no=='')
+	{
+		alert('请正确填写转账交易号!');
+		$('#outer_order_no').focus();
+		return false;
+	}
+     if(!regnum.test(outer_order_no))
+     {    
+     	alert("请填写正确的交易号");    
+     	$('#outer_order_no').focus();
+     	return false;
+     } 
+	if(money=='')
+	{
+		alert('请正确填写交易号对应的转账金额!');
+		$('#price').focus();
+		return false;
+	}
+    if(!money.match(num))
+    {
+        	alert('转账金额格式不对!(XXX.XX)');
+        	$('#price').focus();
+        	return false;
+    }
+	if(money<=0)
+	{
+		alert('转账金额必须大于0');
+		return false;
+	}
+	return true;
+}  
+ function DisplayFun(str)
+{
+	var tab1=document.getElementById("tab01");
+	var tab2=document.getElementById("tab02");  
+	var tab1c=document.getElementById("tab01_c");
+	var tab2c=document.getElementById("tab02_c"); 
+	if(str=="tab01")
+	{
+		tab1c.style.display="block";
+		tab2c.style.display="none";  
+		tab1.className="focus_button";
+		tab2.className="common_button";  
+		return ;
+	}
+	if(str=="tab02")
+	{
+		tab1c.style.display="none";
+		tab2c.style.display="block";  
+		tab1.className="common_button";
+		tab2.className="focus_button"; 
+		return ;
+	}  
+}   
+</script>
+<include file="Public:footer" />	

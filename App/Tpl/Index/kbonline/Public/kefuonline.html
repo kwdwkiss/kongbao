@@ -1,0 +1,30 @@
+<!--在线客服Begin-->
+<link rel="stylesheet" href="__PUBLIC__/js/kefu/css/style.css" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/js/kefu/kefu.js"></script>
+<div id="floatTools" class="rides-cs">
+	<div class="floatL">
+		<a style="display: block" id="aFloatTools_Show" class="btnOpen" title="查看在线客服" onclick="javascript:$('#divFloatToolsView').animate({width: 'show', opacity: 'show'}, 'normal',function(){ $('#divFloatToolsView').show();kf_setCookie('RightFloatShown', 0, '', '/', 'www.shopnc.net'); });$('#aFloatTools_Show').attr('style','display:none');$('#aFloatTools_Hide').attr('style','display:block');" href="javascript:void(0);">
+		展开</a>
+		<a style="display: none" id="aFloatTools_Hide" class="btnCtn" title="关闭在线客服" onclick="javascript:$('#divFloatToolsView').animate({width: 'hide', opacity: 'hide'}, 'normal',function(){ $('#divFloatToolsView').hide();kf_setCookie('RightFloatShown', 1, '', '/', 'www.shopnc.net'); });$('#aFloatTools_Show').attr('style','display:block');$('#aFloatTools_Hide').attr('style','display:none');" href="javascript:void(0);">
+		收缩</a> </div>
+	<div id="divFloatToolsView" align="left" class="floatR" style="display: none">
+		<div class="cn">
+			<foreach name="kefu_list" item="kefu">
+				  <h3 class="titZx" align="left">{$kefu['title']}</h3>
+				  <ul>
+				  	  <foreach name="kefu['data']" item="kf" >
+				  	  	 <li>
+				  	  	 	   <span>{$kf['kf_name']}</span>
+				  	  	 	   <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={$kf['kf_qq']}&site=qq&menu=yes">
+				  	  				 <img border="0" src="http://wpa.qq.com/pa?p=2:{$kf['kf_qq']}:51" alt="{$config['sitename']}-{$kf['kf_name']}" title="{$config['sitename']}-{$kf['kf_name']}" />
+				  	  		   </a>
+				  	  	</li>
+				  	  </foreach>
+				  </ul>
+			</foreach> 
+		</div>
+	</div>
+</div>
+<!--在线客服End-->
+<div style="text-align:center;clear:both">
+</div>

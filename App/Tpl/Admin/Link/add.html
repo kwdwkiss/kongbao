@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<title>管理区域</title>
+</head>
+
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>友情链接</h3>
+      <ul class="tab-base"> 
+         <li><a href="{:U('index')}" ><span>列表</span></a></li>  
+         <li><a href="javascript:void(0)" class="current" ><span>新增</span></a></li>
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+<form action="__URL__/insert" method="post">
+  <table width="99%" border="0" align="center"  cellpadding="3" cellspacing="1" class="table_style">
+    <tr>
+      <td width="18%" class="left_title_1"><span class="left-title">网站名称</span></td>
+      <td width="82%"><input type="text" name="sitename" size="40"></td>
+    </tr>
+    <tr>
+      <td class="left_title_2">网站URL</td>
+      <td><input type="text" name="siteurl" size="40"></td>
+    </tr>
+    <tr>
+      <td class="left_title_1">网站描述</td>
+      <td><textarea name="sitebrief" cols="32" rows="4"></textarea></td>
+    </tr>
+    <tr bgcolor="#FFFFFF">
+      <td colspan="2" class="left_title_2"><div align="center">
+		 <input type="submit" value="保存" /> 
+		 <input class="button" type="reset" value="取消" /></div></td>
+    </tr>
+  </table>
+        
+</form>
+</div>
+</body>
+</html>

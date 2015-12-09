@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<title>管理区域</title>
+</head>
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>首页导航</h3>
+      <ul class="tab-base"> 
+         <li><a href="{:U('index')}" ><span>列表</span></a></li>
+         <li><a href="{:U('add')}" ><span>新增</span></a></li>  
+         <li><a href="javascript:void(0)" class="current" ><span>编辑</span></a></li>  
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+<form action="__URL__/update" method="post" enctype="multipart/form-data">
+<table width="97%" border="0" align="center" cellpadding="3"
+	cellspacing="1" class="table_style">
+	
+	<tr>
+		<td width="18%" class="left_title_2">导航名称</td>
+		<td width="82%"><input type="text" name="name" size="40" value="{$udata['name']}"></td>
+	</tr>
+	<tr>
+		<td class="left_title_2">导航链接</td>
+		<td><input type="text" name="link" size="40" value="{$udata['link']}"></td>
+	</tr>
+    <tr>
+		<td class="left_title_2">导航编号</td>
+		<td><input type="text" name="paixu" size="40" value="{$udata['paixu']}"></td>
+	</tr>
+	
+</table>
+<div
+	style="height: 21px; width: 200px; margin-top: 20px; margin-left: 200px;">
+	 <input type="hidden" name="id" value="{$udata['id']}" />
+	<input type="submit" value="保存" /> 
+	<input class="button" type="button" onclick="history.go(-1);" value="取消" />
+</div>
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<div class="bofrend mt_10">
+		<footer class="container_24 clearfix">
+			   <div>
+				   <a href="{$footer_adv['pic_url']}" target="_blank">
+				    	<img src="{$footer_adv['pic']}" width="100%" height="150px" alt="{$footer_adv['ad_brief']}" >
+		 	        </a>  				   	
+			   </div> 
+				<div  align="left"> 
+ 					 <strong>友情链接：</strong> 
+					<foreach name="flink_list" item="flink">
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="{$flink.siteurl}"  title="{$flink.sitebrief}" rel="nofollow" id="ICPNo" target="_blank">{$flink.sitename}</a>
+					</foreach>
+				</div>
+				<div align="center">
+				 		<SPAN class=afont>{$config['copy_right']} </SPAN><br/>&nbsp;&nbsp;&nbsp;{$config['tongji']}&nbsp;&nbsp;&nbsp;{$config['beian']}<br><br>					
+				</div>
+		</footer>
+</div>
+<include file="Public:kefuonline"/>	 
+</body>
+</html>

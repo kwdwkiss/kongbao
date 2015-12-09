@@ -1,0 +1,75 @@
+<include file="Public:header" />	  
+<script type="text/javascript"> 
+$(document).ready(function(){ 
+ 	$("#btn_qq").click(function()
+ 	{
+ 		alert('由于浏览器不兼容复制功能，请手工复制推广内容！');
+ 		return false;
+ 	});
+	$("#btn_forum").click(function()
+	{
+		alert('由于浏览器不兼容复制功能，请手工复制推广内容！');
+ 		return false;
+	 }); 
+ }) 
+</script>
+<tr>  
+    <include file="Public:left" />			
+    <td class="td_right" valign="top">    
+ 		      <div class="tuiguang_center_center_top"></div>
+		      <div class="course_center_center_line"></div>   	
+			    <input type="hidden" name="code" value="{$tuiguang_url}" /> 
+                <div class="adminright_yuye">
+                    <div class="tishitubiao"></div>
+                     <font color="red" size="3" ><b>如何推广？</b> </font><br/>
+                     <font color="blue" size="3">{$kongbao_page['tuiguang_fangfa']}</font> 
+                </div>
+                 <div class="union_share">  
+                 		 <H4>&nbsp;&nbsp;&nbsp;专属推广链接（由于浏览器兼容问题会出现复制链接按钮失效的现象，请手动复制内容即可）</H4> 
+                   </div>
+                <div class="union_link" style="font-size:12px; height:auto;">
+			     	<DIV class=share_QQ>
+						<DIV class=share_title></DIV>
+						<DIV class=share_link>
+						<H4>这是您的专用推广链接，请通过 MSN 或 QQ 发送给好友来做您的下线会员：</H4>
+						<INPUT class="text"   value="{$tg_content[0]}" type="text" id="recom_qq" /> <INPUT id="btn_qq"    class=smt  value="复制推广链接" type="button" /> 
+						</DIV>
+					</DIV>
+					<DIV class=share_blog>
+						<DIV class=share_title></DIV>
+						<DIV class=share_link>
+						<H4>在支持HTML的网页（比如论坛、博客），可以复制下列HTML代码：</H4><TEXTAREA id="recom_html"   class="area">{$tg_content[1]}</TEXTAREA> 
+						<INPUT class="smt"  id="btn_forum"    value="复制推广链接" type="button"  name="button"    /> 
+						</DIV>
+					</DIV>	
+				  </div> 
+				    <div class="union_share">   
+						<H4>&nbsp;&nbsp;&nbsp;分享推广：(点击下面的分享按钮，将默认内容分享出去，也可输入自定义内容，切记要带上你的专属链接哦)</H4> 
+						<div style="margin:20px 0px 20px 50px"> 
+ 								<!-- JiaThis Button BEGIN -->
+										<div class="jiathis_style_32x32">
+										<a class="jiathis_button_qzone"></a>
+										<a class="jiathis_button_tsina"></a>
+										<a class="jiathis_button_tqq"></a>
+										<a class="jiathis_button_renren"></a>
+										<a class="jiathis_button_kaixin001"></a>
+										<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+										<a class="jiathis_counter_style"></a>
+										</div>
+										<script type="text/javascript" >
+										var jiathis_config={
+											url:"{$tuiguang_url}",
+											summary:"{$tg_content[2]}",
+											title:"{$config['tg_title']}",
+											pic:"{$image_url}",
+											shortUrl:false,
+											hideMore:false
+										}
+										</script>
+										<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+										<!-- JiaThis Button END -->   							
+						</div> 
+				      </div> 
+	 </td>
+</tr> 
+<include file="Public:footer" />		

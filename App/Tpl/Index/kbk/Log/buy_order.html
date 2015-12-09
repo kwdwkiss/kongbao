@@ -1,0 +1,61 @@
+<include file="Public:header" />
+<div class="header_adv">
+  <a href="{$header_adv['pic_url']}" target="_blank"><img src="{$header_adv['pic']}" alt="{$header_adv['ad_brief']}" ></a>
+</div>
+<div class="userbox clearfix">
+  <div class="userleft">
+    <include file="User:left_nav" />
+  </div>
+  <div class="userright">
+    <div class="mynow"><div>订单记录</div></div>
+    <div class="myled" style="margin-top:15px;">
+      <iframe align="center" border="0"  marginWidth=0 marginHeight=0 src="{:U('Index/Index/led')}"  frameBorder=0 width="100%" height="35px" scrolling="no"></iframe>
+    </div>
+    <table border="0" cellSpacing="1" cellPadding="5" width="768" style="margin-top:20px;">
+    <form class="search" action="__URL__/buy_order" method="post">
+      <tr>
+        <td width="7%">筛选：</td>
+        <td width="12%">
+          <select name="ftype" style="height:22px;">
+            <option value="order_no" <eq name="_POST.ftype" value="order_no">selected</eq>>订单编号</option>
+          </select>  				              
+        </td>
+        <td width="31%"><input type="text" size="30" style="height:18px;" name="keyword" value="{:I('keyword')}" /></td>
+        <td align="left"><input name="submit" type="submit" value="查询" /></td>
+        <td align="right">
+          <font color="red">{$count}</font>条数据符合条件
+        </td>
+      </tr>
+    </form>  
+    </table>
+    <table border="0" cellSpacing="1" cellPadding="5" width="768"  class="table1">
+      <tr>
+        <th width="20%" class="left_title_1"><div align="center">下单时间</div></td>
+        <th width="20%" class="left_title_1"><div align="center">订单编号</div></td>
+        <th width="15%" class="left_title_1"><div align="center">订单金额</div></td>
+        <th width="10%" class="left_title_1"><div align="center">订单状态</div></td> 
+        <th width="" class="left_title_1"><div align="center">订单详情</div></td> 
+      </tr>
+      <foreach name="order_list" item='order'> 
+      <tr>
+        <td><div align="center">{$order['addtime']}</div></td>
+        <td><div align="center">{$order['order_no']}</div></td>
+        <td><div align="center">{$order['pay_money']}</div></td> 
+        <td><div align="center">
+          <switch name="order.status">
+          <case value="1"  >已支付</case>
+          <case value="0"><font color="red">未支付</font></case>
+          <default />已支付
+          </switch>
+          </div>
+        </td>
+        <td><div align="left">{$order['comm']}</div> </td>
+      </tr>
+      </foreach>
+      <tr>
+        <td height="30" colspan="9"><div align="center">{$show}</div></td>
+      </tr>
+    </table>
+  </div>
+</div>
+<include file="Public:footer" />	

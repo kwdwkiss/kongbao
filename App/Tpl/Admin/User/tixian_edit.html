@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<title>管理区域</title>
+<script type="text/javascript">
+	function deal_tixian(type)
+	{
+		//判断
+		if(type==0)//如果提现失败需要录入失败原因
+		{
+			var error_msg = document.getElementById('error_msg').value;
+			if(error_msg =='')
+			{
+				alert('请填写提现失败原因!');
+				return false;
+			}
+		}
+		if(type==1) //说明提现成功操作
+		{
+			document.getElementById('deal_type').value=1;
+		}
+		else
+		{
+			document.getElementById('deal_type').value=0;
+		}
+	}
+</script>
+</head> 
+<body>
+<div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>会员提现</h3>
+      <ul class="tab-base"> 
+      	 <li><a href="{:U('tixian_index')}" ><span>提现列表</span></a></li>  
+         <li><a href="javascript:void(0)" class="current"><span>提现处理</span></a></li> 
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+<form action="__URL__/tixian_update" method="post">
+  <table width="99%" border="0" align="center"  cellpadding="3" cellspacing="1" class="table_style">
+    <tr>
+      <td class="left_title_1">会员ID</td>
+      <td><input type="text" disabled="true" size="31" value="{$tixian['user_id']}"></td>
+    </tr>
+    <tr>
+      <td class="left_title_2">会员用户名</td>
+      <td><input type="text" disabled="true"  size="31" value="{$tixian['username']}"></td>
+    </tr>
+    <tr>
+      <td class="left_title_2">会员昵称</td>
+      <td><input type="text" disabled="true"  size="31" value="{$tixian['nickname']}"></td>
+    </tr>
+    <tr>
+      <td class="left_title_1">提现金额</td>
+      <td><input type="text" disabled="true"  size="31" value="{$tixian['tx_money']}"></td>
+    </tr>
+	 <tr>
+	    <td width="130" height="25"><div align="right">提现账号类型：</div></td>
+	    <td>
+	    	<select disabled="true" >
+	    		<option value="1" <eq name="cwsz_config.type" value='1'>selected</eq> >支付宝</option>
+	    		<option value="2" <eq name="cwsz_config.type" value='2'>selected</eq> >财付通</option>
+	    		<option value="3" <eq name="cwsz_config.type" value='3'>selected</eq> >银行转账</option>
+	    	</select>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td width="130" height="25"><div align="right">提现账号：</div></td>
+	    <td><input type="text" disabled="true" value="{$cwsz_config['account_no']}"></td>
+	  </tr>
+	  <tr>
+	    <td width="130" height="25"><div align="right">账户姓名：</div></td>
+	    <td><input type="text" disabled="true" value="{$cwsz_config['account_name']}"></td>
+	  </tr> 
+	  <if condition="$cwsz_config['type']==3">
+		  <tr>
+		    <td width="130" height="25"><div align="right">银行开户行：</div></td>
+		    <td><input type="text" disabled="true" value="{$cwsz_config['account_bank']}"></td>
+		  </tr>
+		  <tr>
+		    <td width="130" height="25"><div align="right">开户行所在地：</div></td>
+		    <td><input type="text" disabled="true" value="{$cwsz_config['account_address']}"></td>
+		  </tr>									  	
+	  </if> 
+    <tr>
+      <td class="left_title_1">提现状态</td>
+      <td>
+      	 <select name="status">
+      	 	<option value="1" <eq name="tixian.status" value="1">selected</eq> >申请中</option>
+      	 	<option value="2" <eq name="tixian.status" value="2">selected</eq> >提现成功</option>
+      	 	<option value="3" <eq name="tixian.status" value="3">selected</eq> >提现失败</option>
+      	 </select> 
+      </td>
+    </tr>
+    <tr>
+      <td class="left_title_2">备注说明</td>
+      <td><textarea cols="40" rows="5" name="comm" >{$tixian['comm']}</textarea></td>
+    </tr>
+     <tr>
+       <td class="left_title_1">错误说明</td>
+       <td> <textarea cols="40" rows="5" id="error_msg" name="error_msg" >{$tixian['error_msg']}</textarea></td>
+    </tr>       
+    <tr bgcolor="#FFFFFF">
+      <td colspan="2" class="left_title_2"><div align="center">
+        <input type="hidden" name="id" value="{$tixian['id']}" /> 
+        <input type="hidden" name="user_id"  size="31" value="{$tixian['user_id']}">
+        <input type="hidden" name="deal_type" id="deal_type" value="" />
+       <if condition="$tixian['status']==1">
+       	   <input type="submit" value="提现成功" onclick="return deal_tixian(1)" /> 
+       	   <input type="submit" value="提现失败" onclick="return deal_tixian(0)" /> 
+       </if>        
+        <input class="button" type="button" onclick="history.go(-1);" value="返回" /></div></td>
+    </tr>
+  </table>
+</form>
+</div>
+</body>
+</html>

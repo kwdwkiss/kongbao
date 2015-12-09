@@ -1,0 +1,135 @@
+<include file="Public:header" />	  
+<script type="text/javascript" src="__PUBLIC__/js/payfor.js"></script>
+<link rel="stylesheet" type="text/css" href="../Public/css/css.css"><!--公用样式-->
+ <section class="clearfix section" style="width:1000px;margin:10px auto">
+  <include file="User:left_nav" />
+ 	<div class="show_panel "> 
+            	 <include file="Public:quick_nav"/> 
+                <!--main content-->
+                 <div class=" clearfix box default">
+                            <!--header内容头部 start-->
+                            <header class="clearfix box_header">
+                                <h2 class="box_title">空包批发</h2> 
+                            </header>  
+				 		   <form id="order_form" action="{:U('kb_pfsave')}" method="POST" >  
+									<table width="100%" id="mytab"   class="t1">
+									    <tr><td colspan="3"  height="100px"  align="center">{$kongbao_page['pf_gonggao']}</td></tr>
+										<tr>
+											<td width="130px" height="25px"> <div align="right">快递选择：</div></td>
+											<td>
+												<select name="type_id" id="type_id" onchange="itemchange($(this))">
+													<option value="">==请==选==择==快==递==类==型==</option>
+													<foreach name="type_list" item="type">
+														<option value="{$type['id']}">{$type['name']}</option>
+													</foreach>
+												</select> 
+											</td>
+											<td width="200px" rowspan="7" valign="top" ><font color="blue" size="2">
+														   <br/><p>说明：</p>
+															{$kongbao_page['pf_shuoming']}
+											</font></td>
+										</tr>
+										<tr> <td height="25"> <div align="right">类型详情：</div> </td>
+											 <td>
+											 	 <textarea id="detail" disabled="true" rows="8" cols="40"></textarea>
+										     </td>
+										</tr>
+										<tr>
+											<td height="25"> <div align="right">当前会员级别：</div> </td>
+											 <td><font color="red" ><b>{$user['type_name']}</b></font>
+											 	   &nbsp;&nbsp;享受单价：<font color="red" ><b> <span id="current_text"></span></b></font>
+											 </td>
+										</tr>	 
+										<tr>
+											<td height="25"> <div align="right">数量：</div> </td>
+											 <td>
+												<div class="p_number">
+														<div class="f_l add_chose">
+															<a class="reduce" onClick="setAmount.reduce('#qty_item_1')" href="javascript:void(0)">-</a>
+															<input type="text" name="qty_item_1" value="1" id="qty_item_1" onKeyUp="setAmount.modify('#qty_item_1')" class="text" />
+															<a class="add" onClick="setAmount.add('#qty_item_1')" href="javascript:void(0)">+</a>		</div>				
+													</div>
+											</td>
+										</tr>
+										<tr>
+											<td height="25"> <div align="right">总价：</div> </td>
+											 <td>
+											 	<div class="p_number">
+														<div class="f_l buy">
+															 ￥<span class="total-font" id="total_item_1">0.00</span>
+															<input type="hidden" name="total_price" id="total_price" value="" />
+														</div>		
+												</div>		 	
+											 </td>
+									    </tr>	
+										<tr>
+											<td height="25" colspan="5">
+												   <input type="hidden" id="single_price" name="single_price"  value=""/> 
+												   <input type="submit" class="btn_submit"  style="cursor:hand" value="确认提交"  /> 					
+											</td>
+										</tr>		    
+									    <tr>
+											<td height="25" colspan="5" bgcolor="#abcdef"> <div align="center"><font size="3" ><b>表格说明</b></font></div> </td>
+										</tr> 
+									    <tr>
+											<td height="25" colspan="5"><div align="center"><font size="3" color="red" ><b> 
+							代理填写表格时注意参考下图(注:表格大小不能修改,以及必填项不能为空,否则录不上系统)<br/>  
+				           　格式如下(<a  id="down_url" href="{:U('downfile')}" >点此下载批发表格</a>): 
+												</b></font></div> </td>
+										</tr>
+										<tr>
+											<td height="25" colspan="5">
+												<div align="center">
+													<img width="100%" id="image_url" src="__PUBLIC__/Uploads/kb/common_pf.jpg" onerror="this.src='__PUBLIC__/Uploads/kb/common_pf.jpg'"/>
+												</div>
+											 </td>
+										</tr> 						 
+									   </table> 	   
+						</form>
+					</div>
+			</div>
+		</section>
+  <!--脚注-->
+ <script type="text/javascript">
+     function itemchange(obj)
+     {
+     	var type_id = obj.val();
+     	if(type_id=='' || type_id==0)
+     	{
+     		$("#detail").text('');
+     		$("#current_text").html('');   
+     		$("#single_price").val('');   
+     		$("#total_item_1").html('');
+     		$("#total_price").val('');
+     		$("#qty_item_1").val('1');
+     	} 
+     	$.post("{:U('getDetail')}",{id:type_id,type:'kb'},function(data,status)
+     	{
+     		var return_data = data.data; 
+     		var detail = return_data.detail.replace(/\|/gm,     "\r\n")
+     		$("#detail").text(detail);
+      		var current_text = return_data.current;
+      		var single_price = return_data.price; 
+     		$("#current_text").html(current_text);    		
+     		$("#single_price").val(single_price);    	
+     		var image_url = return_data.image_url; 
+     		$("#down_url").attr('href',return_data.file_url);
+     		$('#image_url').attr('src','__ROOT__/'+image_url);
+     		var total_item_1 = parseFloat(single_price).toFixed(2);
+     		$("#total_item_1").html(total_item_1);
+     		$("#total_price").val(total_item_1);
+     		$("#qty_item_1").val('1');
+     	},'json');  
+     } 
+ function trim(str){   
+		 str = str.replace(/^(\s|\u00A0)+/,'');   
+			for(var i=str.length-1; i>=0; i--){   
+			  if(/\S/.test(str.charAt(i))){   
+			    str = str.substring(0, i+1);   
+ 				  break;   
+			 }   
+		 }   
+		 return str;   
+	    }   
+</script>
+<include file="Public:footer" />	

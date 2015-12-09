@@ -1,0 +1,157 @@
+<include file="Public:header" />	  
+<style type="text/css"> 
+	.file-box{ position:relative;width:660px}
+	.txt{ height:22px; border:1px solid #cdcdcd; width:300px;}
+	.btn{ background-color:#FFF; border:1px solid #CDCDCD;height:24px; width:70px;}
+	.file{ position:absolute; top:0; right:80px; height:24px; filter:alpha(opacity:0);opacity: 0;width:260px }
+</style> 
+<tr>  
+    <include file="Public:left" />			
+    <td class="td_right" valign="top">    
+		<div class="cardpay_center_center_top"></div>
+		<div class="course_center_center_line"></div>
+		<form id="order_form" action="{:U('upload')}" method="POST" enctype="multipart/form-data" > 
+				<table width="800px" id="mytab"   class="t1">
+				    <tr><td colspan="2"  height="100px"  align="center">{$kongbao_page['upload_gonggao']}</td></tr>
+					<tr>
+						<td width="130px" height="25px"> <div align="right">快递选择：</div></td>
+						<td>
+							<select name="type_id" id="type_id" onchange="itemchange($(this))">
+								<option value="">==请==选==择==快==递==类==型==</option>
+								<foreach name="type_list" item="type">
+									<option value="{$type['id']}">{$type['name']}</option>
+								</foreach>
+							</select> 
+						</td> 
+					</tr>  
+					 <tr>
+						   <td width="130px" height="30" align="right">上传表格&nbsp;</td>
+						    <td   class="tdleft">
+									 <div class="file-box">  
+										<input type='text' name='textfield' id='textfield' class='txt' /> 
+										<input type='button' class='btn' value='浏览...' />
+										<br/><strong><font color="red">(文件名格式：类型名-日期-个数，例：飞康达-20130418-5) 类型名要和系统类型名一致</font></strong>
+										<input type="file" name="fileField" class="file" id="fileField" size="28" onchange="change($(this))" /> 
+										<input type="hidden" name="filename"  value="" id="filename" />
+									</div>  
+						       </td>
+					  </tr>      
+					 <tr > 
+							  	<td rowspan="2" colspan="2">
+							  		 <div class="myclass_pay_card">  
+		 							       <input type="submit" style="cursor:hand" value=""  class="submit"  onclick="return chk_submit()" />
+		 							 </div>				  	
+							    </td>
+					 </tr>   
+				 </table>  
+		</form> 
+		  <table class="table1" align="left"  >
+		    <tr>
+		      <td colspan="5" class="left_title_2">
+		        <form class="search" action="__URL__/daili_upload" method="post">
+		          <div align="left">筛选： 
+	              <select name="status">
+	              	      <option value="">处理状态</option>
+	              		  <option value="0" <eq name="_POST.status" value="0">selected</eq>>待处理</option>
+	                	  <option value="1" <eq name="_POST.status" value="1">selected</eq>>已处理</option>  
+	                      <option value="2" <eq name="_POST.status" value="2">selected</eq>>失败</option>
+	              </select>             	
+	              <select name="type_id"> 
+	              	  <option value="">空包类型</option>
+	              	  <foreach name="type_list" item="type">
+	              	  	<option value="{$type['id']}"  <if condition="I('type_id','')==$type['id']" >selected</if> >{$type['name']}</option>
+	              	  </foreach>
+	              </select>   
+		              <input name="submit" type="submit" value="查询" /> 
+		              <span style="float:right"><font color="red">{$count}</font>条数据符合条件</span>
+		           </div>
+		        </form>        
+		      </td> 
+		    </tr>
+		    <tr>
+		    	 <td width="20%">上传时间</td>
+		    	 <td>文件名称</td>
+		    	 <td width="15%">快递类型</td>
+		    	 <td width="10%">状态</td>
+		    	 <td width="15%">处理</td>
+		    </tr> 
+		    <foreach name="file_list" key="key" item='file'>
+			    	  <if condition="$key%2==0">
+			    	  	   <tr style="background-color:#CCCCCC ;"> 
+			    	  <else/>
+			    	       <tr style="background-color:#FFCC00 ;" > 
+			    	  </if>  
+							 <td width="80"  align="center">{$file['addtime']}</td>
+							 <td width="100" align="center">{$file['filename']}&nbsp;</td>
+							 <td width="100" align="center">{$type_list[$file['type_id']]['name']}</td> 
+							 <td width="100" align="center" title="{$file['comm']}">
+							 		<switch name="file.status">
+							 			<case value="0">待处理</case>
+							 			<case value="1">已处理</case>
+							 			<case value="2"><font color="red">失败</font></case>
+							 			<default/>待处理
+							 		</switch>
+							 </td> 
+							 <td>
+							 	 <if condition="$file['fileurl'] !=''"> 
+							 	 	  <a href="{:U('down_daili',array('id'=>$file['id']))}">下载</a>
+							 	 </if>
+							 	 <if condition="$file['status']==2"> 
+							 	 	  <a title="将该文件删除并重新上传" href="javascript:void(0)" onclick="return file_del({$file['id']})">删除</a>
+							 	 </if>
+							 </td>
+						 </tr> 
+		     </foreach> 
+		     <tr>
+		      <td height="20" colspan="5"><div align="center">{$show}</div></td>
+		    </tr>
+		  </table>
+	</td> 	 
+ </tr>
+ <script type="text/javascript">
+    function change(obj)
+    {
+    	var file_path = obj.val(); 
+         var fullFileName=file_path.match(/([^\\^\/^\:^\?^\|^\<^\>^\|])*(\.)(.{1,8})$/)[0];//获取文件全名
+		 var fileName=fullFileName.match(/[^\.]+/)[0];//文件名，不带点和后缀
+		 var type=file_path.match(/^(.*)(\.)(.{1,8})$/)[3];//文件类型 
+		 if(type !='xls')
+		 {
+		 	alert('选择文件必须为xls表格文件');
+		 	return false;
+		 }
+		 $('#textfield').val(file_path); 
+		 $('#filename').val(fileName);
+    }  
+    function chk_submit()
+    { 
+          var type_id = $("#type_id").val();
+         if(type_id=='')
+         {
+         	alert('请选择快递类型!');
+         	return false;
+         }       	
+         var filename = $("#filename").val();
+         if(filename=='')
+         {
+         	alert('请上传表格文件!');
+         	return false;
+         }   
+   } 
+   function file_del(file_id)
+   {
+   	 $.post("{:U('file_del')}",{id:file_id},function(data,status)
+   	 {
+   	 	 if(status=='success')
+   	 	 {
+   	 	 	 alert(data.info);
+   	 	 	 document.location.href = "{:U('daili_upload')}";
+   	 	 }
+   	 	 else
+   	 	 {
+   	 	 	alert('删除失败!');
+   	 	 }
+   	 },'json');
+   }
+</script>
+  <include file="Public:footer" />		

@@ -1,0 +1,42 @@
+<include file="Public:header"/> 
+<div class="container">
+<include file="User:top_menu" />
+<!--left start-->
+<include file="Help:help_left" />
+<!--left end--> 
+ <div class="member_right fr">
+            <div class="member_right_tit">
+            	<span class="fl"><strong>帮助中心</strong></span>
+             </div>
+             <div class="member_border"> 
+						<div class="biaoti fl">
+							<div class="biaoti-1 fl">
+								<div class="bt-d fl"></div>
+								<div class="bt-wz fl">&nbsp;&nbsp;帮助中心&nbsp;</div>
+								<div class="bt-yw fl"></div>
+								<div class="dqy fr">您的当前位置:<a href="__APP__" class="zi">首页</a> -&gt;<span style="color:#075bb9;">&nbsp;&nbsp;帮助中心&nbsp;</span></div>
+							</div>
+							<div class="biaoti-x fl"></div>
+						</div>
+					   <div class="cpnr fl">
+							<div class="news-bt fd"><span style="float:left; margin-left:35px;">文章标题</span><span style="float:right; margin-right:25px;">日&nbsp;期</span></div>
+							<div class="news-nr2 fd" style="width: 100%; ">
+									<ul>
+										<foreach name="help_list" item="help">
+												 <LI class="all-xw">
+												 	   <span style="float:left; width:500px;">
+												 	   	    <a href="{:U('help',array('id'=>$help['id']))}">{$help['title']}</a>
+												 	   	</span><span style="width:113px; float:right; margin-right:7px; font-family:Arial; font-size:11px;">[{$help['time']|substr=###,0,10}]</span>
+												 </LI>
+										</foreach> 		
+										<LI class="all-xw">
+											<span style="align:center; width:613px;">{$show}</span>
+									    </LI>						
+									</ul> 
+							</div>
+					   </div> 
+				 </div>  
+    </div>
+ </div>
+</div>   
+<include file="Public:footer"/>

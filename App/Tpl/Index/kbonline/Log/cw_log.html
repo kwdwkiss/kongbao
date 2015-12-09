@@ -1,0 +1,75 @@
+<include file="Public:header"/> 
+<div class="container">
+<include file="User:top_menu" />
+<!--left start-->
+<include file="Log:log_left" />
+<!--left end--> 
+ <div class="member_right fr">
+            <div class="member_right_tit">
+            	<span class="fl"><strong>财务日志</strong></span>
+             </div>
+             <div >
+  			 		   <table class="table1" align="left"  style="width: 100%" >
+					    <tr>
+					      <td colspan="10" class="left_title_2">
+					        <form class="search" action="__URL__/cw_log" method="post">
+					          <div align="left">筛选： 
+					              <select name="stage"> 
+					              	  <option value="">日志类型</option>
+					                  <option value="admin" <eq name="_POST.stage" value="admin">selected</eq>>后台</option>
+						              <option value="refund" <eq name="_POST.stage" value="refund">selected</eq>>退款</option>
+						              <option value="buy" <eq name="_POST.stage" value="buy">selected</eq>>下单</option>
+						              <option value="cash" <eq name="_POST.stage" value="cash">selected</eq>>提现</option>
+						              <option value="recharge" <eq name="_POST.stage" value="recharge">selected</eq>>充值</option>
+						              <option value="return" <eq name="_POST.stage" value="return">selected</eq>>提现失败冲回</option>
+						              <option value="refer" <eq name="_POST.stage" value="refer">selected</eq>>佣金</option>
+						              <option value="upgrade" <eq name="_POST.stage" value="upgrade">selected</eq>>会员升级</option>
+					              	  <option value="change" <eq name="_POST.stage" value="change">selected</eq>>佣金转换</option>
+					              </select>   
+					              <input name="submit" type="submit" value="查询" /> 
+					              <span style="float:right"><font color="red">{$count}</font>条数据符合条件</span>
+					           </div>
+					        </form>        
+					      </td> 
+					    </tr>
+					    <tr> 
+					    	 <td width="20%" class="left_title_1"><div align="center">日志时间</div></td>
+					         <td width="10%" class="left_title_1"><div align="center">动作</div></td>
+					         <td width="10%" class="left_title_1"><div align="center">调整金额</div></td> 
+					         <td width="10%" class="left_title_1"><div align="center">账户余额</div></td>
+					         <td width="10%" class="left_title_1"><div align="center">佣金余额</div></td>      
+					         <td width="" class="left_title_1"><div align="center">详情</div></td> 
+					    </tr>
+					    <foreach name="log_list" item='log'> 
+					      <tr>  
+					         <td><div align="center">{$log['addtime']}</div></td>
+					         <td><div align="center">
+					         	      <switch name="log.stage" >
+					         	      	   <case value="admin">后台</case>
+					         	      	   <case value="refund">退款</case>
+					         	      	   <case value="buy">下单</case>
+					         	      	   <case value="cash">提现</case> 
+					         	      	   <case value="recharge">充值</case>
+					         	      	   <case value="return">提现失败冲回</case>
+					         	      	   <case value="refer">佣金</case>
+					         	      	    <case value="upgrade">会员升级</case>
+					         	      	    <case value="change">佣金转换</case>
+					         	      	   <default />其他
+					         	      </switch>
+					         	      </div> 
+					          </td>  
+					          <td><div align="center">{$log['money']}</div></td>
+					          <td><div align="center">{$log['remain_money']}</div></td>
+					          <td><div align="center">{$log['remain_refer_money']}</div></td>
+					           <td><div align="left">{$log['comm']}</div> </td> 
+					      </tr>
+					    </foreach>
+					    <tr>
+					      <td height="30" colspan="10"><div align="center">{$show}</div></td>
+					    </tr>
+					  </table>
+             </div>
+    </div>
+ </div>
+</div>   
+<include file="Public:footer"/>

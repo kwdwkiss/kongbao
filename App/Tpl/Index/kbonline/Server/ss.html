@@ -1,0 +1,87 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/jtable/css/default.css" />
+		<script type="text/javascript" src='__PUBLIC__/js/jquery.js'></script>
+		    <style type="text/css">
+		        body { font-family:Arial, Helvetica, Sans-Serif; font-size:0.8em;}
+		        #report { border-collapse:collapse;}
+		        #report h4 { margin:0px; padding:0px;}
+		        #report img { float:right;}
+		        #report ul { margin:10px 0 10px 40px; padding:0px;}
+		        #report th { background:#7CB8E2 url(__PUBLIC__/jtable/header_bkg.png) repeat-x scroll center left; color:#fff; padding:7px 15px; text-align:left;}
+		        #report td { background:#C7DDEE none repeat-x scroll center left; color:#000; padding:7px 15px;white-space:nowrap;overflow:hidden;}
+		        #report tr.odd td { background:#fff url(__PUBLIC__/jtable/row_bkg.png) repeat-x scroll center left; cursor:pointer; }
+		        #report div.arrow { background:transparent url(__PUBLIC__/jtable/arrows.png) no-repeat scroll 0px -16px; width:16px; height:16px; display:block;}
+		        #report div.up { background-position:0px 0px;}
+		    </style>
+		<script type="text/javascript">
+		
+					 function Click()
+			      {
+			      	 alert("欢迎您访问您使用该系统");
+			      	 window.event.returnValue=false;
+			       }document.oncontextmenu=Click; 
+			 $(document).ready(function()
+			   {
+			            $("#report tr:odd").addClass("odd");
+			            $("#report tr:not(.odd)").hide();
+			            $("#report tr:first-child").show();
+			            
+			            $("#report tr.odd").click(function(){
+			                $(this).next("tr").toggle();
+			                $(this).find(".arrow").toggleClass("up");
+			            });
+			   });
+			function switch_page(pageno) {
+				$('#page').val(pageno); 
+				btn_refresh();
+			}  
+			function btn_refresh() { 
+				var send_form = $("#send_form");
+				   send_form.submit();
+				}
+		</script>
+	</head>
+	<body>
+		<div style="height:300px">
+				<table id="report" width="700px" >
+					<tr>
+						<th>交易时间</th><th>交易号</th><th>对方</th><th>金额</th>
+						<th>状态</th><th></th>
+					</tr>
+					<foreach name="order_list" item="order">
+						  <tr>
+						  	    <td>{$order['order_time']}</td>
+						  	    <td>{$order['outer_order_no']}</td>
+						  	    <td>{$order['duifang']}</td>
+						  	    <td>{$order['order_money']}</td>
+						  	    <td>{$order['order_status']}</td>
+						  	    <td><div class='arrow'></div></td>
+							</tr>
+							 <tr >
+								 <td colspan=6>
+										 <h4>平台用户名：{$order['username']}</h4>
+										 <ul>
+										 	 	<li>平台订单号：{$order['order_no']}</li>
+										 		<li>交易号：{$order['outer_trade_no']} </li>
+										 		<li>平台处理状态： {$order['username']} </li>
+										  </ul>
+								 </td>
+						    </tr>				 
+					</foreach>
+					<tr>
+						<td colspan=6 align=center>
+							<input type=button onclick="switch_page({$pageinfo['prepage']})" value="上一页" />
+							<input type=text  disabled=true value="{$pageinfo['page_view']}"/>
+							<input type=button onclick="switch_page({$pageinfo['nextpage']})" value="下一页" />
+					   </td>
+					 </tr>
+				</table>			
+		</div> 
+		<form id="send_form" action="{:U('ss')}" method="get" >
+				<input type="hidden"  id="page" name="page" value="1"/> 
+				<br/>
+				<input type="hidden"  id="nums" name="nums" value="8" /> 
+		</form> 
+	</body>
+</html>

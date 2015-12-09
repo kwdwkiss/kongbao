@@ -1,0 +1,82 @@
+<include file="Public:header"/>
+<div class="container">
+<include file="User:top_menu" />
+<!--left start-->
+<include file="User:user_left" />
+<!--left end--> 
+ <div class="member_right fr">
+            <div class="member_right_tit">
+            	<span class="fl"><strong>佣金转换</strong></span>
+             </div>
+             <div class="member_border">
+ 					   <form action="{:U('deal_change')}" method="POST" >
+				       	<div class="myclass_pay_card">
+							<table width="100%" id="mytab"   class="t1">
+									<tr>
+										<td width="130px" height="25"> <div align="right">提现用户名：</div></td>
+										<td><input type="text" size="40" disabled="true" value="{$user['username']}"></td>
+										<td rowspan="11" width="250px" valign="top"><font size=3>
+												 <br/><b>转换须知</b>：<br/> 
+												  <font color="red"> 如果您的账户余额不足以下单购买或者升级会员所需费用时，可以使用该功能是指将当前可用佣金转换成账户余额</font>					
+										</font>
+										</td>
+									</tr>
+									<tr>
+										<td width="130px" height="25"> <div align="right">账户金额：</div></td>
+										<td><input type="text"  size="40" disabled="true" value="{$user['money']}"></td>
+									</tr>
+									<tr>
+										<td width="130" height="25"> <div align="right">可用佣金：</div></td>
+										<td><input type="text" size="40" id="valid_money" disabled="true" value="{$user['refer_money']}"></td>
+									</tr>					
+									<tr>
+										<td width="130" height="25"> <div align="right">冻结金额：</div></td>
+										<td><input type="text" size="40" disabled="true" value="{$user['invalid_money']}"></td>
+									</tr>																					
+									<tr>
+										<td height="25"> <div align="right">转换金额：</div> </td>
+										<td><input type="text" size="40" name="money" id="money" /></td>
+									</tr>   																  
+							     </table> 
+							     <input type="hidden" name="user_id" value="{$user['id']}" />  
+						         <input type="submit" class="submit" style="cursor:hand" value="" onclick="return chk_submit()" /> 	
+					      </form>			    	
+             </div>
+    </div>
+ </div>
+</div> 
+<script type="text/javascript">
+	function chk_submit()
+{ 
+	var num = /^[0-9]+(.[0-9]{1,2})?$/; //金额的匹配规则 
+	var money = $('#money').val();
+	var valid_money = $("#valid_money").val(); 
+	if(money=='')
+	{
+		alert('请填写转换金额!');
+		return false;
+	}
+    if(!money.match(num))
+    {
+        	alert('转换金额格式不对!(XXX.XX)');
+        	$('#money').focus();
+        	return false;
+    }
+	if(money<=0)
+	{
+		alert('转换金额必须大于0');
+		return false;
+	}  
+    if(money%1 !=0)
+	{
+		alert('转换金额必须为整数');
+		return false;
+	}
+	if(parseFloat(money) > parseFloat(valid_money))
+	{
+		alert('转换金额不能大于账户可用金额！');
+		return false;		
+	} 
+}  
+</script>
+<include file="Public:footer"/>

@@ -1,0 +1,89 @@
+<include file="Public:header" />	 
+<script type="text/javascript">
+	function export_log()
+	{
+ 	   var count = $("#count").val(); 
+	    if(count<=0) 
+	    {
+	    	alert('无数据可导出！'); 	
+	    	return false;
+	    }
+	   $("#export_form").submit();
+	}
+</script> 
+<div class="header_adv">
+  <a href="{$header_adv['pic_url']}" target="_blank"><img src="{$header_adv['pic']}" alt="{$header_adv['ad_brief']}" ></a>
+</div>
+<div class="userbox clearfix">
+  <div class="userleft">
+    <include file="User:left_nav" />
+  </div>
+  <div class="userright">
+    <div class="mynow"><div>已买小号</div></div>
+    <div class="myled" style="margin-top:15px;">
+      <iframe align="center" border="0"  marginWidth=0 marginHeight=0 src="{:U('Index/Index/led')}"  frameBorder=0 width="100%" height="35px" scrolling="no"></iframe>
+    </div>
+    <table border="0" cellSpacing="1" cellPadding="5" width="768" style="margin-top:20px;"> 
+      <tr>
+        <form class="search" action="__URL__/xh_log" method="post">
+        <td width="7%">筛选：</td>
+        <td width="12%">
+          <select name="ftype" style="height:22px;">
+            <option value="order_no" <eq name="_POST.ftype" value="order_no">selected</eq>>订单编号</option>
+          </select>    				              
+        </td>
+        <td width="22%"><input type="text" name="keyword" value="{:I('keyword')}" style="height:18px;"/>	</td>
+        <td width="13%">
+          <select name="type_id" style="height:22px;">
+            <option value="">小号类型</option>
+            <foreach name="type_list" item="type">
+            <option value="{$type['id']}"  <if condition="I('type_id','')==$type['id']" >selected</if> >{$type['name']}</option>
+            </foreach>
+          </select>
+        </td>
+        <td align="left">
+          <input type="hidden" id="count" value="{$count}"/>
+          <input name="submit" type="submit" value="查询" />&nbsp;
+          <input type="button" value="导出全部数据" onclick="return export_log()"/></td>
+        <td align="right">
+          <font color="red">{$count}</font>条数据符合条件
+        </td>
+        </form>
+        <td>
+          <form id="export_form" action="{:U('log_export_xh')}" method="post">
+          <input type="hidden" name="ftype" value="{:I('ftype')}" />
+          <input type="hidden" name="keyword" value="{:I('keyword')}" />
+          <input type="hidden" name="type_id" value="{:I('type_id')}" />
+          </form>
+        </td>
+      </tr>
+    </table>
+    <table border="0" cellSpacing="1" cellPadding="5" width="768" id="mytab" class="table1"> 
+      <thead>
+        <tr>
+          <th width="">小号</th>
+          <th width="15%">小号类型</th>
+          <th width="15%">购买日期</th>
+          <th width="15%">订单编号</th>
+          <th width="10%">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <foreach name="log_list" key="key" item='log'>
+        <tr>
+          <td>{$log['note_brief']}</td>
+          <td><font color="red">{$xh_type[$log['type_id']]}</font></td>
+          <td align="left">{$log['order_time']}</td>
+          <td align="center">{$log['order_no']}</td>
+          <td align="center"><a href="{:U('dhexp',array('id'=>$log['order_no'],'type'=>3))}">导出小号</a></td>
+        </tr>
+        </foreach>
+      </tbody>
+      <tfoot>
+        <tr><td colspan="5">{$show}</td></tr>
+      </tfoot>
+      </form>
+    </table>
+  </div>
+</div>   
+<include file="Public:footer" />	

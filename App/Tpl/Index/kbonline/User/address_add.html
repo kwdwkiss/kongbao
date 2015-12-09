@@ -1,0 +1,130 @@
+<include file="Public:header"/>
+<div class="container">
+<include file="User:top_menu" />
+<!--left start-->
+<include file="User:user_left" />
+<!--left end--> 
+ <div class="member_right fr">
+            <div class="member_right_tit">
+            	<span class="fl"><strong>新增发货地址</strong></span>
+             </div>
+             <div class="member_border">
+ 						   <form  id="address_form"  action="{:U('User/address_save')}" method="POST">
+									  <div class="myclass_pay_card">
+										<table width="100%" id="mytab" border="1" class="t1">
+											<tr>
+												<td width="130" height="33">
+												<div align="right">姓名：</div>
+												</td>
+												<td><input type="text"  name="name" value=""><font color="red">*(必填写)</font><label></label></td>
+											</tr>
+											<tr>
+												<td width="130" height="33">
+												<div align="right">手机：</div>
+												</td>
+												<td><input type="text"  name="shouji" value=""><font color="red">*(必填写)</font><label></label></td>
+											</tr>	
+											<tr>
+												<td width="130" height="33">
+												<div align="right">固话：</div>
+												</td>
+												<td><input type="text"  name="phone" value=""></td>
+											</tr>										
+											<tr>
+												<td height="33">
+												      <div align="right">具体地址：</div>
+												</td> 
+												  <td class="tdleft">	
+													    <select id="s_province" name="address_province"></select>&nbsp;&nbsp;
+													    <select id="s_city" name="address_city" ></select>&nbsp;&nbsp;
+													    <select id="s_county" name="address_district"></select>&nbsp;&nbsp;
+												  <font color="red">*(必填写)</font></td>
+										    </tr>
+										    <tr>
+										        <td height="33">
+												      <div align="right"> </div>
+												</td> 
+												<td>
+													 <input name="address" id="address" type="text" onfocus="address_focus()" onblur="address_blur()" class="input0" value="填写街道地址(可为空)" size="30" />
+												       <script type="text/javascript" src="__PUBLIC__/js/area.js"></script>
+												       <script type="text/javascript">_init_area();</script>
+						                            </td>
+											</tr>
+											<tr>
+												<td height="33">
+												      <div align="right">邮编：</div>
+												</td>
+												<td><input type="text" name="zipcode" id="zipcode" value="" /> </td>
+											</tr> 
+										</table>
+										<input type="hidden" name="user_id" value="{$user['id']}">
+										<input type="submit" class="submit"   value="" />
+								      </div>
+								    </form>		
+             </div>
+    </div>
+ </div>
+</div> 
+  <script type="text/javascript"> 
+   function address_focus()
+   {
+   	$('#address').val(''); 
+   }
+   function address_blur()
+   {
+     if($("#address").val()=='')
+   	   {
+   	   	  $("#address").val('填写街道地址(可为空)');
+   	   } 	
+   }
+ $(function(){  
+    $("#address_form").validate({
+        errorPlacement: function(error, element){
+            var error_td = element.parent('td');
+            error_td.find('label').hide();
+            error_td.append(error);
+        },
+        submitHandler:function(form){ 
+            ajaxpost('address_form', '', '', 'onerror');
+        },
+        rules : {
+            name : {
+                required : true 
+             } ,
+            shouji : {
+                required : true 
+            },
+           address_province:
+           {
+           	  required : true
+           },
+          address_city:
+           {
+           	  required : true
+           },
+           address_district:
+           {
+           	  required : true
+           } 
+        },
+        messages : {
+            name : {
+                required : '姓名不能为空' 
+            },
+            shouji  : {
+                required : '手机不能为空' 
+            },
+            address_province : {
+                required : '请选择发货省'
+            },
+               address_city : {
+                required : '请选择发货市'
+            },
+			   address_district : {
+                required : '请选择发货地区'
+            } 
+        }
+    });
+});
+</script> 
+<include file="Public:footer"/>

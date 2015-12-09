@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<script charset="utf-8" src="__PUBLIC__/kindeditor/kindeditor.js"></script>
+<script charset="utf-8" src="__PUBLIC__/kindeditor/lang/zh_CN.js"></script>
+<script>
+    KindEditor.ready(function(K) {
+                window.editor = K.create('#caution'); 
+     });
+</script>
+<title>管理区域</title>
+</head> 
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>业务设置</h3>
+      <ul class="tab-base"> 
+         <li><a href="{:U('kb_setting')}" ><span>空包业务设置</span></a></li>  
+         <li><a href="javascript:void(0)" class="current" ><span>小号业务设置</span></a></li> 
+          <li><a href="{:U('Shuoming/ywsetting')}" ><span>说明及注意事项</span></a></li> 
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+<form action="__URL__/xhsave" method="post" enctype="multipart/form-data">
+  <table width="97%" border="0" align="center"  cellpadding="3" cellspacing="1" class="table_style">
+    <tr>
+      <td class="left_title_1">小号刷新时间</td>
+      <td><input type="text" name="xiaohao_config[refresh_second]" value="{$config['refresh_second']}" />毫秒 1秒=1000毫秒
+       <font color='red'>(小号购买页面每隔多长时间自动刷新) 为0时不刷新</font></td>
+    </tr>
+   <tr>
+      <td class="left_title_2">列表页条数</td>
+      <td><input type="text" name="xiaohao_config[numsofpage]" value="{$config['numsofpage']}" />
+       <font color='red'>(未使用小号列表页面以及已使用小号列表页面每页条数)</font></td>
+    </tr>
+      <tr>
+      <td class="left_title_1">小号缺货提醒设置</td>
+      <td><input type="text" name="xiaohao_config[tixing]" value="{$config['tixing']}" />
+       <font color='red'>(当未使用小号不足这个数目时系统给出缺货提醒)</font></td>
+    </tr>
+     <tr>
+      <td class="left_title_2">前台是否显示暂停的小号类型</td>
+      <td>
+       	  	<input type="radio" name="xiaohao_config[stop_view]"  value="1"  checked="true"  <eq name="config.stop_view" value='1'>checked</eq> />是
+      	  	<input type="radio" name="xiaohao_config[stop_view]"  value="0"  <eq name="config.stop_view" value='0'>checked</eq> />否     	
+      		<font color='red'>(如果选"是"则在前台下单界面可以看到暂停的小号类型)</font></td>
+    </tr> 
+     <tr>
+      <td class="left_title_1">前台是否显示库存</td>
+      <td>
+       	  	<input type="radio" name="xiaohao_config[view_kucun]"  value="1"  checked="true"  <eq name="config.view_kucun" value='1'>checked</eq> />是
+      	  	<input type="radio" name="xiaohao_config[view_kucun]"  value="0"   <eq name="config.view_kucun" value='0'>checked</eq> />否     	
+      		<font color='red'>(如果选"是"则在前台下单界面选择小号类型时显示库存量)</font></td>
+    </tr> 
+     <tr>
+      <td class="left_title_2">前台是否显示快递类型描述</td>
+      <td>
+       	  	<input type="radio" name="xiaohao_config[view_comm]"  value="1"   <eq name="config.view_comm" value='1'>checked</eq> />是
+      	  	<input type="radio" name="xiaohao_config[view_comm]"  value="0"   <eq name="config.view_comm" value='0'>checked</eq> />否     	
+      		<font color='red'>(如果选"是"则在前台下单界面选择小号类型时显示该类型的描述)</font></td>
+    </tr>  
+    <tr>
+      <td class="left_title_1">是否启用小号业务</td>
+      <td>
+      	  <input type="radio" name="xiaohao_config[valid]"  value="1"  checked="true"  <eq name="config.valid" value='1'>checked</eq> />是
+      	  <input type="radio" name="xiaohao_config[valid]"  value="0" <eq name="config.valid" value='0'>checked</eq> />否
+          <font color='red'>(是否经营小号业务,如果选择否，则前台将不再对小号业务进行显示)</font></td>
+    </tr> 
+    <tr>
+      <td class="left_title_2">使用默认购买佣金</td>
+      <td>
+      	  <input type="radio" name="xiaohao_config[refer_default]"  value="1"  checked="true"  <eq name="config.refer_default" value='1'>checked</eq> />是
+      	  <input type="radio" name="xiaohao_config[refer_default]"  value="0" <eq name="config.refer_default" value='0'>checked</eq> />否
+          <font color='red'>(如果使用默认佣金设置，则各小号类型中的佣金设置不再起作用)</font></td>
+    </tr>  
+    <tr>
+      <td class="left_title_1">默认购买佣金设置</td>
+      <td>
+      	     <table width="500px"> 
+      	     	    <tr><td colspan="2" ><font color="red"><b>当前购买佣金模式为：{$refer_mode|count}级模式</b></font></td></tr> 
+      	     	    <tr align="center"><td>上线会员</td><td>佣金比例</td></tr>
+	      	    	<foreach name="refer_mode" item="v" key="k"> 
+	      	    		<tr align="center">
+	      	    			 <td>{$k}级上线</td><td><input type="text" name="xiaohao_config[buy_refer][{$v}]"  value="{$config['buy_refer'][$v]}" />%</td>
+	      	    		</tr>	      	    		
+					</foreach> 
+      	     </table>
+      </td>
+     </tr>
+    <tr>
+      <td class="left_title_2">小号注意事项</td>
+          <td><textarea name="xiaohao_config[caution]" rows="5"  id="caution" >{$config['caution']}</textarea></td>
+     </tr>         
+   <tr>
+		<td colspan="2" class="left_title_1">
+		<div align="center"> 
+		 <input type="submit" value="保存" /> 
+		 <input class="button" type="reset"   value="取消" /></div>
+		</td>
+	</tr>
+    <tr><td colspan="2" bgcolor="#abcdef" align="center"><font size="5" color="red">业务设置须知</font></td></tr>
+    <tr>
+    	<td colspan="2" align="left"><font size="3" color="blue">
+    	     ★ 佣金模式设置见  "会员管理"=>"会员设置" =>"会员佣金设置" ;<br/>
+    	     ★ 上文中 “1级上线”是指通过A会员的推广链接直接注册会员B，此时A即为B的1级上线或者称直接上线。<br/>
+    	     ★ 举例说明：假设系统设置为两级佣金模式，B通过A的推广链接注册成为会员，则A即为B的1级上线，B购买小号或者升级会员后，系统会分给A“1级上线”对应的佣金;<br/>
+    	     如果C通过B的推广链接注册成为会员，此时B即为C的1级上线，A成为C的2级上线，C购买小号或者升级会员后，系统会分给B“1级上线”对应的佣金，同时分给A“2级上线”对应的佣金<br/>
+    	     如果D通过C的推广链接注册成为会员，此时C即为D的1级上线，B成为D的2级上线，由于系统设置为两级佣金模式，所以A不再享受佣金;<br/>
+    	     ★其他佣金模式以此类推；目前系统最高支持四级佣金模式 <br/>
+    	     ★升级佣金计算方式：升级费用 * 佣金比例（上线会员按层级对应的佣金比例）-佣金金额精确到小数点后4位<br/>
+    	     ★购买佣金计算方式：（购买价格 - 上线会员购买价格） * 佣金比例（上线会员按层级对应的佣金比例）-佣金金额精确到小数点后4位<br/>
+        </font></td>
+    </tr>
+  </table>
+  </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+BODY
+    {
+        background-image: url(../images/bg.gif);
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    img
+    {
+        border: none;
+    }
+    .menu
+    {
+        padding-bottom: 0px;
+        padding-left: 40px;
+        padding-right: 12px;
+        height: 40px;
+        padding-top: 0px;
+        background-color: #1872ae;
+        margin-bottom: 1px;
+    }
+    .menu UL
+    {
+        width: 100%;
+        height: 40px;
+    }
+    UL
+    {
+        border-bottom: 0px;
+        border-left: 0px;
+        padding-bottom: 0px;
+        margin: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        border-top: 0px;
+        border-right: 0px;
+        padding-top: 0px;
+    }
+    user agent stylesheetul, menu, dir
+    {
+        display: block;
+        list-style-type: disc;
+        -webkit-margin-before: 1em;
+        -webkit-margin-after: 1em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+        -webkit-padding-start: 40px;
+    }
+    
+    .menu LI {
+WIDTH: 108px;
+FLOAT: left;
+HEIGHT: 35px;
+}
+LI {
+LIST-STYLE-TYPE: none;
+LIST-STYLE-IMAGE: none;
+}
+user agent stylesheetli {
+display: list-item;
+text-align: -webkit-match-parent;
+}
+
+.menu A:visited {
+TEXT-ALIGN: center;
+LINE-HEIGHT: 35px;
+WIDTH: 118px;
+DISPLAY: block;
+HEIGHT: 40px;
+COLOR: #fff;
+FONT-SIZE: 14px;
+FONT-WEIGHT: bold;
+}
+.menu A:link {
+TEXT-ALIGN: center;
+LINE-HEIGHT: 35px;
+WIDTH: 118px;
+DISPLAY: block;
+HEIGHT: 40px;
+COLOR: #fff;
+FONT-SIZE: 14px;
+FONT-WEIGHT: bold;
+}
+A:visited {
+COLOR: #07f;
+TEXT-DECORATION: none;
+}
+A:link {
+COLOR: #07f;
+TEXT-DECORATION: none;
+}
+.menu A {
+TEXT-ALIGN: center;
+LINE-HEIGHT: 35px;
+WIDTH: 118px;
+DISPLAY: block;
+HEIGHT: 40px;
+COLOR: #fff;
+FONT-SIZE: 14px;
+FONT-WEIGHT: bold;
+}
+A:visited {
+COLOR: #111;
+TEXT-DECORATION: none;
+}
+A:link {
+COLOR: #111;
+TEXT-DECORATION: none;
+}
+user agent stylesheeta:-webkit-any-link {
+color: -webkit-link;
+text-decoration: underline;
+cursor: auto;
+}

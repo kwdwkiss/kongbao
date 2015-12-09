@@ -1,0 +1,55 @@
+<include file="Public:header" /> 
+<link rel="stylesheet" type="text/css" href="../Public/css/css.css"><!--公用样式-->
+ <section class="clearfix section" style="width:1000px;margin:10px auto">
+ 	<include file="User:left_nav" />
+ 	<div class="show_panel "> 
+            	 <include file="Public:quick_nav"/> 
+                <!--main content-->
+                 <div class=" clearfix box default">
+                            <!--header内容头部 start-->
+                            <header class="clearfix box_header">
+                                <h2 class="box_title">用户信息修改</h2> 
+                            </header> 
+				       <form action="{:U('savecwsz')}" method="POST" name="frmLogin"> 
+							  <table width="740px" id="mytab"  border="1" class="t1"> 
+							   <tr>
+							    <td width="130px" height="33"><div align="right">用户登陆名：</div></td>
+							    <td > {$user['username']}</td>
+							   </tr> 
+							  <tr>
+							    <td height="33"><div align="right">账号类型：</div></td>
+							    <td>
+							    	<select name="cwsz_config[type]">
+							    		<option value="1" <eq name="cwsz_config.type" value='1'>selected</eq> >支付宝</option>
+							    		<option value="2" <eq name="cwsz_config.type" value='2'>selected</eq> >财付通</option>
+							    		<option value="3" <eq name="cwsz_config.type" value='3'>selected</eq> >银行转账</option>
+							    	</select><font color='red'>*</font>必填项
+							    </td>
+							  </tr>
+							  <tr>
+							    <td height="33"><div align="right">提现账号：</div></td>
+							    <td><input type="text" name="cwsz_config[account_no]" value="{$cwsz_config['account_no']}"><font color='red'>*</font>请务必正确填写</td>
+							  </tr>
+							  <tr>
+							    <td height="33"><div align="right">账户姓名：</div></td>
+							    <td><input type="text" name="cwsz_config[account_name]" value="{$cwsz_config['account_name']}"><font color='red'>*</font>请务必正确填写</td>
+							  </tr> 
+							  <tr>
+							    <td height="33"><div align="right">银行开户行：</div></td>
+							    <td><input type="text" name="cwsz_config[account_bank]" value="{$cwsz_config['account_bank']}">如：中国工商银行、中国农业银行</td>
+							  </tr>
+							  <tr>
+							    <td height="33"><div align="right">开户行所在地：</div></td>
+							    <td><input type="text" name="cwsz_config[account_address]" value="{$cwsz_config['account_address']}">如：沈阳分行南湖支行</td>
+							  </tr>
+							  <tr>
+							  	<td height="33" colspan="2" align="left"><font color="red">注:如果存在尚未结算的提现信息，账户信息不能修改!</font></td>  
+							  </tr>
+							</table>
+						 	 <input type="hidden" name="id" value="{$user['id']}">
+							 <input type="submit" class="btn_submit"    value="提交确认" />        
+              </form>
+</div>
+</div>
+</section> 
+<include file="Public:footer" />	

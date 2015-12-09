@@ -1,0 +1,7 @@
+﻿body,img,p,h1,h2,h3,h5,ul,dl,dt,dd,form {margin:0px;border:0px;padding:0px;}
+body {background:#ffffff;font:12px Tahoma, Helvetica, Arial, Simsun}
+a:link,a:visited {color:#111;text-decoration:none;}
+a:hover,a:active {color:#f60;text-decoration:underline;}
+li {list-style:none;}
+h2,h3,input {font-size:12px;}
+.clear {clear:both;height:0;line-height:0;font-size:0}

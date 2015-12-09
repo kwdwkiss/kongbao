@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<title>管理区域</title>
+</head>
+
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>会员设置</h3>
+      <ul class="tab-base"> 
+         <li><a href="{:U('setting')}"><span>会员设置</span></a></li> 
+         <li><a href="{:U('level')}" ><span>会员级别</span></a></li> 
+         <li><a href="{:U('level_add')}" ><span>级别新增</span></a></li> 
+         <li><a href="javascript:void(0)" class="current" ><span>级别编辑</span></a></li> 
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+<form action="__URL__/level_update" method="post">
+  <table width="99%" border="0" align="center"  cellpadding="3" cellspacing="1" class="table_style">
+    <tr>
+      <td width="18%" class="left_title_1"><span class="left-title">级别名称</span></td>
+      <td width="82%"><input type="text" name="title" size="40" value="{$data['title']}"></td>
+    </tr> 
+    <tr>
+      <td class="left_title_1">级别备注</td>
+      <td><textarea name="comm" cols="32" rows="4">{$data['comm']}</textarea></td>
+    </tr>
+    <tr>
+      <td width="18%" class="left_title_1"><span class="left-title">排序</span></td>
+      <td width="82%"><input type="text" name="sort_order" size="40" value="{$data['sort_order']}"><font color="red">（重要字段，数字越大说明级别越高，用于会员升级时判断）</font></td>
+    </tr> 
+    <tr> 
+    	<td colspan="2" bgcolor="#abcdef" align="center">级别配置相关信息</td>
+    </tr>
+     <tr>
+      <td class="left_title_2">是否前台显示</td>
+      <td>
+      			<input type="radio" name="config[level_view]"  value="0" checked="true"  <eq name="config.level_view" value='0'>checked</eq>  />是
+      	  		<input type="radio" name="config[level_view]"  value="1"  <eq name="config.level_view" value='1'>checked</eq>     />否
+           		<font color='red'>是否在会员升级或者下单页面看到该级别会员相关信息)</font>
+       </td> 
+    </tr> 
+     <tr>
+      <td class="left_title_1">是否允许推广</td>
+      <td> 
+      	  <input type="radio" name="config[refer]"  value="1" checked="true"  <eq name="config.refer" value='1'>checked</eq>  />是
+      	  <input type="radio" name="config[refer]"  value="0" <eq name="config.refer" value='0'>checked</eq> />否
+          <font color='red'>(是否可以获取专属推广链接，发展下线会员赚取佣金)</font>
+       </td> 
+    </tr>   
+    <tr>
+      <td class="left_title_2">升级费用</td>
+      <td><input type="text" name="config[money]" value="{$data['config']['money']}" />元<font color='red'>(升级成为该级别时会员需要支付的费用)</font></td>
+    </tr>   
+     <tr>
+        <td class="left_title_1">是否享受购买佣金</td>
+        <td>
+	      	  <input type="radio" name="config[refer_buy]"  value="1" checked="true"  <eq name="config.refer_buy" value='1'>checked</eq> />是
+	      	  <input type="radio" name="config[refer_buy]"  value="0" <eq name="config.refer_buy" value='0'>checked</eq>  />否
+	          <font color='red'>(下线会员购买产品后是否享受购买佣金)</font>
+        </td> 
+     </tr> 
+      <tr>
+        <td class="left_title_1">是否享受升级佣金</td>
+        <td>
+	      	  <input type="radio" name="config[refer_daili]"  value="1" checked="true"  <eq name='config.refer_daili' value="1">checked</eq>  />是
+	      	  <input type="radio" name="config[refer_daili]"  value="0"  <eq name='config.refer_daili' value="0">checked</eq>   />否
+	          <font color='red'>(下线会员升级为付费会员时,该级别会员是否享受升级佣金)</font>
+        </td> 
+     </tr> 
+      <tr>
+	     <td class="left_title_2">升级佣金金额设置</td>
+	      <td>
+	      	     <table width="500px"> 
+	      	     	    <tr><td colspan="2" ><font color="red"><b>当前升级佣金模式为：{$daili_refer_mode|count}级模式</b></font></td></tr> 
+	      	     	    <tr align="center"><td>上线层级</td><td>对应佣金比例</td></tr>
+		      	    	<foreach name="daili_refer_mode" item="v" key="k"> 
+		      	    		<tr align="center">
+		      	    			 <td>作为{$k}级上线</td><td><input type="text" name="config[refer_daili_money][{$v}]"  value="{$config['refer_daili_money'][$v]}" />%</td>
+		      	    		</tr>	      	    		
+						</foreach> 
+	      	     </table>
+	      </td>
+     </tr>
+     <tr>
+        <td class="left_title_1">是否允许批发</td>
+        <td>
+	      	  <input type="radio" name="config[pifa]"  value="1" <eq name='config.pifa' value='1'>checked</eq> />是
+	      	  <input type="radio" name="config[pifa]"  value="0" <eq name='config.pifa' value='0'>checked</eq> />否
+	          <font color='red'>(是否允许该级别会员批发空包)</font>
+        </td> 
+     </tr> 
+       <tr>
+        <td class="left_title_2">是否允许提现</td>
+        <td>
+	      	  <input type="radio" name="config[tixian]"  value="1"  checked="true"  <eq name='config.tixian' value='1'>checked</eq> />是
+	      	  <input type="radio" name="config[tixian]"  value="0"   <eq name='config.tixian' value='0'>checked</eq>  />否
+	          <font color='red'>(是否允许该级别会员进行提现)</font>
+        </td> 
+     </tr> 
+    <tr bgcolor="#FFFFFF">
+      <td colspan="2" class="left_title_2"><div align="center">
+      	<input type="hidden" name="id" value="{$data['id']}" />
+		 <input type="submit" value="保存" /> 
+		 <input class="button" type="reset" value="取消" /></div></td>
+    </tr>
+  </table> 
+</form>
+</div>
+</body>
+</html>

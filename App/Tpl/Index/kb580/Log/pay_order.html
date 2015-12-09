@@ -1,0 +1,69 @@
+<include file="Public:header" />	 
+<link rel="stylesheet" type="text/css" href="../Public/css/css.css"><!--公用样式-->
+ <section class="clearfix section" style="width:1000px;margin:10px auto">
+ 	<include file="User:left_nav" />
+ 	<div class="show_panel "> 
+            	 <include file="Public:quick_nav"/> 
+                <!--main content-->
+                 <div class=" clearfix box default">
+                            <!--header内容头部 start-->
+                          <header class="clearfix box_header">
+                                <h2 class="box_title">充值记录</h2> 
+                            </header>  
+				 		   <table class="t1" align="left" width="740px"  >
+							    <tr>
+							      <td colspan="9" class="left_title_2">
+							        <form class="search" action="__URL__/pay_order" method="post">
+							          <div align="left">筛选： 
+							              <select name="ftype">
+							                 <option value="order_no" <eq name="_POST.ftype" value="order_no">selected</eq>>系统订单编号</option>
+											 <option value="outer_order_no" <eq name="_POST.ftype" value="outer_order_no">selected</eq>>充值交易号</option>
+							              </select>  
+							              <input type="text" size="30" name="keyword" value="{:I('keyword')}" />
+							              <input name="submit" type="submit" class="btn_query" value="查询" /> 
+							               <span style="float:right;margin-right:20px"><font color="red">{$count}</font>条数据符合条件</span>
+							           </div>
+							        </form>        
+							      </td> 
+							    </tr>
+							    <tr style="border-top:#A7A6AA 1px dashed " > 
+							      <td width="20%" class="left_title_1"><div align="center">充值时间</div></td>
+							      <td width="30%" class="left_title_1"><div align="center">交易号</div></td>
+							      <td width="10%" class="left_title_1"><div align="center">订单类型</div></td> 
+							      <td width="10%" class="left_title_1"><div align="center">订单金额</div></td> 
+							      <td width="10%" class="left_title_1"><div align="center">订单状态</div></td>    
+							      <td width="" class="left_title_1"><div align="center">订单详情</div></td> 
+							    </tr>
+							    <foreach name="order_list" item='order'> 
+							      <tr>  
+							      	 <td><div align="center">{$order['addtime']}</div></td>
+							         <td><div align="center">{$order['outer_order_no']}</div></td>
+							         <td><div align="center">{$order['pay_money']}</div></td> 
+						             <td><div align="center">
+										         	<switch name="order.order_type">
+										         		<case value="1"  >财付通</case>
+										         		<case value="0"><font color="red">支付宝</font></case>
+										         		<default />支付宝
+										         	</switch> 
+							         	 </div> 
+							        </td>							         
+							         <td><div align="center">
+									         	<switch name="order.status">
+									         		<case value="1"  >已支付</case>
+									         		<case value="0"><font color="red">待审核</font></case>
+									         		<default />已支付
+									         	</switch> 
+							         	 </div> 
+							        </td>  
+							        <td><div align="left">{$order['comm']}</div> </td> 
+							      </tr>
+							    </foreach>
+							    <tr>
+							      <td height="30" colspan="9"><div align="center">{$show}</div></td>
+							    </tr>
+							  </table>
+					</div>
+			</div>
+	</section>
+	  <!--脚注--> 
+<include file="Public:footer" />	

@@ -1,0 +1,139 @@
+<include file="Public:header" />
+<div class="header_adv">
+  <a href="{$header_adv['pic_url']}" target="_blank"><img src="{$header_adv['pic']}" alt="{$header_adv['ad_brief']}" ></a>
+</div>
+<div class="userbox clearfix">
+  <div class="userleft">
+    <include file="User:left_nav" />
+  </div>
+  <div class="userright">
+    <div class="mynow"><div>账户提现</div></div>
+    <div class="myled" style="margin-top:15px;">
+      <iframe align="center" border="0"  marginWidth=0 marginHeight=0 src="{:U('Index/Index/led')}"  frameBorder=0 width="100%" height="35px" scrolling="no"></iframe>
+    </div>
+    <form action="{:U('deal_tixian')}" method="POST" >
+    <div class="myclass_pay_card">
+      <table id="mytab" border="0" cellSpacing="1" cellPadding="5" width="768">
+        <tr>
+		  <td colspan="2" height="20"></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <div class="mytips">
+            <b>提现须知：</b><br/>
+            <if condition="$tixian_setting['refernums'] gt 0">
+            ★下线会员必须达到<font color="e53333">{$tixian_setting['refernums']}</font>个<br/>
+            </if>
+            <if condition="$tixian_setting['used_money'] gt 0">
+            ★您的消费必须达到<font color="e53333">{$tixian_setting['used_money']}</font>元<br/>
+            </if>
+            <if condition="$tixian_setting['money'] gt 0">
+            ★您的可用佣金达到<font color="e53333">{$tixian_setting['money']}</font>元<br/>
+            </if>
+            <if condition="$tixian_setting['min_money'] gt 0">
+            ★每次最低提现金额<font color="e53333">{$tixian_setting['min_money']}</font>元<br/>
+            </if>
+            <if condition="$tixian_setting['zsb'] gt 0">
+            ★提现金额必须是<font color="e53333">{$tixian_setting['zsb']}</font>的整数倍<br/>
+            </if>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td width="130px" align="right">提现用户名：</td>
+          <td><input type="text" size="40" disabled="true" value="{$userInfo['username']}" class="myinputbox01" style="background:#f8f8f8;"></td>
+		</tr>
+        <tr>
+          <td align="right">账户金额：</td>
+          <td><input type="text"  size="40" disabled="true" value="{$userInfo['money']}" class="myinputbox01" style="background:#f8f8f8;"></td>
+        </tr>
+        <tr>
+          <td align="right">可用佣金：</td>
+          <td><input type="text" size="40" id="valid_money" disabled="true" value="{$userInfo['refer_money']}" class="myinputbox01" style="background:#f8f8f8;"></td>
+        </tr>
+        <tr>
+          <td align="right">冻结金额：</td>
+          <td><input type="text" size="40" disabled="true" value="{$userInfo['invalid_money']}" class="myinputbox01" style="background:#f8f8f8;"></td>
+        </tr>
+        <tr>
+          <td align="right">提现金额：</td>
+          <td><input type="text" size="40" name="money" id="money" class="myinputbox01"/></td>
+        </tr>
+        <tr>
+          <td align="right">账号类型：</td>
+          <td>
+            <div class="myinputbox" style="width:120px;">
+            <div style="width:120px;">
+            <select disabled="true" style="width:122px;">
+              <option value="1" <eq name="cwsz_config.type" value='1'>selected</eq> >支付宝</option>
+              <option value="2" <eq name="cwsz_config.type" value='2'>selected</eq> >财付通</option>
+              <option value="3" <eq name="cwsz_config.type" value='3'>selected</eq> >银行转账</option>
+            </select>
+            </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td align="right">提现账号：</td>
+          <td><input type="text" size="40" disabled="true" value="{$cwsz_config['account_no']}" class="myinputbox01" style="background:#f8f8f8;"></td>
+        </tr>
+        <tr>
+          <td align="right">账户姓名：</td>
+          <td><input type="text" size="40" disabled="true" value="{$cwsz_config['account_name']}" class="myinputbox01" style="background:#f8f8f8;"></td>
+        </tr>
+        <if condition="$cwsz_config['type']==3">
+        <tr>
+          <td align="right">银行开户行：</td>
+          <td><input type="text"  size="40" disabled="true" value="{$cwsz_config['account_bank']}" class="myinputbox01" style="background:#f8f8f8;"></td>
+        </tr>
+        <tr>
+          <td align="right">开户行所在地：</td>
+          <td><input type="text" size="40" disabled="true" value="{$cwsz_config['account_address']}" class="myinputbox01" style="background:#f8f8f8;"></td>
+        </tr>
+        </if>
+        <tr>
+          <td align="right">提现备注：</td>
+          <td><textarea name="comm" style="width:400px;padding:10px;border:1px solid #ddd;height:100px;font-size:14px;"></textarea></td>
+        <tr>
+          <td height="50"></td>
+          <td><input type="hidden" name="user_id" value="{$userInfo['id']}" /><input type="hidden" name="status" value="1" /><input type="submit" class="submit" style="cursor:pointer" value="确认提现" onclick="return chk_submit()" />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" height="50">
+        </tr>
+      </table>
+      </form>
+    </div> 
+  </div>    
+</div>		  
+ <script type="text/javascript">
+	function chk_submit()
+{ 
+	var num = /^[0-9]+(.[0-9]{1,2})?$/; //金额的匹配规则 
+	var money = $('#money').val();
+	var valid_money = $("#valid_money").val(); 
+	if(money=='')
+	{
+		alert('请填写提现金额!');
+		return false;
+	}
+    if(!money.match(num))
+    {
+        	alert('提现金额格式不对!(XXX.XX)');
+        	$('#money').focus();
+        	return false;
+    }
+	if(money<=0)
+	{
+		alert('提现金额必须大于0');
+		return false;
+	}  
+	if(parseFloat(money) > parseFloat(valid_money))
+	{
+		alert('提现金额不能大于账户可用金额！');
+		return false;		
+	}
+}  
+</script>
+<include file="Public:footer" />	

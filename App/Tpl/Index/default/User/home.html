@@ -1,0 +1,89 @@
+<include file="Public:header" />	
+<tr>  
+    <include file="Public:left" />			
+    <td class="td_right" valign="top"> 
+  	    <include file="Public:quick_nav" />	
+		 <div style="width:100%;height:60px;line-height:60px;margin-bottom:10px" >
+				<iframe align=center border="0"   marginWidth=0 marginHeight=0 src="__APP__/Index/Index/led"  frameBorder=0 width=100%  height=60px scrolling=no></iframe>
+		 </div>  	
+         <table cellspacing="0" cellpadding="0" width="100%" class="news">
+            <tbody> 
+            	<tr>
+			        <td width="50%" valign="top">
+			           <div class="gonggao">
+			              <h2>平台最新公告<span style="float:right;margin-right:10px"><a href="{:U('Gonggao/index')}">[更多]</a></span></h2>
+						   <ul>
+									   <foreach name="gonggao_list" item="gonggao">
+									   	  <li>
+									   	  	<span class="left">
+									   		       <a href="{:U('Gonggao/gonggao',array('id'=>$gonggao['id']))}" style="color: #FF0000"  class="top">
+									   		       			<nobr>{$gonggao['title']}</nobr>
+									   		       </a>
+									   		 </span>
+									   		 <span class="right">{$gonggao['time']|substr=###,0,10 }</span>      
+									      </li>
+									      </foreach>
+                               </ul> 
+			            </div>
+			          </td>
+			          <td width="1%"></td>
+			           <td width="49%" valign="top">
+			           <div class="gonggao">
+			              <h2>平台常见问题<span style="float:right;margin-right:10px"><a href="{:U('Help/index')}">[更多]</a></span></h2>
+						   <ul>
+									   <foreach name="help_list" item="help">
+									   	  <li>
+									   	  	<span class="left">
+									   		       <a href="{:U('Help/help',array('id'=>$help['id']))}" style="color: #FF0000"  class="top">
+									   		       			<nobr>{$help['title']}</nobr>
+									   		       </a>
+									   		 </span>
+									   		 <span class="right">{$help['time']|substr=###,0,10 }</span>      
+									      </li>
+									      </foreach>
+                               </ul> 
+			            </div>
+			            </td>
+			     </tr>
+            	<tr>
+			        <td width="50%" valign="top">
+			           <div class="gonggao">
+			              <h2>平台最新文章<span style="float:right;margin-right:10px"><a href="{:U('Article/index')}">[更多]</a></span></h2>
+						   <ul>
+									   <foreach name="article_list" item="article">
+									   	  <li>
+									   	  	<span class="left">
+									   		       <a href="{:U('Article/article',array('id'=>$article['id']))}" style="color: #FF0000"  class="top">
+									   		       			<nobr>{$article['article_name']}</nobr>
+									   		       </a>
+									   		 </span>
+									   		 <span class="right">{$article['article_time']|substr=###,0,10 }</span>      
+									      </li>
+									      </foreach>
+                               </ul> 
+			            </div>
+			          </td>
+			          <td width="1%"></td>
+			           <td width="49%" valign="top">
+			           <div class="gonggao">
+			              <h2>关于我们<span style="float:right;margin-right:10px"><a href="{:U('About/index')}">[更多]</a></span></h2>
+						   <ul>
+								 <foreach name="about_list" item="about">
+									   	  <li>
+									   	  	<span class="left">
+									   		       <a href="{:U('About/about',array('id'=>$about['id']))}" style="color: #FF0000"  class="top">
+									   		       			<nobr>{$about['title']}</nobr>
+									   		       </a>
+									   		 </span>
+									   		 <span class="right">{$about['time']|substr=###,0,10 }</span>      
+									      </li>
+									      </foreach>
+                               </ul> 
+			            </div>
+			            </td>
+			     </tr>			     
+			 </tbody>
+      </table> 
+    </td>
+ </tr>
+  <include file="Public:footer" />		

@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<script charset="utf-8" src="__PUBLIC__/kindeditor/kindeditor.js"></script>
+<script charset="utf-8" src="__PUBLIC__/kindeditor/lang/zh_CN.js"></script>
+<script>
+    KindEditor.ready(function(K) {
+                window.editor = K.create('#gonggao');
+                window.editor = K.create('#shuoming');
+                window.editor = K.create('#true_gonggao');
+                window.editor = K.create('#true_shuoming');                   
+                window.editor = K.create('#pf_gonggao');
+                window.editor = K.create('#pf_shuoming');
+                window.editor = K.create('#dh_gonggao');
+                window.editor = K.create('#dh_shuoming');  
+                window.editor = K.create('#xh_gonggao');
+                window.editor = K.create('#xh_shuoming');                                 
+                window.editor = K.create('#dd_gonggao');
+                window.editor = K.create('#index_youshi');
+                window.editor = K.create('#upload_gonggao'); 
+                window.editor = K.create('#ddsq_tixing'); 
+                window.editor = K.create('#ddsq_defaultcontent'); 
+                window.editor = K.create('#recharge_tixing'); //充值友情提醒
+                window.editor = K.create('#recharge_shuoming'); //充值页面说明
+                window.editor = K.create('#tuiguang_fangfa'); //推广方法
+     });
+</script>
+<title>管理区域</title>
+</head> 
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>页面设置</h3>
+      <ul class="tab-base"> 
+         <li><a href="javascript:void(0)" class="current" ><span>前台页面设置</span></a></li>
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+<form action="__URL__/pagesave" method="post" enctype="multipart/form-data">
+  <table width="97%" border="0" align="center"  cellpadding="3" cellspacing="1" class="table_style">
+    <tr>
+      <td class="left_title_1">空包下单页面页头公告</td>
+      			<td><textarea name="kongbao_page[gonggao]" rows="5" id="gonggao" >{$kongbao_page['gonggao']}</textarea></td>
+     </tr> 
+    <tr>
+      <td class="left_title_2">空包下单页面说明</td>
+      			<td><textarea name="kongbao_page[shuoming]" rows="5" id="shuoming" >{$kongbao_page['shuoming']}</textarea></td>
+     </tr>   
+     <tr>
+      <td class="left_title_1">真实空包下单页面页头公告</td>
+      			<td><textarea name="kongbao_page[true_gonggao]" rows="5" id="true_gonggao" >{$kongbao_page['true_gonggao']}</textarea></td>
+     </tr> 
+    <tr>
+      <td class="left_title_2">真实空包下单页面说明</td>
+      			<td><textarea name="kongbao_page[true_shuoming]" rows="5" id="true_shuoming" >{$kongbao_page['true_shuoming']}</textarea></td>
+     </tr>           
+    <tr>
+      <td class="left_title_1">空包批发页面页头公告</td>
+      			<td><textarea name="kongbao_page[pf_gonggao]" rows="5" id="pf_gonggao" >{$kongbao_page['pf_gonggao']}</textarea></td>
+     </tr>  
+   <tr>
+      <td class="left_title_2">空包批发页面说明</td>
+      			<td><textarea name="kongbao_page[pf_shuoming]" rows="5" id="pf_shuoming" >{$kongbao_page['pf_shuoming']}</textarea></td>
+     </tr>  
+    <tr>
+      <td class="left_title_1">单号下单页面页头公告</td>
+      			<td><textarea name="kongbao_page[dh_gonggao]" rows="5" id="dh_gonggao" >{$kongbao_page['dh_gonggao']}</textarea></td>
+     </tr>  
+   <tr>
+      <td class="left_title_2">单号下单页面说明</td>
+      			<td><textarea name="kongbao_page[dh_shuoming]" rows="5" id="dh_shuoming" >{$kongbao_page['dh_shuoming']}</textarea></td>
+     </tr> 
+    <tr>
+      <td class="left_title_1">小号下单页面页头公告</td>
+      			<td><textarea name="kongbao_page[xh_gonggao]" rows="5" id="xh_gonggao" >{$kongbao_page['xh_gonggao']}</textarea></td>
+     </tr>  
+   <tr>
+      <td class="left_title_2">小号下单页面说明</td>
+      			<td><textarea name="kongbao_page[xh_shuoming]" rows="5" id="xh_shuoming" >{$kongbao_page['xh_shuoming']}</textarea></td>
+     </tr>      
+    <tr>
+      <td class="left_title_1">空包底单申请页面页头公告</td>
+      			<td><textarea name="kongbao_page[dd_gonggao]" rows="5" id="dd_gonggao" >{$kongbao_page['dd_gonggao']}</textarea></td>
+     </tr> 
+    <tr>
+      <td class="left_title_2">上传代理文件页面页头公告</td>
+      			<td><textarea name="kongbao_page[upload_gonggao]" rows="5" id="upload_gonggao" >{$kongbao_page['upload_gonggao']}</textarea></td>
+     </tr>   
+    <tr>
+      <td class="left_title_1">首页”我的优势“</td>
+      			<td><textarea name="kongbao_page[index_youshi]" rows="5" id="index_youshi" >{$kongbao_page['index_youshi']}</textarea></td>
+     </tr>  
+    <tr>
+      <td class="left_title_2">表格形式申请底单特别提醒</td>
+      			<td><textarea name="kongbao_page[ddsq_tixing]" rows="5" id="ddsq_tixing" >{$kongbao_page['ddsq_tixing']}</textarea></td>
+     </tr>      
+     <tr>
+      <td class="left_title_1">表格形式申请默认表格内容</td>
+      			<td><textarea name="kongbao_page[ddsq_defaultcontent]" rows="5" id="ddsq_defaultcontent" >{$kongbao_page['ddsq_defaultcontent']}</textarea></td>
+     </tr>    
+    <tr>
+      <td class="left_title_2">充值页面友情提醒</td>
+      			<td><textarea name="kongbao_page[recharge_tixing]" rows="5" id="recharge_tixing" >{$kongbao_page['recharge_tixing']}</textarea></td>
+     </tr>      
+     <tr>
+      <td class="left_title_1">充值页面说明</td>
+      			<td><textarea name="kongbao_page[recharge_shuoming]" rows="5" id="recharge_shuoming" >{$kongbao_page['recharge_shuoming']}</textarea></td>
+     </tr>        
+    <tr>
+      <td class="left_title_2">我要推广页面推广方法</td>
+      			<td><textarea name="kongbao_page[tuiguang_fangfa]" rows="5" id="tuiguang_fangfa" >{$kongbao_page['tuiguang_fangfa']}</textarea></td>
+     </tr>                       
+   <tr>
+		<td colspan="2" class="left_title_1">
+		<div align="center"> 
+		 <input type="submit" value="保存" /> 
+		 <input class="button" type="reset"   value="取消" /></div>
+		</td>
+	</tr>
+  </table>
+  </form>
+</div>
+</body>
+</html>

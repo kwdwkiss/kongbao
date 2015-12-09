@@ -1,0 +1,15 @@
+<div class="clear"></div> 
+	 <a href="{$footer_adv['pic_url']}" target="_blank">
+		 <img src="{$footer_adv['pic']}" width="1000px" height="150px" alt="{$footer_adv['ad_brief']}" >
+	</a> 
+   <div class="ft2">
+	 <strong>友情链接：</strong> 
+	<foreach name="flink_list" item="flink">
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="{$flink.siteurl}"  title="{$flink.sitebrief}" rel="nofollow" id="ICPNo" target="_blank">{$flink.sitename}</a>
+	</foreach>
+</div>
+<div class="reg_footer">{$config['copy_right']}</div>{$config['beian']}{$config['tongji']} 
+ <include file="Public:kefuonline"/>	 
+</body>
+</html>

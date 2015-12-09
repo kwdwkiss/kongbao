@@ -1,0 +1,70 @@
+<include file="Public:header" />
+<div class="header_adv">
+  <a href="{$header_adv['pic_url']}" target="_blank"><img src="{$header_adv['pic']}" alt="{$header_adv['ad_brief']}" ></a>
+</div>
+<div class="userbox clearfix">
+  <div class="userleft">
+    <include file="User:left_nav" />
+  </div>
+  <div class="userright">
+    <div class="mynow"><div>地址管理</div></div>
+    <div class="myled" style="margin-top:15px;">
+      <iframe align="center" border="0"  marginWidth=0 marginHeight=0 src="{:U('Index/Index/led')}"  frameBorder=0 width="100%" height="35px" scrolling="no"></iframe>
+    </div>
+    <div style="line-height:50px;"><b>发货地址</b>&nbsp;&nbsp;<a href="{:U('User/address_add')}" style="color:#0088cc;">[增加发货地址]</a></div>
+    <table id="mytab" border="0" class="table1" cellSpacing="1" cellPadding="5" width="770">
+      <thead>
+        <th height="30px" width="10%">姓名</th>
+        <th width="15%">手机</th>
+        <th width="15%">重量</th>
+        <th>具体地址</th>
+        <th width="8%">默认</th>
+        <th width="20%">操作</th>
+      </thead> 
+      <tbody>
+        <foreach name="address_list" item="address">
+        <tr>
+          <td align="center">{$address['name']}</td>
+          <td align="center">{$address['shouji']}</td>
+          <td>{$address['phone']}</td>
+          <td>{$address['address']}</td>
+          <td align="center">
+            <switch name="address.is_default" >
+            <case value="0"><font color="red">否</font></case>
+            <case value="1"><font color="blue">是</font></case>
+            </switch> 
+          </td>
+          <td align="center">
+            <a href="{:U('User/address_edit',array('id'=>$address['id']))}">编辑</a> | <a href="{:U('User/address_del',array('id'=>$address['id']))}">删除</a> | <a href="javascript:void(0)" onclick="set_default('{$address['id']}')">设为默认</a>
+		  </td>
+        </tr>
+        </foreach>
+      </tbody>
+    </table>
+  </div>  
+</div>
+								    
+ <script type="text/javascript">
+	function set_default(id)
+	{
+		 if(confirm('确认将此地址信息为默认发货地址吗?'))
+		 {
+		 	 $.post("{:U('address_default')}",{id:id},function(data,status)
+		 	 { 
+		 	 	 if(data.status==1)
+		 	 	 {
+		 	 	 	 document.location.reload();
+		 	 	 }
+		 	 	 else
+		 	 	 {
+		 	 	 	alert(data.info);
+		 	 	 }
+		 	 },'json');
+		 }
+		 else
+		 {
+		 	return false;
+		 }
+	}
+</script>
+<include file="Public:footer" />	

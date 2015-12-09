@@ -1,0 +1,88 @@
+<include file="Public:header" />	 
+<link rel="stylesheet" type="text/css" href="../Public/css/css.css"><!--公用样式-->
+<style type="text/css">  
+	 .table1 {background:#c2e0ec;width:780px;margin-left:0px;} 
+ </style> 
+ <script type="text/javascript">
+	function export_log()
+	{
+ 	   var count = $("#count").val(); 
+	    if(count<=0) 
+	    {
+	    	alert('无数据可导出！'); 	
+	    	return false;
+	    }
+	   $("#export_form").submit();
+	}
+</script>
+ <section class="clearfix section" style="width:1000px;margin:10px auto">
+ 	<include file="User:left_nav" />
+ 	<div class="show_panel "> 
+            	 <include file="Public:quick_nav"/> 
+                <!--main content-->
+                 <div class=" clearfix box default">
+                            <!--header内容头部 start-->
+                          <header class="clearfix box_header">
+                                <h2 class="box_title">小号下单记录</h2> 
+                            </header>  
+                            <table class="t1" align="left" width="800px"  >
+									    <tr>
+									      <td colspan="5" class="left_title_2">
+									        <form class="search" action="__URL__/xh_log" method="post">
+									          <div align="left">筛选： 
+							              <select name="ftype">
+							                 <option value="order_no" <eq name="_POST.ftype" value="order_no">selected</eq>>订单编号</option>
+							              </select>  
+							              <input type="text" name="keyword" value="{:I('keyword')}" />		          	
+									              <select name="type_id"> 
+									              	  <option value="">小号类型</option>
+									              	  <foreach name="type_list" item="type">
+									              	  	<option value="{$type['id']}"  <if condition="I('type_id','')==$type['id']" >selected</if> >{$type['name']}</option>
+									              	  </foreach>
+							 		              </select>   
+							 		              <input type="hidden" id="count" value="{$count}"/> 
+									              <input name="submit" type="submit" class="btn_query" value="查询" /> 
+									              <input type="button" value="导出全部数据" onclick="return export_log()"/> 
+									              <span style="float:right;margin-right:20px"><font color="red">{$count}</font>条数据符合条件</span>
+									           </div>
+									        </form>   
+									        <form id="export_form" action="{:U('log_export_xh')}" method="post"> 
+							       	       					<input type="hidden" name="ftype" value="{:I('ftype')}" /> 
+							       	       					<input type="hidden" name="keyword" value="{:I('keyword')}" /> 
+							       	       					<input type="hidden" name="type_id" value="{:I('type_id')}" /> 	                                 	
+	                                 		</form>        
+									      </td> 
+									    </tr> 
+									    <tr>  
+									    		 <td colspan="5">
+														 <table id="mytab"   class="table1" width="780px" > 
+																 <thead>
+								 									 	   <th width="">小号</th>
+								 									 	   <th width="15%">小号类型</th>
+																	 	   <th width="15%">购买日期</th>
+																	 	   <th width="15%">订单编号</th>  
+																	 	   <th width="15%">操作</th>
+																 </thead> 
+																 <tbody> 
+																 	  <foreach name="log_list" key="key" item='log'>
+																 	  	   <tr>
+								 								 	  	   	   <td>{$log['note_brief']}</td>
+																 	  	   	   <td><font color="red">{$xh_type[$log['type_id']]}</font></td>
+																 	  	   	   <td align="left">{$log['order_time']}</td>
+																 	  	   	   <td align="center">{$log['order_no']}</td>
+																 	  	   	   <td align="center"><a href="{:U('dhexp',array('id'=>$log['order_no'],'type'=>3))}">导出小号</a></td> 
+																 	  	   </tr>
+																 	  </foreach>
+																 </tbody>
+																 <tfoot>
+																 	 <tr><td colspan="5">{$show}</td></tr>
+																 </tfoot>
+																</form>
+														 </table>   		    		
+										    	</td>
+ 									    </tr>
+						  </table>
+					</div>
+			</div>
+</section> <!--脚注--> 
+<include file="Public:footer" />	

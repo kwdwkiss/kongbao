@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<link href="../Public/js/lhgcalendar/_doc/prettify/prettify.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="../Public/js/lhgcalendar/_doc/prettify/prettify.js"></script>
+<script type="text/javascript" src="../Public/js/lhgcalendar/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../Public/js/lhgcalendar/lhgcalendar.min.js"></script>
+<title>管理区域</title>
+<style type="text/css">
+<!--
+#man_zone .table_style tr .search {
+	margin-left: 10px;
+}
+-->
+</style>
+<script type="text/javascript">
+ $(function(){   
+    $('#starttime').calendar({ format:'yyyy-MM-dd HH:mm:ss' });
+    $('#endtime').calendar({ format:'yyyy-MM-dd HH:mm:ss' });
+ 
+});
+function chk_submit_1()
+{
+   	 	   var count = $("#count").val(); 
+		    if(count<=0) 
+		    {
+		    	alert('无数据可导出！'); 	
+		    	return false;
+		    }
+}
+function chk_submit()
+{
+    var type_id = $("#type_id").val();
+	 if(type_id=='')
+	 {
+	 	alert('请选择快递类型!');
+	 	return false;
+	 }
+	 var starttime = $('#starttime').val();
+	 if(starttime=='')
+	 {
+	 	alert('请填写开始时间!');
+	 	return false;	 	
+	 } 
+	 var endtime = $('#endtime').val();
+	 if(endtime=='')
+	 {
+	 	alert('请填写终止时间!');
+	 	return false;	 	
+	 }	 
+} 
+</script>
+</head>
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>底单管理</h3>
+      <ul class="tab-base"> 
+         <li><a href="{:U('dd_index')}"><span>底单申请</span></a></li>   
+         <li><a href="javascript:void(0)" class="current"><span>底单导出</span></a></li>
+         <li><a href="{:U('dd_uploads')}"><span>表格形式底单申请</span></a></li> 
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+  <table width="97%" border="0" align="center" cellpadding="3" cellspacing="1" class="table_style">
+    <tr>
+      <td colspan="7" class="left_title_2">
+        <form class="search" action="__URL__/dd_exp" method="post">
+          <div align="left">筛选：  
+              <select name="type_id" id="type_id">
+              	   <option value="">请选择空包类型</option>
+                  <foreach name="type_list" item="type">
+                  	    <option value="{$type['id']}"  <if condition="I('type_id')==$type['id']">selected</if> >{$type['name']}</option>
+                  </foreach>
+              </select> 
+ 		       选择导出时间段:
+		               <input class="prettyprint"  id="starttime" readonly="true"  name="starttime" value="{:I('starttime')}"  style="width:130px;"/>至
+		               <input class="prettyprint"   id="endtime" readonly="true" name="endtime"  value="{:I('endtime')}" style="width:130px;"/>                   
+              <input name="submit" type="submit" value="查询" onclick="return chk_submit()" /> 
+              <input type="hidden" id="count" value="{$count}"/>   
+              <span style="float:right"><font color="red">{$count}</font>条数据符合条件</span>
+           </div>
+        </form>        
+      </td> 
+    </tr>
+    <tr>
+      <td width="5%" class="left_title_1"><div align="center">用户ID</div></td>
+      <td width="12%" class="left_title_1"><div align="center">用户名</div></td> 
+      <td width="12%" class="left_title_1"><div align="center">空包单号</div></td>
+      <td width="10%" class="left_title_1"><div align="center">空包类型</div></td>  
+      <td width="14%" class="left_title_1"><div align="center">申请时间</div></td>
+      <td width="14%" class="left_title_1"><div align="center">申请状态</div></td>
+      <td width="8%" class="left_title_1"><div align="center">操作</div></td> 
+    </tr>
+    <foreach name="order_list" item='order'> 
+      <tr> 
+        <td><div align="center">{$order['user_id']}</div></td>
+        <td><div align="center">{$order['username']}</div></td>
+         <td><div align="center">{$order['note_no']}</div></td>
+          <td><div align="center">{$order['name']} </div> </td> 
+        <td><div align="center">{$order['addtime']}</div></td>
+         <td><div align="center">
+         	   <switch name="order.status" >
+         	   	  <case value="1"><font color="red">申请中</font></case>
+         	   	  <case value="2"><font color="blue">已完成</font></case>
+         	   	  <default />申请中
+         	   </switch>
+         	</div></td>
+        <td>
+        	<div align="center">  
+        		 <a title="底单处理" href="__URL__/dd_edit/id/{$order['id']}"><img src="../Public/images/set2.gif" alt="底单处理"></img></a> 
+        	</div> 
+       </td>
+      </tr>
+    </foreach>
+    <tr>
+            <td height="30" colspan="7">
+       		 <form class="search"   action="__URL__/dd_export"  method="post">
+       	       			<input type="submit" name="submit" value="导出" onclick="return chk_submit_1()" /> 
+       	       			<input type="hidden" name="start" value="{:I('starttime')}" /> 
+       	       			<input type="hidden" name="end" value="{:I('endtime')}" /> 
+       	       			<input type="hidden" name="tid" value="{:I('type_id')}" /> 
+       			</form>  
+      			<div align="center">{$show}</div></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

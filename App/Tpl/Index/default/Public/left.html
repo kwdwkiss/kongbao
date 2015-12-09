@@ -1,0 +1,120 @@
+     <td class="td_left" valign="top">
+                    <div class="nr_left">
+                        <div class="login_top">
+                        </div>
+                        <script language="javascript" type="text/javascript">
+                            function UserPanelStatus(obj){
+                                var panel = document.getElementById("UserPanel");
+                                if (obj.className == "menutitle")
+                                {
+                                    panel.style.display = "none";
+                                    obj.className = "menutitle2";
+                                }
+                                else
+                                {
+                                    panel.style.display = "";
+                                    obj.className = "menutitle";
+                                }
+                            }
+							function GetBalance(){
+							window.location.href = window.location.href;
+							} 
+						  function checkindexfrm(){
+									var username=$("#username").val();
+									var pass=$("#password").val();
+									if(username==""){
+										alert("用户名不能为空"); return false;
+									}
+									if(pass==""){
+										alert("密码不能为空"); return false;
+									}
+									return true; 
+								} 					
+                        </script>
+                        <div class="login">  
+								<h2><span class="yh">用户登陆</span></h2>
+	                            <h3 class="menutitle" onclick="UserPanelStatus(this)"><span>用户登陆</span></h3>
+	                            <ul id="UserPanel">
+	                            	<if condition="$_SESSION['IS_LOGIN']==1">
+	                            		<li>账号：{$_SESSION['username']}</li>
+			                            <li>级别：{$user['type_name']}</li>
+			                             <li>
+			                                    <div style="float: left" title="账户可用金额，可以用于购买或者升级会员">余额：<span class="yue" id="Balance">{$user['money']}</span>元</div>
+			                                    <div style="float: left"><input id="RefreshImg" class="shuaxin" title="刷新余额" onclick="GetBalance()" type="button">
+			                                    </div>
+			                               </li>
+			                             <li>
+			                                    <div style="float: left" title="可转换为账户可用金额或者提现" >佣金：<span class="yue" >{$user['refer_money']}</span>元</div>
+			                                    <div style="float: left"><input id="RefreshImg" class="shuaxin" title="刷新余额" onclick="GetBalance()" type="button">
+			                                    </div>
+			                             </li>		
+			                             <li>
+			                                    <div style="float: left" title="佣金提现尚未成功时，这部分提现金额处于冻结状态">冻结：<span class="yue"  >{$user['invalid_money']}</span>元</div>
+			                                    <div style="float: left"><input id="RefreshImg" class="shuaxin" title="刷新余额" onclick="GetBalance()" type="button">
+			                                    </div>
+			                               </li>	
+			                               <if condition="$user['refer_id'] gt 0 && $reg_setting['view_refer_qq']==1">
+			                             		 <li>上线QQ：<font color="red">{$refer_qq}</font></li>
+			                               </if>				                               
+			                               <if condition="$user['isvalid']==0">
+			                             		 <li>状态：<font color="red">管理员审核中</font></li>
+			                               </if>			                               	                               
+			                              <li style="padding: 5px 0 4px 9px">
+			                              	<a href="{:U('Cash/recharge')}" class="pay1">充值</a>
+			                              	<a href="{:U('Cash/tixian')}" class="pay1">提现</a>
+			                              	<a href="{:U('User/logout')}" class="pay1" style="margin-right: 0px;">退出</a>
+			                              </li> 
+	                            	<else/>
+	                            	     <form action="{:U('User/login')}" method="post" onsubmit="return checkindexfrm();" >
+				                                <li>账 号:<input style="width:120px;" type="text" name="username" id="username"/></li>
+				                                <li>密 码:<input style="width:120px;" type="password" name="password" id="password"/></li>
+				                          		<li style="padding: 5px 0 4px 3px">
+				                          			<input type="submit"  value="登陆"/> 
+													没有账号-><a  href="{:U('User/reg')}" class="pay1">注册</a>
+												</li>
+										</form>
+									</if>
+	                            </ul> 
+                         </div>
+                        <div class="login_bottom">
+                        </div>
+                        <div class="main_top">
+                        </div>
+                        <div class="main" id="menua">
+                            <h3 class="menutitle"><span>账户管理</span></h3>
+	                            <ul>
+		                            <li class="li1"><a href="{:U('User/reinfo')}">修改信息</a></li>
+		                            <li class="li1"><a href="{:U('User/cwsz')}">账户设置</a></li>
+	                                <li class="li1"><a href="{:U('User/address')}">发货地址</a></li>
+	                                <li class="li1"><a href="{:U('User/repass')}">修改密码</a></li>
+	                            </ul>                       	
+                        	<h3 menuid="2" togglegroup="on" class="menutitle"><span>推广赚钱</span></h3>
+                            <ul>
+                                <li class="li1"><a href="{:U('Tg/index')}">我要推广</a></li>
+                                <li class="li1"><a href="{:U('Log/refer_log')}">我的下级</a></li>
+                                <li class="li1"><a href="{:U('Tg/uplevel')}">升级会员</a></li>
+                                <if condition="$kongbao_config['pf_valid']==1">
+                                	<li class="li1"><a href="{:U('Order/daili_upload')}">上传代理表格</a></li>
+                                </if>
+                            </ul>
+                            <h3 menuid="2" togglegroup="on" class="menutitle"><span>记录信息</span></h3>
+                            <ul>
+                                <li class="li1"><a href="{:U('Log/pay_order')}">充值记录</a></li>
+								<li class="li1"><a href="{:U('Log/cw_log')}">财务记录</a></li>
+								<if condition="$danhao_config['valid']==1">
+									<li class="li1"><a href="{:U('Log/dh_log')}">单号记录</a></li>
+								</if>
+								<if condition="$xiaohao_config['valid']==1">
+									<li class="li1"><a href="{:U('Log/xh_log')}">小号记录</a></li>
+								</if>								
+                            </ul>
+                              <if condition="$config['tuiguang_valid']==1">
+                              		<h3 menuid="2" togglegroup="on" class="menutitle"><span>网站定制</span></h3>
+                              		 <ul>
+                                			<li class="li1"><a href="{:U('Index/Index/tuiguang')}">网站定制</a></li>
+                                	 </ul>
+                              </if>
+                            <div class="main_bottom"></div>
+                        </div>
+                        </div> 
+</td>	

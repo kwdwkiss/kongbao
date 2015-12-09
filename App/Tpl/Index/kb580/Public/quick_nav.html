@@ -1,0 +1,25 @@
+<div class="hotdaohang">
+    <h2>
+        常用功能快速导航</h2>
+    <ul>
+        <li style="margin-left: 10px;"><a class="a1" href="{:U('Order/kb')}">空包下单</a></li>
+        <li><a class="a8" href="{:U('Cash/recharge')}">账户充值</a></li>
+        <li><a class="a11" href="{:U('Cash/change')}" title="将可用佣金转换为可用账户余额">佣金转换</a></li>
+        <li><a class="a2" href="{:U('Log/pay_order')}">充值记录</a></li>
+        <li><a class="a7" href="{:U('Log/kb_log')}">下单记录</a></li>
+        <if condition="$kongbao_config['pf_valid']==1">
+        	<li><a class="a2" href="{:U('Log/kbpf_log')}">批发记录</a></li>
+        </if>
+		<li><a class="a9" href="{:U('Log/buy_order')}">购买日志</a></li>
+		<li><a class="a2" href="{:U('Log/didan_log')}">底单记录</a></li>
+        <li><a class="a5" href="javascript:void(0)" onclick="getpassword()">找回密码</a></li>                
+        <li><a class="a6" href="{:U('User/repass')}">修改密码</a></li> 
+    </ul>
+</div>
+<script type="text/javascript">
+	function getpassword()
+	{
+		 var info="请联系网站客服重置密码！请向客服提供以下信息:\r\n账户名+注册邮箱+QQ号";
+		 alert(info);
+	}
+</script>

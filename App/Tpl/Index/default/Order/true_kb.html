@@ -1,0 +1,288 @@
+<include file="Public:header" />	
+<style type="text/css">
+			#cheisnos{display:none;}
+			.addtextstyle{background:#F7F7F7;}
+			.addtextstyle tr td{text-align:center;}
+			.adderror{background:#FC0}
+			.addyes{background:#CCC}
+ </style> 
+<tr>  
+    <include file="Public:left" />			
+    <td class="td_right" valign="top">     
+		<form id="order_form" action="{:U('truekbsave')}" method="POST" >
+		 <div class="myclass_pay_card"> 
+				<table width="900px" id="mytab"   class="t1">
+				    <tr><td colspan="3"  height="100px"  align="center">{$kongbao_page['true_gonggao']}</td></tr>
+					<tr>
+						<td width="130px" height="25px"> <div align="right">快递选择：</div></td>
+						<td>
+							<select name="type_id" id="type_id" onchange="itemchange($(this))">
+								<option value="">==请==选==择==快==递==类==型==</option>
+								<foreach name="type_list" item="type">
+									<option value="{$type['id']}">{$type['name']}</option>
+								</foreach>
+							</select> 
+						</td>
+						<td width="200px" rowspan="4" valign="top" ><font color="blue" size="2">
+													   <br/><p>说明：</p>
+														{$kongbao_page['true_shuoming']}
+						  </font></td>
+					</tr>
+					<tr> <td height="25"> <div align="right">类型详情：</div> </td>
+						 <td>
+						 	 <textarea id="detail" disabled="true" rows="8" cols="40"></textarea>
+					     </td>
+					</tr>
+					<tr>
+						<td height="25">
+							<div align="right">当前会员级别：</div>
+						</td>
+						 <td><font color="red" ><b>{$user['type_name']}</b></font>
+						 	   &nbsp;&nbsp;享受单价：<font color="red" ><b> <span id="current_text"></span></b></font>
+						 </td>
+					</tr>	 
+ 					 <tr>
+						    <td height="25"> <div align="right">默认发货信息：</div> </td>
+							 <td>
+							 	  <table width="100%">
+							 	  	<tr><td width="40%" height="30px" align="right">发货省市</td> <td><span id="address"></span></td></tr>
+							 	  	<tr><td align="right">详细地址</td> <td><input type="text" style="width:200px" name="send_address"  id="send_address"  value="" /></td></tr>
+									<tr><td align="right">发货人姓名</td> <td><input type="text" name="send_name"  id="send_name" style="width:200px" value="" /></td></tr>
+							 	  	<tr><td align="right">手机号</td> <td><input type="text" name="send_shouji" id="send_shouji" style="width:200px" value="" /></td></tr>
+							 	    <tr><td  align="right">联系电话</td> <td><input type="text" name="send_phone"  id="send_phone" style="width:200px" value="" /></td></tr>
+							 	    <tr><td  align="right">邮政编码</td> <td><input type="text" name="send_zipcode"  id="send_zipcode" style="width:200px" value="" /></td></tr>
+							 	    <tr><td colspan="2">(<font color="blue">手机号、电话可任选其一填写</font>)</td></tr>
+							 	  </table> 
+							  </td>
+					 </tr>
+					 <tr> <td height="25" colspan="3"> <div align="left">收货人信息：</div> </td>  </tr> 
+					 <tr>
+					 	   <td colspan="3" height="50" bgcolor="#ffffff">
+					 	   	    <p><img width="100%" height="120px" src="../Public/images/yw/shdz.gif"/></p> 
+					            <p style="border:1px  dashed #F00; padding-left:5px; background:#F5F5F5">
+					            <font color="#FF0000" >老格式：</font><font color="#0000FF">姓名<b>，</b>手机<b>，</b>电话<b>，</b>省 市 县区 地址<b>，</b>邮编</font><br/>
+					            <font color="#FF0000" >新格式：</font><font color="#0000FF">姓名<b>，</b>手机<b>，</b>省 市 县区 地址<b>，</b>邮编</font>
+					            <br/>例如：<br/>
+					            <font color="#FF0000" >老格式：</font>张三峰<b>，</b>13688888888 <b>，</b><b>，</b>上海 上海市 长宁区 虹桥路48号102室<b>，</b>100000 <br/>
+					            <font color="#FF0000" >新格式：</font>张三峰<b>，</b>13688888888 <b>，</b>上海 上海市 长宁区 虹桥路48号102室<b>，</b>100000 
+					            </p>
+					            <p><font color="red"><b> 批量下单：每一行添加一个收货地址(一次最多下100单)，严格按上面的格式来( 由于格式原因造成的失败，该站概不负责)</b></font> </p><br/>
+					 	   		<textarea  name="postscript"  id="postscript"   value="" onblur="javascript:this.value=this.value.replace(',','，');" style=" width:700px; border:1px solid   #ccc;height:200px;"></textarea>
+		            			  <input  id="btn_check" type="button" style="height:40px;font-size:14px;font-weight: 600;"  value="检查地址格式是否正确" onclick="checkisnos()" />
+		            			 <div id="cheisnos" ></div>
+		             			<div id="addinputarrs" ></div> 
+					 	   </td>
+					 </tr> 
+				   </table> 
+		   <input type="hidden" id="single_price"  value=""/>
+		   <input type="hidden" id="order_money" name="order_money" value=""/>
+		   <input type="hidden" id="order_nums" name="order_nums" value=""/>
+		   <input type="submit" class="submit"  style="cursor:hand" value="" onclick="return chk_submit()" /> 
+		   </div>
+		</form> 
+	</td> 	 
+ </tr>
+ <script type="text/javascript">
+    var is_enabled = -1;
+     var checkSubmitFlg = false;    
+    function chk_submit()
+    {
+       if (!checkSubmitFlg)
+        { 
+        	checkSubmitFlg = true;      
+        }else{
+            alert("双击无效，不能重复提交");
+            return false;
+        }    	
+    	if(is_enabled==-1)
+    	{
+    		alert('请先对数据进行校验!');
+    		checkSubmitFlg = false;
+    		$("#btn_check").focus();
+    		return false;
+    	}
+    	if(is_enabled !=1)
+    	{
+    		alert('有错误数据，请调整后再提交!');
+    		checkSubmitFlg = false;
+    		return false;
+    	} 
+       	//获取发货人姓名
+    	var  send_name = $("#send_name").val();
+    	if(send_name=='')
+    	{
+    		alert('请填写发货人姓名！');
+    		checkSubmitFlg = false;
+    		$("#send_name").focus();
+    		return false;
+    	}
+    	//获取发货人电话或者手机号
+    	var send_phone = $("#send_phone").val();
+    	var send_shouji = $("#send_shouji").val();
+    	if(send_phone=='' && send_shouji=='' )
+    	{
+    		alert('发货人手机号或者联系电话可任选其一填写！');
+    		checkSubmitFlg = false;
+    		$("#send_shouji").focus();
+    		return false;
+    	}
+    }
+     function itemchange(obj)
+     {
+     	var type_id = obj.val();
+     	if(type_id=='' || type_id==0)
+     	{
+     		$("#detail").text('');
+     		$("#current_text").html('');   
+     		$("#single_price").val(''); 
+     		$("#address").html('');  
+     	} 
+     	$.post("{:U('getDetail')}",{id:type_id},function(data,status)
+     	{
+     		var return_data = data.data; 
+     		var detail = return_data.detail.replace(/\|/gm,     "\r\n")
+     		$("#detail").text(detail);
+      		var current_text = return_data.current;
+      		var single_price = return_data.price; 
+      		var default_address = return_data.address;
+     		$("#current_text").html(current_text);    		
+     		$("#single_price").val(single_price); 
+     		$("#address").html(default_address);   	
+     	},'json');  
+     	//对之前已经校验过的数据进行清理add by liq  20140517
+     	 $('#cheisnos').html('');
+		 $('#cheisnos').css('display','none'); 
+		 $('#addinputarrs').html('');  
+		 $("#order_nums").val('0'); 
+		 $("#order_money").val('0');		 
+		 $('#postscript').val('');
+		  is_enabled = -1;
+     }
+     
+ 	function checkisnos(){ 
+ 		  var type_id = $("#type_id").val();	 
+		  if(type_id==""){
+				alert("请选择快递！");
+				$("#type_id").focus();
+				return false;
+		   }	 	
+		   addtext =$('#postscript').val();
+		  if(addtext==""){
+				alert("请您填写收货地址！");
+				$("#postscript").focus();
+				return false;
+		   }  			   
+		  var current_price = parseFloat($('#single_price').val());
+		  if(current_price<=0){
+				alert("你选择的快递单价出错！");
+				return false;
+		   }	  
+			  //是否错误标识
+			  isno=1;
+		 	  var addtextarr= new Array(); 
+			  var adddan=new Array();
+			  addtextarr=addtext.split("\n");
+			  addstr="";
+			  addinputarr="";
+			  addsum=0;
+			   
+			  //最多一次只能提交100个
+			  if(addtextarr.length<=100){
+			  for(i=0;i<addtextarr.length;i++){ 		  	
+				  if(addtextarr[i]  && trim(addtextarr[i])!=''){
+				 addtextarr[i] = addtextarr[i].replace(/\'/g, "");
+				 addtextarr[i] = addtextarr[i].replace(/\,/g, "，");					  	
+				 addinputarr+="<input type='hidden' name='addinputarr["+addsum+"]' value='"+addtextarr[i]+"' >";  
+				 adddan=trim(addtextarr[i]).split("，");
+				 addsum+=1;
+				//保存表单数据方便提交
+				 if(adddan.length!=5  && adddan.length!=4){alert("第"+addsum +" 个收货地址格式有错误，请仔细检查！");  isno=0;}
+ 				 if(adddan.length==5)
+				 {
+				 	 var shouhuodizhi = adddan[3];//获取收件地址  
+				 }else if(adddan.length==4)
+				 {
+				 	  var shouhuodizhi = adddan[2];//获取收件地址 
+				 } 				  
+				 var shdz_array =trim(shouhuodizhi).split(" ");
+				 if(shdz_array.length<4)
+				 {
+				 	alert("第"+addsum +" 个收货地址格式中省、市、县之间应该用空格隔开，请仔细检查！");  isno=0;
+				 }
+     			 //判断地址之间空格是否是多个
+     			 if(exists_multispace(trim(shouhuodizhi)))
+     			 {
+     			 	 alert("第"+addsum +" 个收货地址格式中省、市、县之间只能用一个空格隔开，请仔细检查！");  isno=0;
+     			 }				 
+				 addstr+="<tr><td class='addyes'>"+addsum+"</td>"; 
+				 for(j=0;j<adddan.length;j++){
+					 //如果不是四个淘宝的逗号格式提示错误
+					 if(adddan.length!=5  && adddan.length!=4 ){
+								 //如果有数据就显示 ，没有显示空
+								 if(adddan[j])
+								     {
+											addstr+="<td  class='adderror'>" +adddan[j]+"</td>";
+									 }
+									 else{
+										    addstr+="<td  class='adderror'>" +"</td>"; 
+										 }
+							 }else
+							 {
+									    if(adddan.length==4 && j==2)
+									 	{
+									 		addstr+="<td class='addyes'></td>";	
+									 	}
+										 if(isno==0)
+									 	  {
+									 	  	addstr+="<td class='adderror'>" +adddan[j]+"</td>";	 
+									 	  }else{
+									 	  	addstr+="<td class='addyes'>" +adddan[j]+"</td>";	 
+									 	  }  
+							 }
+					 }
+				  			addstr+="</tr>";
+				  } 
+				  }
+			  }
+			  else{
+				  alert("亲，一次最多只能批量下100单，请减少收货地址！");  isno=0;
+				  }
+				  
+			  //计算价格
+			  kuaidisum=addsum*current_price;
+			  
+			  $("#order_nums").val(addsum);
+			   
+			  $("#order_money").val(kuaidisum);
+			  
+			 var table_html="<table class=addtextstyle  cellpadding='5' width='100%' cellspacing='1'><tr><td  class='addyes' ><b>编号</b></td><td  class='addyes'><b>名字</b></td><td  class='addyes'><b>手机</b></td><td  class='addyes'><b>电话</b></td><td  class='addyes'><b>地址</b></td><td  class='addyes'><b>邮编</b></td></tr>"+addstr+"</table>"+"<p> 共 "+addsum+" X "  + current_price +"="+kuaidisum.toFixed(2)+" <input type='hidden' value="+kuaidisum.toFixed(2)+" name='kuaidipicle' id='kuaidipicle' /><input type='hidden' value='0' name='youyuer' id='youyuer'/>";  
+			   $('#cheisnos').html(table_html);
+			  $('#cheisnos').css('display','block'); 
+			 $('#addinputarrs').html(addinputarr);  
+			 is_enabled =isno;
+			  return(isno);
+		 } 
+		function trim(str){   
+		 str = str.replace(/^(\s|\u00A0)+/,'');   
+			for(var i=str.length-1; i>=0; i--){   
+			  if(/\S/.test(str.charAt(i))){   
+			    str = str.substring(0, i+1);   
+ 				  break;   
+			 }   
+		 }   
+		 return str;   
+	    }   
+    function exists_multispace(str)
+     {
+     	  var rtn_result=false;
+     	  var str_length_old=str.length;
+     	  str = str.replace(/\  /g, " ");
+     	  var str_length =str.length;
+     	  if(str_length_old !=str_length )
+     	  {
+     	  	  rtn_result = true;
+     	  } 
+     	  return rtn_result;
+     } 	    	    
+</script>
+  <include file="Public:footer" />		

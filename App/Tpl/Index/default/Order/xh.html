@@ -1,0 +1,156 @@
+<include file="Public:header" />	
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.1.min.js"></script> 
+ <script type="text/javascript" src="__PUBLIC__/js/layer/layer.min.js"></script> 
+ <script type="text/javascript">
+  var refresh_seconds=parseInt("{$xiaohao_config['refresh_second']}");
+	$(function()
+{
+    	$('.checkall').click(function(){
+		$('.checkall').attr('checked',$(this).attr('checked'));
+		$('.checkitem').each(function(){
+			$(this).attr('checked',$('.checkall').attr('checked'));
+		});
+	});
+		 if(refresh_seconds>0)
+	 {
+	 	 setTimeout('myrefresh()',refresh_seconds); //指定1秒刷新一次
+	 } 
+});
+   function myrefresh()
+  {
+       window.location.reload();
+   }  
+function chaxiaohao(url)
+{ 
+	$.layer({
+		type :2,  
+		title : ['查询小号',true],
+		closeBtn : [1 , true],
+		iframe : {src :url},
+		area : ['580px' , '180px'],
+		offset : ['260px', ''],
+		close : function(index)
+		{ 
+			 layer.close(index);
+		} 
+	}); 
+}
+</script>
+<style type="text/css">  
+			.table1 {background:#c2e0ec;width:900px;margin-left:0px;}
+			.table2 {background:#c2e0ec;width:800px;margin-left:0px;}
+ </style> 
+<tr>  
+    <include file="Public:left" />			
+    <td class="td_right" valign="top">    
+		<div class="cardpay_center_center_top"></div>
+		<div class="course_center_center_line"></div> 
+		   <form action="{:U('xh')}" method="post" >  
+				   <table width="900px" id="mytab"   class="t1">
+						    <tr><td colspan="3"  height="100px"  align="center">{$kongbao_page['xh_gonggao']}</td></tr>
+							<tr> 
+								 <td colspan="3">
+								 	 <table class="table2"  > 
+										 <tr>
+												 <td align="left" height="30px" colspan="2"> <div align="left">当前会员级别：<font color="red" ><b>{$user['type_name']}</b></font> </div> </td>
+										 </tr>							 
+								 	 	  <foreach name="type_list" item="type_xh">
+								 	 	  	  <tr>
+								 	 	  	  	   <td height="30px" >{$type_xh['name']}</td>
+								 	 	  	  	   <td align="left">
+								 	 	  	  	   	     <foreach name="user_level_list" item="ulevel">
+								 	 	  	  	   	     	   {$ulevel['title']}：<font color="red"><b>{$type_xh['config']['price'][$ulevel['id']]|number_format=###,2}</b></font>元/个 &nbsp;&nbsp;
+								 	 	  	  	   	     </foreach>
+								 	 	  	  	   </td>
+								 	 	  	  </tr>
+								 	 	  </foreach> 
+								 	 </table>
+								 </td>
+							</tr> 
+ 							<tr><td colspan="3" height="40px" align="left"><font color="blue" size="4" ><b>在售小号列表(点击账号可查小号安全度)</b></font></td></tr>  		 
+							<tr>
+								<td  colspan="3" height="40px" valign="center" >
+									请选择小号类型：<select name="xh_type_id" id="xh_type_id" >
+										<option value="">==请==选==择==小==号==类==型==</option>
+										<foreach name="type_list" item="type">
+											<option value="{$type['id']}" <if condition="$type['id']==I('xh_type_id','')">selected</if>  >{$type['name']}</option>
+										</foreach>
+									</select>
+									 <input type="submit" style="height:30px;line-height:30px;font-size:14px;color: blue;font-weight: 600;cursor: hand"  value="查询"></a>
+ 								</td> 
+							</tr> 
+					 </table> 
+			 </form>
+			 <table id="mytab"   class="table1" width="900px" > 
+					 <thead>
+	  							<th title="全选/反选" width="4%" align="center"><input type="checkbox"  class="checkall" id="checkallBottom"></th> 
+						 	   <th width="6%">编号</th>
+						 	   <th width="">类型</th>
+						 	   <th width="15%">账号</th>
+						 	   <th width="12%">密码</th>
+						 	   <th width="12%">邮箱账号</th>
+						 	   <th width="12%">邮箱密码</th>
+						 	   <th width="8%">您的价格</th>
+						 	   <th width="10%">操作</th>
+					 </thead> 
+					 <tbody>
+					 	<form method="post" action="{:U('buyxh_pl')}" id="form" >
+					 	  <foreach name="xh_list" item="xh"> 
+					 	  	   <tr>
+									<td align="center" ><input type="checkbox" name='id[]' value="{$xh['id']}" class="checkitem"></td>
+					 	  	   	   <td>{$xh['id']}</td>
+					 	  	   	   <td><font color="red">{$xh['type_name']}</font></td>
+									<td align="left" >{$xh['account']}&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" onclick="chaxiaohao('{$xh['query_url']}')" >【查询】</a></td>
+					 	  	   	   <td align="center">购买后显示</td>
+					 	  	   	   <td align="center">购买后显示</td>
+					 	  	   	   <td align="center">购买后显示</td>
+					 	  	   	   <td><font color="red"><b>{$xh['price']|number_format=###,2}</b>元</font></td> 
+					 	  	   	   <td> 
+					 	  	   	   	    <input type="button" style="height:30px;line-height:30px;font-size:14px;color: blue;font-weight: 600;cursor: hand" onclick="return xhbuy('{$xh['id']}',{$xh['price']})" value="购买"></a>
+					 	  	   	   </td>
+					 	  	   </tr>
+					 	  </foreach>
+					 </tbody>
+					 <tfoot>
+					 	 <tr>
+					 	 	<td colspan="2"><div align="center">
+					 	 		<input  type="button" style="height:30px;line-height:30px;font-size:14px;color: blue;font-weight: 600;cursor: hand"   value="批量购买" onclick="if(confirm('确定全部购买吗？')){$('#form').submit();}">
+					 	 	</div></td>
+					 	 	<td colspan="7">{$show}</td></tr>
+					 </tfoot>
+					</form>
+			 </table>   
+	</td> 	 
+ </tr>
+ <script type="text/javascript"> 
+  function xhbuy(id,money)
+   {
+  	    if(confirm('确定要购买这个小号？'))
+  	    { 
+  	    	 $.post("{:U('buyxh')}",{id:id,money:money},function(data,status)
+  	    	 {
+  	    	 	 if(status=='success')
+  	    	 	 {
+  	    	 	 	  if(data.status==1)
+  	    	 	 	  {
+  	    	 	 	  	    alert("小号购买成功,请到小号购买记录处查看!");
+  	    	 	 	  }
+  	    	 	 	  else
+  	    	 	 	  {
+  	    	 	 	  	    alert(data.info); 
+  	    	 	 	  }
+  	    	 	 	  window.location.href=data.data;
+  	    	 	 }
+  	    	 	 else
+  	    	 	 {
+  	    	 	 	 	alert('小号购买失败!请联系网站客服');
+  	    	 	 }
+  	    	 },'json');
+  	    }
+  	    else
+  	    {
+  	    	return false;
+  	    }
+   }
+</script>
+  <include file="Public:footer" />		

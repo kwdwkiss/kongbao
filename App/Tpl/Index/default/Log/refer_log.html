@@ -1,0 +1,118 @@
+<include file="Public:header" />	
+<style>
+	/* tb */
+	.tb-type2{}
+	.tb-type2 tr.hover:hover .tips2{ color:#333; }
+	.tb-type2 td, tb-type2 th.td{ padding:5px 5px 3px 0; border-top: 1px dotted #CBE9F3; }
+	.tb-type2 .tfoot td {padding:5px 5px 3px 0; border-top: 1px solid #CBE9F3;}
+	.tb-type2 th{ padding:5px 5px 3px 0; line-height:21px; font-size: 12px; }
+	.tb-type2 .txt, .tb-type2 .txtnobd{ width:100px; margin-right:10px; }
+	.tb-type2 .smtxt { margin-right: 5px; width: 25px; }
+	.nowrap { white-space: nowrap; }
+	.tb-type2 .required { padding:3px 0 3px 5px; font-weight:700; }
+	.tb-type2 .rowform{ padding-left:5px; }
+	.nobdb{ border-bottom:none; }
+	.thead th{ font-size:13px; font-weight: 700; color: #333; white-space: nowrap; border-top: solid 1px #DEEFFB;}
+</style>
+<tr>  
+    <include file="Public:left" />			
+    <td class="td_right" valign="top"> 
+    	 <include file="Public:quick_nav" />	
+			 <table width="600px" class=" tb-type2 nobdb">
+			      <thead>
+			        <tr class="thead">
+			          <th></th> 
+			          <th>用户名</th>
+			          <th>QQ号</th>
+			          <th>用户级别</th>
+			          <th>账户余额</th> 
+			        </tr>
+			      </thead>
+			      <tbody> 
+			      	  <if condition="$counts == 0">
+			      	  	<tr><td colspan="5" align="center">你还没有下线记录!</td></tr>
+			      	  <else/>
+			      	    <foreach name="refer_users" item="user"> 
+				             <tr class="hover edit">
+						          <td class="w36">
+						          	    <if condition="$user['havechild']==1">
+						                	 <img fieldid="{$user['id']}" status="open" nc_type="flex" src="../Public/images/tv-expandable.gif">						          	    	
+						          	    </if>
+						          </td>
+						          <td class="name">
+						          	<span title="用户名称" >{$user['username']}</span>
+						          </td>
+						          <td><a target='_blank' href='http://wpa.qq.com/msgrd?v=3&uin={$user[user_qq]}&site=qq&menu=yes'><img border='0' src='http://wpa.qq.com/pa?p=2:{$user[user_qq]}:41' alt='联系他' title='联系他'/></a>{$user['user_qq']}</td>
+						          <td align="center">{$user['user_type']}</td>
+						          <td align="center">{$user['money']}</td>
+				             </tr> 
+			             </foreach>			      	  
+			      	  </if> 
+			      </tbody>
+			   </table>  
+	 </td>
+</tr>
+<script type="text/javascript">
+ $('img[nc_type="flex"]').click(function(){ 
+			create_tr($(this),1);
+		})	;	
+function create_tr(clickobj)
+{
+	 var status = clickobj.attr('status');  
+      if(status == 'open'){
+				var pr = clickobj.parent('td').parent('tr');
+				var id = clickobj.attr('fieldid');
+				var obj = clickobj;
+				clickobj.attr('status','close');
+				//ajax
+				$.post("{:U('getChild')}",{id:id},function(data,status)
+				{
+					if(data.status==1)
+					{ 
+						data = data.data;
+						var src='';
+						for(var i = 0; i < data.length; i++){
+								var tmp_vertline = "<img class='preimg' src='skin/images/vertline.gif'/>";
+								src += "<tr class='"+pr.attr('class')+" row"+id+"'>";
+								src +="<td class='w36'>";
+								if(data[i].havechild == 1)
+							   { 
+									src += "<img fieldid='"+data[i].id+"' status='open' nc_type='flex' src='../Public/images/tv-expandable.gif' />";
+								}else{
+									src += "<img fieldid='"+data[i].id+"' status='none' nc_type='flex' src='../Public/images/tv-item.gif' />";
+								} 
+								src += "</td>"; 
+								//名称
+								src += "<td class='name'>"+ data[i].username+ "</td>";
+								//用户QQ
+								src += "<td class='name'><a target='_blank' href='http://wpa.qq.com/msgrd?v=3&uin="+data[i].user_qq+"&site=qq&menu=yes'><img border='0' src='http://wpa.qq.com/pa?p=2:"+data[i].user_qq+":41' alt='联系他' title='联系他'/></a>"+ data[i].user_qq+ "</td>";
+								//用户级别
+								src += "<td align=center>"+ data[i].user_type+ "</td>";
+								//账户余额
+								src += "<td align=center>"+ data[i].money+ "</td>"; 
+								src += "</tr>";
+							}
+							//插入
+							pr.after(src);
+							obj.attr('status','close');
+							obj.attr('src',obj.attr('src').replace("tv-expandable","tv-collapsable")); 	
+							$('img[nc_type="flex"]').unbind('click'); 
+							$('img[nc_type="flex"]').bind('click',function()
+							{ 
+								create_tr($(this));
+							}); 
+					}
+					else
+					{
+						alert(data.info);
+					}
+				},'json');
+			}
+		 if(status == 'close'){ 
+				$(".row"+clickobj.attr('fieldid')).remove();
+				clickobj.attr('src',clickobj.attr('src').replace("tv-collapsable","tv-expandable"));
+				clickobj.attr('status','open');
+			}	
+} 
+</script>
+<include file="Public:footer" />		

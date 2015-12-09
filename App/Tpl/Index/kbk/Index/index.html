@@ -1,0 +1,67 @@
+<if condition="$_SESSION['IS_LOGIN']==1">
+	<include file="User:home" />	
+<else />
+		<include file="Public:header" />	
+			<script language="JavaScript">
+			 function changeVerify()
+			   { 
+			   	  var timenow = new Date().getTime(); 
+			   	  document.getElementById('verifyImg').src='{:U('Index/Index/verify')}'+"?"+timenow; 
+			   }
+			 </script>
+    <div class="mybanner">
+      <div class="myloginbox">
+        <div>
+        <form name="form1" method="post" action="{:U('User/login')}">
+		<table width="250" id="table1" style="margin:0 auto;" >
+          <tr>
+            <td colspan="3" height="55"><b>会员登录</b></td>
+          </tr>
+		  <tr>
+		    <td height="46" align="right"><span>用户名</span></td>
+            <td colspan="2" align="center"><input name="username" type="text" class="input" style="width:160px;"/></td>
+          </tr>
+		  <tr>
+			<td height="46" align="right"><span>密　码</span></td>
+            <td colspan="2" align="center"><input name="password" type="password" class="input" style="width:160px;"/></td>
+          </tr> 
+          <tr>
+			<td width="65" height="46" align="center"> 
+            </td>
+            <td width="100" align="center"> 
+            </td>
+            <td width="85" align="center"> 
+            </td>
+          </tr>
+          <tr>
+			<td height="46" colspan="3" align="center">
+			  <input type="image" src="../Public/images/login.png" style="width:220px;height:36px;"  name="1" align="middle"/>
+            </td>
+          </tr>
+          <tr>
+			<td height="22" colspan="2"><a href="{:U('User/reg')}" style="margin-left:12px;">免费注册会员</a></td>
+            <td align="right"><a href="javascript:void(0)" onclick="alert('忘记密码，请联系官方客服！')">忘记密码？</a>&nbsp;&nbsp;&nbsp;</td>
+	      </tr> 
+	    </table>
+        </form>
+        </div>
+      </div> 
+      <!--<foreach name="slide_list" item="slide">
+          <a href="{$slide['pic_url']}" target="_blank"><img src="{$slide['pic']}" alt="{$slide['ad_brief']}" width="1006" height="183" /></a>
+      </foreach> 幻灯片调用-->  
+    </div>
+    <div class="userbox">
+      <div class="myled">
+        <iframe align="center" border="0"  marginWidth=0 marginHeight=0 src="{:U('Index/Index/led')}"  frameBorder=0 width="100%" height="35px" scrolling="no"></iframe>
+      </div>
+	  <div class="content">
+		{$kongbao_page['index_youshi']}
+	  </div>
+    </div>
+    <div class="mylink">
+	  合作伙伴：<foreach name="flink_list" item="flink">
+        <a href="{$flink.siteurl}"  title="{$flink.sitebrief}" rel="nofollow" id="ICPNo" target="_blank">{$flink.sitename}</a>
+	  </foreach>
+	</div>
+    <include file="Public:footer" />	
+</if>

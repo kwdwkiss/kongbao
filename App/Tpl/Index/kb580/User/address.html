@@ -1,0 +1,75 @@
+<include file="Public:header" /> 
+<link rel="stylesheet" type="text/css" href="../Public/css/css.css"><!--公用样式-->
+ <section class="clearfix section" style="width:1000px;margin:10px auto">
+ 	<include file="User:left_nav" />
+ 	<div class="show_panel "> 
+            	 <include file="Public:quick_nav"/> 
+                <!--main content-->
+                 <div class=" clearfix box default">
+                            <!--header内容头部 start-->
+                            <header class="clearfix box_header">
+                                <h2 class="box_title">发货地址</h2> 
+                            </header>   
+							  <div class="new_qie">
+									    <div class="new_qie2">
+									   	 		<h2><a href="{:U('User/address_add')}">增加发货地址</a></h2>
+									    </div>
+									</div> 
+									 <table id="mytab" width="740px"   class="t1">
+												 <thead>
+												 	   <th height="30px" width="10%">姓名</th>
+												 	   <th width="15%">手机</th>
+												 	   <th width="15%">固话</th>
+												 	   <th>具体地址</th>
+												 	   <th width="8%">默认</th>
+												 	   <th width="20%">操作</th>
+												 </thead> 
+												 <tbody>
+												 	  <foreach name="address_list" item="address">
+												 	  	   <tr>
+												 	  	   	   <td>{$address['name']}</td>
+												 	  	   	   <td>{$address['shouji']}</td>
+												 	  	   	   <td>{$address['phone']}</td>
+												 	  	   	   <td>{$address['address']}</td>
+												 	  	   	   <td>
+													 	  	   	   	<switch name="address.is_default" >
+													 	  	   	   		 <case value="0"><font color="red">否</font></case>
+													 	  	   	   		  <case value="1"><font color="blue">是</font></case>
+													 	  	   	   	</switch> 
+												 	  	   	   </td>
+												 	  	   	   <td>
+												 	  	   	   	   <a href="{:U('User/address_edit',array('id'=>$address['id']))}">编辑</a>|
+												 	  	   	   	   <a href="{:U('User/address_del',array('id'=>$address['id']))}">删除</a>|
+												 	  	   	   	    <a href="javascript:void(0)" onclick="set_default('{$address['id']}')">设为默认</a>
+												 	  	   	   </td>
+												 	  	   </tr>
+												 	  </foreach>
+												 </tbody>
+										  </table>    	
+					</div>
+			</div>
+		</section> <!--脚注--> 
+ <script type="text/javascript">
+	function set_default(id)
+	{
+		 if(confirm('确认将此地址信息为默认发货地址吗?'))
+		 {
+		 	 $.post("{:U('address_default')}",{id:id},function(data,status)
+		 	 { 
+		 	 	 if(data.status==1)
+		 	 	 {
+		 	 	 	 document.location.reload();
+		 	 	 }
+		 	 	 else
+		 	 	 {
+		 	 	 	alert(data.info);
+		 	 	 }
+		 	 },'json');
+		 }
+		 else
+		 {
+		 	return false;
+		 }
+	}
+</script>
+<include file="Public:footer" />	

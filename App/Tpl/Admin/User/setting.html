@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<title>管理区域</title>
+</head> 
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>会员设置</h3>
+      <ul class="tab-base"> 
+         <li><a href="javascript:void(0)" class="current" ><span>会员设置</span></a></li> 
+         <li><a href="{:U('level')}" ><span>会员级别</span></a></li> 
+         <li><a href="{:U('level_add')}" ><span>级别新增</span></a></li> 
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+<form action="__URL__/settingsave" method="post" enctype="multipart/form-data">
+  <table width="97%" border="0" align="center"  cellpadding="3" cellspacing="1" class="table_style">
+    <tr> 
+  		<td colspan="2" bgcolor="#abcdef" >会员前台注册相关设置项</td> 
+    </tr>
+    <tr>
+      <td width="18%" class="left_title_1">是否启用验证码</td>
+      <td width="82%">
+      	  <input type="radio" name="reg_setting[verycode]"  value="1"  checked="true" <eq name="reg_setting.verycode" value='1'>checked</eq> />是
+      	  <input type="radio" name="reg_setting[verycode]"  value="0" <eq name="reg_setting.verycode" value='0'>checked</eq> />否
+      <font color='red'>(前台会员注册时是否需要输入验证码)</font></td>
+    </tr>   
+    <tr>
+      <td class="left_title_2">是否启用审核机制</td>
+      <td>
+      	  <input type="radio" name="reg_setting[shenhe]"  value="1"  <eq name="reg_setting.shenhe" value='1'>checked</eq>  />是
+      	  <input type="radio" name="reg_setting[shenhe]"  value="0"  <eq name="reg_setting.shenhe" value='0'>checked</eq> />否
+          <font color='red'>(前台会员注册完成后是否需要管理员审核后才能登陆系统)</font></td>
+    </tr>  
+     <tr>
+	      <td class="left_title_1">注册赠送体验金</td>
+	      <td>
+	      	  <input type="radio" name="reg_setting[zs_valid]"  value="1"  <eq name="reg_setting.zs_valid" value='1'>checked</eq>  />是
+	      	  <input type="radio" name="reg_setting[zs_valid]"  value="0"  <eq name="reg_setting.zs_valid" value='0'>checked</eq> />否
+	          <font color='red'>(前台会员注册时是否赠送体验金)</font>
+	       </td>
+     </tr>     
+     <tr>
+	      <td class="left_title_2">体验金赠送金额</td>
+	      <td>
+	      	    <input type="text" size=5 name="reg_setting[zs_money]" value="{$reg_setting['zs_money']}" />
+	      	   <font color='red'>(为空或0时即使开启赠送体验金，也不会产生相应的金额)</font>
+	      </td>
+     </tr>      
+    <tr>
+      <td class="left_title_1">是否显示上线QQ</td>
+      <td>
+      	  <input type="radio" name="reg_setting[view_refer_qq]"  value="1"  <eq name="reg_setting.view_refer_qq" value='1'>checked</eq>  />是
+      	  <input type="radio" name="reg_setting[view_refer_qq]"  value="0"  <eq name="reg_setting.view_refer_qq" value='0'>checked</eq> />否
+          <font color='red'>(前台是否显示上线的QQ)</font></td>
+    </tr> 
+    <tr> 
+  		<td colspan="2" bgcolor="#abcdef" >会员佣金设置</td> 
+    </tr>
+    <tr>
+    	 <td class="left_title_1">购买佣金模式</td>
+    	 <td>
+    	 	   <select name="refer_mode">
+    	 	   	   <option value="0" <eq name="refer_mode" value='0'>selected</eq> >无佣金模式</option>
+    	 	       <option value="1" <eq name="refer_mode" value='1'>selected</eq> >一级佣金模式</option>
+    	 	       <option value="2" <eq name="refer_mode" value='2'>selected</eq>>二级佣金模式</option>
+    	 	       <option value="3" <eq name="refer_mode" value='3'>selected</eq>>三级佣金模式</option>
+    	 	       <option value="4" <eq name="refer_mode" value='4'>selected</eq>>四级佣金模式</option>
+    	     </select><font color="red">(下线会员购买时返佣金模式)</font>
+    	 </td>
+    </tr>
+    <tr> 
+  		<td colspan="2"  ><font color='blue'>例如：假如选择一级佣金模式，B在A的推广链接下注册为会员，而C通过B的推广链接成为会员，如果C购买产品，此时系统只支付给B相应的佣金！<br/>
+  			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  			如果选择二级佣金模式的话，系统还会给A相应的佣金,其他模式以此类推！
+  		</font></td> 
+    </tr>
+    <tr>
+    	 <td class="left_title_1">升级佣金模式</td>
+    	 <td>
+    	 	   <select name="daili_refer_mode">
+    	 	   	   <option value="0" <eq name="daili_refer_mode" value='0'>selected</eq> >无佣金模式</option>
+    	 	       <option value="1" <eq name="daili_refer_mode" value='1'>selected</eq> >一级佣金模式</option>
+    	 	       <option value="2" <eq name="daili_refer_mode" value='2'>selected</eq>>二级佣金模式</option>
+    	 	       <option value="3" <eq name="daili_refer_mode" value='3'>selected</eq>>三级佣金模式</option>
+    	 	       <option value="4" <eq name="daili_refer_mode" value='4'>selected</eq>>四级佣金模式</option>
+    	     </select><font color="red">(下线会员升级会员时返佣金模式)</font>
+    	 </td>
+    </tr>
+    <tr> 
+  		<td colspan="2"  ><font color='blue'>例如：假如选择一级佣金模式，B在A的推广链接下注册为会员，而C通过B的推广链接成为会员，如果C升级成为付费会员，此时系统只支付给B相应的佣金！<br/>
+  			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  			如果选择二级佣金模式的话，系统还会给A相应的佣金,其他模式以此类推！
+  		</font></td> 
+    </tr>  
+     <tr> 
+  		<td colspan="2" bgcolor="#abcdef" >会员提现设置</td> 
+    </tr>
+    <tr>
+      <td class="left_title_2">会员提现条件</td>
+      <td>
+      	  下线会员达到<input type="text" size=5 name="tixian_setting[refernums]" value="{$tixian_setting['refernums']}" />个<br/>
+      	  会员累计消费<input type="text" size=5 name="tixian_setting[used_money]" value="{$tixian_setting['used_money']}" />元以上<br/>
+      	  可用佣金达到<input type="text" size=5 name="tixian_setting[money]" value="{$tixian_setting['money']}" />元<br/>
+      	  最低提现金额<input type="text" size=5 name="tixian_setting[min_money]" value="{$tixian_setting['min_money']}" />元<br/>
+      	  提现金额需为<input type="text" size=5 name="tixian_setting[zsb]" value="{$tixian_setting['zsb']}" />的整数倍
+      	</td>
+    </tr>    
+   <tr>
+		<td colspan="8" class="left_title_2">
+		<div align="center"> 
+		 <input type="submit" value="保存" /> 
+		 <input class="button" type="reset"   value="取消" /></div>
+		</td>
+	</tr>
+  </table>
+  </form>
+</div>
+</body>
+</html>

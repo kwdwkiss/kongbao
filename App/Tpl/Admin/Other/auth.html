@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<script charset="utf-8" src="__PUBLIC__/js/jquery.js"></script>
+<title>管理区域</title> 
+<script type="text/javascript">
+  function jsonpReturn(data)
+   {  
+   	 	var auth_code= $("#auth_code").val();
+   	 	
+ 	 	 if(data.status==1)//授权成功
+ 	 	 {      
+ 	 	 	   var k=data.data.k;  
+ 	 	 	   var mydata = {acode:auth_code,keycode:k};
+				$.ajax({
+				         url: "__URL__/deal_auth",  
+				         type: "POST", 
+				         data:mydata,
+				         dataType: "json",
+				         error: function(XMLHttpRequest, textStatus, errorThrown){  
+				             alert(XMLHttpRequest.status);  
+				         },  
+				         success: function(data1,status)
+				         { 
+				              alert(data1.info);
+				              if(data1.status==1)
+				              {
+				              	 window.location.href=data1.data;
+				              } 
+				         }
+				     });	 	 	  
+ 	 	 }else
+ 	 	 { 
+ 	 	 	    alert(data.info);
+ 	 	 } 
+   }  
+  function auth_operate()
+   {
+   	   var username= $("#username").val();
+   	   if(username=='') {alert('请填写用户名!');return false;}
+   	   var password= $("#password").val();
+   	   if(password=='') {alert('请填写密码!');return false;}
+   	   var auth_code= $("#auth_code").val();
+   	   if(auth_code=='') {alert('请填写授权码!');return false;}  
+   	   var type = $("#type").val();
+   	   var domain = $('#domain').val();
+        var mydata={username:username,
+   	   	                      password:password,
+   	   	                      auth_code:auth_code,
+   	   	                     type:type,domain:domain};  
+			$.ajax({
+						type : 'GET',
+						url : '{$auth_url}',
+						dataType : 'jsonp',
+						jsonp : 'jsonpReturn',
+						data: mydata,   
+						success : function(data) { 
+						},
+						error : function() {
+								alert('授权失败!');
+						  }
+					}); 
+   }
+</script>
+</head> 
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>授权绑定</h3>
+      <ul class="tab-base"> 
+         <li><a href="javascript:void(0)" class="current" ><span>授权绑定</span></a></li> 
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+<form action="__URL__/type_insert" method="post" enctype="multipart/form-data">
+  <table width="99%" border="0" align="center"  cellpadding="3" cellspacing="1" class="table_style">
+    <tr><td colspan="2" bgcolor="#abcdef" align="center"><font size="5" color="red">授权说明</font></td></tr>
+    <tr>
+    	<td colspan="2" align="left"><font size="3" color="blue">
+    	     ★一个授权码只能绑定一个域名<br/>
+    	     ★如果使用其他域名使用该程序，联系QQ{:C('QQ')}解除绑定<br/>
+    	     ★如果授权码到期，请联系QQ{:C('QQ')}进行续费<br/>  
+        </font></td>
+    </tr>
+    <if condition="$config['auth_code']==''">
+			     <tr>
+				      <td width="18%" class="left_title_1"><span class="left-title">平台用户名</span></td>
+				      <td width="82%"><input type="text" id="username" name="username" size="40"></td>
+				</tr> 
+			    <tr>
+				      <td class="left_title_2">密码</td>
+				      <td> <input name="password" id="password"  type="password" size="40"> </td>
+			    </tr>
+			    <tr>
+			      <td class="left_title_1">授权码</td>
+			      <td>
+			      	    <textarea name="auth_code" id="auth_code" rows="4" cols="40"></textarea>
+			      </td>
+			    </tr> 
+			    <tr bgcolor="#FFFFFF">
+			      <td colspan="2" class="left_title_1"><div align="center">
+			      	  <input type="hidden" name="domain" id="domain" value="{$domain}" />
+			      	  <input type="hidden" name="type" id="type" value="{:C('AUTH_TYPE')}" />
+					 <input type="button" onclick="auth_operate()" value="授权绑定" /> 
+					 <input class="button" type="button" onclick="history.go(-1);" value="取消" /></div></td>
+			    </tr>   	
+    <else/>
+			   <tr>
+				      <td width="18%" class="left_title_1"><span class="left-title">平台用户名</span></td>
+				      <td width="82%"><input type="text" readonly="true" size="40" value="{$auth[0]}"></td>
+				</tr> 
+			    <tr>
+				      <td class="left_title_2">授权开始时间</td>
+				      <td> <input type="text" readonly="true" size="40" value="{$auth[1]|date='Y-m-d',###}"></td>
+			    </tr>
+			    <tr>
+				      <td class="left_title_2">授权截止时间</td>
+				      <td> <input type="text" readonly="true" size="40" value="{$auth[2]|date='Y-m-d',###}"></td>
+			    </tr>			    
+			    <tr>
+			      <td class="left_title_1">授权码</td>
+			      <td>
+			      	    <textarea rows="4" cols="40" readonly="true">{$config['auth_code']}</textarea>
+			      </td>
+			    </tr>     
+    </if>
+
+  </table> 
+</form>
+</div>
+</body>
+</html>

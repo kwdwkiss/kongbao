@@ -1,0 +1,86 @@
+<include file="Public:header"/>
+<style type="text/css">  
+	 .table1 {background:#c2e0ec;width:850px;margin-left:0px;} 
+ </style> 
+   <script type="text/javascript">
+	function export_log()
+	{
+ 	   var count = $("#count").val(); 
+	    if(count<=0) 
+	    {
+	    	alert('无数据可导出！'); 	
+	    	return false;
+	    }
+	   $("#export_form").submit();
+	}
+</script> 
+<div class="container">
+<include file="User:top_menu" />
+<!--left start-->
+<include file="Order:order_left" />
+<!--left end--> 
+ <div class="member_right fr">
+            <div class="member_right_tit">
+            	<span class="fl"><strong>小号购买记录</strong></span>
+             </div> 
+		 		   <table class="table1" style="width: 100%" align="left"  >
+				    <tr>
+				      <td colspan="5" class="left_title_2">
+				        <form class="search" action="__URL__/xh_log" method="post">
+				          <div align="left">筛选： 
+		              <select name="ftype">
+		                 <option value="order_no" <eq name="_POST.ftype" value="order_no">selected</eq>>订单编号</option>
+		              </select>  
+		              <input type="text" name="keyword" value="{:I('keyword')}" />		          	
+				              <select name="type_id"> 
+				              	  <option value="">小号类型</option>
+				              	  <foreach name="type_list" item="type">
+				              	  	<option value="{$type['id']}"  <if condition="I('type_id','')==$type['id']" >selected</if> >{$type['name']}</option>
+				              	  </foreach>
+		 		              </select>   
+		 		              <input type="hidden" id="count" value="{$count}"/> 
+				              <input name="submit" type="submit" value="查询" /> 
+				              <input type="button" value="导出全部数据" onclick="return export_log()"/> 
+				              <span style="float:right"><font color="red">{$count}</font>条数据符合条件</span>
+				           </div>
+				        </form>  
+				         <form id="export_form" action="{:U('log_export_xh')}" method="post"> 
+		   	       					<input type="hidden" name="ftype" value="{:I('ftype')}" /> 
+		   	       					<input type="hidden" name="keyword" value="{:I('keyword')}" /> 
+		   	       					<input type="hidden" name="type_id" value="{:I('type_id')}" /> 	                                 	
+			              </form>   				              
+				      </td> 
+				    </tr>  
+				     <tr>
+				      		 <td colspan="5">
+										 <table id="mytab"   class="table1" width="850px" > 
+												 <thead>
+				 									 	   <th width="">小号</th>
+				 									 	   <th width="15%">小号类型</th>
+													 	   <th width="15%">购买日期</th>
+													 	   <th width="15%">订单编号</th>  
+													 	   <th width="10%">操作</th>
+												 </thead> 
+												 <tbody> 
+												 	  <foreach name="log_list" key="key" item='log'>
+												 	  	   <tr>
+				 								 	  	   	   <td>{$log['note_brief']}</td>
+												 	  	   	   <td><font color="red">{$xh_type[$log['type_id']]}</font></td>
+												 	  	   	   <td align="left">{$log['order_time']}</td>
+												 	  	   	   <td align="center">{$log['order_no']}</td>
+												 	  	   	   <td align="center"><a href="{:U('dhexp',array('id'=>$log['order_no'],'type'=>3))}">导出小号</a></td> 
+												 	  	   </tr>
+												 	  </foreach>
+												 </tbody>
+												 <tfoot>
+												 	 <tr><td colspan="5">{$show}</td></tr>
+												 </tfoot>
+												</form>
+										 </table>   		    		
+						    	</td>
+				    </tr>
+				  </table> 
+    </div>
+ </div>
+</div>   
+<include file="Public:footer"/>

@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<title>管理区域</title>
+<style type="text/css">
+<!--
+#man_zone .table_style tr .search {
+	margin-left: 10px;
+}
+-->
+</style>
+</head>
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>用户留言</h3>
+      <ul class="tab-base"> 
+         <li><a href="javascript:void(0)" class="current"><span>留言列表</span></a></li>    
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+  <if condition="$count==0">
+       	  系统暂无留言信息！
+       <else/>
+    <volist name="suggest" id="suggest">
+      <div class="suggest">
+
+       
+         <div class="sugg_top">
+           <div id="sugg_name">姓名：{$suggest['user_name']}</div>
+           <div id="sugg_time">时间：{$suggest['add_time']}</div>
+           <div id="sugg_huifu"><a href="__URL__/huifu/id/{$suggest['id']}"><font color="red">回复</font></a></div>
+           <div id="sugg_del"><a href="__URL__/del/id/{$suggest['id']}"><font color="red">删除</font></a></div>
+         </div>
+         <div class="sugg_con">内容：{$suggest['content']}<br>
+                               <font color="red">回复：{$suggest['huifu']}</font>
+         </div>
+      </div>
+     </volist>
+   </if>
+    <div align="center">{$show}</div>
+  
+</div>
+</body>
+</html>

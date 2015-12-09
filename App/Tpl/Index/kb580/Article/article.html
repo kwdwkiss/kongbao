@@ -1,0 +1,33 @@
+<include file="Public:header" />	
+<link rel="stylesheet" href="../Public/css/news.css">
+<link rel="stylesheet" href="../Public/css/news_1.css">
+<div class="wrapper">
+   <div class="bodier clearfix pt_10"  >
+	<!--左边部分 start-->
+		<div class="main bor2">
+			<div class="aboutZone commission">
+				<dl>
+					<dt><div class="aboutZoneHD"><a href="__APP__">首页</a><span> > </span><a href="{:U('Article/index')}">文章中心</a> >  正文</div></dt>
+					<dd class="clearfix">
+							 <ul class="clearfix">
+										<div class="article_title">
+										     <h1>{$article["article_name"]}</h1>
+										      <div class="artictim c999 t_c pt_10">
+										               {$article["article_time"]}&nbsp;&nbsp;&nbsp;来源：{$config['sitename']}&nbsp;&nbsp;&nbsp;
+										       </div>
+									    </div>
+										<div class="article_detaile pt_10 pl_20 pr_20 pb_20 clearfix">
+											<div class="font14 c333 pt_20 detail">{$article["article_content"]}</div>
+										      <div class="outherbq">来源：{$config['sitename']}，转载须经版权人书面授权并注明来源</div>
+										</div>
+
+						       </ul> 
+					</dd>
+				</dl>
+			</div>
+		</div> 
+	   <include file="Public:article_cat" />
+	<div class="clear"></div>
+ </div> 
+</div>  
+<include file="Public:footer" />	

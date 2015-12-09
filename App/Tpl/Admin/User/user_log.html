@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<script type="text/javascript" src="../Public/js/jquery-1.4.2.min.js"></script>
+<title>管理区域</title>
+<style type="text/css">
+<!--
+#man_zone .table_style tr .search {
+	margin-left: 10px;
+}
+-->
+</style>
+<script type="text/javascript"> 
+	 // 全选 start
+$(function()
+{
+    	$('.checkall').click(function(){
+		$('.checkall').attr('checked',$(this).attr('checked'));
+		$('.checkitem').each(function(){
+			$(this).attr('checked',$('.checkall').attr('checked'));
+		});
+	});
+}) 
+</script>
+</head>
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>会员操作日志</h3>
+      <ul class="tab-base"> 
+         <li><a href="javascript:void(0)" class="current"><span>操作日志</span></a></li>   
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+  <table width="97%" border="0" align="center" cellpadding="3" cellspacing="1" class="table_style">
+    <tr>
+      <td colspan="11" class="left_title_2">
+        <form class="search" action="__URL__/user_log" method="post">
+          <div align="left">筛选： 
+              <select name="ftype">
+              	<option value="user_id"  <if condition="I('ftype')=='user_id'">selected</if>>用户ID</option> 
+                <option value="username" <if condition="I('ftype')=='username'">selected</if>>用户名</option>  
+                <option value="opt_type" <if condition="I('ftype')=='opt_type'">selected</if>>操作类型</option> 
+              </select>
+              <input type="text" name="keyword" value="{:I('keyword','')}" />
+              <input name="submit" type="submit" value="查询" />
+              <input name="reset" type="button" onclick="this.location.href='__URL__/user_log'" value="清空" />
+              <span style="float:right"><font color="red">{$count}</font>条数据符合条件</span>
+          </div>
+        </form>        
+      </td> 
+    </tr> 
+    <form method="post" action="{:U('user_log_del')}" id="form" >
+            <input type="hidden" name="form_submit" value="ok" />
+		    <tr>
+		      <th width="4%" align="center"><input type="checkbox"  class="checkall" id="checkallBottom"></th> 
+		      <th width="8%" class="left_title_1"><div align="center">用户ID</div></th>
+		      <th width="15%" class="left_title_1"><div align="center">用户名</div></th>
+		      <th width="10%" class="left_title_1"><div align="center">操作类型</div></th> 
+		      <th width="" class="left_title_1"><div align="center">操作说明</div></th> 
+		      <th width="10%" class="left_title_1"><div align="center">操作IP</div></th> 
+		      <th width="14%" class="left_title_1"><div align="center">
+		          <div align="center">操作时间</div>
+		      </div></th>
+		      <th width="15%" class="left_title_1"><div align="center">操作</div></th> 
+		    </tr> 
+		    <tbody>
+		    	<foreach name="log_list" item="log">
+			      <tr> 
+				       <td align="center" ><input type="checkbox" name='del_id[]' value="{$log['id']}" class="checkitem"></td>
+				        <td><div align="center"><a href="{:U('index',array('ftype'=>'id','keyword'=>$log['user_id']))}">{$log['user_id']}</a></div></td>
+				        <td><div align="center">{$log['username']}</div></td>
+				        <td><div align="center">{$log['opt_type']}</div></td>
+				        <td><div align="center">{$log['comm']}</div></td>
+				        <td><div align="center">{$log['opt_ip']}</div></td>
+				        <td><div align="center">{$log['addtime']}</div></td> 
+						<td><div align="center"> <a title="删除操作" href="{:U('user_log_del',array('id'=>$log['id']))}"><img src="../Public/images/pic12.gif" alt="删除" /></a></div></td>
+			      </tr> 
+		      </foreach> 
+		    </tbody>
+		    <tfoot>
+			    <tr>
+				     <td colspan="9">
+				      <a href="JavaScript:void(0);" class="btn" onclick="if(confirm('确定要删除吗？')){$('#form').submit();}"><span>删除</span></a>
+				       {$show} </td>
+			    </tr>
+		    </tfoot>
+		 </form>
+  </table>
+</div>
+</body>
+</html>

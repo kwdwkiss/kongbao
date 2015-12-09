@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<script type="text/javascript" src="../Public/js/jquery-1.4.2.min.js"></script> 
+ <link rel="stylesheet" href="__PUBLIC__/kindeditor/themes/default/default.css" />
+<script charset="utf-8" src="__PUBLIC__/kindeditor/kindeditor.js"></script>
+<script charset="utf-8" src="__PUBLIC__/kindeditor/lang/zh_CN.js"></script>
+<title>管理区域</title>
+<script type="text/javascript">
+  	KindEditor.ready(function(K) { 
+ 		var editor = K.editor({
+			allowFileManager : true
+		}); 		
+		K('#jietu_i').click(function() {
+				editor.loadPlugin('image', function() {
+					editor.plugin.imageDialog({
+						showRemote : false,
+						imageUrl : K('#jietu').val(),
+						clickFn : function(url, title, width, height, border, align) {
+							K('#jietu').val(url);
+							$('#jietu_save').val(url);
+							$("#tupian").attr('src',url);
+							editor.hideDialog();
+						}
+					});
+				});
+		});		
+	}); 
+</script>
+</head>
+<body>
+	<div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>广告管理</h3>
+      <ul class="tab-base"> 
+         <li><a href="{:U('index')}" ><span>列表</span></a></li>  
+         <li><a href="javascript:void(0)" class="current" ><span>新增</span></a></li>
+      </ul>
+    </div>
+</div>
+<div id="man_zone">
+<form action="__URL__/insert1" method="post" enctype="multipart/form-data">
+<table width="97%" border="0" align="center" cellpadding="3"
+	cellspacing="1" class="table_style">
+	<tr>
+		<td class="left_title_2">添加说明</td>
+		<td ><font color="red">  
+			    1、前台使用模板不同，幻灯片广告自行调整大小<br>
+			    2、页头图片建议大小500*80<br/>
+			    3、除幻灯广告位其他类型广告位存在多条时，页面随机显示<br/>
+			    4、页底广告位建议大小1000*150
+			    </font>
+		</td>
+	</tr>
+	 <tr>
+		      <td class="left_title_1"> 广告图片</td>
+		      <td>
+			      	<input type="text"  id="jietu" size="31" value="">
+			      	<input type="button" id="jietu_i" value="选择图片" />
+			      	<input type="hidden" id="jietu_save" value="" name="pic" /> 
+		      </td>
+	  </tr>
+	<tr>
+		<td width="18%" class="left_title_2">广告位类型</td>
+		<td width="82%">
+			 <select name="typeid">
+			 	  <option value="">请选择广告位类型</option>
+                  <option value="1">幻灯片广告</option>
+                  <option value="2">页面页头广告位</option> 
+                  <option value="3">页面底广告位</option> 
+                  <option value="4">首页价格广告位</option> 
+			 </select>
+		 </td>
+	</tr>
+	<tr>
+		<td width="18%" class="left_title_2">链接地址</td>
+		<td width="82%"><input type="text" name="pic_url" size="40"></td>
+	</tr>
+	<tr>
+		<td class="left_title_2">广告描述</td>
+		<td><input type="text" name="ad_brief" size="40"></td>
+	</tr>
+   
+</table>
+</br>
+ <tr>
+		<td colspan="8" class="left_title_2">
+		<div align="center"> 
+		 <input type="submit" value="保存" /> 
+		 <input class="button" type="button" onclick="history.go(-1);" value="取消" /></div>
+		</td>
+	</tr>
+</form>
+</div>
+</body>
+</html>

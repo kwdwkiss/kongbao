@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<script type="text/javascript" src="../Public/js/jquery-1.4.2.min.js"></script> 
+<title>管理区域</title>
+<script type="text/javascript">
+    var i = "{$cols_count}";
+    i = parseInt(i);
+	var tr_model = "<tr>"+
+		"<td><input style='width: 100%'  type='text' name='rule_col[key][name]'></td>"+
+		"<td><input style='width: 100%'  type='text' name='rule_col[key][content]'></td>"+ 
+		"<td align=center><input type='button' onclick='col_delete($(this))' value='移除' /></td>" +
+		"</tr>";
+	function col_delete(obj)
+	{
+		 obj.parent().parent().remove();  
+	} 
+	function col_add()
+	{ 
+		$('#rows > tr:last').after(tr_model.replace(/key/g, i));
+		i++;
+	} 
+</script>
+</head> 
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>小号类型</h3>
+      <ul class="tab-base">
+        <li><a href="{:U('type')}" ><span>小号类型</span></a></li>
+         <li><a href="{:U('type_add')}" ><span>类型新增</span></a></li> 
+         <li><a href="{:U('rule_index')}" ><span>导出规则</span></a></li> 
+         <li><a href="{:U('rule_add')}" ><span>规则新增</span></a></li>  
+         <li><a href="javascript:void(0)" class="current" ><span>规则编辑</span></a></li>   
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+<form action="__URL__/rule_update" method="post" enctype="multipart/form-data"  onsubmit="chk_submit()" >
+  <table width="99%" border="0" align="center"  cellpadding="3" cellspacing="1" class="table_style">
+    <tr>
+      <td width="18%" class="left_title_1"><span class="left-title">规则描述</span></td>
+      <td width="82%">字段对应:<br/>{$fields_comm}<br/>
+      		<font color="red">表头名：是指导出的文件中对应单元格的标题</font><br/>
+      		<font color="red">显示项目：填写以上字段对应的数字,可以设置多个，请用英文,分开</font><br/>
+      		<font color="red">连接符：同一单元格中多个字段之间的连接符号，不填写默认为空格</font><br/> 
+      </td>
+    </tr>
+    <tr>
+    	<td width="18%" class="left_title_2">规则名称</td>
+    	<td><input type="text" name="title" value="{$rule['title']}" style="width: 400px" /></td>
+    </tr>  
+    <tr>
+    	<td width="18%" class="left_title_1">间隔符</td>
+    	<td><input type="text" name="separator" value="{$rule['separator']}" style="width: 400px" />例各项之间用"|"</td>
+    </tr>  
+    <tr>
+    	<td width="18%" class="left_title_2">备注说明</td>
+    	<td>
+    		 <textarea name="comm" rows="5" cols="60">{$rule['comm']}</textarea>
+    	</td>
+    </tr>      
+    <tr> 
+    	  <td width="18%" class="left_title_1"></td>
+    	  <td   align="left">
+    	          <table id="table1" width="100%">
+    	          	 <thead>
+    	          	 	 <tr>  
+    	          	 	 	 <td align="center">名称</td>
+    	          	 	 	 <td align="center" width="30%" >对应数字</td> 
+    	          	 	 	 <td align="center" width="20%">操作</td>
+    	          	 	 </tr>
+    	          	 </thead>
+    	          	  <tbody id="rows">
+    	          	  	   <foreach name="imp_rule" key="key" item="rule1">
+    	          	  	   	 <tr>
+    	          	  	   	 	 <td><input style='width: 100%'  type='text' name='rule_col[{$key}][name]' value="{$rule1['name']}" ></td>
+    	          	  	   	  	 <td><input style='width: 100%'  type='text' name='rule_col[{$key}][content]' value="{$rule1['content']}" ></td>
+    	          	  	   	 	 <td align=center><input type='button' onclick='col_delete($(this))' value='移除' /></td>
+    	          	  	   	 </tr>  
+    	          	  	   </foreach> 
+    	          	 </tbody>
+    	          	  <tfoot>
+     	          	  	  <tr><td colspan="4" align="left"><input type="button" onclick="col_add()" value="添加项目" /></td></tr>
+    	          	  </tfoot> 
+    	          </table>
+    	  </td>
+    </tr> 
+    <tr bgcolor="#FFFFFF">
+      <td colspan="2" class="left_title_2"><div align="center">
+		 <input type="submit" value="保存" /> 
+		 <input type="hidden" name="id" value="{$rule['id']}" />
+		 <input class="button" type="button" onclick="history.go(-1);" value="取消" /></div></td>
+    </tr> 
+  </table> 
+</form>
+</div>
+</body>
+</html>

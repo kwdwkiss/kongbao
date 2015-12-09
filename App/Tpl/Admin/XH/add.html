@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<script type="text/javascript" src="../Public/js/jquery-1.4.2.min.js"></script>
+<title>管理区域</title>
+<script type="text/javascript">
+	function ajax_submit()
+	{
+	   var type_id = $('#type_id').val();
+	    if(type_id=='' || type_id<=0)
+	    {
+	    	alert('请选择小号类型!');
+	    	$("#type_id").focus();
+	    	return false;
+	    }
+	    var note_nos = $("#note_nos").val();
+	    if(note_nos =='')
+	    {
+	    	alert('小号不能为空!');
+	    	$("#note_nos").focus();
+	    	return false;	    	
+	    }
+	   var action_url = $("#form").attr('action');
+	   
+       $.post(action_url,{type_id:type_id,note_nos:note_nos},function(data,status) {  
+       	   var return_data = data.data; 
+       	   if(return_data.error_count>0)
+       	   {
+       	   	  $("#error").css('display',''); 
+       	   	  var error_msg = return_data.error_msg.replace(/\|/gm,     "\r\n");     
+       	   	  $("#error_data").text(error_msg);
+       	   } 
+       	   alert(data.info); 
+	        },'json');
+	} 
+</script>
+</head>
+
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>小号管理</h3>
+      <ul class="tab-base"> 
+         <li><a href="{:U('index')}" ><span>未使用小号</span></a></li>  
+         <li><a href="javascript:void(0)" class="current" ><span>小号新增</span></a></li>           
+         <li><a href="{:U('used_index')}" ><span>已使用小号</span></a></li>
+      </ul>
+    </div>
+  </div>
+<div id="man_zone"> 
+  <table width="99%" border="0" align="center"  cellpadding="3" cellspacing="1" class="table_style">
+		     <tr><td colspan="2" ><font color="red" size="3"><b>单条录入</b></font></td></tr>
+		         <form action="__URL__/insert" method="post">
+		          <tr>
+				      <td class="left_title_2">所属类型</td>
+				      <td>
+				      	   <select name="type_id">
+				      	   	   <option value="">请选择小号类型</option>
+				      	   	   <foreach name="type_list" item="type">
+				      	   	   	    <option value="{$type['id']}" title="{$type['comm']}">{$type['name']}</option>
+				      	   	   </foreach>
+				      	   </select>
+				      </td>
+				    </tr>		         	 
+				    <tr>
+				      <td width="18%" class="left_title_1"><span class="left-title">小号</span></td>
+				      <td width="82%"><input type="text" name="note_no" size="100"></td>
+				    </tr>
+				    <tr bgcolor="#FFFFFF">
+				      <td colspan="2" class="left_title_1"><div align="center">
+						 <input type="submit" value="保存" /> 
+						 <input class="button" type="reset" value="取消" /></div></td>
+				    </tr>
+				</form>
+				<form action="__URL__/insert_multi" method="post" id="form">
+					 <tr><td colspan="2" ><font color="red" size="3"><b>多行录入</b></font></td></tr>
+				    <tr>
+				     <td class="left_title_1">所属类型</td>
+				      <td>
+				      	   <select name="type_id" id="type_id">
+				      	   	   <option value="">请选择小号类型</option>
+				      	   	   <foreach name="type_list" item="type">
+				      	   	   	    <option value="{$type['id']}" title="{$type['comm']}">{$type['name']}</option>
+				      	   	   </foreach>
+				      	   </select>
+				      </td> 
+				    </tr>
+				    <tr>
+				    	 <td class="left_title_2">小号</td>
+				    	 <td>
+				    	 	   <textarea name="note_nos" id="note_nos" cols="100" rows="10"></textarea>
+				    	 <br/>（<font color="red">每行添加一个;可从文件直接复制粘贴</font>）</td>
+				    </tr>
+				    <tr bgcolor="#FFFFFF">
+					      <td colspan="2" class="left_title_1"> 
+					      	<div align="center">
+									 <input type="button" onclick="return ajax_submit()" value="验证保存" /> 
+									 <input class="button" type="reset"   value="取消" /> 
+					      	</div>  
+						  </td>
+				    </tr>
+				   <tr id="error" style="display: none">
+				    	 <td class="left_title_2"><font color=red>错误数据</font></td>
+				    	 <td><textarea id="error_data"  disabled="true"   cols="40" rows="10"></textarea></td>
+				    </tr> 			 
+				</form> 
+  </table> 
+</form>
+</div>
+</body>
+</html>

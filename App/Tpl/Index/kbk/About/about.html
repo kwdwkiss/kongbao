@@ -1,0 +1,18 @@
+<include file="Public:header" />
+<div class="header_adv">
+  <a href="{$header_adv['pic_url']}" target="_blank"><img src="{$header_adv['pic']}" alt="{$header_adv['ad_brief']}" ></a>
+</div>	
+<div class="userbox">
+  <div class="content2 clearfix">
+    <include file="Public:article_cat" />	 
+    <div class="right fr">
+      <div class="biaoti">关于我们</div>
+      <div class="myart">
+        <h1>{$about["title"]}</h1>
+        <div class="mytime">发布日期：[{$about["time"]|substr=###,0,10}]</div>
+        <div class="mycont">{$about["content"]}</div>
+      </div>
+    </div>
+  </div> 
+</div>
+<include file="Public:footer" />	

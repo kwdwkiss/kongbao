@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<title>管理区域</title>
+</head>
+
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>网站设置</h3>
+      <ul class="tab-base">  
+         <li><a href="{:U('config')}" ><span>基本设置</span></a></li> 
+         <li><a href="{:U('payonline_setting')}" ><span>支付设置</span></a></li>
+         <li><a href="{:U('bindip')}" ><span>IP绑定设置</span></a></li> 
+         <li><a href="javascript:void(0)" class="current" ><span>飞信提醒设置</span></a></li>
+         <li><a href="{:U('Shuoming/config')}" ><span>说明及注意事项</span></a></li>  
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+<form action="__URL__/fetion_save"  method="post">
+  <table width="97%" border="0" align="center"  cellpadding="3" cellspacing="1" class="table_style">
+   	<tr>
+  		<td colspan="2" bgcolor="#abcdef" >飞信提醒相关设置</td>
+  	</tr> 
+  	<div style="display: none"> 
+	    <tr>
+	      <td class="left_title_1">发信者账号</td> 
+	      <td><input type="text" autocomplete="off"  disabled="true" size="40" value="{$config['fetion_setting']['sender']}"/></td>
+	    </tr> 
+	    <tr>
+	      <td class="left_title_2">发信者密码</td> 
+	      <td><input type="password" autocomplete="off"  disabled="true" size="40" value="{$config['fetion_setting']['password']}"/></td>
+	    </tr>
+    </div>
+    <tr>
+      <td class="left_title_1">发信者账号</td> 
+      <td><input type="text" autocomplete="off" name="fetion_setting[sender]" size="40" value="{$config['fetion_setting']['sender']}"/></td>
+    </tr> 
+    <tr>
+      <td class="left_title_2">发信者密码</td> 
+      <td><input type="password" autocomplete="off" name="fetion_setting[password]" size="40" value="{$config['fetion_setting']['password']}"/></td>
+    </tr> 
+    <tr>
+      <td class="left_title_1">系统接收者账号</td> 
+      <td><input type="text" name="fetion_setting[receiver]" size="40" value="{$config['fetion_setting']['receiver']}"/></td>
+    </tr> 
+    <tr>
+      <td class="left_title_2">加款提醒内容</td> 
+      <td><textarea name="fetion_setting[jk_tixing]" rows="5" cols="60">{$config['fetion_setting']['jk_tixing']}</textarea></td>
+    </tr>
+    <tr>
+    	<td class="left_title_1"></td>
+    	<td class="" align="left"  >
+    		用户名:{username} 淘宝交易号{outer_order_no}交易金额{order_money}用户qq{user_qq}提交申请时间:{addtime}
+    	</td> 
+    </tr>  
+    <tr>
+      <td class="left_title_2">提现提醒内容</td> 
+      <td><textarea name="fetion_setting[tx_tixing]" rows="5" cols="60">{$config['fetion_setting']['tx_tixing']}</textarea></td>
+    </tr>
+    <tr>
+    	<td class="left_title_1"></td>
+    	<td class="" align="left"  >
+    		用户名:{username}提现金额{money}用户QQ{user_qq}提现申请时间:{addtime}
+    	</td> 
+    </tr>   
+     <tr>
+    	<td class="left_title_2">后台登录提醒</td>
+    	<td class="" align="left"  >
+       	  	<input type="radio" name="fetion_setting[login_tip]"  value="1"  checked="true"  <eq name="config.fetion_setting.login_tip" value='1'>checked</eq> />是
+      	  	<input type="radio" name="fetion_setting[login_tip]"  value="0"  <eq name="config.fetion_setting.login_tip" value='0'>checked</eq> />否     	
+      		<font color='red'>(如果选"是"则在登录后台时给予提醒，若非本人登录，请及时修改后台密码)</font>
+    	</td> 
+    </tr>         
+    <tr>
+		<td colspan="2" class="left_title_1">
+		 <div align="center"> 
+		 		<input type="submit" value="保存" />  
+		  </div>
+		</td>
+	</tr> 
+  </table>
+  </form>
+</div>
+</body>
+</html>

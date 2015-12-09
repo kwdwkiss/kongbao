@@ -1,0 +1,60 @@
+<include file="Public:header" />
+<div class="wrapper clearfix">
+	 <div id="flashBg">
+			<div id="flashLine">
+					<div id="flshimgload"><img src="../Public/images/loadinwait.gif" original-title=""></div>
+					<div id="flash">  
+			  	    	  <foreach name="slide_list" item="slide" key="k">
+			  	    	  		 <a title="{$config['sitename']}" target="_blank" href="{$slide['pic_url']}" id="flash{$k+1}" style="background-image: url({$slide['pic']}); display: block; background-position: 50% 0%; background-repeat: initial initial;"><img class="imgsbaner" style="height:0; display:none;" src="{$slide['pic']}" original-title="{$config['sitename']}"></a>
+                            </foreach> 
+ 					<div class="flash_bar">
+					<span onclick="changeflash(1)" class="dq" id="f1"></span>
+					<span onclick="changeflash(2)" class="no" id="f2"></span>
+					</div></div>
+					</div>
+					<div class="indexritlogin">
+					<div class="indloginer">
+					<div class="toel">
+					
+					<a class="jianbcibton wid230" href="{:U('User/reg')}" target="_blank"><span><img src="../Public/images/mffburw_hover.gif" alt="成为代理,月转5K" original-title=""></span><b style="display: block;"><img src="../Public/images/mffburw_hover.gif" original-title=""></b></a>
+					<div class="toel_b"><strong>成为代理</strong>：月赚8000元其实很简单</div>
+					</div>
+					<div class="box mb_10">
+					<div class="inner"> 
+					<!--公告 start-->
+					<div class="notice"> 
+					<!--公告头部 start-->
+					<header class="box_header clearfix">
+					<nav class="box_nav">
+							<ul class="ov_hide block clearfix">
+									<li onmouseover="swaptab(&#39;plac&#39;,&#39;selectedLava&#39;,&#39;&#39;,4,1)" id="ul_plac_1" class="selectedLava"><a href="javascript:void(0);" original-title="公告">公告</a></li>
+									<li onmouseover="swaptab(&#39;plac&#39;,&#39;selectedLava&#39;,&#39;&#39;,4,2)" id="ul_plac_2" class=""><a href="javascript:void(0);" original-title="常见问题">常见问题</a></li>
+							</ul>
+					</nav>
+					<div class="clear"></div>
+					</header> 
+					<!--公告detail内容 start-->
+					<article id="div_plac_1" class="box_detail block">
+						<ul>
+							<foreach  name="gonggao_list" item="gonggao">
+									<li><a href="{:U('Gonggao/gonggao',array('id'=>$gonggao['id']))}" target="_blank" title="{$gonggao["title"]}" style="" >{$gonggao["title"]}</a></li>							
+							</foreach>						
+						</ul>  
+	 				 </article>
+					<article id="div_plac_2" class="box_detail hidden">
+ 						<ul>
+							<foreach  name="help_list" item="help">
+									<li><a href="{:U('Help/help',array('id'=>$help['id']))}" target="_blank" title="{$help["title"]}" style="" >{$help["title"]}</a></li>							
+							</foreach>						
+						</ul>  
+					</article>
+					<!--公告detail内容 end--> 
+					</div>
+					</div>
+					</div>
+					</div> 
+			</div>
+	 </div>
+</div>  
+<script type="text/javascript" src="../Public/js/topbannerset.js"></script> 
+<include file="Public:footer" /> 

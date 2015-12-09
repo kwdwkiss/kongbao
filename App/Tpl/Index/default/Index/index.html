@@ -1,0 +1,163 @@
+﻿<include file="Public:header" />	
+<tr>  
+    <include file="Public:left" />			
+    <td class="td_right" valign="top"> 
+  	    <include file="Public:quick_nav" />	
+		 <div style="width:100%;height:60px;line-height:60px;margin-bottom:10px" >
+				<iframe align=center border="0"   marginWidth=0 marginHeight=0 src="__APP__/Index/Index/led"  frameBorder=0 width=100%  height=60px scrolling=no></iframe>
+		 </div>  	
+         <table cellspacing="0" cellpadding="0" width="100%" class="news">
+            <tbody> 
+            	<tr>
+			        <td width="50%" valign="top">
+			           <div class="gonggao">
+			              <h2>平台最新公告<span style="float:right;margin-right:10px"><a href="{:U('Gonggao/index')}">[更多]</a></span></h2>
+						   <ul>
+									   <foreach name="gonggao_list" item="gonggao">
+									   	  <li>
+									   	  	<span class="left">
+									   		       <a href="{:U('Gonggao/gonggao',array('id'=>$gonggao['id']))}" style="color: #FF0000;font-size: 14px"  class="top">
+									   		       			<nobr><b>{$gonggao["title"]}</b></nobr>
+									   		       </a>
+									   		 </span>
+									   		 <span class="right" style="color: #FF0000;font-size: 14px" ><b>{$gonggao["time"]|substr=###,0,10 }</b></span>      
+									      </li>
+									      </foreach>
+                               </ul> 
+			            </div>
+			          </td>
+			          <td width="1%"></td>
+			           <td width="49%" valign="top">
+			           <div class="gonggao">
+			              <h2>平台常见问题<span style="float:right;margin-right:10px"><a href="{:U('Help/index')}">[更多]</a></span></h2>
+						   <ul>
+									   <foreach name="help_list" item="help">
+									   	  <li>
+									   	  	<span class="left">
+									   		       <a href="{:U('Help/help',array('id'=>$help['id']))}" style="color: #FF0000"  class="top">
+									   		       			<nobr>{$help["title"]}</nobr>
+									   		       </a>
+									   		 </span>
+									   		 <span class="right">{$help["time"]|substr=###,0,10 }</span>      
+									      </li>
+									      </foreach>
+                               </ul> 
+			            </div>
+			            </td>
+			     </tr>
+            	<tr>
+				        <td width="50%" valign="top"> 
+						           <div class="scrllodiv">
+						              <h2>最新充值动态</h2>
+						              <div class="gundong" id="systemnew1"> 
+										  <ul>
+											   <foreach name="recharge_list" item="recharge">
+																<li>
+																	<span class="left">
+																		<a href="#" style="color: #0000FF" class="top">
+																			<nobr>****{$recharge['username']|cut_str=###,3}   成功充值 {$recharge['pay_money']} 元</nobr>
+																	    </a>
+																	 </span>
+																	 <span class="right">{$recharge['addtime']|substr=###,0,10}&nbsp;&nbsp;&nbsp;</span>
+															     </li>												
+												 </foreach> 
+											 </ul>
+			 						      </div>
+			 						 </div>  
+						          </td>
+						          <td width="1%"></td>
+						           <td width="49%" valign="top"> 
+										<div class="scrllodiv">
+			                        		<h2>最新下单动态</h2>
+			                        		<div class="gundong"  id="systemnew2">
+													<ul>
+														<foreach name="order_list" item="order">
+																<li>
+																	<span class="left">
+																		<a href="#" style="color: #0000FF" class="top">
+																			<nobr>会员 ***{$order['username']|cut_str=###,3} 采购交易额为<font color="red"><b>￥{$order['pay_money']} </b></font>的订单，编号为<font color="red"><b>{$order['order_no']} </b></font></nobr>
+																	    </a>
+																	 </span>
+																	 <span class="right">{$order['addtime']|substr=###,0,10}&nbsp;&nbsp;&nbsp;</span>
+															     </li>												
+														</foreach> 
+													 </ul>
+			 								</div> 
+			                    		</div> 
+						          </td>
+			     </tr>			     
+			 </tbody>
+      </table> 
+    </td>
+ </tr>
+<script type="text/javascript">	//滚动插件
+	(function($){
+		$.fn.extend({
+			Scroll:function(opt,callback){
+					//参数初始化
+					if(!opt) var opt={};
+					var _this=this.eq(0).find("ul:first");
+					var lineH=_this.find("li:first").height(), //获取行高
+						line=opt.line?parseInt(opt.line,10):parseInt(193/lineH,10), //每次滚动的行数，默认为一屏，即父容器高度
+						speed=opt.speed?parseInt(opt.speed,10):500, //卷动速度，数值越大，速度越慢（毫秒）
+						timer=opt.timer?parseInt(opt.timer,10):3000; //滚动的时间间隔（毫秒）
+					if(line==0) line=1;
+					var upHeight=0-line*lineH+28;
+					//滚动函数
+					scrollUp=function(){
+							_this.animate({
+									marginTop:upHeight
+							},speed,function(){
+									for(i=1;i<=line;i++){
+											_this.find("li:first").appendTo(_this);
+									}
+									_this.css({marginTop:0});
+							});
+					}
+					//鼠标事件绑定
+					_this.hover(function(){
+							clearInterval(timerID);
+					},function(){
+							timerID=setInterval("scrollUp()",timer);
+					}).mouseout();
+			}     			       
+		}); 
+	})(jQuery);
+	(function($){
+		$.fn.extend({
+			Scroll2:function(opt,callback){
+					//参数初始化
+					if(!opt) var opt={};
+					var _this=this.eq(0).find("ul:first");
+					var lineH=_this.find("li:first").height(), //获取行高
+						line=opt.line?parseInt(opt.line,10):parseInt(193/lineH,10), //每次滚动的行数，默认为一屏，即父容器高度
+						speed=opt.speed?parseInt(opt.speed,10):500, //卷动速度，数值越大，速度越慢（毫秒）
+						timer=opt.timer?parseInt(opt.timer,10):3000; //滚动的时间间隔（毫秒）
+					if(line==0) line=1;
+					var upHeight=0-line*lineH+28;
+					//滚动函数
+					scrollUp2=function(){
+							_this.animate({
+									marginTop:upHeight
+							},speed,function(){
+									for(i=1;i<=line;i++){
+											_this.find("li:first").appendTo(_this);
+									}
+									_this.css({marginTop:0});
+							});
+					}
+					//鼠标事件绑定
+					_this.hover(function(){
+							clearInterval(timerID1);
+					},function(){
+							timerID1=setInterval("scrollUp2()",timer);
+					}).mouseout();
+			}     			       
+		}); 
+	})(jQuery);	
+	$(document).ready(function(){
+		$("#systemnew1").Scroll({line:5,speed:600,timer:4000}); 
+		$("#systemnew2").Scroll2({line:4,speed:400,timer:4000}); 
+	});
+ </script>
+  <include file="Public:footer" />		

@@ -1,0 +1,67 @@
+<div class="aside">
+	<div class="attent">
+		<div class="aboutZone commission">
+			<dl class="clearfix">
+				<dt>
+					<div class="aboutZoneHD">帮助中心</div>
+					<a href="{:U('Help/index')}" class="fl_r c666">更多<span class="font_simsun">&gt;</span></a>
+				</dt>
+				<dd class="clearfix">
+						  <ul class="clearfix">
+						  	<foreach name="help_list" item="help" key="k" >
+						  		<if condition="$k lt 5">
+						  				<li><a href="{:U('Help/help',array('id'=>$help['id']))}" target="_blank"> {$help['title']}</a></li>
+						  		 </if>
+						  	</foreach>
+ 						 </ul>
+		         </dd>
+			</dl>
+			<dl class="clearfix">
+				<dt>
+					<div class="aboutZoneHD">官方公告</div>
+					<a href="{:U('Gonggao/index')}" class="fl_r c666">更多<span class="font_simsun">&gt;</span></a>
+				</dt>
+				<dd class="clearfix">
+						  <ul class="clearfix">
+						  	<foreach name="gonggao_list" item="gonggao" key="k1" >
+						  		<if condition="$k1 lt 5">
+						  				<li><a href="{:U('Gonggao/gonggao',array('id'=>$gonggao[id]))}" target="_blank">{$gonggao['title']}</a></li>
+						  		 </if>
+						  	</foreach>
+ 						 </ul>
+		         </dd>
+			</dl>		
+			<dl class="clearfix">
+				<dt>
+					<div class="aboutZoneHD">文章中心</div>
+					<a href="{:U('Gonggao/index')}" class="fl_r c666">更多<span class="font_simsun">&gt;</span></a>
+				</dt>
+				<dd class="clearfix">
+						  <ul class="clearfix">
+						  	<foreach name="article_list" item="article" key="k2" >
+						  		<if condition="$k2 lt 5">
+						  				<li><a href="{:U('Article/article',array('id'=>$article['id']))}" target="_blank"><nobr>{$article["article_name"]}</nobr></a></li>
+						  		 </if>
+						  	</foreach>
+ 						 </ul>
+		         </dd>
+			</dl>	
+			<dl class="clearfix">
+				<dt>
+					<div class="aboutZoneHD">关于我们</div>
+					<a href="{:U('About/index')}" class="fl_r c666">更多<span class="font_simsun">&gt;</span></a>
+				</dt>
+				<dd class="clearfix">
+						  <ul class="clearfix">
+						  	<foreach name="about_list" item="about" key="k3" >
+						  		<if condition="$k3 lt 5">
+						  				<li><a href="{:U('About/about',array('id'=>$about['id']))}" target="_blank"><nobr>{$about["title"]}</nobr></a></li>
+						  		 </if>
+						  	</foreach>
+ 						 </ul>
+		         </dd>
+			</dl>								
+		</div>
+	</div>
+	<div class="attent mt_10"></div>
+</div>

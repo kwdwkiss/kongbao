@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<title>管理区域</title>
+<style type="text/css">
+<!--
+#man_zone .table_style tr .search {
+	margin-left: 10px;
+}
+-->
+</style>
+</head>
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>广告管理</h3>
+      <ul class="tab-base"> 
+         <li><a href="javascript:void(0)" class="current" ><span>列表</span></a></li>  
+         <li><a href="{:U('add1')}" ><span>新增</span></a></li>
+      </ul>
+    </div>
+</div>
+<div id="man_zone"> 
+<table width="96%" border="0" align="center" cellpadding="3"
+	cellspacing="1" class="table_style">
+	<tr>
+		<td width="18%" class="left_title_1"><div align="center">广告类型</div></td>
+		<td width="18%" class="left_title_1"><div align="center">连接地址</div></td>
+		<td width="20%" class="left_title_1"><div align="center">广告描述</div></td>
+		<td width="" class="left_title_1"><div align="center">广告图片</div></td>
+		<td width="10%" class="left_title_1"><div align="center">操作</div></td>
+	</tr>
+	<volist name="data" id="data">
+	<tr>
+		<td><div align="center"><switch name="data.typeid">
+                          <case value="1">幻灯片广告</case>
+                          <case value="2">页面页头广告位</case> 
+                          <case value="3">页面底部广告位</case> 
+                          <case value="4">首页价格广告位</case> 
+                         </switch></div></td>
+		<td><div align="center">{$data['pic_url']}</div></td>
+		<td><div align="center">{$data['ad_brief']}</div></td>
+		<td><div align="center" id="advpic"><img  width="100%" src="{$data['pic']}"></img></div></td>
+		<td> <div style="margin:0 13px 0 13px;float:left"><a title="修改该条广告位信息" href="__URL__/edit/id/{$data[id]}"><img src="../Public/images/set2.gif" alt="编辑"></img></a></div>
+             <div style="text-align:center"><a href="__URL__/del/id/{$data['id']}" onclick="return confirm('确定要删除该条信息？')"><img src="../Public/images/pic12.gif" alt="删除"></img></a></div></td>
+	</tr>
+	</volist>
+	 <tr>
+	  <td height="30" colspan="5"><div align="center">{$show}</div></td>
+	  </tr>
+</table>
+</div>
+</body>
+</html>

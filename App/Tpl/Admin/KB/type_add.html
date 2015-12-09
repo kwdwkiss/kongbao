@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<script type="text/javascript" src="../Public/js/jquery-1.4.2.min.js"></script> 
+<title>管理区域</title>
+<script type="text/javascript">
+	$(function()
+	{
+		$("input[name='is_true']").click(function()
+		{
+			 var curr_value = $(this).attr('value');
+			 if(curr_value==1)
+			 {
+			 	 $("#s_province").attr('disabled','');
+			 	 $("#s_city").attr('disabled','');
+			 	 $("#s_county").attr('disabled','');
+			 } 
+			 else
+			 {
+			 	 $("#s_province").attr('disabled','true');
+			 	 $("#s_city").attr('disabled','true');
+			 	 $("#s_county").attr('disabled','true');			 	
+			 }
+		});
+	});
+</script>
+</head> 
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>空包类型</h3>
+      <ul class="tab-base">
+        <li><a href="{:U('type')}" ><span>空包类型</span></a></li>
+         <li><a href="javascript:void(0)" class="current" ><span>类型新增</span></a></li> 
+         <li><a href="{:U('rule_index')}" ><span>导出规则</span></a></li> 
+         <li><a href="{:U('rule_add')}" ><span>规则新增</span></a></li>          
+         <li><a href="{:U('Shuoming/kbtype')}" ><span>说明及注意事项</span></a></li> 
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+<form action="__URL__/type_insert" method="post" enctype="multipart/form-data">
+  <table width="99%" border="0" align="center"  cellpadding="3" cellspacing="1" class="table_style">
+    <tr>
+      <td width="18%" class="left_title_1"><span class="left-title">类型名称</span></td>
+      <td width="82%"><input type="text" name="name" size="40"></td>
+    </tr> 
+    <tr>
+      <td class="left_title_2">类型状态</td>
+      <td>
+      	    <input type="radio" name="state" value="0" checked="true" />业务正常
+      	    <input type="radio" name="state" value="1" />业务暂停
+      </td>
+    </tr>
+    <tr>
+      <td class="left_title_1">是否真实空包</td>
+      <td>
+      	    <input type="radio" name="is_true" value="0" checked="true" />否
+      	    <input type="radio" name="is_true" value="1" />是
+      </td>
+    </tr>
+    <tr>
+    	<td class="left_title_2">选择发货地址</td>
+    	<td> 
+				    <select id="s_province" disabled="true" name="config[address][province]"></select>&nbsp;&nbsp;
+				    <select id="s_city" disabled="true" name="config[address][city]" ></select>&nbsp;&nbsp;
+				    <select id="s_county" disabled="true" name="config[address][district]"></select>&nbsp;&nbsp;
+					 <font color="red">如果类型为真实空包时，地址必填写</font> 
+					 <script type="text/javascript" src="__PUBLIC__/js/area.js"></script>
+				     <script type="text/javascript">_init_area();</script>
+    	</td>
+    </tr>
+    <tr>
+      <td class="left_title_1">排序</td>
+      <td>
+      	    <input type="text" name="sort_order" value="0" />(类型显示时，数字越大显示靠后)
+      </td>
+    </tr>
+    <tr>
+      <td class="left_title_2">底单价格</td>
+      <td>
+      	    <input type="text" name="config[didan]" value="0" />(如果申请底单免费的话，此处填写0)
+      </td>
+    </tr>
+    <tr>
+      <td class="left_title_1">进货价格</td>
+      <td>
+      	    <input type="text" name="config[in_price]" value="0" />(用于网站统计时计算利润额)
+      </td>
+    </tr>    
+     <tr>
+      <td class="left_title_2">价格设置(<font color="red">说明见设置须知</font>)</td>
+      <td>
+      	    <table width="500px"> 
+      	    	<tr align="center"><td>会员类型</td><td>对应价格</td></tr>
+      	    	<foreach name="level_list" key="id" item="level">
+      	    		<tr align="center">
+      	    			 <td>{$level['title']}</td><td><input type="text" name="config[price][{$id}]" value="0" /></td>
+      	    		</tr>
+      	    	</foreach>
+      	    </table>
+      </td> 
+    </tr>
+    <tr>
+      <td class="left_title_1">购买佣金设置(<font color="red">说明见设置须知</font>)</td>
+      <td>
+      	     <table width="500px"> 
+      	     	    <tr><td colspan="2" ><font color="red"><b>当前购买佣金模式为：{$refer_mode|count}级模式</b></font></td></tr> 
+      	     	    <tr align="center"><td>上线会员</td><td>对应佣金比例</td></tr>
+	      	    	<foreach name="refer_mode" item="v" key="k"> 
+	      	    		<tr align="center">
+	      	    			 <td>{$k}级上线</td><td><input type="text" name="config[refer][{$v}]"  value="0" />%</td>
+	      	    		</tr>	      	    		
+					</foreach> 
+      	     </table>
+      </td>
+     </tr> 
+     <tr>
+     	<td class="left_title_2">快递订单导出模板选择</td>
+    	<td>
+        	  <select name="exp_id">
+	      	  	   <option value="">请选择模板类型</option>
+	      	  	   <foreach name="moban_list" item="moban" key="k">
+	      	  	   	     <option value="{$moban['id']}">{$moban['title']}</option>
+	      	  	   </foreach>
+      	       </select>用于导出会员订单时格式模板     		
+    	</td> 	    	
+     </tr>
+    <tr>
+      <td class="left_title_1">代理表格模板</td>
+      <td><input type="text" disabled="true"  size="40" value=""><input type="file" name="file_url">批发页面下载代理模板</td>
+    </tr>      
+    <tr>
+      <td class="left_title_2">批发模板图片</td>
+      <td><input type="text" disabled="true"  size="40" value=""><input type="file" name="image_url">用于批发页面展示</td>
+    </tr>    
+    <tr>
+      <td class="left_title_1">类型描述</td>
+      <td ><textarea name="comm" cols="80" rows="4"></textarea></td>
+    </tr>
+    <tr bgcolor="#FFFFFF">
+      <td colspan="2" class="left_title_2"><div align="center">
+		 <input type="submit" value="保存" /> 
+		 <input class="button" type="button" onclick="history.go(-1);" value="取消" /></div></td>
+    </tr>
+    <tr><td colspan="2" bgcolor="#abcdef" align="center"><font size="5" color="red">类型设置须知</font></td></tr>
+    <tr>
+    	<td colspan="2" align="left"><font size="3" color="blue">
+    	     ★ 佣金模式设置见  "会员管理"=>"会员设置" =>"会员佣金设置" ;<br/>
+    	     ★ 上文中 “1级上线”是指通过会员的推广链接直接注册的会员。<br/>
+    	     ★ 举例说明：假设系统设置为两级佣金模式，B通过A的推广链接注册成为会员，则A即为B的1级上线，B下单支付后，系统会分给A“1级上线”对应的佣金;<br/>
+    	     如果C通过B的推广链接注册成为会员，此时B即为C的1级上线，A成为C的2级上线，C下单支付后，系统会分给B“1级上线”对应的佣金，同时分给A“2级上线”对应的佣金<br/>
+    	     如果D通过C的推广链接注册成为会员，此时C即为D的1级上线，B成为D的2级上线，由于系统设置为两级佣金模式，所以A不再享受佣金;<br/>
+    	     ★其他佣金模式以此类推；目前系统最高支持四级佣金模式
+    	     
+        </font></td>
+    </tr>
+  </table> 
+</form>
+</div>
+</body>
+</html>

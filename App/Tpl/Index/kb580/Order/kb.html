@@ -1,0 +1,400 @@
+<include file="Public:header" />	   
+<link rel="stylesheet" type="text/css" href="../Public/css/css.css"><!--公用样式-->
+ <section class="clearfix section" style="width:1000px;margin:10px auto">
+ 	<include file="User:left_nav" />
+ 	<div class="show_panel "> 
+            	 <include file="Public:quick_nav"/> 
+                <!--main content-->
+                 <div class=" clearfix box default">
+                            <!--header内容头部 start-->
+                            <header class="clearfix box_header">
+                                <h2 class="box_title">空包下单</h2> 
+                            </header>    
+				 		   <form id="order_form" action="{:U('kbsave')}" method="POST" > 
+								<table width="740px" id="mytab"   class="t1">
+								    <tr><td colspan="3"  height="100px"  align="center">{$kongbao_page['gonggao']}</td></tr>
+									<tr>
+										<td width="130px" height="25px"> <div align="right">快递选择：</div></td>
+										<td>
+											<select name="type_id" id="type_id" onchange="itemchange($(this))">
+												<option value="">==请==选==择==快==递==类==型==</option>
+												<foreach name="type_list" item="type">
+													<option value="{$type['id']}">{$type['name']}</option>
+												</foreach>
+											</select> 
+										</td>
+										<td width="200px" rowspan="4" valign="top" ><font color="blue" size="2">
+													   <br/><p>说明：</p>
+														{$kongbao_page['shuoming']}
+										</font></td>
+									</tr>
+									<tr> <td height="25"> <div align="right">类型详情：</div> </td>
+										 <td>
+										 	 <textarea id="detail" disabled="true" rows="8" cols="40"></textarea>
+									     </td>
+									</tr>
+									<tr>
+										<td height="25">
+											<div align="right">当前会员级别：</div>
+										</td>
+										 <td><font color="red" ><b>{$user['type_name']}</b></font>
+										 	   &nbsp;&nbsp;享受单价：<font color="red" ><b> <span id="current_text"></span></b></font>
+										 </td>
+									</tr>	 
+									<tr>
+									    <td height="25"> <div align="right">选择发货地址：</div> </td>
+										 <td> 
+										 	<select name="address_id" id="address_id"  style="width:100%">
+										 		<option value="">==请==选==择==发==货==地==址==</option>
+										 		<foreach name="address_list" item="address">
+										 			<option value="{$address['id']}" <eq name="address.is_default" value='1'>selected</eq> >{$address['title']}</option>
+										 		</foreach>
+										 	</select><br/>增加<a href="javascript:void(0)" onclick="add_address()"><font color="blue" size="3"><b>发货地址</b></font></a>
+										  </td>
+									</tr>
+									 <tr> <td height="25" colspan="3"> <div align="left">收货人信息：</div> </td>  </tr> 
+									 <tr>
+									 	   <td colspan="3" height="50" bgcolor="#ffffff">
+									 	   	    <p><img width="90%" height="120px" src="../Public/images/yw/shdz.gif"/></p> 
+									            <p style="border:1px  dashed #F00; padding-left:5px; background:#F5F5F5">
+									            	<font color="#FF0000" >老格式：</font><font color="#0000FF">姓名<b>，</b>手机<b>，</b>电话<b>，</b>省 市 县区 地址<b>，</b>邮编</font><br/>
+									            	<font color="#FF0000" >新格式：</font><font color="#0000FF">姓名<b>，</b>手机<b>，</b>省 市 县区 地址<b>，</b>邮编</font>
+									            <br/>例如：<br/>
+									           		 	<font color="#FF0000" >老格式：</font>张三峰<b>，</b>13688888888 <b>，</b><b>，</b>上海 上海市 长宁区 虹桥路48号102室<b>，</b>100000 <br/>
+									            		<font color="#FF0000" >新格式：</font>张三峰<b>，</b>13688888888 <b>，</b>上海 上海市 长宁区 虹桥路48号102室<b>，</b>100000 
+									            </p>
+									            <p><font color="red"><b> 批量下单：每一行添加一个收货地址(一次最多下100单)，严格按上面的格式来( 由于格式原因造成的失败，该站概不负责)</b></font> </p><br/>
+									 	   		<textarea  name="postscript"  id="postscript"   value="" onblur="javascript:this.value=this.value.replace(',','，');" style=" width:700px; border:1px solid   #ccc;height:200px;"></textarea>
+		            			 				 <input  id="btn_check" type="button"   style="height:40px;width:200px;font-size:14px;font-weight: 600;"  value="检查地址格式是否正确" onclick="checkisnos()" />
+						            			 <div id="cheisnos" ></div>
+						             			<div id="addinputarrs" ></div> 
+									 	   </td>
+									 </tr> 
+								   </table> 
+								   <input type="hidden" id="single_price"  value=""/>
+								   <input type="hidden" id="order_money" name="order_money" value=""/>
+								   <input type="hidden" id="order_nums" name="order_nums" value=""/>
+								   <input type="submit" class="btn_submit"  style="cursor:hand" value="确认提交" onclick="return chk_submit()" /> 
+						  
+						</form> 
+		 </div>
+		</div>
+</section><!--脚注-->
+ <script type="text/javascript">
+    var is_enabled = -1;
+    var checkSubmitFlg = false; 
+    function chk_submit()
+    {
+        if (!checkSubmitFlg)
+        { 
+        	checkSubmitFlg = true;      
+        }else{
+            alert("双击无效，不能重复提交");
+            return false;
+        }   	
+    	if(is_enabled==-1)
+    	{
+    		alert('请先对数据进行校验!');
+    		checkSubmitFlg = false;
+    		$('#btn_check').focus();
+    		return false;
+    	}
+    	if(is_enabled !=1)
+    	{
+    		alert('有错误数据，请调整后再提交!');
+    		checkSubmitFlg = false;
+    		return false;
+    	} 
+    }
+     function itemchange(obj)
+     {
+     	var type_id = obj.val();
+     	if(type_id=='' || type_id==0)
+     	{
+     		$("#detail").text('');
+     		$("#current_text").html('');   
+     		$("#single_price").val('');   
+     	} 
+     	$.post("{:U('getDetail')}",{id:type_id},function(data,status)
+     	{
+     		var return_data = data.data; 
+     		var detail = return_data.detail.replace(/\|/gm,     "\r\n")
+     		$("#detail").text(detail);
+      		var current_text = return_data.current;
+      		var single_price = return_data.price; 
+     		$("#current_text").html(current_text);    		
+     		$("#single_price").val(single_price);    	
+     	},'json'); 
+      	//对之前已经校验过的数据进行清理add by liq  20140517
+     	 $('#cheisnos').html('');
+		 $('#cheisnos').css('display','none'); 
+		 $('#addinputarrs').html('');  
+		 $("#order_nums").val('0'); 
+		 $("#order_money").val('0');		 
+		 $('#postscript').val('');
+		 is_enabled = -1; 
+     }
+     
+ 	function checkisnos(){ 
+ 		  var type_id = $("#type_id").val();	 
+		  if(type_id==""){
+				alert("请选择快递！");
+				$("#type_id").focus();
+				return false;
+		   }	
+ 		  var address_id = $("#address_id").val();	 
+		  if(address_id==""){
+				alert("请选择发货地址！");
+				$("#address_id").focus();
+				return false;
+		   }		   		
+		   addtext =$('#postscript').val();
+		  if(addtext==""){
+				alert("请您填写收货地址！");
+				$("#postscript").focus();
+				return false;
+		   }  			   
+		  var current_price = parseFloat($('#single_price').val());
+		  if(current_price<=0){
+				alert("你选择的快递单价出错！");
+				return false;
+		   }	  
+			  //是否错误标识
+			  isno=1;
+		 	  var addtextarr= new Array(); 
+			  var adddan=new Array();
+			  addtextarr=addtext.split("\n");
+			  addstr="";
+			  addinputarr="";
+			  addsum=0;			   
+			  //最多一次只能提交100个
+			  if(addtextarr.length<=100){
+			  for(i=0;i<addtextarr.length;i++){ 
+				  if(addtextarr[i]  && trim(addtextarr[i])!='' ){
+				 addtextarr[i] = addtextarr[i].replace(/\'/g, "");
+				 addtextarr[i] = addtextarr[i].replace(/\,/g, "，");				  	
+				 addinputarr+="<input type='hidden' name='addinputarr["+addsum+"]' value='"+addtextarr[i]+"' >";  
+				 adddan=trim(addtextarr[i]).split("，");
+				 addsum+=1;
+				//保存表单数据方便提交
+				 if(adddan.length!=5  && adddan.length!=4){alert("第"+addsum +" 个收货地址格式有错误，请仔细检查！");  isno=0;}
+				 if(adddan.length==5)
+				 {
+				 	 var shouhuodizhi = adddan[3];//获取收件地址  
+				 }else if(adddan.length==4)
+				 {
+				 	  var shouhuodizhi = adddan[2];//获取收件地址 
+				 } 
+				 var shdz_array =trim(shouhuodizhi).split(" ");
+				 if(shdz_array.length<4)
+				 {
+				 	alert("第"+addsum +" 个收货地址格式中省、市、县之间应该用空格隔开，请仔细检查！");  isno=0;
+				 }			
+     			 //判断地址之间空格是否是多个
+     			 if(exists_multispace(trim(shouhuodizhi)))
+     			 {
+     			 	 alert("第"+addsum +" 个收货地址格式中省、市、县之间只能用一个空格隔开，请仔细检查！");  isno=0;
+     			 }				 	
+				 addstr+="<tr><td class='addyes'>"+addsum+"</td>"; 
+				 for(j=0;j<adddan.length;j++){
+					 //如果不是四个淘宝的逗号格式提示错误
+					 if(adddan.length!=5  && adddan.length!=4 ){
+						 //如果有数据就显示 ，没有显示空
+						 if(adddan[j]){
+					addstr+="<td  class='adderror'>" +adddan[j]+"</td>";
+						 }
+						 else{
+							addstr+="<td  class='adderror'>" +"</td>"; 
+							 }
+					 }else
+					 {
+					   if(adddan.length==4 && j==2)
+					 	{
+					 		addstr+="<td class='addyes'></td>";	
+					 	}
+					 	  if(isno==0)
+					 	  {
+					 	  	addstr+="<td class='adderror'>" +adddan[j]+"</td>";	 
+					 	  }else{
+					 	  	addstr+="<td class='addyes'>" +adddan[j]+"</td>";	 
+					 	  } 
+					 }
+					 }
+				  addstr+="</tr>";
+				  } 
+				  }
+			  }
+			  else{
+				  alert("亲，一次最多只能批量下100单，请减少收货地址！");  isno=0;
+				  }
+				  
+			  //计算价格
+			  kuaidisum=addsum*current_price;
+			  
+			  $("#order_nums").val(addsum);
+			   
+			  $("#order_money").val(kuaidisum);
+			  
+			 var table_html="<table class=addtextstyle  cellpadding='5' width='100%' cellspacing='1'><tr><td  class='addyes' ><b>编号</b></td><td  class='addyes'><b>名字</b></td><td  class='addyes'><b>手机</b></td><td  class='addyes'><b>电话</b></td><td  class='addyes'><b>地址</b></td><td  class='addyes'><b>邮编</b></td></tr>"+addstr+"</table>"+"<p> 共 "+addsum+" X "  + current_price +"="+kuaidisum.toFixed(2)+" <input type='hidden' value="+kuaidisum.toFixed(2)+" name='kuaidipicle' id='kuaidipicle' /><input type='hidden' value='0' name='youyuer' id='youyuer'/>";  
+			   $('#cheisnos').html(table_html);
+			  $('#cheisnos').css('display','block'); 
+			 $('#addinputarrs').html(addinputarr);  
+			 is_enabled =isno;
+			  return(isno);
+		 } 
+		function trim(str){   
+		 str = str.replace(/^(\s|\u00A0)+/,'');   
+			for(var i=str.length-1; i>=0; i--){   
+			  if(/\S/.test(str.charAt(i))){   
+			    str = str.substring(0, i+1);   
+ 				  break;   
+			 }   
+		 }   
+		 return str;   
+	    }   
+     function exists_multispace(str)
+     {
+     	  var rtn_result=false;
+     	  var str_length_old=str.length;
+     	  str = str.replace(/\  /g, " ");
+     	  var str_length =str.length;
+     	  if(str_length_old !=str_length )
+     	  {
+     	  	  rtn_result = true;
+     	  } 
+     	  return rtn_result;
+     } 	 	    
+</script>
+<script type="text/javascript" src="__PUBLIC__/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/layer/layer.min.js"></script> 
+<div  class="address"  style="display:none"  >
+	<form  id="address_form"  action="{:U('address_save')}" method="POST">
+		 <div class="myclass_pay_card"> 
+		<table width="100%" border="1" class="t1">
+			<tr>
+				<td width="80" height="33">
+				<div align="right">姓名：</div>
+				</td>
+				<td  align="left"><input type="text"  name="name" value=""><font color="red">*(必填写)</font><label></label></td>
+			</tr>
+			<tr>
+				<td width="80" height="33">
+				<div align="right">手机：</div>
+				</td>
+				<td align="left"><input type="text"  name="shouji" value=""><font color="red">*(必填写)</font><label></label></td>
+			</tr>	
+			<tr>
+				<td width="80" height="33">
+				<div align="right">固话：</div>
+				</td>
+				<td  align="left"><input type="text"  name="phone" value=""></td>
+			</tr>										
+			<tr>
+				<td height="33">
+				      <div align="right">具体地址：</div>
+				</td> 
+				  <td class="tdleft"  align="left">	
+					    <select id="s_province" name="address_province"></select>&nbsp;&nbsp;
+					    <select id="s_city" name="address_city" ></select>&nbsp;&nbsp;
+					    <select id="s_county" name="address_district"></select>&nbsp;&nbsp;
+				  <font color="red">*(必填写)</font></td>
+		    </tr>
+		    <tr>
+		        <td height="33">
+				      <div align="right"> </div>
+				</td> 
+				<td  align="left">
+					 <input name="address" id="address" type="text" onfocus="address_focus()" onblur="address_blur()" class="input0" value="填写街道地址(可为空)" size="30" />
+				       <script type="text/javascript" src="__PUBLIC__/js/area.js"></script>
+				       <script type="text/javascript">_init_area();</script>
+                    </td>
+			</tr>
+			<tr>
+				<td height="33">
+				      <div align="right">邮编：</div>
+				</td>
+				<td  align="left"><input type="text" name="zipcode" id="zipcode" value="" /> </td>
+			</tr> 
+		</table>
+			<input type="hidden" name="user_id" value="{$user['id']}">
+			<input type="button" class="submit"  style="margin-left:80px" onclick="return address_submit()"  value="" /> 
+		</div>
+    </form>	
+</div> 
+<script type="text/javascript">
+   $(function(){
+		layer.use('extend/layer.ext.js'); //载入拓展模块
+     });
+    var address_win ;
+    function add_address()
+   {
+      address_win = $.layer({
+			title : '新增发货地址',
+			shade : [0.5 , '#000' , true], 
+			type : 1,
+			area : ['600px','350px'], 
+			border : [0],
+			page : {dom : '.address'} ,
+			closeBtn: [0, true] ,
+			 close : function(index){
+			layer.close(index); 
+		}
+		});		
+   } 
+   function address_focus()
+   {
+   	$('#address').val(''); 
+   }
+   function address_blur()
+   {
+     if($("#address").val()=='')
+   	   {
+   	   	  $("#address").val('填写街道地址(可为空)');
+   	   } 	
+   } 
+   function address_submit()
+   {
+   	    var obj = $("#address_form").serialize(); 
+   	    $.post("{:U('address_save')}",obj,function(data,status)
+   	    {
+   	    	if(status=='success')
+   	    	{
+   	    		alert(data.info);
+   	    		if(data.status==1)
+   	    		{
+   	    			layer.close(address_win);
+   	    			clearForm($("#address_form"));
+   	    			//重新获取地址信息
+   	    			$.post("{:U('address_get')}",{},function(data1,status1)
+   	    			{
+   	    				if(status1=='success')
+   	    				{
+   	    					if(data1.status==1)
+   	    					{ 
+   	    						 $("#address_id").html(data1.data);
+   	    					}
+   	    				} 
+   	    			},'json');
+   	    		}
+   	    	}
+   	    	else
+   	    	{
+   	    		 alert('地址新增失败！');
+   	    	}
+   	    },'json');
+   }
+   function clearForm(form) 
+   {   
+	    $(':input', form).each(function() {   
+	      var type = this.type;   
+	      var tag = this.tagName.toLowerCase(); // normalize case    
+	      if (type == 'text' || type == 'password' || tag == 'textarea')   
+	        this.value = "";    
+	      else if (type == 'checkbox' || type == 'radio')   
+	      this.checked = false;    
+	     else if (tag == 'select')   
+	      this.selectedIndex = -1;   
+	   });   
+   };  
+</script>
+<include file="Public:footer" />	

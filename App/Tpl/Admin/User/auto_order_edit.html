@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<title>管理区域</title>
+</head> 
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>自动充值</h3>
+      <ul class="tab-base">  
+      	 <li><a href="{:U('auto_order')}" ><span>自动充值</span></a></li> 
+         <li><a href="javascript:void(0)" class="current" ><span>自动充值详情</span></a></li> 
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+<form action="__URL__/order_update" method="post">
+  <table width="99%" border="0" align="center"  cellpadding="3" cellspacing="1" class="table_style">
+    <tr>
+      <td class="left_title_1">会员ID</td>
+      <td><input type="text" disabled="true" size="31" value="{$order['user_id']}"></td>
+    </tr>
+    <tr>
+      <td class="left_title_2">会员用户名</td>
+      <td><input type="text" disabled="true"  size="31" value="{$order['username']}"></td>
+    </tr>
+    <tr>
+      <td class="left_title_1">会员昵称</td>
+      <td><input type="text" disabled="true"  size="31" value="{$order['nickname']}"></td>
+    </tr>
+    <tr>
+      <td class="left_title_2">系统内订单号</td>
+      <td><input type="text" disabled="true"  size="31" value="{$order['order_no']}"></td>
+    </tr> 
+    <tr>
+      <td class="left_title_1">网站订单号</td>
+      <td><input type="text" disabled="true"  size="31" value="{$order['outer_order_no']}"></td>
+    </tr> 
+    <tr>
+      <td class="left_title_2">交易号</td>
+      <td><input type="text" disabled="true"  size="31" value="{$order['outer_trade_no']}"></td>
+    </tr> 
+     <tr>
+      <td class="left_title_1">付款对方</td>
+      <td><input type="text" disabled="true"  size="31" value="{$order['duifang']}"></td>
+    </tr>    
+      <tr>
+      <td class="left_title_2">交易状态</td>
+      <td><input type="text" disabled="true"  size="31" value="{$order['order_status']}"></td>
+    </tr>    
+    <tr>
+      <td class="left_title_1">金额</td>
+      <td><input type="text" disabled="true"  size="31" value="{$order['order_money']}"></td>
+    </tr> 
+    <tr>
+      <td class="left_title_2">交易时间</td>
+      <td><input type="text" disabled="true"  size="31" value="{$order['order_time']}"></td>
+    </tr> 
+    <tr>
+      <td class="left_title_1">订单状态</td>
+      <td>
+      	 <select name="status" disabled="true">
+      	 	<option value="0" <eq name="order.status" value="0">selected</eq> >未支付</option>
+      	 	<option value="1" <eq name="order.status" value="1">selected</eq> >已支付</option>
+      	 </select> 
+      </td>
+    </tr>
+    <tr>
+      <td class="left_title_2">订单详情</td>
+      <td><textarea cols="40" rows="5" name="comm" >{$order['comm']}</textarea></td>
+    </tr>   
+    <tr bgcolor="#FFFFFF">
+      <td colspan="2" class="left_title_1"><div align="center">
+        <input type="hidden" name="id" value="{$order['id']}" />  
+        <input type="hidden" name="user_id"  value="{$order['user_id']}" />        
+        <input class="button" type="button" onclick="history.go(-1);" value="返回" /></div></td>
+    </tr>
+  </table>
+</form>
+</div>
+</body>
+</html>

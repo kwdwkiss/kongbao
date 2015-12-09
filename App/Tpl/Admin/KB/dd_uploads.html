@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<link href="../Public/js/lhgcalendar/_doc/prettify/prettify.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="../Public/js/lhgcalendar/_doc/prettify/prettify.js"></script>
+<script type="text/javascript" src="../Public/js/lhgcalendar/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../Public/js/lhgcalendar/lhgcalendar.min.js"></script>
+<title>管理区域</title>
+<style type="text/css">
+<!--
+#man_zone .table_style tr .search {
+	margin-left: 10px;
+}
+-->
+</style> 
+</head>
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>底单管理</h3>
+      <ul class="tab-base"> 
+         <li><a href="{:U('dd_index')}"><span>底单申请</span></a></li>   
+         <li><a href="{:U('dd_exp')}"><span>底单导出</span></a></li> 
+         <li><a href="javascript:void(0)" class="current"><span>表格形式底单申请</span></a></li> 
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+  <table width="97%" border="0" align="center" cellpadding="3" cellspacing="1" class="table_style">
+    <tr>
+      <td colspan="7" class="left_title_2">
+        <form class="search" action="__URL__/dd_uploads" method="post">
+          <div align="left">筛选： 
+              <select name="ftype">
+              	 <option value="user_id" <eq name="_POST.ftype" value="user_id">selected</eq>>用户ID</option>
+                 <option value="username" <eq name="_POST.ftype" value="username">selected</eq>>用户名</option>  
+              </select>  
+              <input type="text" name="keyword" value="{:I('keyword')}" /> 
+              <select name="status">
+              	   <option value="">请选择处理状态</option> 
+              	   <option value="1" <if condition="I('status')==1">selected</if> >申请中</option> 
+              	   <option value="2" <if condition="I('status')==2">selected</if> >已完成</option>
+              	   <option value="3" <if condition="I('status')==3">selected</if> >失败</option>  
+                  </foreach>
+          </select> 
+ 		       <input name="submit" type="submit" value="查询" /> 
+              <span style="float:right"><font color="red">{$count}</font>条数据符合条件</span>
+           </div>
+        </form>        
+      </td> 
+    </tr>
+    <tr>
+      <td width="5%" class="left_title_1"><div align="center">用户ID</div></td>
+      <td width="12%" class="left_title_1"><div align="center">用户名</div></td> 
+      <td width="20%" class="left_title_1"><div align="center">申请内容</div></td>
+      <td width="20%" class="left_title_1"><div align="center">处理结果</div></td>  
+      <td width="14%" class="left_title_1"><div align="center">申请时间</div></td>
+      <td width="14%" class="left_title_1"><div align="center">申请状态</div></td>
+      <td width="8%" class="left_title_1"><div align="center">操作</div></td> 
+    </tr>
+    <foreach name="order_list" item='order'> 
+      <tr> 
+        <td><div align="center">{$order['user_id']}</div></td>
+        <td><div align="center">{$order['username']}</div></td>
+         <td><div align="center"><a href="{:U('dddocexp',array('id'=>$order['id'],'type'=>1))}" target="_blank" >点击查看申请内容</a></div></td>
+          <td><div align="center">
+  						<if condition="$order['status']==2">
+ 	   	   	    	  	   	     <a href="{:U('dddocexp',array('id'=>$order['id'],'type'=>2))}" target="_blank" >点击查看处理结果</a>
+ 	   	   	    	  	   <else/>
+ 	   	   	    	  	         {$order['comm']}
+						 </if>
+          	 </div> 
+         </td> 
+        <td><div align="center">{$order['addtime']}</div></td>
+         <td><div align="center">
+         	   <switch name="order.status" >
+         	   	  <case value="1"><font color="red">申请中</font></case>
+         	   	  <case value="2"><font color="blue">已完成</font></case>
+         	   	  <case value="3"><font color="red">失败</font></case>
+         	   	  <default />申请中
+         	   </switch>
+         	</div></td>
+        <td>
+        	<div align="center">  
+        		 <a title="表格底单处理" href="__URL__/dd_uploads_edit/id/{$order['id']}"><img src="../Public/images/set2.gif" alt="底单处理"></img></a>
+        		 &nbsp;&nbsp;&nbsp;
+        		 <if condition="$order['status']!=2">
+		        		 <a title="删除该条表格底单" href="__URL__/dd_uploads_del/id/{$order['id']}" onclick="return confirm('确定要删除该条信息吗？')"><img src="../Public/images/pic12.gif" alt="删除"></img></a> 
+         		 </if>
+        	</div> 
+       </td>
+      </tr>
+    </foreach>
+    <tr>
+      		<td height="30" colspan="7"><div align="center">{$show}</div></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

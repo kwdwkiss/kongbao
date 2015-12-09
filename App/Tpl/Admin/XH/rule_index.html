@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<script type="text/javascript" src="../Public/js/jquery-1.4.2.min.js"></script> 
+<title>管理区域</title>
+<style type="text/css">
+<!--
+#man_zone .table_style tr .search {
+	margin-left: 10px;
+}
+-->
+</style>
+<script type="text/javascript"> 
+	 // 全选 start
+$(function()
+{
+     $('.checkall').click(function(){
+		$('.checkall').attr('checked',$(this).attr('checked'));
+		$('.checkitem').each(function(){
+			$(this).attr('checked',$('.checkall').attr('checked'));
+		});
+	});
+
+});  
+</script>
+</head>
+<body>
+	
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>小号类型</h3>
+      <ul class="tab-base">
+        <li><a href="{:U('type')}" ><span>小号类型</span></a></li>
+         <li><a href="{:U('type_add')}" ><span>类型新增</span></a></li> 
+         <li><a href="javascript:void(0)" class="current" ><span>导入规则</span></a></li> 
+         <li><a href="{:U('rule_add')}" ><span>规则新增</span></a></li>  
+      </ul>
+    </div>
+  </div>
+<div id="man_zone"> 
+<table width="99%" border="0" align="center" cellpadding="3" cellspacing="1" class="table_style"> 
+	<tr>
+		<td width="4%" align="center"><input type="checkbox"  class="checkall" id="checkallBottom"></td>
+		<td width="30%" class="left_title_1"> <div align="center">规则名称</div></td> 
+		<td width="" class="left_title_1"><div align="center">备注</div> </td> 
+		<td width="15%" class="left_title_1"> <div align="center">操作</div> </td>
+	</tr>
+	<tbody>
+			<form method="post" action="{:U('rule_del')}" id="form" >
+				<foreach name="rule_list" item="rule">
+						<tr>
+					        <td align="center" ><input type="checkbox" name='id[]' value="{$rule['id']}" class="checkitem"></td>
+							<td><div align="center">{$rule['title']}</div></td>
+							<td><div align="center">{$rule['comm']}</div></td> 
+							<td>
+								<div style="margin:0 13px 0 13px;float:left"><a title="修改该导出规则信息" href="__URL__/rule_edit/id/{$rule['id']}"><img src="../Public/images/set2.gif" alt="编辑"></img></a></div>
+								<div><a title="删除该条导出规则信息" href="__URL__/rule_del/id/{$rule['id']}" onclick="return confirm('确定要删除该条信息吗？')"><img src="../Public/images/pic12.gif" alt="删除"></img></a></div>
+							</td>
+						</tr>
+					</foreach>
+			    </form>
+      </tbody>
+	    <tfoot>
+		    <tr>
+			     <td colspan="4">
+			      <a href="JavaScript:void(0);" class="btn" onclick="if(confirm('确定要删除吗？')){$('#form').submit();}"><span>删除</span></a>
+                 </td>
+		    </tr>
+	    </tfoot> 
+</table>
+</div>
+</body>
+</html>

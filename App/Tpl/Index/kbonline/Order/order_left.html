@@ -1,0 +1,38 @@
+<div class="member_left fl">
+	<dl>
+    	<dt>业务管理</dt>
+    	<dd>
+        	<ul>
+        		<li><a href="{:U('User/address')}" target="_self">发货地址</a></li>
+            	<li><a href="{:U('Order/kb')}" target="_self">空包下单</a></li>
+            	<if condition="$kongbao_config['true_valid']==1">
+            		<li><a href="{:U('Order/true_kb')}" target="_self">真实空包下单</a></li>
+            	</if>
+            	<if condition="$kongbao_config['pf_valid']==1">
+            		<li><a href="{:U('Order/kb_pf')}" target="_self">空包批发</a></li> 
+            	</if>
+            	<li><a href="{:U('Order/dd_apply')}" target="_self">底单申请</a></li> 
+            	<if condition="$kongbao_config['pf_valid']==1">
+            		<li><a href="{:U('Order/daili_upload')}" target="_self">上传代理表格</a></li> 
+               </if>
+            	<if condition="$danhao_config['valid']==1">
+            		<li><a href="{:U('Order/dh')}" target="_self">购买单号</a></li> 
+            	</if>
+             	<if condition="$xiaohao_config['valid']==1">
+            		<li><a href="{:U('Order/xh')}" target="_self">购买小号</a></li> 
+            	</if>    
+            	<li><a href="{:U('Log/kb_log')}" target="_self">空包下单记录</a></li>
+            	<if condition="$kongbao_config['pf_valid']==1">
+            		<li><a href="{:U('Log/kbpf_log')}" target="_self">空包批发记录</a></li>
+            	</if>
+            	<li><a href="{:U('Log/didan_log')}" target="_self">底单申请记录</a></li>            	
+            	<if condition="$danhao_config['valid']==1">
+            		<li><a href="{:U('Log/dh_log')}" target="_self">单号购买记录</a></li> 
+            	</if>
+             	<if condition="$xiaohao_config['valid']==1">
+            		<li><a href="{:U('Log/xh_log')}" target="_self">小号购买记录</a></li> 
+            	</if>                   	       	 
+             </ul>
+        </dd>
+    </dl>
+</div>

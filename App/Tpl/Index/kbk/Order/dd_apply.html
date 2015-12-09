@@ -1,0 +1,325 @@
+<include file="Public:header" />	  
+<link rel="stylesheet" href="__PUBLIC__/kindeditor/themes/default/default.css" />
+<script src="__PUBLIC__/kindeditor/kindeditor.js"></script>
+<script src="__PUBLIC__/kindeditor/lang/zh_CN.js"></script>
+<script type="text/javascript">
+  	KindEditor.ready(function(K) {
+  		window.editor = K.create('#file_content');
+		var editor = K.editor({
+			allowFileManager : true
+		});
+		K('#jietu_i').click(function() {
+				editor.loadPlugin('image', function() {
+					editor.plugin.imageDialog({
+						showRemote : false,
+						imageUrl : K('#jietu').val(),
+						clickFn : function(url, title, width, height, border, align) {
+							K('#jietu').val(url);
+							$('#jietu_save').val(url);
+							editor.hideDialog();
+						}
+					});
+				});
+		});		
+	}); 	
+</script> 
+<div class="header_adv">
+  <a href="{$header_adv['pic_url']}" target="_blank"><img src="{$header_adv['pic']}" alt="{$header_adv['ad_brief']}" ></a>
+</div>
+<div class="userbox clearfix">
+  <div class="userleft">
+    <include file="User:left_nav" />
+  </div>
+  <div class="userright">
+    <div class="mynow"><div>底单申请</div></div>
+    <div class="myled" style="margin-top:15px;">
+      <iframe align="center" border="0"  marginWidth=0 marginHeight=0 src="{:U('Index/Index/led')}"  frameBorder=0 width="100%" height="35px" scrolling="no"></iframe>
+    </div>  
+	<div class="clearfix" style="margin-top:20px;">
+	  <div class="focus_button"  id="tab01" onclick="DisplayFun('tab01')">单个形式申请</div> 
+	  <div class="common_button" id="tab02" onclick="DisplayFun('tab02')">表格形式申请</div>
+    </div>
+ 	<div id="tab_Father1" style="border:1px solid #f0f0f0; font-size:14px;">  
+	  <div id="tab01_c" style="margin-top:20px;"> 
+	  <form id="order_form" action="{:U('ddsave')}" method="POST" > 
+											<table border="0" cellSpacing="1" cellPadding="5" width="750" align="center" id="mytab">
+											    <tr>
+                                                  <td colspan="3" align="left">
+                                                    <div style="width:700px;margin:0 auto;height:150px;line-height:20px;border-bottom:1px solid #f2f2f2;">{$kongbao_page['dd_gonggao']}</div>
+                                                  </td>
+                                                </tr>
+												<tr>
+													<td> <div align="right">快递选择</div></td>
+													<td colspan="2">
+                                                    <div class="myinputbox" style="width:180px;">
+                                                      <div style="width:180px;">
+														<select name="type_id" id="type_id" onchange="itemchange($(this))" style="width:182px;">
+															<option value="">=请=选=择=快=递=类=型=</option>
+															<foreach name="type_list" item="type">
+																<option value="{$type['id']}">{$type['name']}</option>
+															</foreach>
+														</select>
+                                                      </div> 
+                                                    </div> 
+													</td>
+												</tr> 
+												  <tr id="dd_price">
+												       <td align="right">底单价格</td>
+												       <td   class="tdright"><input  align="right" name="price" type="text" disabled="true" id="price" value="0" size="5" class="myinputbox01" style="background:#f8f8f8;">&nbsp;元</td>
+												       <input type="hidden" id="dd_price" name="dd_price" />
+												  </tr> 		
+												  <tr>
+												    <td align="right" width="120">快递单号</td>
+												    <td width="440" class="tdleft"><input class="myinputbox01" name="note_no" type="text" id="note_no" size=60></td>
+                                                    <td width="190"><font color="red">*必填项</font></td>
+												  </tr> 
+												 <tr>
+													<td align="right">降权截图</td>
+													<td class="tdleft">
+													      	<input type="text" id="jietu" value="" disabled="true"  size="40" class="myinputbox01" style="background:#f8f8f8;"/>
+													      	<input type="hidden" id="jietu_save" value="" name="jietu" /> 
+													        <input type="button" id="jietu_i" value="选择图片" />
+													      </td>
+                                                    <td><font color="red">*无降权截图则不予处理</font></td>
+												  </tr>     
+													  <tr>
+													    <td align="right">发货地址</td>
+													    <td  class="tdleft"><input name="fhaddr" type="text" id="fhaddr" class="myinputbox01" size="60" value="格式：地址，邮编，姓名，手机，固话 共4个逗(淘宝上复制下来)" onfocus="if(value==defaultValue){value='';this.style.color='#666666'}" onblur="if(!value){value=defaultValue;this.style.color='#666666'}" style="color:#999999;">
+													    </td>
+                                                        <td><font color="red">*必填项</font></td>
+													  </tr>  
+													  <tr>
+													    <td align="right">收货地址</td>
+													    <td  class="tdleft"><input class="myinputbox01" name="shaddr" type="text" id="shaddr" size=60 value="格式：姓名，手机，固话，地址，邮编 共4个逗(淘宝上复制下来)" onfocus="if(value==defaultValue){value='';this.style.color='#666666'}" onblur="if(!value){value=defaultValue;this.style.color='#666666'}" style="color:#999999">
+													    </td>
+                                                        <td><font color="red">*必填项</font></td>
+													  </tr> 
+													  <tr>
+													    <td align="right">发货日期</td>
+													    <td colspan="2"><input name="order_time" type="text" id="order_time" size=60 value="如：2013-09-18（若无日期，则底单上不写发货日期）" onfocus="if(value==defaultValue){value='';this.style.color='#666666'}" onblur="if(!value){value=defaultValue;this.style.color='#666666'}" style="color:#999999;" class="myinputbox01"></td>
+													  </tr>
+													  <tr>
+														    <td align="right">重量</td>
+													        <td colspan="2"><input name="weight" type="text" id="weight" class="myinputbox01"/>	</td>			  
+													  </tr>
+													  <tr>
+														    <td align="right">运费</td>
+													        <td colspan="2"><input name="yunfei" type="text" id="yunfei" class="myinputbox01"/>	</td>		  	
+													  </tr>				
+													  <tr>
+														    <td align="right">商品名称</td>
+													        <td colspan="2"><input name="goods_name" type="text" size=60  id="goods_name" class="myinputbox01"/>	</td>							  	
+													  </tr>
+        <tr>
+          <td height="50"></td>
+          <td colspan="2"><input type="submit" style="cursor:hand" value="提交申请" class="submit" onclick="return chk_submit()" /></td>
+        </tr>
+        <tr>
+          <td colspan="3" height="50">
+        </tr>
+											   </table>  
+	  </form>
+	</div>
+	<div id="tab02_c" style="display:none;padding:10px;width:700px;margin:20px auto 0;">						
+													
+													<div style="width:700px;margin:0 auto;height:120px;line-height:20px;border-bottom:1px solid #f2f2f2;"><b style="color:#e53333;">递底单申请须知</b><br/>
+                                                    本空包单网站提供的空包单号只用来刷信誉用，任何非法、别处使用后果一律不负责，<br/>
+                                                    只能提供发货底单作为降权申诉之用，无法提供对方签收的底单或者红章证明什么的，请大家注意！<br/> 
+													请细心填写内容，若申请多个底单，可把下列信息复制多份填写。<br/>
+													<font color="#e53333">由于页面宽度有限，建议在Word中按照格式编辑好后复制到此!</font>
+													</div>
+													<div style="margin-top:20px;">
+                                                    <form  action="{:U('ddsave_file')}" method="post" style="line-height:30px;"> 
+													<textarea  id="file_content" name="file_content" style="width:690px;height:300px;resize:none;">{$kongbao_page['ddsq_defaultcontent']}</textarea> 
+													<input type="submit" value="提交">
+													</form>
+                                                    </div>
+													<div style="margin-top:20px;"><b style="color:#e53333;">特别提醒</b><br/>
+													{$kongbao_page['ddsq_tixing']}
+                                                    </div>
+													
+													<div style="margin-top:20px;"><b>申请记录</b><br/>
+													<table border="0" class="table1" cellSpacing="1" cellPadding="5" width="700" align="center">
+														    	 <thead>
+														    	 	 <tr>
+															    	 	 	 <th>记录ID</th>
+															    	 	 	 <th>提交时间</th>
+															    	 	 	 <th>申请底单内容</th>
+															    	 	 	 <th>底单处理状态</th>
+															    	 	 	 <th>处理结果或失败原因</th> 
+														    	 	  </tr> 
+														    	 </thead> 
+														    	 <tbody>
+														    	 	   <if condition="$count gt 0">
+														    	 	   	   <foreach name="didan_list" item="didan">
+														    	 	   	   	    <tr align="center">
+														    	 	   	   	    	  <td width="10%">{$didan['id']}</td>
+														    	 	   	   	    	  <td width="20%">{$didan['addtime']}</td>
+														    	 	   	   	    	  <td width="25%"><a href="{:U('dddocexp',array('id'=>$didan['id'],'type'=>1))}" target="_blank" >点击查看申请内容</a></td>
+														    	 	   	   	    	  <td width="20%">
+														    	 	   	   	    	  	   <switch name="didan.status">
+														    	 	   	   	    	  	   	     <case value="1">等待处理</case>
+														    	 	   	   	    	  	   	     <case value="2">处理完成</case>
+														    	 	   	   	    	  	   	     <case value="3"><font color="red">失败</font> </case>
+														    	 	   	   	    	  	   	     <default />等待处理 
+														    	 	   	   	    	  	   </switch>
+														    	 	   	   	    	  </td>
+														    	 	   	   	    	  <td width="25%">
+														    	 	   	   	    	  	   <if condition="$didan['status']==2">
+														    	 	   	   	    	  	   	     <a href="{:U('dddocexp',array('id'=>$didan['id'],'type'=>2))}" target="_blank" >点击查看处理结果</a>
+														    	 	   	   	    	  	   <else/>
+														    	 	   	   	    	  	         {$didan['comm']}
+														    	 	   	   	    	  	   </if>
+														    	 	   	   	    	  </td>
+														    	 	   	   	    </tr>
+														    	 	   	   </foreach>
+														    	 	   	<else />
+														    	 	   	  <tr><td align="center" colspan="5">暂无表格形式申请记录！</td></tr>
+														    	 	   </if> 
+														    	 </tbody> 
+														    	 <tfoot> 
+														    	 		<tr>
+						      													<td colspan="5"><div align="center">{$show}</div></td> 
+														    	 	     </tr>
+														    	 </tfoot>
+														    </table>	
+                                                    </div>        										 		
+		</div>								 	
+	  </div> 
+	</div>  
+  </div>
+</div>  
+ <script type="text/javascript">  
+    function chk_submit()
+    { 
+    	 var user_money = "{$user['money']}";
+    	 var type_id = $('#type_id').val();
+    	 if(type_id<=0 || type_id=='')
+    	 {
+    	 	alert('请选择快递类型!')
+    	 	return false;
+    	 }
+    	 var dd_price = $("#dd_price").val();
+    	 if(dd_price>0)//如果大于0时判断是否满足
+    	 {
+    	 	  var price=parseFloat(user_money);
+    	 	  if(price<dd_price)
+    	 	  {
+    	 	  	alert('当前账户余额不足，请先充值!');
+    	 	  	return false;
+    	 	  }
+    	 }
+    	 var note_no = $("#note_no").val();
+    	 if(note_no =='')
+    	 {
+    	 	alert('请填写快递单号!');
+    	 	return false;
+    	 }
+    	 var jietu_save = $("#jietu_save").val();
+    	 if(jietu_save=='')
+    	 {
+      	 	alert('请上传降权截图!');
+    	 	return false;  	 	
+    	 }
+    	 var fhaddr = $("#fhaddr").val();
+    	 if(fhaddr=='')
+    	 {
+      	 	alert('请填写发货地址!');
+    	 	return false;  	 	
+    	 }
+    	 if(fhaddr=='格式->地址，邮编，姓名，手机，固话 共4个逗(淘宝上复制下来)')
+    	 {
+       	 	alert('请填写发货地址!');
+    	 	return false;  	   	 	
+    	 }
+    	 //判断发货地址是否满足条件
+    	 var result=check_address(fhaddr);
+    	 if(!result) 
+    	 {
+    	 	 alert('发货地址格式不对，请检查！');
+    	 	 return false;
+    	 } 
+    	 var shaddr = $("#shaddr").val();
+    	 if(shaddr=='')
+    	 {
+      	 	alert('请填写收货地址!');
+    	 	return false;  	 	
+    	 }   
+    	 if(shaddr=='格式->姓名，手机，固话，地址，邮编 共4个逗(淘宝上复制下来)')
+    	 {
+      	 	alert('请填写收货地址!');
+    	 	return false;  	 	
+    	 }       	 
+    	 //判断收货地址是否满足条件
+    	 var result=check_address(shaddr);
+    	  if(!result) 
+    	   {
+    	   	alert('收货地址格式不对，请检查！');   
+    	   	return false;
+    	   } 	  	 
+    }
+	 function trim(str){   
+			 str = str.replace(/^(\s|\u00A0)+/,'');   
+				for(var i=str.length-1; i>=0; i--){   
+				  if(/\S/.test(str.charAt(i))){   
+				    str = str.substring(0, i+1);   
+	 				  break;   
+				 }   
+			 }   
+			 return str;   
+	  }   
+	 function check_address(address)
+	 {
+	 	var adddan=trim(address).split("，");
+	    if(adddan.length!=5)
+	     {
+	       	  return false;
+	     }
+	    return true;
+	 }  
+ function itemchange(obj)
+     {
+	     	var type_id = obj.val();
+	     	if(type_id=='' || type_id==0)
+	     	{
+	     		$("#price").val('0');  
+	     		$("#dd_price").val('0'); 
+	     	}
+	     	else
+	     	{
+		     	$.post("{:U('getDetail')}",{id:type_id},function(data,status)
+		     	{
+		     		var return_data = data.data;  
+		     		if(return_data.dd_price>0)
+		     		{
+			      	    $('#dd_price').val(return_data.dd_price);   
+			     		$("#price").val(return_data.dd_price);     			
+		     		} 
+		     	},'json');  	     		
+	     	}  
+    }  
+ function DisplayFun(str)
+{
+	var tab1=document.getElementById("tab01");
+	var tab2=document.getElementById("tab02");  
+	var tab1c=document.getElementById("tab01_c");
+	var tab2c=document.getElementById("tab02_c"); 
+	if(str=="tab01")
+	{
+		tab1c.style.display="block";
+		tab2c.style.display="none";  
+		tab1.className="focus_button";
+		tab2.className="common_button";  
+		return ;
+	}
+	if(str=="tab02")
+	{
+		tab1c.style.display="none";
+		tab2c.style.display="block";  
+		tab1.className="common_button";
+		tab2.className="focus_button"; 
+		return ;
+	}  
+} 
+</script> 
+<include file="Public:footer" />	

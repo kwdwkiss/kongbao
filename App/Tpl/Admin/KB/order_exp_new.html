@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />    
+<script type="text/javascript" src="../Public/js/lhgcalendar/jquery-1.7.1.min.js"></script> 
+<title>管理区域</title>
+<style type="text/css">
+<!--
+#man_zone .table_style tr .search {
+	margin-left: 10px;
+}
+-->
+</style>
+<script type="text/javascript">
+$(function()
+{
+	 $("#exp_batch").click(function()
+	 { 
+	 	 var type_id = $("#type_id").val();
+		 $.post("{:U('order_exp_post')}",{type_id:type_id},function(data,status)
+		 {
+				 if(status=='success')
+				 {
+				 	 if(data.status==1)
+				 	 {
+				 	 	alert('批量导出成功！'); 
+				 	 	window.location.reload();
+				 	 }
+				 	 else
+				 	 {
+				 	 	alert(data.info); 
+				 	 }
+				 }
+				 else
+				 {
+				 	alert('批量导出失败！'); 
+				 }
+		 },'json');	 	
+	 });
+});
+</script>
+</head>
+<body>
+ <div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>空包订单</h3>
+      <ul class="tab-base"> 
+           <li><a href="{:U('order_index')}" title="会员单个购买订单"   ><span>普通订单</span></a></li>  
+           <li><a href="{:U('order_daili')}" ><span>批发订单</span></a></li> 
+           <li><a href="{:U('order_exp')}" ><span>空包订单导出</span></a></li> 
+           <li><a href="javascript:void(0)" class="current" ><span>订单批量导出</span></a></li> 
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+  <table width="97%" border="0" align="center" cellpadding="3" cellspacing="1" class="table_style">
+    <tr> 
+    	<td colspan="6" align="left">上次导出操作时间：<font color="red"><strong>{$last_time}</strong></font></td>
+    </tr>
+    <tr> 
+    	<td colspan="6" align="left">
+    		<select name="type_id" id="type_id">
+              	  <option value="">请选择空包类型</option>
+                  <foreach name="type_list" item="type">
+                  	    <option value="{$type['id']}"  <if condition="I('type_id')==$type['id']">selected</if> >{$type['name']}</option>
+                  </foreach>
+		     </select> 
+    		<input type="button" style="height:40px; line-height:40px;width:120px" id="exp_batch" value="批量导出"></td>
+    </tr>
+    <tr> 
+      <td width="15%" class="left_title_1"><div align="center">导出时间</div></td>  
+      <td width="15%" class="left_title_1"><div align="center">空包类型</div></td>
+      <td width="" class="left_title_1"><div align="center">导出文件名</div></td>
+      <td width="10%" class="left_title_1"><div align="center">订单条数</div></td>   
+      <td width="15%" class="left_title_1"><div align="center">上次导出时间</div></td> 
+      <td width="10%" class="left_title_1"><div align="center">操作</div></td>
+    </tr>
+    <foreach name="log_list" item='log'> 
+	      <tr> 
+	        	 <td><div align="center">{$log['exp_time']}</div></td>
+	        	 <td><div align="center">{$log['type_name']}</div></td>
+	         	 <td><div align="left">{$log['exp_filename']}</div></td>
+	         	 <td><div align="center">{$log['exp_counts']} </div> </td>
+	         	 <td><div align="center">{$log['last_time']}</div></td>
+	         	 <td><div align="center"><a href="{:U('downfile',array('id'=>$log['id']))}">下载文件</a></div></td> 
+	      </tr>
+    </foreach>
+    <tr>  
+      	<td colspan="6"><div align="center">{$show}</div></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

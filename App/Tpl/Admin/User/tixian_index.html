@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../Public/css/common.css" type="text/css" />
+<title>管理区域</title>
+<style type="text/css">
+<!--
+#man_zone .table_style tr .search {
+	margin-left: 10px;
+}
+-->
+</style>
+</head>
+<body>
+<div class="fixed-bar">
+    <div class="item-title"> 
+      <h3>会员提现</h3>
+      <ul class="tab-base"> 
+         <li><a href="javascript:void(0)" class="current"><span>提现列表</span></a></li>   
+      </ul>
+    </div>
+  </div>
+<div id="man_zone">
+  <table width="97%" border="0" align="center" cellpadding="3" cellspacing="1" class="table_style">
+    <tr>
+      <td colspan="10" class="left_title_2">
+        <form class="search" action="__URL__/tixian_index" method="post">
+          <div align="left">筛选： 
+              <select name="ftype">
+              	<option value="username"<if condition="I('ftype')=='username'">selected</if> >用户名</option>  
+              	<option value="user_id" <if condition="I('ftype')=='user_id'">selected</if>>用户ID</option>  
+              </select>
+              <input type="text" name="keyword" value="{:I('keyword','')}"/>
+               <select name="status">
+               	<option value="">请选择提现状态</option>
+              	<option value="1" <if condition="I('status')=='1'">selected</if>>申请中</option>  
+              	<option value="2" <if condition="I('status')=='2'">selected</if>>成功提现</option>  
+              	<option value="3" <if condition="I('status')=='3'">selected</if>>提现失败</option>  
+              </select>            
+              <input name="submit" type="submit" value="查询" /> 
+              <span style="float:right"><font color="red">{$count}</font>条数据符合条件</span>
+           </div>
+        </form>        
+      </td>
+    </tr>
+    <tr>
+      <td width="5%" class="left_title_1"><div align="center">ID</div></td>
+      <td width="8%" class="left_title_1"><div align="center">用户ID</div></td>
+      <td width="15%" class="left_title_1"><div align="center">用户名</div></td>
+      <td width="10%" class="left_title_1"><div align="center">提现金额</div></td>
+      <td width="10%" class="left_title_1"><div align="center">提现姓名</div></td> 
+      <td width="10%" class="left_title_1"><div align="center">账号类型</div></td> 
+      <td width="10%" class="left_title_1"><div align="center">提现账号</div></td> 
+      <td width="15%" class="left_title_1"><div align="center">
+      <div align="center">申请时间</div>
+      </div></td> 
+      <td width="8%" class="left_title_1"><div align="center">
+          <div align="center">状态</div>
+      </div></td> 
+      <td width="10%" class="left_title_1"><div align="center">
+          <div align="center">操作</div>
+      </div></td> 
+    </tr>
+   <foreach name="tixian_list" item="tixian"> 
+      <tr> 
+        <td><div align="center">{$tixian['id']}</div></td>
+        <td><div align="center"><a href="{:U('index',array('ftype'=>'id','keyword'=>$tixian['user_id']))}">{$tixian['user_id']}</a></div></td>
+        <td><div align="center">{$tixian['username']}</div></td>
+        <td><div align="center">{$tixian['tx_money']}</div></td>
+        <td><div align="center">{$tixian['cwsz_config']['account_name']}</div></td>
+        <td><div align="center">
+        	<switch name="tixian.cwsz_config.type">
+        		<case value="1">支付宝</case>
+        		<case value="2">财付通</case>
+        		<case value="3">银行转账</case>
+        		<default/>其他未说明
+        	</switch> 
+        	</div>
+        </td>
+        <td <eq name="tixian.cwsz_config.type" value='3'>title="{$tixian['cwsz_config']['account_bank']-$tixian['cwsz_config']['account_address']}"</eq>>
+        	<div align="center">{$tixian['cwsz_config']['account_no']}</div>
+        </td>
+        <td><div align="center">{$tixian['addtime']}</div></td>
+        <td>
+			<switch name="tixian.status">
+			    <case value="1"><div align="center"><font color="green">申请中</font></div></case>
+			    <case value="2"><div align="center"><font color="blue">提现成功</font></div></case>
+			    <case value="3"><div align="center"><font color="red">提现失败</font></div></case>
+			    <default />未说明
+			</switch> 
+        </td> 
+		<td><div align="center">
+        	   <div style="margin:0 0 0 5px;float:left"><a href="{:U('tixian_edit',array('id'=>$tixian['id']))}"><img src="../Public/images/set2.gif" alt="查看及处理提现申请" /></a></div>
+			</div>
+		</td>
+      </tr>
+     </foreach>
+    <tr>
+      <td height="30" colspan="10"><div align="center">{$show}</div></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

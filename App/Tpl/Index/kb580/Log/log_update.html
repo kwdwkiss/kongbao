@@ -1,0 +1,149 @@
+<include file="Public:header" />	 
+<script type="text/javascript" src="__PUBLIC__/js/area.js" charset="gb2312"></script>
+<script type="text/javascript">
+	function change_area(type)
+	{
+	      if(type=='s1') //重新选择发货地址
+			 { 
+			 	$("#area_default").css('display','none');
+			 	$("#area_setting").css('display','block');
+			 	$('#is_update').val(1);
+			 }
+			 else if(type=='s2') //取消设置收货地址
+			 {
+			 	$("#area_default").css('display','block');
+			 	$("#area_setting").css('display','none');
+			 	$('#is_update').val(0);//不更新元发货地址
+			 }else if(type=='s3') //重新选择收货地址
+			 { 
+			 	$("#area_default1").css('display','none');
+			 	$("#area_setting1").css('display','block');
+			 	$('#is_update1').val(1);
+			 }
+			 else if(type=='s4') //取消设置收货地址
+			 {
+			 	$("#area_default1").css('display','block');
+			 	$("#area_setting1").css('display','none');
+			 	$('#is_update1').val(0);//不更新元发货地址
+			 }
+	}
+</script>   
+<link rel="stylesheet" type="text/css" href="../Public/css/css.css"><!--公用样式-->
+ <section class="clearfix section" style="width:1000px;margin:10px auto">
+ 	<include file="User:left_nav" />
+ 	<div class="show_panel "> 
+            	 <include file="Public:quick_nav"/> 
+                <!--main content-->
+                 <div class=" clearfix box default">
+                            <!--header内容头部 start-->
+                          <header class="clearfix box_header">
+                                <h2 class="box_title">空包信息修改</h2> 
+                            </header>   
+                  		  <form  id="log_form"  action="{:U('log_save')}" method="POST">
+					  		  	<input type="hidden" name="is_update" id="is_update" value="0" />
+					  		  	<input type="hidden" name="is_update1" id="is_update1" value="0" /> 
+								 <table width="700px" id="mytab" border="1" class="t1">
+										<tr>
+											<td width="130" height="33">
+												<div align="right">快递类型：</div> 
+											</td>
+											<td><input type="text" disabled="true" value="{$kb_type[$kongbao_order['type_id']]}"><font color="red">*(快递类型无法修改)</font><label></label></td>
+										</tr>
+										<tr>
+											<td colspan="2" bgcolor="#abcdef" >发货信息</td>
+										</tr> 
+										<tr>
+											<td width="130" height="33">
+											<div align="right">发货人姓名：</div>
+											</td>
+											<td><input type="text"  name="send_name" value="{$kongbao_order['send_name']}"><font color="red">*请确认您的信息是否正确,不正确提交后果自负</font><label></label></td>
+										</tr>	
+										<tr>
+											<td width="130" height="33">
+											<div align="right">发货人手机号：</div>
+											</td>
+											<td><input type="text"  name="send_shouji" value="{$kongbao_order['send_shouji']}"><font color="red">*请确认您的信息是否正确,不正确提交后果自负</font></td>
+										</tr>	
+										<tr>
+											<td width="130" height="33">
+											<div align="right">发货人固定电话：</div>
+											</td>
+											<td><input type="text"  name="send_phone" value="{$kongbao_order['send_phone']}"></td>
+										</tr>														
+										<tr>
+											<td height="33">
+											      <div align="right">发货地址：</div>
+											</td> 
+											  <td class="tdleft">	
+											  	   	 	<div id="area_default">
+					    			 							{$kongbao_order['send_province']}-{$kongbao_order['send_city']}-{$kongbao_order['send_district']} <input type="button" onclick="change_area('s1')" value="重新设置发货地址">
+					    								</div>  			
+					    								<div style="display:none" id="area_setting">			  	
+														    	<select id="s_province"  name="send_province"></select>&nbsp;&nbsp;
+														    	<select id="s_city"   name="send_city" ></select>&nbsp;&nbsp;
+														    	<select id="s_county"   name="send_district"></select>&nbsp;&nbsp;<font color="red">*(必填写)</font><br/>
+														    	<input type="text" name="send_address" value="{$kongbao_order['send_address']}" />
+														    	<script type="text/javascript"  defer>_init_area_s(); </script>
+														  		<input type="button"  onclick="change_area('s2')" value="取消设置发货地址" />    		 	
+					    		 					</div>							    
+											  </td>
+									    </tr> 
+										<tr>
+											<td height="33">
+											      <div align="right">邮编：</div>
+											</td>
+											<td><input type="text" name="send_zipcode"  value="{$kongbao_order['send_zipcode']}" /> </td>
+										</tr>
+										<tr>
+											<td colspan="2" bgcolor="#abcdef">收货信息</td>
+										</tr> 					 
+										<tr>
+											<td width="130" height="33">
+											<div align="right">收货人姓名：</div>
+											</td>
+											<td><input type="text"  name="rec_name" value="{$kongbao_order['rec_name']}"><font color="red">*请确认您的信息是否正确,不正确提交后果自负</font><label></label></td>
+										</tr>	
+										<tr>
+											<td width="130" height="33">
+											<div align="right">收货人手机号：</div>
+											</td>
+											<td><input type="text"  name="rec_shouji" value="{$kongbao_order['rec_shouji']}"><font color="red">*请确认您的信息是否正确,不正确提交后果自负</font></td>
+										</tr>	
+										<tr>
+											<td width="130" height="33">
+											<div align="right">收货人固定电话：</div>
+											</td>
+											<td><input type="text"  name="rec_phone" value="{$kongbao_order['rec_phone']}"></td>
+										</tr>														
+										<tr>
+											<td height="33">
+											      <div align="right">收货地址：</div>
+											</td> 
+											  <td class="tdleft">	
+											  	    <div id="area_default1">
+					    			 						{$kongbao_order['rec_province']}-{$kongbao_order['rec_city']}-{$kongbao_order['rec_district']} <input type="button" onclick="change_area('s3')" value="重新设置收货地址">
+					    							</div>  
+					    							<div style="display:none" id="area_setting1">
+												    		<select id="s1_province"  name="rec_province"></select>&nbsp;&nbsp;
+												    		<select id="s1_city" name="rec_city" ></select>&nbsp;&nbsp;
+												    		<select id="s1_county" name="rec_district"></select>&nbsp;&nbsp;<font color="red">*(必填写)</font><br/>
+												    		<input type="text" name="rec_address" value="{$kongbao_order['rec_address']}" />
+												    		<script type="text/javascript"  defer> _init_area_s1(); </script>
+												  		 <input type="button"  onclick="change_area('s4')" value="取消设置收货地址" />    		 	
+					    		 					</div>
+											  </td>
+									    </tr> 
+										<tr>
+											<td height="33">
+											      <div align="right">邮编：</div>
+											</td>
+											<td><input type="text" name="rec_zipcode"  value="{$kongbao_order['rec_zipcode']}" /> </td>
+										</tr> 					
+									</table>
+									<input type="hidden" name="id" value="{$kongbao_order['id']}">
+									<input type="submit" class="btn_submit"   value="确认提交" /> 
+							 </form>   
+					</div>
+		</div>
+</section> <!--脚注--> 
+<include file="Public:footer" />	
