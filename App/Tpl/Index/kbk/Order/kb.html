@@ -13,8 +13,9 @@
     </div>
     <div style="margin-top:20px;">
       {$kongbao_page['gonggao']}
+		<br>
+		{$kongbao_page['shuoming']}
     </div>
-    <div style="margin-top:20px;">{$kongbao_page['shuoming']}</div>
 	<form id="order_form" action="{:U('kbsave')}" method="POST" >
 	<div class="myclass_pay_card mytd">
       <table id="mytab" border="0" cellSpacing="1" cellPadding="5" width="768">
@@ -61,7 +62,7 @@
 		      <select name="address_id" id="address_id" style="width:400px;">
 		        <option value="">=请=选=择=发=货=地=址=</option>
 		        <foreach name="address_list" item="address">
-		        <option value="{$address['id']}" <eq name="address.is_default" value='1'>selected</eq> >{$address['title']}</option>
+		        <option value="{$address['id']}"> <eq name="address.is_default" value='1'>selected</eq> >{$address['title']}</option>
 		        </foreach>
 		      </select>
               </div>
@@ -69,6 +70,15 @@
 		  </td>
 		  <td width="190"><a href="javascript:void(0)" onclick="add_address()"><font color="#337fe5">[添加发货地址]</font></a></td>
 		</tr>
+		          <tr>
+            <td style="text-align: center;padding: 10px 0px 10px 0px;">快递重量<span style="color: #a10000;">*</span>：</td>
+            <td style="padding: 10px 0px 10px 10px;">
+                <input type="text" class="kongbao-weight-text" style="width: 100px;"/> kg<span style="color: #a10000;">*</span>
+                &nbsp;&nbsp;&nbsp;
+                <span class="" style="color: #a10000;">请填写您快递包裹的真实重量
+                &nbsp;&nbsp;&nbsp;<span class="weight-range-span"></span>
+                </span>
+            </td>
         <tr>
           <td colspan="3" height="10"></td>
         </tr>
@@ -76,7 +86,15 @@
           <td><span class="mytitle03">收货人信息：</span></td>
           <td colspan="2" rowspan="2">
             <img width="600" src="../Public/images/yw/shdz.gif"/>
-            <p style="width:600px;padding:10px 0;"><font color="red"><b>批量下单：每一行添加一个收货地址(一次最多下100单)，严格按上面的格式来( 由于格式原因造成的失败，本站概不负责)</b></font>
+            <p style="width:600px;padding:10px 0;"><font color="red"><b>									                    	            格式①：姓名，手机，电话，省 市 县区 地址，邮编<br />
+
+																		格式②：姓名，手机，省 市 县区 地址，邮编<br />
+
+																		格式②：张三峰，13688888888 ，上海 上海市 长宁区 虹桥路48号102室，100000<br />
+
+																		三个逗号必须准确的位置！看清楚了！省市区必须三个空格隔开<br /> 
+
+																		正确格式：姓名,手机,省 市 县 详细,邮编(3个空格位置注意看清)<br />批量下单：每一行添加一个收货地址(一次最多下100单)，严格按上面的格式来( 由于格式原因造成的失败，本站概不负责)——请先点下方检查地址格式才点确定提交</b></font>
             </p>
 			<textarea name="postscript" id="postscript" value="" onblur="javascript:this.value=this.value.replace(',','，');" style="width:580px;padding:10px;border:1px solid #ddd;height:200px;font-size:14px;"></textarea>
           </td>
@@ -86,13 +104,58 @@
       <input type="hidden" id="single_price"  value=""/>
       <input type="hidden" id="order_money" name="order_money" value=""/>
       <input type="hidden" id="order_nums" name="order_nums" value=""/>
-      <div style="text-align:center;padding:20px;"><input id="btn_check" type="button" value="检查地址格式是否正确" onclick="checkisnos()" style="background:#fcf8e3;height:34px;border:1px solid #faeabe;color:#ff8800;font-size:16px;cursor:pointer;padding:0 20px;width:auto;" class="submit" />&nbsp;&nbsp;<input type="submit" class="submit" style="cursor:pointer;" value="确定提交" onclick="return chk_submit()" /></div>
-    </div>
+		<style type="text/css">input.submit{margin-top: 20px}</style>
+      <div style="text-align:center;padding:20px;">
+		  <input id="btn_check" type="button" value="检查地址格式是否正确" onclick="checkisnos()" style="background:#fcf8e3;height:34px;border:1px solid #faeabe;color:#ff8800;font-size:16px;cursor:pointer;padding:0 20px;width:auto;" class="submit" />&nbsp;&nbsp;
+		  <input type="submit" class="submit" style="cursor:pointer;" value="确定提交" onclick="return chk_submit()" />
+<p id="errorRemind"></p>
+<input id="unloadPic" type="button" value="上传CSV"  class="submit"/>&nbsp;&nbsp;
+<input id="wenjian" type="hidden" value="文件不会使用"  class="submit"/>
+
+<ol id="uploadedName"></ol>	  
+	  </div>
+   
+
+   </div>
     <div id="cheisnos" style="width:770px;" ></div>
     </form> 
 
   
     <script type="text/javascript">
+	$("#wenjian").click(function(){
+		$('#shiyong').dialog({ autoOpen: true ,height: 680,width:1010, title:'文件不会使用'});
+	});
+window.onload = function(){
+	var oBtn = document.getElementById("unloadPic");
+	var oShow = document.getElementById("uploadedName");
+	var oRemind = document.getElementById("errorRemind");	
+	new AjaxUpload(oBtn,{
+		action:"__PUBLIC__/file_csv.php",
+		name:"upload",
+		onSubmit:function(file,ext){
+			if(ext && /^(txt|csv)$/.test(ext)){
+				//ext是后缀名
+				oBtn.value = "正在上传…";
+				oBtn.disabled = "disabled";
+			}else{	
+				oRemind.style.color = "#ff3300";
+				oRemind.innerHTML = "不支持的格式！";
+				return false;
+			}
+		},
+		onComplete:function(file,response){
+			//console.log(response);
+			$("#postscript").val(response);
+			oBtn.disabled = "";
+			oBtn.value = "重新上传";
+			oRemind.innerHTML = "";
+			var newChild =  document.createElement("li");
+			newChild.innerHTML = file;
+			oShow.appendChild(newChild);
+			
+		}
+	});
+};	
     var is_enabled = -1;
     var checkSubmitFlg = false; 
     function chk_submit()
@@ -296,7 +359,7 @@
 			</tr>	
 			<tr>
 				<td width="80" height="33" bgcolor="#FFFFFF">
-				<div align="right">重量：</div>
+				<div align="right">固话：</div>
 				</td>
 				<td  align="left" bgcolor="#FFFFFF"><input type="text"  name="phone" value=""></td>
 			</tr>										
@@ -322,7 +385,7 @@
 			</tr>
 			<tr>
 				<td height="33" bgcolor="#FFFFFF">
-				      <div align="right">韵达揽件编码：</div>
+				      <div align="right">邮编：</div>
 				</td>
 				<td  align="left" bgcolor="#FFFFFF"><input type="text" name="zipcode" id="zipcode" value="" /> </td>
 			</tr> 
@@ -410,4 +473,12 @@
   
   </div>
 </div>
+<div id="shiyong" style="display:none; ">
+<img src="/Public/images/w/scwj_01.jpg" width="961" height="615"> 
+<img src="/Public/images/w/scwj_02.jpg" width="961" height="385"> 
+<img src="/Public/images/w/scwj_03.jpg" width="961" height="397"> 
+<img src="/Public/images/w/scwj_04.jpg" width="961" height="400"> 
+<img src="/Public/images/w/scwj_05.jpg" width="961" height="737">
+</div>
+ 
 <include file="Public:footer" />	
