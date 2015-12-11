@@ -8,7 +8,7 @@
  * 系统调试设置
  * 项目正式部署后请设置为false
  */
-   define ( 'APP_DEBUG', true);
+   define ( 'APP_DEBUG', false);
 /**
  * 应用目录设置
  * 安全期间，建议安装调试完成后移动到非WEB目录
