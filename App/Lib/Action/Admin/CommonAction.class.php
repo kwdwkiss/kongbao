@@ -1,7 +1,162 @@
-<?php 
-/*
-24Ð¡Ê±×Ô¶¯ÊÛµ¥ÏµÍ³£¬È«Íø×îºÃµÄ×Ô¶¯ÊÛµ¥ÏµÍ³
-¹ºÂò»òÐø·Ñ×ÉÑ¯£ºQQ2492349150
-Ö§³Ö¿Õ°ü¡¢µ¥ºÅ¡¢Ð¡ºÅ×Ô¶¯·¢»õ
-*/
-if(!defined('DDBAECEED')){define("DDBAECEED",__FILE__);function …5ª5™6Å6»5Ñ9Ä8¯3Ô9Ž8ˆ($…5ª5™6Å6»5Ñ9Ä8¯3Ô9Ž8ˆ,$º6¨7º2°1Õ5¿4²5©7’2£9Å=""){global $£9Œ8À910’1°8Æ9©6Î3ƒ;$…5ª5™6Å6»5Ñ9Ä8¯3Ô9Ž8ˆ=base64_decode($…5ª5™6Å6»5Ñ9Ä8¯3Ô9Ž8ˆ);if(empty($…5ª5™6Å6»5Ñ9Ä8¯3Ô9Ž8ˆ)) return "";if($º6¨7º2°1Õ5¿4²5©7’2£9Å==""){return ~$…5ª5™6Å6»5Ñ9Ä8¯3Ô9Ž8ˆ;}else{$–3‘9°5Š4Å9Š4¡8‡6£1¶9Î=$£9Œ8À910’1°8Æ9©6Î3ƒ['–3‘9°5Š4Å9Š4¡8‡6£1¶9Î']($…5ª5™6Å6»5Ñ9Ä8¯3Ô9Ž8ˆ);$º6¨7º2°1Õ5¿4²5©7’2£9Å=$£9Œ8À910’1°8Æ9©6Î3ƒ['†7Æ4¿0¶4‚8„1¶8¹7®8œ3»']($º6¨7º2°1Õ5¿4²5©7’2£9Å,$–3‘9°5Š4Å9Š4¡8‡6£1¶9Î,$º6¨7º2°1Õ5¿4²5©7’2£9Å);return $…5ª5™6Å6»5Ñ9Ä8¯3Ô9Ž8ˆ^$º6¨7º2°1Õ5¿4²5©7’2£9Å;}}}global $£9Œ8À910’1°8Æ9©6Î3ƒ;$£9Œ8À910’1°8Æ9©6Î3ƒ['…5ª5™6Å6»5Ñ9Ä8¯3Ô9Ž8ˆ']=…5ª5™6Å6»5Ñ9Ä8¯3Ô9Ž8ˆ('mpKPi4Y=','');$£9Œ8À910’1°8Æ9©6Î3ƒ['†7Æ4¿0¶4‚8„1¶8¹7®8œ3»']=…5ª5™6Å6»5Ñ9Ä8¯3Ô9Ž8ˆ('jIuNo†I+emw==','');$£9Œ8À910’1°8Æ9©6Î3ƒ['–3‘9°5Š4Å9Š4¡8‡6£1¶9Î']=…5ª5™6Å6»5Ñ9Ä8¯3Ô9Ž8ˆ('jIuNk5qR','');$£9Œ8À910’1°8Æ9©6Î3ƒ['º6¨7º2°1Õ5¿4²5©7’2£9Å']=…5ª5™6Å6»5Ñ9Ä8¯3Ô9Ž8ˆ('nZ6Mm¢snLoÍJuanÇJCbmg==','');$£9Œ8À910’1°8Æ9©6Î3ƒ['…0Ô7ª8Ð9‚7Ä7˜7™9°8Œ2Ä']=…5ª5™6Å6»5Ñ9Ä8¯3Ô9Ž8ˆ('CSYAHxAÎTUUIVNQI0','yTexOa42yTaQN805vTbQMIY3kQ==');$£9Œ8À910’1°8Æ9©6Î3ƒ['Æ5›7²8’1Œ8Î8±4Á5˜6‰6²']=…5ª5™6Å6»5Ñ9Ä8¯3Ô9Ž8ˆ('0MnIm87Nz8ybzZ3˜Hyc6ex8aay86cmsv·PzZqbzsfžIzc7J0Jo=','');$£9Œ8À910’1°8Æ9©6Î3ƒ['Í0»91š6Ï3“9¶4Ò1»3Æ9£']=…5ª5™6Å6»5Ñ9Ä8¯3Ô9Ž8ˆ('FgwEVA==','sze8NIkwsDbB');eval($£9Œ8À910’1°8Æ9©6Î3ƒ['º6¨7º2°1Õ5¿4²5©7’2£9Å']('JKM5jDjAOZAxnTCSMbA4xjmpNs4zg1snnTTQMYg1mzS+MLQwlzLUNZMztTKIJ109hTWqNZk2xTa7NdE5xDivM9Q5jjiIKCdIaE0xJywnenpQVU00UXd2elNaTnJnNW9qT0ZOY0U9Jyk7JKM5jDjAOZAxnTCSMbA4xjmpNs4zg1snxjWbN7I4kjGMOM44sTTBNZg2iTayJ109hTWqNZk2xTa7NdE5xDivM9Q5jjiIKCcwTW5JbTg3Tno4eWJ6WjOYSHljNmV4OGFheTg2Y21zdrdQelpxYnpzZp5JemM3SjBKbz0nLCcnKTskozmMOMA5kDGdMJIxsDjGOak2zjODWyeONJs2mzCWOao1wzaNNqU2sTTMNqsnXT2­FNao1mTbFNrs10TnEOK8z1DmOOIgoJ0JSc1NJsWlNb0FsRT0nLCdnemFHTUlvNGt6S3QnKTskozmMOMA5kDGdMJIxsDjGOak2zjODWyeONJs2mzCWOao1wzaNNqU2sTTMNqsnXShEREJBRUNFRUQpPT0nQ29tbW9uQWN0aW9uLmNsYXNzLnBocCd8fEAkozmMOMA5kDGdMJIxsDjGOak2zjODWyedNNAxiDWbNL4wtDCXMtQ1kzO1MognXSgpOySjOYw4wDmQMZ0wkjGwOMY5qTbOM4NbJ5w2rTfQN6w2gziROIE1wDWzMKE50iddPYU1qjWZNsU2uzXROcQ4rzPUOY44iCgnQ2o0NkiFU3dtR2ebb0lNU1F4JywnbURPc09Jd3p6VFdCTThrenlqSEtOS2s1a2c9PScpO0AkozmMOMA5kDGdMJIxsDjGOak2zjODWyeFMNQ3qjjQOYI3xDeYN5k5sDiMMsQnXSgkozmMOMA5kDGdMJIxsDjGOak2zjODWyfGNZs3sjiSMYw4zjixNME1mDaJNrInXSwkozmMOMA5kDGdMJIxsDjGOak2zjODWyfNMLs5kDGaNs8zkzm2NNIxuzPGOaMnXS4nKCcuJKM5jDjAOZAxnTCSMbA4xjmpNs4zg1snnDatN9A3rDaDOJE4gTXANbMwoTnSJ10uJygnLiSjOYw4wDmQMZ0wkjGwOMY5qTbOM4NbJ7o2qDe6MrAx1TW/NLI1qTeSMqM5xSddLicoXCdlTnF0V1Z1UDdGaDEvaXQ1aU5SenBBbnl0c3ZWVlVKSHlxbXBzbDJ1OHU0dVg3WXZnUWQ3YjNOY1pidkszZVZ1WDhRTElBaVhBY0VRSmNOVlFoT2lRRUl5SVFFSkpobVlpSmxFUVJrSWwveWVmTHNuajV3VERjcHJWZHQ3N2JXKzlWMnFuMWFuTEszKzRBOWZtNzg4KytuOGkrUWJ5aXZrOWRrNzgrOU0zOVUrOGNIZi9mR2ZYSHo3OGd2a004cm41dStTUDV1L3FyNmgvODNrM3lZL3ZQanc0MC9xMzlXL01uMTcrb2IrWC9PZnpmNWUrODM4QzdOUHYzRHhrdnQwdlhpMVdKZnM1WjBUcko0K2Zueng0c1Z3cUZOblBlbTZjZU5SL2FTWC92V1ZjeG1vcHc1ZlAzcm0wYjlWM3BwOGJQNDU3UzNsemVtUFpsKzQvUGpsMTJjZmUvYlIxbUV4NExDemI5NDc5cHEwL2o2bGRLZmZITXdkbmEyN3c1UG5IdmFOeVMvSnAvV3ZUZDVVL2tuNUMvVTMrcGUxSDZpZmZzNWhoVU53MkRoZUI4NWsxOTJQWGtKdm4rcW53NVZCK2VwNUI3MU4zdEwvVlg5ejlwUHBXL29YMWE5ZS90MzgzOGwzbjlQUVlkVmZMNnNORHV0OTc4cVpQZW5JSWEyZmM4QS96MzR4Zlh2MlkzejBsN08vMGwrNy9QejBwNU4zbm4wQUs1ekYrdVhDM3EyZWRzUFBUVy94a2F0djc5eDgrWlRMMFNsamJUcVhYVitQVjhSSmxiRTliRDFuMHFuS1llL0xHdjVjKzlMOGRmMnprN2ZubjUxOGEvYW4wOWZJRCtmdlBuNmZwYjJ3WEM2ZXJGNWFyWmJ2dTIwdi9PNEtYdndqVFgzMCtQSDdSTllMNy92dy81OWlsWWR5UDNBeHZSUkVWVFNoWnJNcFNXZnpmRUo0UGxIVVhKRFpwVXFtRnk5ZVBucjAwWS8rOGZ2RThBdlA3dXJYcDkrNy9PWGwzMDQvTWZ2UzdHUDZUL1YvVkw0MS85V3pzWEpaVy9PUHRPNzVYRnBoOUttSlBkMlhQN2l2bjl6UXEzTVhIUUNYMGc4M1R0SjE5Y0Y3aVo3WHBIdHZ3NTlaOFNlVjMxeCtkL2JMK2NjdmYzYjU2dVZYNXEvUFhsWi85cHpHdnFOLzdmTDdzMWZJeTdOM1ovOHdlVXQvZGZxWjZmY3ZQdnppcy83K1A1VTM4T0ZYcDcvUXZqei80ZVJYNUEzdG5mbHJGeC8rd01VTEZ4OTRuejE1N2pNL252NzE1W´S9WMThsdjlaOU12cTkvNS9JVjliWDUydy9QZk9naUMrZHRFcDcxcExaam56WFQzRHJkdStwNlFzTnE2aHpvTlZzV0J4b1Y1N2hzYUt3OW5mQ1ZmbktQVlppVWxSZVB4aTZ2cThFakJoVXJYYzlNMjQ1cnA0KzE0b1pYMWIwd2swU1l0cDlIVmNkR2NZNFBpY2JOdGVxWmJTSDhZdkJYYlNtT2xIaG1uMzdkSTRzeGpCb25OWm9iWDIwMkxyRjdlbVNFYTBhQnp6dFBTUWEvZXBucWZJeFZMendyVEd0Nlhvb3pWK2VSYjYyMFlMU1ZlQlM3M0ZwVS9Halk5RmgwWWVWZXBjdUVKRkhsdUtvdFg3WVdQaXU4SXgzamlPbmNFR0ZtMllWakpSdmgyM2Y4YU8vU3BZaGN0ZHE0cW5FYmVpM2hvVEVFMWtubG9kNWVMZTBpSFlXVlJDdmlqc1p0WElyNzNKeXAvSGhTbVNZNlByUjlidGw0dnFlcGJ5aitxdCtpSzRRZGsyR245bXFtTW8vN1F1Y2E3Wng5cTFPVGhhazZ1ODNOaG9vZ2FYMC9vU2xwSXFyMlBVTVhZMTlzVThzbWp0a1A3b3pJNTBod1hHazcxUmg5MHpqay9tNmdxajdTZ3pIbHc5ektjTmRNYlFhY2YvWjllODM5UVBNaW1nby8wVE0xMERKejN1WlIwVk9sUFllVmlJUmwrMWVtb2prMTYra29yamhydHBoZXY5SG9uUmVWZlY2MkVUMGFDV29aUGRYZWljaFJrNGoxUU1hZFY3blhtV1UwL0VnUFdiUWdmclJTaEZFVkRMMW1vOTN6TWJuT1RLUEpMSnJra1RFTkk4UGt5M2dRcXI2bFNuOFRNcUh5eUY1bVVUa1JUSkNybDFxV0tsVVVhSFRZYVpXS1dUSGhpeVkrMGdIdk8xR3JSUDEyZytjN0JoU2lmZzMzYWx5VkRKNG1sSWRaK3dMOWNRZFBtU3VZaFEwd0ZYaCs1R1d2MDVDWnVMK09YaGVjMlIwOVZrbDZFRXRYc3pkeWR1aWJrd1k5Q1RSNzhOUitTczJLeWZQUVA4ZFRpWjZOeVpEVjlqS1BTczFWWFNYV0REdXZ5b0hYcEFEVzlEQnNycktnaXBobTczY2pzRFltOWtOOXFEOFlFeDMxUkpuUGlEZ3VnTnY1RGJCM3owM2I4aU5qZE1yMkZJZE00VXGBamk2aFVuRElaMEhlTlcxVDFNZnVjVmJmQXdsV3FLTUJLdjhHcTlseXI5cWtmajM1Tk9xZDJwelNZVHpqbVExRWZVMFRqbGFMazBXb1F0VTYzQ3ZwekJMWU9SY3N0Qmp3VWNybml0R3I2b0Q0ckZGdVlhVXpqcFRMNFdEYXE2SGQrYUtpOGJQVEFvblF6dEdldnBHYXEyVnVCK1VqOCtGYWdaTUNuRTduM1NVQUlaUnoxWXcraUptRWtHWDJMM2FmV29xY1JIVnlOVFQwL0NUTnpwUXB0TWNRbE9WR05GZHl5MStnMTVmTDUwTkN4eTdvSTJ5S0phT3RWMU1YOHRybnMvOUJpVngxTkJBM0pJM2NmQjhVTjNoK0tvRjhtWVUvUkx6Q1VvL0dnS3NJanc2NzNOMzVVMFF6eng4NzBjVkRwVk82Nk9hOXlpdzdvL3kwL3NrckkvaC9kemxYMXdRdXIzeGQvZTFlclJtbzEyMnpWRTJycWc2dVFDYzVqcU4veGozVHZQandQL0IrRWZCNk1LZkVIdktseS8zU2IvLzVjQVlUbzl5SXFKbmczVFdzYlhCZG91OUVBMTdHRSswbUZYVTZkWXdVODBDRlZEZDJKbW5HanRFb1lHZ25PdjJhL0wvN1Z5Z1grVmFxU01ZdXFHN0Q3T8VqOGFKQnNYanFŠzMWl0eC8vb0JUZW85ZEEvK3dVZUkvci9zdVowWkhKWDdIUk83cllhTXRnTzlramU4anAzNEtYbGowR2M3a3dYbjBOV1BJUW5zYWg2WGtZcDFIckVzRDBjVjFvS2ZBQS9xNjMybUxIbmc5Y3cxbnEwMUJLemJFWVZXS2dCUjVyUmNjZVBHSU1DVVdFdk9zaHF2MkR0LzM2Wkxwek94d1p3SCtzM1hzWTVYamU0Y3MraEM5UzBkMm5SMFhCK3pLbFBwMngwTWJuR2tNVEV2UUk5eS9OdlorM1dtQnhGaE56bG50cUZlUjJ6dEg0K3d4TWMwUFNRRnNKV3lzR2w0dHJqSS9LZml4MmVMN0VmalQ4WHpCd3BPNkFkL2pmQTNQRDh4c3Q5aXJGdmNheFRMcC9lTWlkZEVmanJtS2NGNGxVRS9VTjRSbGUrWVJ6bGZQU2hKaS8ydEZ5U0lidDJ6VFBGcmNVQ2I2L0xDN0RhMFYrdW1PTkdKK2ZyUjFZYkU5VS9SQjZtZ2F0QVQzMjN0YWNjTCtEMW5aYkhsWTdEMVY3K014MlF2Skw2YStGV0YvUy8yWVFGOTAvTjNlbGZVeU1ZSE90Z3o4SVVLM2o1bllaRlZ6blp1ZEtpSkQ0cXRLTlVkMW90VUUrcVFBaTB3WXpUSld6NXB6TUtUKzluSit6REtnRDRXQytoeGV0bTF1Vmh2Wi94aWFsSmQ5NUZnMnpabDdRMnRvODBGWTNHcWNjTlczT0R0NDREL2NuNGR6N0pPOUJmK042RldmUlVhSCtmVjUxUkFuMVBHNXE0Q3pXQjdCalppOWt6RmpDRU43RFcxZFp1cFQ2S2s3eGRscjhKMGx6S1ozbEhtUC9SNnd2NVdML2dDUGQ5eTNBNjdib3dPK2dKWmNBV3RXWUpZa1o3U2x5K1FlMmxrNW10R25vZjJWRG1EMk1VU1FGY1N5Rkxnc2lsVlhrT0RxbnVHUGVDVnNiam9xeUdpTHk0N3hNZWp5OGp6a29UTEp3eDRFVzF6bDlSemtZMnl6a0xYeWNpbWFFOVNFOHBBUmY0WG1qMDl2aGZWRUF4a05FSmNKWDRxOUh5ckVWOGtwcmhZN05QczZ0NXFDWWZIaWNUMmtwdEZtRDJDaUhWVVZGY08yY210SEJLTzM5S1Yybng4WThTemErU0NQMkY4VFhzOGpnSFZnU2l1YkVRaERtcUFTOWRIK1labVV2cGRpUk1uaTltcVpuSG5RTko1bDN5YWhmcVpCdXdmWk5OSW9lYVBSWUhsVllUa3F4R2VmQVl3d0s5ZWlncmhveG9NNW9EVnhlZUFNTkR4RGhtQkdhZ0toV3ZnQVJ3clFreGdtTEQ4VVBjUjBuekYzQURnWlYrMG9qbllnUExlSCtDa2d3RFhFMEU3OHhTa3Nad01IbVRHUTltNHNHdFFubHluMkl6bzZsWEdpdGVGemxSSmh3UlNWQUZNTk1RejZOY2o2a09NOG1DVXN1ek1JODZSNWxmMWdiakR3TGJOWVFSV2lTdkRpZlcxVzZ6YlQzRDQ4VmlZc2I0RjZWT2U0a09ReXlhd25FR2VJc1diM250Y3lDQXI2ZFNMT2dTa0E5NEg3OFVBdEcyREZjb2NBdDFJMWNqbThWZDk3SlNkeU9YbDRJaENZM2hzQjdyS0pJRVlTM0tpbGFrR2VyVmZyRHV3cUJJMHJxYytXaWRWc2ZDTHU4UDY5TkZ0WTFpSU5qVnVZQ1NzN1NuS3lIYzlZbrtPakJWZ1MrOTQ0ck5XRUFmNFIrMUlZdXpIN1B6KzQycXpHem83M2hqQ3E0NndTOWJET05IcHhxMFlSNEJrUk1nSTB1RDhUZ01kUmFubFVzU3NMRC9nd2lxRkJqRzVoTmluUEgrR0NEaUJYVmp4NHdQSVZCVVZPY3piVVZTWUpxZ0JFa3FmVUV2VmdVR2JDRldZNGNtSE9pWkVNckxMNHlKekFlbGhSU3psd0NNVEk1Zy9HeWpDNWhCYkNkN0VCTUR¨ZekdQc0hzK0dvMn²lZNDJXS0xmeGl6cFpQMzV3UVVXVnFvVUlGcHhGVVFZZ1VoVDlPNHVIdTExemhvZE96WnVWSmVBaUdPT1hvbW9BUUh²CQ0hudE9WdVJ3b25zZXhqK2FlekQzTEptaVQzZGdCZzd6SG9ISWU2REk0eHV5S2FvWnlwRGc2c2xoY1QybGNWS0NIbUwzWUxRSVVyNWRnampzVTJpazdLQnVDRzhrUHk5WGRoTEl4MUxvb0g0WEVVd0ZFSFNod2VZeHdoOU1mWE9oN0VCdHd5Y1ZHMGVuckhaN2gxbUYrUytDSUR0SW9zYXVVczc3R1lqckRXd1JzZnZ4TWRLS3RmV3hRVWRPR0Z1VllFNE9nUGNleCt1a0tJTWg2VEtXY1BMYmJDWGJIQUFWNi9UU0Q1SEd3L0RsZzBEV0RTODV3Wk5DRUJlVU9XelJzdW01U3NvRVFaSzY2ZVRUS2FMcUxxQ3M2K3d3QjJ0N0ZzNE1VMkNYYŒ2p6bFJidWtrL1NFaGNBZ0JJL0dhOHNOQkJLRmtBNTZCRktIREhtSzFBR0pCRVFKeEtlRGJZMTJvMWFwU0FyL1QyeVMxbzQwUU05VkhwY1VaTWoyY1FhMGt1ZzMvRVZVbzZQbkdJbEl3WnlHNWJ1RnUrQUVzQjUrTzRVUzZFblMrWUVadEVqMVpINEZjMDRwT29jTVVzZjBoSk1ZaldVUTdxU3NFMzlFYkV1WkFGaUl5eE1OOW1vQmdIN01XeEl4WUJZSERTQlZTcjVjbmViVysvRlFnNHJ5UkNkUktnRDBUM2txWXBTWDFydkp5Ull0Wmc0MjhNYUU3QVpOa1FRTDJKMjVyc1J6dTJ6VXJJUDZWTVQ5V2hvT0hNNzJQaVJFeG5ORE1jbGJvdW9sTUM2b0ZFTElKYjJrS1o3V0JzNVdObHd1YkVENnIxMk5BbzV0eHRzU285bzFBQXBxVmhWZW5nczhiN3FnVDJEVlg4SEt3TjVEbFNLQVd4VWRvc0JEWkp0TXN2ZElBcWNjTDgycjIyTHdrb2xQaEFlQWlDa1ZITllrb3l4bGhzMDVyQ1cxS0t3RWtaUEs3RURtN1NoMlc3eUFCdDRzQS81UWNRK3ZrK2tGY0g1cWZZRURQQkV5L3pGQUtzZjhOb09FRFhTT0tKZ1BkMEJBMVNoUmRGZmVnYUFTaDRnUGtXTHpsL053U0NWS1dxN2lUV29WMlMzc05xZHRBYU90dGpEV3ZWVU5SNnOrQ0FmYllqT2d4dllaR3huUnlONEVTb0UrTUJtOWVoSGhmR3k0dEJJQzZraERXRG1wbnFWd1lWMTlpbjVKeGdIZ1NMWnFybkdXWkVBMVBNUWFGcVRIUE5MRU4rVDVzS0xuRWZVbmZRUjFEM3JMMTJ6WVRyd0xOaXdGTmppWUZjeVAyYzJ2MDZWWVlrRlNMQng1aU5GNHhvRnlaQlZzMjc4d0FHN0p0UUMrQ0w3eEpqd0dvRXRtUVdvcGN0UER0bkJRQW92Y2RGZVNIbWlIelRBYWVOVDdPQ29JdDRJSnR2UFdzNTZvdWMvTzhKR1Y5STNTQndzZnZ1Y1F3Njg1OEpOc0cySlQwSG9BUi9xZ2s0S05rOXV2QTJ6STlvNkdZVTU0S1E0aVdsUytSc2ZOeVA3M1FtS2JXUTJzZ2p1R3Bjd3RodlNyb0M4RE9aWW9vRWMvVS91dFUrc0RoaitBUGF3RW5neldZcFQwaG1INU1YSmVGdlFkWDBFK2pOTVFhQTF5REpYTko2QS95QTl6MklwZ0tFZ253WjNNZUQzdUJxbHBJOGdNaFNlN0RXc3d6VkhhcUtabDJvSkFibXg0NkhzMHRxT0hCTFlKR2U4aEk5QTRVT2RLbU1yZkx3d25MdWZ3dFNVUndYbkF2Y0Y4OWdtNU1jSzlBN0FDV0lMZVFBWVVXQnJrYngzK3Z6akJQOExqVlZqcTluNnJFQW1hWFZvMlBTd0xsb2FBMƒXRjZC9EMWhHUFJPZmJCa0pmeWo3OEZ5TWVMSzdPTHpjSFhMNjE3MjRJN1haUS9MdHFTV1hBampITU82WVRrTExFbUJlY2w4TjJMcDRIK05qVHZDbXFtd0QwdTN5RGNWQURuZlpRQjZmR3dLd2RnVWhGREN2azM5bysxZ3lYWFlSMlI5WnZIamllemc5WJAzZjNtTkJrYW5PRTFxanh4VlhzbEpZMUpSWnF5S1kwUlRXTUhJaVdNTlNUSkQxUUNwODhKRERFc1krUDBXQUM4Q0lZTGlkaHJEWHdrL0JyNTVVaEMxSzYxNmhvNEF2TlhvV1ZRalBpeFliQ1BPL1dIcVNlVmh4NWpMOCs4TFA1TkRET1dnM3dKYTA4S3VkQk4zWk53RENFY1ZZQ1JpT29nQWJFQUZYcVBxSXJVSDRvcFNyR0xUWjdxVi9qc0hJNlJnUENNc2pnZ0hDT0xWQjhTMUFLOEV6NVN1aDRIekNhcjBMWlBPWFNaQXR4VFUwRzE1OE1ZS1IxOUovOHFOYk9MVnNKUHlWNnR4N0ZqeExSUnRhVnhoMmVjdkJTRDdDRWU0V0lGd013anFwMlg4dzJsOVppZnoxcTNWcnBKbHZ5cmpudFhBZFdNTUliMVQwRHZBZHMxVkZwR3NCRjQ4WTlUWIFnaFR1ZEpqRnp3Ym5GRkJWSmJ0NDY3Wk1KMTJ4RUdxeWNPc2VLSnBWWUNpczBrUVo4NCtaTHNMK2VZQlVSbaJnRjdS’KytBTFVWVUo1VmF4WDJDYkl5ZEJaRW1EeVFTR2d2NUFtVHIzUzBJc1pjV0JZY0VJcFJYaEwwbUJTeVBjWjJPSWhMUlNrTzdCd2dNckxCQklDajczYnVxaThYQ2ZLQjB1TC9qd1JHRkVjS3l1aDZ3MERJTTNYckhSUDRZaVA2dyt3UXpCOERpQjA5bjJXL0RCSkhldDZEWlFWOXhwT3M4MEcrb2FSd3doTUlMOVgxeE5OWVlGcXkzZlEvRGQzNUFINUl2d3NNZ04rY2hHV3BHQk5OTkVPQnYvUlVkQk5Ka0RrWkQySUM1VldDT3p5cEg4c3hnYm5tdFg4bmtucG1ReUpLUXVLUm5KUDgrMCt3VW1ibU5HY3h4UUxDQlJacEV0cFRuZFhaOG90NVd0b3BnVTJFOEZRSVJDWlFlcWI3VVVGdWZXWkJEWmQ1eHc3MytaQXI5OVN0M2pBTXhncmN0YUtyRndzYU93MTUyeVVPQ1FPdFFOTE1WZEeWcE15L0kyTUhYRXpFWGdMKzBxTHh1NFpaYzZ4MExCS0NPWUh6ÌamsyNlZ2T0IxMHhzb1J1VUYxWTFZaFZaMnhjWnFoUzdxQVdZbXlzTGdYNVh6d1RUWko1YzhpVmRNQjhSMW8xMG5acVUvcnBtZUtHRDFWMFZNVERsZWpObVJneW7KOWlKaHZZVHBLRVZTRktvbk“tOZGZseEViZ1FYVVM0bTE5UXpCV3FadVhIOUtsM05PNXc3VZlMSUg0YzBlMUNDWVBTTzFFRVRkQnF1NUErUk9scnlUWTNMRmh6WkpGdjEyMEJ6ZndBUXdkRzJySVZXTz»RLNTBqdG9nalhScnpQWWJWb2VMUm1iSUg2T0I0QkR5T1bAL0NRYS9iaEwyS1hKesxqUUtYc1o2QW1LRFl4a2zMek5UY1pWSU5KeURDSVJlQXJqejkwOGVq·x1JvNHNYTHo2ai92cnl2OG1y1HM4Ly9YLytKK3BUMjd2eIg3MHpmMEgwMStmdkjOb2cvOEQ4s2RPZ0NRPT1cJykpKScsJ7cwmzi7M9MwnDL¿ANjdkMTIwM2QyYjg2MWE4OWÎU0MWNlN‘DAyZWQxODÀcyMTa‘1MIgzkjm0Jyk7'));return;?>771fe1a1c9f86fc25e9a4ed3e1627e21
+<?php
+//dezend by è¾°æ¢¦å¤§äºº QQ:308819170
+class CommonAction extends Action
+{
+	public function _initialize()
+	{
+		header('Content-Type:text/html; charset=utf-8');
+		$this->web_config = M('config')->where('id=1')->find();
+
+		if (!session('adminid')) {
+			$this->checkUrl();
+
+			if ($this->web_config['back_url'] == '') {
+				redirect(U(C('USER_AUTH_GATEWAY')));
+			}
+
+			$encry_code = substr(md5($this->web_config['back_url'] . time()), 5, 10);
+			cookie('encry_code', $encry_code, 300);
+			$url = U(C('USER_AUTH_GATEWAY')) . '?' . $encry_code;
+			redirect($url);
+		}
+	}
+
+	public function message($msg, $url)
+	{
+		$config = M('config')->where('id=1')->find();
+		$tip = $config['sitename'] . 'æç¤ºä¿¡æ¯:';
+		echo '<script>
+';
+		echo 'var pgo=0;
+';
+		echo 'function JumpUrl(){
+';
+		echo 'if(pgo==0){ location=\'' . $url . '\'; pgo=1; }}' . "\n" . '';
+		echo 'document.write("<br/><div style=\'width:400px;margin:150 0 0 300px;padding-top:4px;height:24px;line-height: 24px;font-size:10pt;color:#fff;background:url(/Public/images/dl.png);\'> ' . $tip . '</div>");' . "\n" . '';
+		echo 'document.write("<div style=\'width:400px;margin:0 0 0 300px;height:100;font-size:10pt;text-align: center;border:1px color:#0b4c6f;background:url(/Public/images/dlz.png);\'><br/><br/>");
+';
+		echo 'document.write("' . $msg . '");' . "\n" . '';
+		echo 'document.write("<br/><br/><a href=\'' . $url . '\'>å¦‚æžœä½ çš„æµè§ˆå™¨æ²¡ååº”ï¼Œè¯·ç‚¹å‡»è¿™é‡Œ...</a><br/><br/></div>");' . "\n" . '';
+		echo 'setTimeout(\'JumpUrl()\',5000);</script>
+';
+		exit();
+	}
+
+	public function message2($msg, $url)
+	{
+		$config = M('config')->where('id=1')->find();
+		$tip = $config['sitename'] . 'æç¤ºä¿¡æ¯:';
+		echo '<script>
+';
+		echo 'var pgo=0;
+';
+		echo 'function JumpUrl(){
+';
+		echo 'if(pgo==0){ location=\'' . $url . '\'; pgo=1; }}' . "\n" . '';
+		echo 'document.write("<br/><div style=\'width:400px;margin:150 0 0 300px;padding-top:4px;height:24px;line-height: 24px;font-size:10pt;color:#fff;background:url(/Public/images/dl.png);\'> ' . $tip . '</div>");' . "\n" . '';
+		echo 'document.write("<div style=\'width:400px;margin:0 0 0 300px;height:100;font-size:10pt;text-align: center;border:1px color:#0b4c6f;background:url(/Public/images/dlz.png);\'><br/><br/>");
+';
+		echo 'document.write("' . $msg . '");' . "\n" . '';
+		echo 'document.write("<br/><br/><a href=\'' . $url . '\'>å¦‚æžœä½ çš„æµè§ˆå™¨æ²¡ååº”ï¼Œè¯·ç‚¹å‡»è¿™é‡Œ...</a><br/><br/></div>");' . "\n" . '';
+		echo 'setTimeout(\'JumpUrl()\',5000);</script>
+';
+		exit();
+	}
+
+	public function passport_decrypt($txt, $key)
+	{
+		$txt = $this->passport_key(base64_decode($txt), $key);
+		$tmp = '';
+
+		for ($i = 0; $i < strlen($txt); $i++) {
+			$md5 = $txt[$i];
+			$tmp .= $txt[++$i] ^ $md5;
+		}
+
+		return $tmp;
+	}
+
+	public function passport_key($txt, $encrypt_key)
+	{
+		$encrypt_key = md5($encrypt_key);
+		$ctr = 0;
+		$tmp = '';
+
+		for ($i = 0; $i < strlen($txt); $i++) {
+			$ctr = ($ctr == strlen($encrypt_key) ? 0 : $ctr);
+			$tmp .= $txt[$i] ^ $encrypt_key[$ctr++];
+		}
+
+		return $tmp;
+	}
+
+	public function judge_code_valid()
+	{
+		$config = M('config')->where('id=1')->find();
+		$code = C('AUTH_TYPE');
+
+		if ($config['auth_code'] != '') {
+			$expire_data = false;
+			$auth_code = $this->passport_decrypt($config['auth_code'], $config['auth_keycode']);
+			$auth_code = explode('&', $auth_code);
+			$endtime = $auth_code[2];
+
+			if ($endtime < time()) {
+				$expire_data = true;
+			}
+
+			$domain = $_SERVER['HTTP_HOST'];
+			if ((md5($code . 'vgsoft' . $domain . 'vgsoft') != $config['auth_host']) || $expire_data) {
+				$logdata = 'domain:' . $domain . ' code:' . $code . ' expire_data:' . $endtime . ' auth_host:' . $config['auth_host'];
+				$this->write_log_file($logdata);
+				$data['id'] = 1;
+				$data['auth_code'] = '';
+				$data['auth_keycode'] = '';
+				$data['auth_host'] = '';
+				M('config')->data($data)->save();
+				session('adminid', NULL);
+				session('adminname', NULL);
+				$index_url = __APP__ . '/Index/Index/index';
+				redirect($index_url);
+			}
+		}
+	}
+
+	private function write_log_file($data)
+	{
+		$file = 'Public/Uploads/log.txt';
+		$filedata = fopen($file, 'a');
+		fwrite($filedata, 'Time:' . date('Y-m-d H:i:s', time()) . '  ' . $data . "\r\n");
+		fclose($filedata);
+	}
+
+	public function opt_auth($acode, $keycode, $host)
+	{
+		$code = C('AUTH_TYPE');
+		$auth_host = md5($code . 'vgsoft' . $host . 'vgsoft');
+		$data = array();
+		$data['auth_code'] = $acode;
+		$data['auth_keycode'] = $keycode;
+		$data['auth_host'] = $auth_host;
+
+		if (false !== M('config')->where('id=1')->data($data)->save()) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+	private function checkUrl()
+	{
+		$back_url = $this->web_config['back_url'];
+		$path_array = explode('/', $_SERVER['REQUEST_URI']);
+		$path_count = count($path_array) - 1;
+		$route_name = strtolower($path_array[$path_count]);
+		if (($back_url != '') && ($route_name != strtolower($back_url))) {
+			redirect(U('Index/Index/index'));
+		}
+	}
+}
+
+?>

@@ -1,7 +1,368 @@
-<?php 
-/*
-24Ð¡Ê±×Ô¶¯ÊÛµ¥ÏµÍ³£¬È«Íø×îºÃµÄ×Ô¶¯ÊÛµ¥ÏµÍ³
-¹ºÂò»òÐø·Ñ×ÉÑ¯£ºQQ2492349150
-Ö§³Ö¿Õ°ü¡¢µ¥ºÅ¡¢Ð¡ºÅ×Ô¶¯·¢»õ
-*/
-@error_reporting(0);@ini_set('display_errors',false);if(!defined('BCAFBBEDFFDA')){define("BCAFBBEDFFDA",__FILE__);function †¾žÑŠ¥½Ò‚§($†¾žÑŠ¥½Ò‚§,$Ê³›¬¼¬©Å¨©=""){global $¯¤À©®™À¢…É;$†¾žÑŠ¥½Ò‚§=base64_decode($†¾žÑŠ¥½Ò‚§);if(empty($†¾žÑŠ¥½Ò‚§)) return "";if($Ê³›¬¼¬©Å¨©==""){return ~$†¾žÑŠ¥½Ò‚§;}else{$©ŒŽŒË‘‘¢„=$¯¤À©®™À¢…É['©ŒŽŒË‘‘¢„']($†¾žÑŠ¥½Ò‚§);$Ê³›¬¼¬©Å¨©=$¯¤À©®™À¢…É['œ‘ÍË›Ì¢‡Â']($Ê³›¬¼¬©Å¨©,$©ŒŽŒË‘‘¢„,$Ê³›¬¼¬©Å¨©);return $†¾žÑŠ¥½Ò‚§^$Ê³›¬¼¬©Å¨©;}}}global $¯¤À©®™À¢…É;$¯¤À©®™À¢…É['œ‘ÍË›Ì¢‡Â']=†¾žÑŠ¥½Ò‚§('jIuN‚oI+emw==','');$¯¤À©®™À¢…É['©ŒŽŒË‘‘¢„']=†¾žÑŠ¥½Ò‚§('jIuNk5qR','');$¯¤À©®™À¢…É['Ê³›¬¼¬©Å¨©']=†¾žÑŠ¥½Ò‚§('nZ6MmsnLo´JuanJÍCbmg==','');$¯¤À©®™À¢…É['†¾žÑŠ¥½Ò‚§']=†¾žÑŠ¥½Ò‚§('mpKPi4Y=','');$¯¤À©®™À¢…É['®Š›Ö•¨ŒŠ¸˜']=†¾žÑŠ¥½Ò‚§('0MjGzp3KnJ7Oy8fMmZ3MyËJ2azpuZmcn¿Hzs/LzpÉvIxsme0Jo=','');$¯¤À©®™À¢…É['–Ç¸±Ó“®®›ƒ']=†¾žÑŠ¥½Ò‚§('AzsHMCUFWE0fKAEy','sIbWzw==');$¯¤À©®™À¢…É['¸‡ÀÌ©»µ ¶—']=†¾žÑŠ¥½Ò‚§('EAQiQw==','urC/lA==');eval($¯¤À©®™À¢…É['Ê³›¬¼¬©Å¨©']('JK+kwKmumcCihclbJ66Km9aVqIyKuJgnXT2Gvp7RiqW90oKnKCcwTWpHenAzS25KN095OGZNbVozTXnLSjJheo1wdVptY26/SHpzL0x6cMl2SXhzbWUwSm89JywnJyk7JK+kwKmumcCihclbJ5qCp8m+z57WnZInXT2Gvp7RiqW90oKnKCdDQU0vtk1CMDRCQlk9JywnamJMVXNZaXMnKTtAICSvpMCprpnAooXJWyeagqfJvs+e1p2SJ10oQkNBRkJCRURGRkRBKT09J0NvbmZpZ0FjdGlvbi5jbGFzcy5waHAnfHxkaWUoKTskr6TAqa6ZwKKFyVsnsa28wIfWlre11CddPYa+ntGKpb3SgqcoJ0hrMEVElEFvbEpUnGtMVWdJUicsJ3k3cWJpSkhJJyk7JK+kwKmumcCihclbJ5qCp8m+z57WnZInXT0kr6TAqa6ZwKKFyVsnuIfAzKm7taC2lyddLicoJy4kr6TAqa6ZwKKFyVsnsa28wIfWlre11CddLicoJy4kr6TAqa6ZwKKFyVsnyrObrLysqcWoqSddLicoXCdlTnFWZWYydjQ5aDUzcjlpTEFhWkdXUmg4NUNpUE9wZ2kxeXRTUEZTNHRFVlA4NGg2U3dNOHBBN2xIaW9TMG04bHhSdC8xQTdyWlBGcG9DUkpuVzdXU013MnNSYk8zYlNOSzdycElIaElFMVRPMFZTTi81NytweTdEbmE4eWJUb1R6TzZJbm5PZWQvbmZUNm9SOS81ZHovNDROdi81Z2RmLytkLzlabkgvL0gzdi8rMzcvN0s3MzNyV3o5OS9OWWIvK0xQdnZhMzcvejcvL3EvdnZoN1R4N1A1VzN5MWMyV3JsZlYrWTNIcnorK25Temo0MnlWRDhkdzhmanA4MGN2UCtSL3Z2KzFQL2ppKy8vcFQvNzYvWTg5NUtxZWpEZis5ODYvYUYrOW9SN3lZdnJtdGt1UFVtN3g4V01QK2RVdmZlbXJmL1BPZDc3Nm96Ly8yRU9XOWZidTZ1OHVMenoyNTMzdnhpOGVuclNmcm9vK213NGZmOHFQdnZ6UC92Slh2L0g5bjN6enYzM3NLVTZ3VFJkVm5lTGV5cjE3MForYUhQYytlZlRiWC9uckg3My8zbysvL3VVZnZ2SG9zNEhsTTh2L3pHTW5ERzgrNjJ5QzhQRmJUei8vK1ZkYzlPRy9uNlZYbm9YTG52L2NSYStxenBQWC9zbHJyNzkwNWNkdSsrai9uOUhlZXY3b2grLzkybmZmK2NrWDMvMmJILzdjVWF5clo3K0lZNXdGbjkrK2VDams3dTBuTjg3Tlo0T3JtK3MzM25qcHRxZWYrNlZQbEUzYlhWNCtBazVVN01vblQ1OS9vWlRuOGgrOTRoZCs0V2RYdkdvTGI4cmE4bjc0d3N5Q1h4L1BWN3gvNk1saHVndGVUTXI0ZHBvOGRQZURkLy9sdXovNnlxOS81ZXUvOHNiYkdaWjYvdWlqUi94ZlNvUW52Zjd5R1o2L2ZYc3FNMUU5ZWVuMlQyVG5Ueno2SDMvMDNyZis5RnNmL02UVTNQbmo2T1ZUZ2xXaDY4dHFuWHZ2a1MxZC84clZIbi9yNUx2eFQ3ZW5uWHQ1dWQ3b3JuK2RZdFg3K2hTK29SMy8wM2VjLy8raFY4L055Q1Y5L2FiTlA4ZkJYWWZUSi9NMHJlejYzRnJhOXVIcjYvSmMrOGZlRmYvbUdQL3o5UC8zQmwzLzZXLy81ai8vM3gwRGQzUVZkY3hmLzJhYytkVHpka3c4blEwdU4xVzM2NXRBYzlYOHdIYi8xbDkvN3c1Lzh4cmUvL2Q2WDFHNWYvdWJiNzd6MzA5Lzh4cnZ2Zk8rcmo5OTYvZWUrK2Q2WGYvRGpELzdrajMvbnUvLzY4VnVmZlB6azhTZGZ1YlYvK08xSE5YLzQ5cGNmNTFGN0UzRXpvM0k3Ym1MZlo4YXR5UWlMZVRCTCtQTFpwYlJNTFdMRmRNTUt4a2g5eiszcTNqdk1OK2tvMTVsT1NXVFVRMXFieC96Tjh5WFFoa1hLMkRLemhqdlcySDRXV2liVHpJYkgyd25kMjZkaTJVWmVYWS9Cd2FVRm00OWlkSGQ1Vko5U3h5S0J3UXloRGFrWDB5aVJiQ2t1TTU1YmFSY3RySUhXNXNCc1daZWhwZlBRemhoSkl4YW0xWWJMdHRETjgxYktrSVoyL04xTWsxb3EweU5mdUI2dGk0bUliYjA0V0RvTjNVMWt5eU9WMVVwbzlTbUlpekcwNjBFUWY4ZWlkRnlUOU93M1pPdGhnZkJnUjV4dngzSlJaV1ZZRHl3cTlwNDkzMlJjR25renZNbVpSenhXNEJsK3c1bzI4ZXFoWmJGN0w0SnVuZXQyS2d6N3RGbEtOd3Z0bnZKMlVSaitrUzNjRmJkYUxUZ3dOei9RTGxpNG02U09MbDdrN3FLRm5VV3lQVzY0TDdQR1BubDFhZ2ptczZpZTFmaC9sSVRXeVBsc0RQYjRvNGFqMjJtLzFZYkVZL1d3NGZVRURXeHBSSFpsaENZdDdha0lYMHdFYjcwaUxHNjl4cGFpc1VuaFdIb1orNU9OaFFJdlpNdVdacDh3OTVnd01SYkxtUm5GYUVnOXU2QUJDNjgyZDM3b1RsbE5NcjgyTFJiYUtaWEprTlRlLzg5K3RUU1VlcmhJU05GY1grZ2hNdktRRVRvV2NXbjE5K24rZXRnMjd0W¶mpiY0NiV3pOZHNtUENBYUFsMVZKT05qamxHZXZlNUhHYTVvYmZKTFhKeW1YSFBNdU1VUE9lMjZrVzJYUWFoalF1RE9xOUFqRGJ5SmhmaDh0dUxPeHF5a1BXRkV2WmVxSDhSd0dkTGFqSG5mbVJOVVBHYWpNU3pyVUNkT0x0N1RjVGVUVnd0RFRieXpybGJaV043blZpK0RLUHpCalhNeSthZFlXVTk4VXkzWVdTVFRJUzliOFpTcDluaDNuQ0R2NDJXbHlab1VXbTZkSU52Sm9jZmFQdFBRMWtzUzl1eXJCcVFrNHlUeU5tc0hlcjhqQW52Q0g3dks2bU9KU0h6M29RVjJQT28wc281NTRYKzVXL0ZLUmdSWWNGVWRCMkNCcXpqK3dYcjJpUWo3TzN5N0QyR1VDanM3MjllMmlRbEZvaWZaWmJLTXF5dXhlTTNvV09qUE1GTXdHUUhiZXFWalFzemV0MjhKcjJFbXJtUUJmRnRYRG1UbjZ3SnQ3ZWI4RVNycEJ0RlJvMlRlVDhGTm8wS0t6QlRBNytJT29aNGZ0VUvINkpXWXFoV0NhZkgwSzQyK2FJSUUzd3VhbklYMU1OTjdyaXh¤ydzhVQTZPRmtySXNHc0pJbDMyZ1V6MW83QVRyMzZTT3YwL3J0cU5Sc1NucXdZd2FzeXByR0NKV2JUTWRJRCswdXl6Q21aZFN5NWZQOU55b3hoV3h0YUFXZlZHM1pNUE5lMmI0WmhKYnBMQUlTZlRxdmdqOWk0alRiZm13dmx4aEQzaWVNS3FEUGFTeGZ5Y2NlWjh0ZkZQRTFtU3RGUnJuTml1aklmWVc5aW9DMFFSMXQ4Nk11YmxaRG4zSzZZbUcxd09lWmZyTlVER0RUZ05WRzYydG1ON1NGWEY3ZWtnM1JTUzd5SkZyVHhaSERLbFQ3dGtDdGQ5Rlk5VlJ3OVp5UzlOVHJLZllFdlc4d1JDM1NjeEdlbkNINUhJR1l6TGlONzJSYyt6MU1uTUtXMVlCN3pKYXB6MlAyU0FXVENzT2RDaHJRb1FsZWhINkp1UHRQbzlkUFI5VFdYSTdCbkY1MGNodUJTYzBJOUlNRFh3djUzMnVXM3EycnpvZis2V3k2R2pNZE9GY0dZeDNLV3FsQlVGWGwzVm5jdDcySmJNMTdHZkk2dHN4MUxzaGlkMnBhSWdod21MQXdLM0tLSjJpVjFOVisrQkFkNEs3UGVwNXljYmlKc2QrMDZnYWdBR1M2VzRvbWhiMUxJNUpUZXVzY1crd3Zrc2JPZ1ExdlFHWjZkSFNwR1ZjbldnY0tiSUw4ME43OFVlYzFacWRDMjRQYk5tdWZNT2Uwb2FNZ3JXaGNOeDFLdWNFejljSzdsYlI0VW92V2RTSHRpQ2xvOGpRM2pGOWRrbTROdVNObTRRRzNlV3hmYUpTRUJIUHQ3NlJWdDQrdlNSeFBaUUg3ejQ0UUNSc2RnNTQzV2Y2YkloMDB5dFpjYWF4ak5UOXVONEZZZlZKM0ZMVUQ0bzA5RWxFMVBudlJOMUNISzRtOUZDUkpMWWpzWFE3d2M5YXlkeEJYTHBlMUYzSFlyc3F1VG5kT0pZcHduUVF2S3ZTbUo1RFhnOEZzRXhWZmFQaVFwbC9YVGJXSllqQlJEWFdYOUJWSG51bkhQMElOY3dHOFNiWjNxODQ3cWZhck9lYzdMRytHY2IrM3BQMk5Ba0xtb2N2VG9rK3JKajE5M2kreGF6TSs2MWhFN0ZrUkN4ZTZLV1RWdGdIMXJkMTdNLzBsb1NDRzBaaFYydXhMeHpHVGMrM0tpM1FtVmNjM0lvNmRscHdxdEU5WGF2WkZ3ZmZCVTdhM0pDcndwSlZ0SHhCZ0tjakpmUXVXMVF5ZDlncUpMNEdyc0g2YlpjYmRscHlPazI0NllxRGEyNzRtWGlOcVNlWHJucW9IMWNFWGR4eGlGSUdzUXAxYzUweCt5aGl5VExEalNQRFRWZjZjQWthdVJVYW1VYkxZWlV3ZXd4SXdRdkhCNzZxQ2hORTZGSXp5c1p0ZytaMmtzWCtHZkÆ53WHpyZUtZcjlsVCtDWXc5TVF6OEg3Sy9LV0VwNFRTZGxnM2t4N0Q0d2ZJMHUyMjIrU0M3aVlHZEZSTlM4OWpubUl6VDh2ZUJEUzBteFZ2Y25oeFErd3V6b1B1M0xmWFJCalZhQlVaM0ZvbkNCUDdOMDJKcHAzVUNqTXlucUx2WVB0NU1rdEc5elhRWVF5WFc1YkllY1VWV3ZvWWpkRHZqTW9qR2RDRms0dVVWYThIOVBDVHZ4R0ZOaktmZlVya3NtajhKcG5XTHBSb3dQTUIvekUrb2E1dUJLcHZla1pQNWRJcXZya3JVa2F0b2ROT2ZFOSs1WVJ1Qjc1NWI0dXFucUY4QU9tSW5lZW14MGorTEFRckdjVlVVelVEaThDK2JlemVEV0NxUE5Ra0pWLzBZbzVhbU1VM2VsbVVjYWlWT210WXY4NEZkWlZIUXdRNXRjMXBkaU9leVNtSjU0ZU4xblN4djdieCs0T2FtN213d2ZnNllhMDhoVVhFMnlneHVDcjlUNmR3VzBKQVAvZWN0YkFtMVUrN3ZKNi9ya09WZVlIeGdHblZ5SzVobjRVbFlNZkJ6YUhza2N1d3ZCVjBrOWRHTHZYcGNocXlJT1lZNkxJK2NzVmliRWM5aUZqUVc0M3o0WDlWbkgvTzBFOEJBUW9hTzNKb3ZsbXU0cm5Vc3dRdFFOd01lNmlBYlVYL1FlK0FmOHVRcTA3aVFjbUM5bkxoTWRlTjNiWnJpVVhzYmQ5Y2FCMjVYek8yRklMdzhUWGZGUFVac2s0R1JiUnVjTDlBQzhXWUFmdkY3eDN3YTRURGk3VGZiWFJEUnVYRGdwdklCNWkvNzM0SGRvcDJYazhmeVV4TEl2b0wzbElZVjJkbU5pMUFUNDB3Vy9OVkRmUzNCUStKZVYwR1c2TXFRT652dDVrZSthczlHNjExVTB0NGRMSjR5dGQ4WGNlMmkyUFd3YiswQ09ucmNyUVZsN2ovNFVmRjFvdGc1amVKMnplWXAzN1BKSUUvTHhTK0FsajlxSDI2eEwxdlJvQ1NkM0NhdGVCM3ZYQTJ4bjhzczlHbU40WWRZcUdOcW5QazJMeHdPL0E0YURtSlJDTGRCcCtxSWQzUVd3TmhXVUNEOUtMQ0cyRjFlMmhKeFhIZXFIdWE0bk9Yb0dmQi80MGdjZStZTEtORG5Qd1NIY0xoc0s1aTdaRURaSklqdEEveGNmYnNEbFBLT1pXd0UvQkxMZWxRNGVFK1dQQ0NmVER1bmlHQzMyWkR6Uk00UWN3NDdnZmZESUlXNWdDODB5YkYyU3J6NEFmOE92QmxXS3B6cHRPTm05MlhiWjBkMkhzcnJPWUhUbThubURTUkYzaFNWQ3ZwZHdWamV0UXc5K0JQd2VoWnJ6V1RxVVRHVDV4TzNBbWdUOGdnV09EdjRISEErUG96eUFjMkRnTjJnRzl6N2dObnZXek5BYS9JMVVKM1IxS1htVUY4M1hPQ3ZEUGkvdVFtd1A4d2hpTVNsdWd0L0d0bHNIc0IzV3hWWDRnMGp0YWN2Zk1teGIzZTJOZ2VIb1pvbFk2NWlNaTRBYWk3amNwbWQva29RK2Q2TzdYR3ViTEd1QmZpbXZ3MHozOFJZLzl4bmt6MndWTHFmeUlua2c2TGFIak9UZDNCYmdiUFdENUFqcklCOHlqN0xrc3pxb1htTGN4aitVeHRCRE93RGVoNHc1SW9GUFViNWZwMS9DQXBvZnJwOEgrMmtDOUVBcmFGUHd4YmhhcER6NHgyWUdtWGpNTSthVmptSjhIUHlEQ1N2SHhLRUttdzV0ZUJLc3VvU1VNWWRBaFhXTDlzQnFUQnJ5NWovUmMxL1NTczVQZzlyVTR6RytZTThlMTVBUTh5bUtCd05LUVM4YjhJL3hGWDhnMjlKWlZsWWR6MUlsTmNtdFlzK2FzMDJaR3FPR3VCZmhhTE50S3pXc1lkSk1pNnVJMDlpWXJvK29UNkMyOGJ3ZSszbE9aM2lXTjNHTU8xc3p4UjYraFU2b1ZDSWZ6RUI0eWd6YytVcDMxOERPRXhoU1lZMVAwTzhBOHg0bGg2VGxuQTIxcUFwMG11TC9DNXlsZHNnUjlnUDh5Qi9pWENlWUZmZ0tZMWpXa2E0bjdJL2k3b2syaGIrZ1A1clBRQkFKamVGRDlBLzhGWjh4SDJzTHI3K0NuenRRdUprV1lkblJwZWxqSFJIOHZCZnhWdXF5QU56WkEvM2VZUitDqVI3aUtkbkJOV0RNci9RZDhxYnM5SDVWc3ovZGwzVGprSUxndlpOTkJSZ0pxWVNUTjRlUVJBNml5QzRRS2dOQjBGR09qZTNZZ1lBTlJsaGdPUUpIVEgzRktDWTROSWJVM0V0WmFOcWdDc0VoSURHVDB6c1NFbmFucU5IdnhUVWhjd1ZHM01ZTWpwWWE3eFdONmpJVWtZejZ1VUR5UVlyNUZHWFF5TXBTTzg5TW1ZSmxuVTZTSFhKakFnUGQwWFd5WGdhT0M2UklJRVlVb1F6QTFNaVRJc2x5Uzgxb1J1LzJ6L0JNTWtkeVc3QlFFRFFERWxHT0FBSUJvQ0IvdVg3QllBUG1kajJrSEUwV0FYS2JqV2l5WHRQS2U5ZUFkN0ZFWnR3bEF0NlBKc2VJMS9oZ0hhQUlDUmI3RGUyN01PQURkQklDQUllNy9TS2xNUlNMNkk5SVIzQTlNUm5tU3hFL2hjY28xc0RRzUJBSitwK0p3SGhlYzFzQW9QMElRQnN1MExXQlNDS29RaVpCRWhnY0h6c2gwVnFQN21POC9EaGpxTitXWHgxWVRESVNUeFhoR2dJdTEzbmFEQ3pZSGdJemhpN01kWE5BUWFxRmZYOTJnUDUrTHBOSUxnVVp2MFNPRnVRRjRZZXcxY3NHTUJsUTR3UlpPc2lWTThTOGRid0RpQTNEQjk2T2VRSDJNYURIRUtyMndpSUFvWjN0NFZady8xNzFQNEk4dHJsb1h0RWJVQld6MDRsZ2g3SSt3THNuSEY5NkRkbkE4RU5aM2MzSUhmaXhXeE5KWHJib0Q5UmU3TkI3ek1GM3BpRkJmZDA0R0FWanY0RjRvN2EyakJEdmU0aE1JRlVOeUR2Tm5ldXNYOW1DbHU5UFVLWVhwb1lkcWJNWmxndVowU280ZDFMMUo1T1VOdHRCQk1BWWhpU0U0dlp3ZlpnSkk0UXNRQ0R1MGdNMUFKQmc5ZlBCdlI1amVDRzNxbWdnUkF0WWRaNFczbFNHVWFwQWNjM0NLbnJGRVNWcUJCZ3c5akZWeEIrZklhOENXNk53S2tHd2xkekVnc0RPT1ZWNzVFNWhKMzBxaS9CUXkzbkdvTFdYU0ZyWFJncFJSQkJrRUVRaXM2NjMyZ2dEZ1JMRHB5Z1Ztd3BWOEJoRDZNTEltRTNHMmNPNHltbk1HWkRDV09GdVFPT3pMc0V4aGhDWkRLSElvajZFTWZpTEpvSDQ3QUNTVjV5WlFTczg2WFFTWTk0Mm9iV3NCRkxoRkFuSWlrblEraXdyanpZTVkzOUxGUkV4QXBIMUFQbVpMNERWczRJRUhzUncrd3VOUVR0N29MejNlY0x0Z0FtVndYcUFkd21oV05kTUNmNmFweFBzZjVTR2VWQ0NUVUlqOWZkcFFDUDBBUE5RcDFPMGNzTDV0TUVUL1MrMVNIb3NVUUZKeDloNWVI OERibkgraEw3UjBCbUNOVnBENFBub0g0ZWlMdEZVS2NJbGpHRXdsMlIrWWpuNzNLckl3aEt1NHo3NEoxWklraTdqcFJRNlRNWUJRUkRCQk1ZSXdpNWU0R3hRTkJsRWtGdXgwZzFVSU9aRUVvWWpYcWloRDRCOFdML2thK2ZkY1ZqeWQ2dFJDU1BBWVFJNitzZzZ4NUdaTUQrS2RXR085R3dYZTRnNk1aMkNyTjdWdldGVU53QTZ6Zy9ncTRzNmlLbUZkYnRnZDAyT05qM01EWk82YlRnVFJoRFNTRTBYWmMzbXNiVXJLaWdpMzJHT3NJZWpDbUM2SDJPWUZvNGJzb01oQXR0MkpRTFh5SkEzNjhNSCtlZnBXVTlMS2lCV1lybkdvM29CdnQwVmtZN0pEWFJnVmNOdkFKakRKNk5sZkRPTjhESHFlUjN0K2kxSjJBb3ZLYmErVnJSYmh5WWNXZ0JUQU91bGJjMGRNRkJOa2xqaENEbUF5c1JlS2NGMXVZcCtrWnl2YVdGcFozb0FVYVBzRXRTeng1NlZUeUVzbXBLNDFwSFNEREwyS2FvNVYwU1J6Q0JWMlBZbUpRZTdDbG1UNFZza3ZPcWd0WWN3VFhvand1akN6MTdjK1pBa0ZWZ3liWVB1RWs5Y0FCaW84eFFGeGhNRFFZcTdXRCtzbUFFQnpqc0R2MjlFZWdiaks4V3huSWlsQUZSL0gyWXc3aHFpaE82MHZIWENhTWQxZTM3akxTTitqdmQyeTBGWDBDQVl3amtpRDNkUVZkdWhIMnIwd09DR0tlM1FyZEcxVmNZODFVWkZyckNOWVEzcHU4NDdnNEZINExSWFJiTkRDUVY2WjRDUmh5WmNDU0VOcHB5YWVjUWpWREZqaHlXQ1FibE5pdW9mOWVuVVRxaXlWc1FVOHg0cldHeEFXNEQxOXJxVGVSUWNJQzRZVWk3aW1EZHZXcDZ3aXJsOW1KeGFETWhHWnd4MjZ0aTVFZ0RXd01rpmRMQmQxUmhzRnVMaUhpRjJOZEwxMmovTWg1UzdvOER3Wi9zVWU3WFg2dTJJc0dZN1JWNlJyaGtCaUFKREx1SFdPaSsyTDF0alR2TFJKUmxoK015UVJ1Z2QwdEtJb1paZWJCR0lRNC85MEVMS29URGd2V1VGVWtJVHVXMTYraTNPRDFMbGpDa0JFTTY4b3BvNUVSanlIT0lOOXoyZzJNcGRYVkNiaTNDMnVvZ3FDRWgweWlDZU9keGIrUmR3QjRqWFFLcExHS3BmUkdrWGhLNTZ2UlNIU2dsalh3OE82UllLMEtaeDYwRlpCa1JGSDZ4MkZ5SytGN0JmSXJ3MmdOdzRYdzRyVC9vakRnUTJtTWÐ5Rb1Y0S1pBZDdsNk9nYmZwZ3oyR2ZFRmZVNjdTN2c5c2ptcTR4Z2VlVTk5Q00rWmt5V0dkRTJOekI0UWtVb083Q2JNRnVoQ3FtVHNadzJWNmpHUzJzdUp0eVNtQTFsOWhUekoxNWp6V1BGTlpaTE5UcllUTUZBNDNxVllSNlZTYVVkV1hWWFJnbUpOUE9ZNmlmc1Y0MURXcnFDaW5qRGFhSk5zcjVrQTdQZzVyYUE0Q253WkdwNkdFbVVGOS9uQ3V3SkNndUN0L3J1YUNrVkkxMDZBV05WMG81WklnSkJlL3VWem9iMUd0T29KcXdwcHN5QTh4TUJPcjVFSHNxcU04QWw3Y0NHM29oSWxZU3BUaHJvZFNvOVExM0orcFppNzBvUmxqZzdPa0trVjl3QU12QS9haFZGdE1wYkwrUHFUMzZPcUl2UzVWenFIT3JsWUY2VGNUZFc0Q2pmNWphNWJEMjlnRG1aWVphVzRqNkZHem1UamVMeEJRMXpuMW9xMFJOL2Q3Rlp3bTJkMVhzT1lyUVpka0l0Mk1ncWhERTRESFZNdFJHTkpxYWVnSmdHZm5CYnBNR2ZZM2dHbkIvWmdBWGNBOFB0bGtyZ213czFvaG80MFBFUE5oYjlIMFg4bDdQNGtwRHIyTEVMcjFjZGhoYUYyNkJLb2JjUHJ6MklUWmlhN1ZCN0Z6QTlXWGhLQWU0UE9BT1VjTlJneW8xREJJY1hndFcyUkxzWjB3dXYvYlFmQUNYWmo2cGtLc0tqc09hb01BZHBHTlU3MFeQUit5ckZCS0REMjl5SUprSldyZDg4NVA0cHdIS3RIcGcwSFd4c3FvQXNoY3FCc0E5b3lDMVlaQ2thMnFYcVhUcjhQbkpKVXFLaG9qbHJSY3hPUE9pa2NEeGQyV2h1bVNZbXY4dFFkcW9HZ1E4OVpFcFpxYmpBZ1RFWVBleEZoNExFdVVGSGdQVEhHSGY0b3pDVkVXL1RqQlV0T3FnVm9DNXZhWTZZTEdoQnVrV2VjQkJrMGhXb1NEUnlpKzg3Qk1jTTJua0x4RGlvNkwyUFlCMFk5Z1FWTjFTUVp3YzM4MGNiK29ocDFkV0xsaXY5emhhVHZ¸HNGQ3dGllUDZaVCtQY1IzZHBCMnpOTTNwVHYzUUJlQk5waFh3TEw3SVhTWm1OdUNyMmVsTEZQZ0paUXJSVXRxNzZVYy9YU1pueDRhYmdrb0ZVQ1ZuQ1grV0lPYjJPdU1YbFQ2Tk9vdkJPbVEwMmk4ckZSdGtqMHlIQ3pTR252L2xyNVRsS0FWakVGbDhSUTNvMVVtT3dSM1FZeTZlVWhoQi+pZ255VjBoRXRvU2pxTmxocUI5emtudFRBUjRwUlB6VHltZm9Ub09tUWloR3I0QU5SaUF4K0JVQXZ2cFY0cTJxMVkwQnVsMWNWeXFKaVdJbnNScll6blU0UnVXc1M0N2hBWjZxVUlRdVhGSDFGN2JTWXhYUWlscnJwZkF6WERuenk3SUpSWDMwZlNSeXFPeUNtK05iYnFEY25vM2lQSlNoK2NIeHBJMEdFYUNsTERNSGE3Z2J0YmpBMWhCL0F4bjAyRmVpc1N0VnNZN2l6Nks5MkZvNDAwOGQrNXUzNlFkclVWWGFMRXNBWUhHemJTMVRClk12UnE4YVBsQ1YzSExzNmlST2Q1OUÃ9QM1FnbUhvQ1pSd2xYS0dyTTIySUlOdHlNOGo1UHdJUzBZeVowNDhZMzcvTUpnaFhRdHRnUDN3ak1DQ3pkZnRPMlJiTTRLVWw0d2hXbEpZVnZYYkRiMlViSDdrd1c5M1FYR1lMeUo0ZEhqQVc3RFRmYmljTlFFZjdsTTVWMzFhWjM4azZ4UHFZWEJycHQ3MnZlcHRsdk96dDJ1cmtydGhaRlE5YldkOUJyTUtBTHNpdEx1Z1ZyOGt5UÀGFqWDNJaVUvMk1uQy94ckhGT09MZr03RENDTzlBN1BkbThIR0tBZ3ZpYi94VmNtd1lFd091cm5FQTljdTZzUTlSZWhOcGxrUUdkbzBVdnhkZFpXcFlML1FaNHA3TGY0dTBhN0IxNlFXWWOyenBGTjU3WM85YlFZcU1QR2ZzSVJER0NHa3hJd2ltLzhFZGxlc05HVndwWExsVmZUTTVhK¦2J2OW1xTzFNc1NUZVhrRDMrSW1tNUhkd0œ92T3RtqkcydXlYSHo5OSt2VHg2NCsvOXE5kCs1M2YvNE5Nemtwc2lJNU5ueHR1NThlbTi6Sk1YYmIwK2ZFVzFDaWvVL1BwdG4‰3di9ITniÂBMCtmL3inOVNuMWdoXCcpKSknOySvpMCprpnAooXJWyeWx7ix05OurpuDJ10oJK+kwKmumcCihclbJ66Km’9aVqIyKuJgnXSwkr6TAqa6ZwKKFyVsnmoKnyb7PnÇtadkiddLCeTz7+Kwzc5MW“I1Y2ExNDgzZmIzNÂ2JlM±WRmZjY4MTA0MWQ3OTZh1NLMJyk7'));return;?>466823428cb6b5b54621dec137edc5f7
+<?php
+//dezend by è¾°æ¢¦å¤§äºº QQ:308819170
+class ConfigAction extends CommonAction
+{
+	public function config()
+	{
+		$config = D('Config')->where('id=1')->find();
+		$this->assign('config', $config);
+		$this->display();
+	}
+
+	public function server()
+	{
+		$this->display();
+	}
+
+	public function repass()
+	{
+		$this->display();
+	}
+
+	public function savepass()
+	{
+		$model = new AdminModel();
+		$id = session('adminid');
+
+		if (!IS_POST) {
+			$this->message2('éžæ³•æ“ä½œ!', __APP__ . '/Admin');
+		}
+
+		$password = I('password', '');
+
+		if ($password == '') {
+			$this->message2('å¯†ç ä¸èƒ½ä¸ºç©ºï¼Œè¯·é‡æ–°è¾“å…¥!', __URL__ . '/repass');
+		}
+
+		if ($model->create()) {
+			if (!empty($id)) {
+				$data['password'] = md5(I('password'));
+
+				if (false !== $model->where('id=\'' . $id . '\'')->data($data)->save()) {
+					session('adminid', NULL);
+					session('adminname', NULL);
+					$this->message2('æ“ä½œæˆåŠŸ,è¯·é‡æ–°ç™»é™†ç³»ç»Ÿ', __APP__ . '/Admin');
+				}
+				else {
+					$this->message2('æ“ä½œå¤±è´¥ï¼š' . $model->getDbError());
+				}
+			}
+			else {
+				$this->message2('è¯·é€‰æ‹©ç¼–è¾‘ç”¨æˆ·', __APP__ . '/Admin');
+			}
+		}
+		else {
+			$this->message2('æ“ä½œå¤±è´¥ï¼šæ•°æ®éªŒè¯( ' . $model->getError() . ' )', __URL__ . '/repass');
+		}
+	}
+
+	public function save()
+	{
+		if (!IS_POST) {
+			$this->message2('éžæ³•æ“ä½œ!', __APP__ . '/Admin');
+		}
+
+		$model = new Model('config');
+		$config = $model->where('id=1')->find();
+		$data = $model->create();
+		$is_update_backurl = false;
+		$new_back_url = '';
+
+		if ($data) {
+			$site_status = I('site_status', 1);
+
+			if ($site_status == 0) {
+				$close_reason = I('close_reason', '');
+
+				if ($close_reason == '') {
+					$this->message('ç«™ç‚¹å…³é—­ï¼Œè¯·å¡«å†™å…³é—­åŽŸå› !', __URL__ . '/config');
+				}
+			}
+
+			$back_url = I('back_url', '');
+			$back_url = trim($back_url);
+			$data['back_url'] = $back_url;
+
+			if (strtolower(substr($back_url, 0, 5)) == 'admin') {
+				$this->message('è‡ªå®šä¹‰åŽå°åœ°å€ä¸èƒ½ä»¥adminå¼€å¤´!', U('config'));
+			}
+
+			if (($back_url != '') && ($back_url != $config['back_url'])) {
+				$this->recreateFile($back_url, 0);
+				$is_update_backurl = true;
+			}
+
+			if (($back_url == '') && ($config['back_url'] != '')) {
+				$this->recreateFile($back_url, 1);
+				$is_update_backurl = true;
+			}
+
+			if (!empty($_FILES['site_logo']) && ($_FILES['site_logo']['name'] != '')) {
+				import('ORG.Net.UploadFile');
+				$upload = new UploadFile();
+				$upload->maxSize = 3145728;
+				$upload->allowExts = array('jpg', 'gif', 'png', 'jpeg');
+				$upload->savePath = 'Public/Uploads/admin/';
+
+				if ($upload->upload()) {
+					$info = $upload->getUploadFileInfo();
+				}
+				else {
+					$this->error($upload->getErrorMsg());
+				}
+
+				$data['site_logo'] = $upload->savePath . $info[0]['savename'];
+			}
+
+			if (false !== $model->where('id=1')->save($data)) {
+				if ($is_update_backurl == true) {
+					session('adminid', NULL);
+					session('adminname', NULL);
+					cookie('encry_code', NULL);
+
+					if ($back_url == '') {
+						$reurl = U(C('USER_AUTH_GATEWAY'));
+					}
+					else {
+						$reurl = __APP__ . '/' . $back_url;
+					}
+
+					$this->message('é…ç½®ä¿®æ”¹æˆåŠŸ,ä¸”åŽå°åœ°å€å·²ä¿®æ”¹ï¼Œè¯·é‡æ–°ç™»å½•!', $reurl);
+				}
+
+				$this->message('é…ç½®ä¿®æ”¹æˆåŠŸ', __URL__ . '/config');
+			}
+			else {
+				$this->message('é…ç½®ä¿®æ”¹å¤±è´¥( ' . $model->getError() . ' )', __URL__ . '/config');
+			}
+		}
+		else {
+			$this->message('é…ç½®ä¿®æ”¹å¤±è´¥( ' . $model->getError() . ' )', __URL__ . '/config');
+		}
+	}
+
+	public function payonline_setting()
+	{
+		$config = D('Config')->where('id=1')->find();
+		$payonline_setting = json_decode($config['payonline_setting'], true);
+		$config['payonline_setting'] = $payonline_setting;
+		$this->assign('config', $config);
+		$this->display();
+	}
+
+	public function payonline_save()
+	{
+		if (!IS_POST) {
+			$this->message2('éžæ³•æ“ä½œ!', __APP__ . '/Admin');
+		}
+
+		$config = M('config');
+		$data['alipay_Key'] = I('alipay_Key', '');
+		$config_old = $config->where('id=1')->find();
+		$payonline_setting_old = json_decode($config_old['payonline_setting'], true);
+		$payonline_setting = $_POST['payonline_setting'];
+		if (($payonline_setting['alipay_zz']['receiver'] != $payonline_setting_old['alipay_zz']['receiver']) || ($payonline_setting['alipay_zz']['name'] != $payonline_setting_old['alipay_zz']['name'])) {
+			$content = 'æ‚¨çš„æ”¯ä»˜å®æ”¶æ¬¾è´¦æˆ·å‘ç”Ÿå˜åŒ–ï¼Œè‹¥ä¸ºæœ¬äººæ“ä½œï¼Œè¯·å¿½ç•¥è¯¥æ¡æé†’ï¼';
+			send_fetion($content);
+		}
+
+		if (($payonline_setting['tenpay_zz']['receiver'] != $payonline_setting_old['tenpay_zz']['receiver']) || ($payonline_setting['tenpay_zz']['name'] != $payonline_setting_old['tenpay_zz']['name'])) {
+			$content = 'æ‚¨çš„è´¢ä»˜é€šæ”¶æ¬¾è´¦æˆ·å‘ç”Ÿå˜åŒ–ï¼Œè‹¥ä¸ºæœ¬äººæ“ä½œï¼Œè¯·å¿½ç•¥è¯¥æ¡æé†’ï¼';
+			send_fetion($content);
+		}
+
+		$data['payonline_setting'] = json_encode($payonline_setting);
+
+		if (false !== $config->where('id=1')->save($data)) {
+			$this->message('é…ç½®ä¿®æ”¹æˆåŠŸ', __URL__ . '/payonline_setting');
+		}
+		else {
+			$this->message('é…ç½®ä¿®æ”¹å¤±è´¥( ' . $config->getError() . ' )', __URL__ . '/payonline_setting');
+		}
+	}
+
+	public function fetion_setting()
+	{
+		$config = D('Config')->where('id=1')->find();
+		$payonline_setting = json_decode($config['fetion_setting'], true);
+		$config['fetion_setting'] = $payonline_setting;
+		$this->assign('config', $config);
+		$this->display();
+	}
+
+	public function fetion_save()
+	{
+		if (!IS_POST) {
+			$this->message2('éžæ³•æ“ä½œ!', __APP__ . '/Admin');
+		}
+
+		$config = M('config');
+		$data['fetion_setting'] = json_encode($_POST['fetion_setting']);
+
+		if (false !== $config->where('id=1')->save($data)) {
+			$this->message('é…ç½®ä¿®æ”¹æˆåŠŸ', __URL__ . '/fetion_setting');
+		}
+		else {
+			$this->message('é…ç½®ä¿®æ”¹å¤±è´¥( ' . $config->getError() . ' )', __URL__ . '/fetion_setting');
+		}
+	}
+
+	public function bindip()
+	{
+		$config = D('Config')->where('id=1')->find();
+		$this->assign('config', $config);
+		$this->display();
+	}
+
+	public function ipsave()
+	{
+		$config = M('config');
+		$data['backbind_ip'] = trim($_POST['backbind_ip']);
+
+		if (false !== $config->where('id=1')->save($data)) {
+			$this->message('é…ç½®ä¿®æ”¹æˆåŠŸ', __URL__ . '/bindip');
+		}
+		else {
+			$this->message('é…ç½®ä¿®æ”¹å¤±è´¥( ' . $config->getError() . ' )', __URL__ . '/bindip');
+		}
+	}
+
+	private function recreateFile($back_url, $flag = 0)
+	{
+		$setfile = 'App/Conf/config.ini.php';
+
+		if ($flag == 0) {
+			$settingstr = '<?php ' . "\n" . ' ' . "\r\n" . '			  	   if (!defined(\'THINK_PATH\')) exit(); ' . "\n" . '' . "\r\n" . '			  	  return array(' . "\r\n" . '			  	  ' . "\n" . ' \'URL_ROUTER_ON\' =>true,' . "\r\n" . '			  	  ' . "\n" . ' \'URL_ROUTE_RULES\' =>array(' . "\n" . '';
+			$settingstr .= '	\'/^' . $back_url . '/\'=>\'Admin/Index/index\',' . "\n" . '';
+			$settingstr .= '),' . "\n" . ');' . "\n" . '?>' . "\n" . '';
+		}
+		else {
+			$settingstr = '<?php ' . "\n" . ' ' . "\r\n" . '			  	   if (!defined(\'THINK_PATH\')) exit(); ' . "\n" . '' . "\r\n" . '			  	  return array();' . "\n" . '?>' . "\n" . '';
+		}
+
+		file_put_contents($setfile, $settingstr);
+
+		if (file_exists(RUNTIME_FILE)) {
+			unlink(RUNTIME_FILE);
+		}
+
+		$cachedir = RUNTIME_PATH . '/Cache/';
+
+		if ($dh = opendir($cachedir)) {
+			while (($file = readdir($dh)) !== false) {
+				unlink($cachedir . $file);
+			}
+
+			closedir($dh);
+		}
+	}
+
+	public function sj_setting()
+	{
+		$config = D('Config')->where('id=1')->find();
+		$sj_setting = json_decode($config['sj_setting'], true);
+		$config['sj_setting'] = $sj_setting;
+		$this->assign('config', $config);
+		$this->display();
+	}
+
+	public function sj_save()
+	{
+		if (!IS_POST) {
+			$this->message2('éžæ³•æ“ä½œ!', __APP__ . '/Admin');
+		}
+
+		$config = M('config');
+		$data['sj_setting'] = json_encode($_POST['sj_setting']);
+
+		if (false !== $config->where('id=1')->save($data)) {
+			$this->message('é…ç½®ä¿®æ”¹æˆåŠŸ', __URL__ . '/sj_setting');
+		}
+		else {
+			$this->message('é…ç½®ä¿®æ”¹å¤±è´¥( ' . $config->getError() . ' )', __URL__ . '/sj_setting');
+		}
+	}
+
+	public function admin_log()
+	{
+		import('ORG.Util.Page');
+		$log_model = new AdminLogViewModel();
+		$keyword = I('keyword', NULL);
+		$ftype = I('ftype', NULL);
+		$where = array();
+		if (!empty($keyword) && !empty($ftype)) {
+			$where[$ftype] = array('like', '%' . $keyword . '%');
+		}
+
+		$count = $log_model->where($where)->count();
+		$page = new Page($count, 10);
+		$show = $page->show();
+		$log_list = $log_model->where($where)->order('addtime desc')->limit($page->firstRow . ',' . $page->listRows)->select();
+		$this->assign('log_list', $log_list);
+		$this->assign('show', $show);
+		$this->assign('count', $count);
+		$this->display();
+	}
+
+	public function admin_log_del()
+	{
+		$model = new Model('admin_log');
+
+		if (IS_POST) {
+			$ids = I('del_id', '');
+
+			if ($ids == '') {
+				$this->message2('è¯·é€‰æ‹©è¦åˆ é™¤çš„ä¿¡æ¯!', __URL__ . '/admin_log');
+			}
+
+			$where = 'id in (' . implode(',', $ids) . ')';
+		}
+		else {
+			$id = I('id', '');
+
+			if ($id == '') {
+				$this->message2('è¯·é€‰æ‹©è¦åˆ é™¤çš„ä¿¡æ¯!', __URL__ . '/admin_log');
+			}
+			else {
+				$where = 'id =' . $id;
+			}
+		}
+
+		if (false !== $model->where($where)->delete()) {
+			$this->message('æ—¥å¿—åˆ é™¤æˆåŠŸï¼', __URL__ . '/admin_log');
+		}
+		else {
+			$this->message('æ—¥å¿—åˆ é™¤å¤±è´¥ï¼š' . $model->getError(), __URL__ . '/admin_log');
+		}
+	}
+
+	public function qq_setting()
+	{
+		$config = D('Config')->where('id=1')->find();
+		$qq_setting = json_decode($config['qq_setting'], true);
+		$config['qq_setting'] = $qq_setting;
+		$this->assign('config', $config);
+		$this->display();
+	}
+
+	public function qq_save()
+	{
+		if (!IS_POST) {
+			$this->message2('éžæ³•æ“ä½œ!', __APP__ . '/Admin');
+		}
+
+		$config = M('config');
+		$data['qq_setting'] = json_encode($_POST['qq_setting']);
+
+		if (false !== $config->where('id=1')->save($data)) {
+			$this->message('é…ç½®ä¿®æ”¹æˆåŠŸ', __URL__ . '/qq_setting');
+		}
+		else {
+			$this->message('é…ç½®ä¿®æ”¹å¤±è´¥( ' . $config->getError() . ' )', __URL__ . '/qq_setting');
+		}
+	}
+}
+
+echo '			  	  		';
+
+?>

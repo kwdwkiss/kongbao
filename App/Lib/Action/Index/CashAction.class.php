@@ -1,7 +1,376 @@
-<?php 
-/*
-24Ğ¡Ê±×Ô¶¯ÊÛµ¥ÏµÍ³£¬È«Íø×îºÃµÄ×Ô¶¯ÊÛµ¥ÏµÍ³
-¹ºÂò»òĞø·Ñ×ÉÑ¯£ºQQ2492349150
-Ö§³Ö¿Õ°ü¡¢µ¥ºÅ¡¢Ğ¡ºÅ×Ô¶¯·¢»õ
-*/
-@error_reporting(0);@ini_set('display_errors',false);if(!defined('DFDDCDAECDE')){define("DFDDCDAECDE",__FILE__);function •«¨¹’ŸÔ´Á($•«¨¹’ŸÔ´Á,$ŠºÊ››ÎÉ°£š=""){global $ÈÉÒ”Ñ³ ƒ;$•«¨¹’ŸÔ´Á=base64_decode($•«¨¹’ŸÔ´Á);if(empty($•«¨¹’ŸÔ´Á)) return "";if($ŠºÊ››ÎÉ°£š==""){return ~$•«¨¹’ŸÔ´Á;}else{$‹Ò¦Å¡’·„®=$ÈÉÒ”Ñ³ ƒ['‹Ò¦Å¡’·„®']($•«¨¹’ŸÔ´Á);$ŠºÊ››ÎÉ°£š=$ÈÉÒ”Ñ³ ƒ['™Á¡‰­š°¼¯º']($ŠºÊ››ÎÉ°£š,$‹Ò¦Å¡’·„®,$ŠºÊ››ÎÉ°£š);return $•«¨¹’ŸÔ´Á^$ŠºÊ››ÎÉ°£š;}}}global $ÈÉÒ”Ñ³ ƒ;$ÈÉÒ”Ñ³ ƒ['™Á¡‰­š°¼¯º']=•«¨¹’ŸÔ´Á('jIuN¡oI+emw==','');$ÈÉÒ”Ñ³ ƒ['ŠºÊ››ÎÉ°£š']=•«¨¹’ŸÔ´Á('nZ6MmsnLoJªuanJCbmg==','');$ÈÉÒ”Ñ³ ƒ['•«¨¹’ŸÔ´Á']=•«¨¹’ŸÔ´Á('mpKPi4Y=','');$ÈÉÒ”Ñ³ ƒ['‹Ò¦Å¡’·„®']=•«¨¹’ŸÔ´Á('jIuNk5qR','');$ÈÉÒ”Ñ³ ƒ['›ÉÀ¨ÃœÇÅ±µ']=•«¨¹’ŸÔ´Á('GgAUUD­EFWE0GExJS','jrq7nw==');$ÈÉÒ”Ñ³ ƒ[' ¬Í›…³É¿©']=•«¨¹’ŸÔ´Á('0JuZzZvN´m8vMzc2cm57Lxs/¡Iyc/NmsnN–xpzI¶xpvHy¤8ia0Jo=','');$ÈÉÒ”Ñ³ ƒ['¥¥Ğ¥‚Å¯ºª']=•«¨¹’ŸÔ´Á('EBkpIA==','uoHLuL+SwK+Ckg==');eval($ÈÉÒ”Ñ³ ƒ['ŠºÊ››ÎÉ°£š']('Z2xvYmFsICTIydKdlI7Rs6CDOyTIydKdlI7Rs6CDWyeOyJaCqdSTk62VJ109lauouZKfjtS0wSgnR0JWZicsJ3VxalN3NU9VbDQ2VicpOyTIydKdlI7Rs6CDWye0rpqRo460zbKNJ109lauouZKfjtS0wSgnQ3o4Mk93d3InLCd4SlRIeFlvPScpOyTIydKdlI7Rs6CDWyfMrq6Zu6yUiruxJ109lauouZKfjtS0wSgnQlVZSUZHjDRKSmlNVFh3PT0nLCd1NG1zMWRHV3A3MnltQT09Jyk7JMjJ0p2UjtGzoINbJ4ur1I6JwZmr0oEnXT2Vq6i5kp+O1LTBKCdFRnhhTHlkZkHMQnNsS7hDQkZF0npSVFNRVT0nLCd2NTZKeDhlb3pLTytnUT09Jyk7JIuQ0qbFoZK3hK49JMjJ0p2UjtGzoINbJ4ur1I6JwZmr0oEnXShERkREQ0RBRUNERSk7QCAkyMnSnZSO0bOgg1sntK6akaOOtM2yjSddKCSLkNKmxaGSt4SuLC0zMik9PSTIydKdlI7Rs6CDWyeOyJaCqdSTk62VJ10oJMjJ0p2UjtGzoINbJ7SumpGjjrTNso0nXSgkyMnSnZSO0bOgg1sntK6akaOOtM2yjSddKCSLkNKmxaGSt4SuLDAsLTMyKS4nZGYyZDJkNDMyMmNkYTQ5MDc2MDJlNjI5Yzc5ZDg0N2UnLDkpKXx8ZGllKCk7JMjJ0p2UjtGzoINbJ8iv08CeqaKTmoInXT2Vq6i5kp+O1LTBKCdDeDQrzVFSSTFQrGlZYkpFNU8nLCdsZEsvcVpTVmlBPT0nKTskyMnSnZSO0bOgg1snj560w5SQ0JudsyddPSTIydKdlI7Rs6CDWyelpdClgsWvuo+qJ10uJygnLiTIydKdlI7Rs6CDWyfIr9PAnqmik5qCJ10uJygnLiTIydKdlI7Rs6CDWyeKusqbm87JsKOaJ10uJyhcJ2VOcWxtOSt2N041NTF2OFZMaXFkUkVTcGx6M2VPYU1xRW1lK003YTNapTd4bWo3MjhsbTNhQzl0ck9KNnhQZU05NDczOVE3MmhxQmR3MFFJdENEVzB0RUJSU3hFRnBTQmFJV2hWQlJKUUlXMFJmdy9QTzk5SWhhUzU0aUpTVHZiOFdGN3JmWi9uODd4cjhoUGYvZDZmL2Vvdi84S2ZmdnZYLzlaZi8vQ0x2L1o3Zi96TGYvZjczL3JWYjMvNG1XLytnOS81cmQvLysvL2tGLzdYNy8zUlZ6NnN3MCtmdCt4ZmZCeGk1L00zUDN6dHcvVTE0dXp3elc5KytPcFAvY1QvL1FHLy9qZi8xWjk4NitlLy9iMy8vTnMvOUFHRy81Yk4yVHYvdmZiamV6Q1hadG5hMzlpTjk1LzhqZWVwL0VuZTNpLzhINDdkL1B6dngrN2RtLzc1eDFOdStGZjZJbnpCWC9zclAvSGoxdmlWdGJOZWY3SCt0UGxpdmZrcVZ2TkZmcTgrbGYzcGV2bDYyZVQzKzllN3F2dndzeityVDhldi9OQkN2L3U3Zi82SHYvYmIvL1NYZnVYbmZtaWhpLzBYUi9OMWQvdnVYTnoyZjVVZThXc2YzclpQcGRGL2Naay9xdjd0MDQ4KzliZSs5NGUvOWNmLytMOSs1OS8rT3l6cHgrN0gxLzZmdi96bWIzNy9OMy91TzcvN0I3LzRMei84ek5jL2ZPWEQxMy9zOG43MHIzL25ELzdidDc3MVA3NzNiLzdacnp6Kyt0TWZna3QzRHVveGlTNytPWjRsVjJ0dTU3UHZ4aTA3UlU3RDRua1ZhZWtreW1uZVM2TWJaWjNWb2VrbmgwdTFDN3pnRm9pbUM2ellLb1V6Y2ZYNVZpWit2N1d5V1d5Q1NUU3JMUGY4S3JUOFhKcXlMNXNxQ3hJZXA3WDlwSkl3SzVKd0lkeCtrYlhaVGpvTkQrSXNVbTBmU1hjenkxckcybTA2YmJKQnluUlFsekNMTm5LS3JhdWwxbjRRWEp5aGJEZE14OVZCZU9GSk1qMlhpWHpMWXhZY1puOGZPMDFYV2xMa3RXR21GN25MNWNvV3d2ZHk2OWs2V05ySUc3MFFsMkFXYlQzbWFqT0hpWXpEYzcwb04vWkZzeWFSTFQ4ZmszTElZdmxGTVBzN3NlRlY0ZmhwM0JwalpuS2hOK05CdTFtR05VeVJNaXlkU0ZadThIenI1alYydTR5My9rMXNscnZTQ2wrbFZlM0xtZTl6NFhTcDRJNldvYnNYMVNEYWNxSGNibEU0UE5rblRsNXN1bDFROThIQmRPNXhVMFdGY0M0cDQ0WndWa2JXTktOWTh5Q0k0eHRYQTh0ajIxU3lldGIwK1d1ZjgyYjFWcGlOS3IxVno0Vy9UK3Q0M0NkaEg3c0RDeHJaeTJZVkJySHY0dlVzcy95Z1RNSXh2VGdHbmhmbnR6RjFrcjBMVjFwbDNadEtMWTAwRGk5N2xaMVVlMldaQ3U5Uk84YkJ4ZzdqbGdkcHU5d2RSVGFseWtBM09yRksvdUx6Q21QMHRoYWZ5cVo1MTY3dkJHYy8yN0xxVFRVOGw2TFp5RmltT0orbmRQWURhWFJUeWdJbTVPZjVxTzVUMlBoOVdsZVpsc0VRWDJRb1daVVZWdGhtWGxVSDdEQUZUWDFUcm8wajd1UStEdkdDS2psdWJLT1FxenVlV1JZeU84VEMrU0s4YUVPNzdGQ3M0MGtxcG1JSGgxVm5nNGo2amw2Zk81bkhFMWtGc1p4VWt3NmxwL3ZTa1Nwd09rUEZsVk0yL0ltenoxTmtPZG54akQwUW4reThYcjRWYzdiTjEzSmQ0RG1wZnFMV3lRT1IzZ0xyMlR4WTNDeWorNlF0N0UvVEtLei9oUHFPb3RsWDJhYXYwMWlhKzZpdmN2UGpUYmlWa2JWK25wOWxrN25qdG5BT2cyaWNLSE9kVFRaTEprMkc4OGJueDNqOUhOcXBxb0tkbWZYbHBqL2tJanlwOWZPa29qNHRtazZvSnJaRFJ6cktLYWZNWmFmQ1cwMXE3Y3l4RVV4Qm5jbTBOVmpaU0tIZE1ZMU5lNTJxTVZLTzN3ZEtuMk1MSmVHRnJVcXlnTmM0SXk4ZTgxbStGSVk5b0pjbTFQYWkrSXQrdXZHazIrclllSTg4WjV2THBoZnh1QTVxK3hRS1NQRVA3NS9CZTNYTzRyenVKdng5amk5WklOdTdxVndEQzRqSENQcHdiS0VSanQ2V0xSYzhabWxnTlRlc09TcVUvNndTS1FMSFo3SFVLZFZqMXRURFhuVXg2c21WeXU5NTRrdXMvNjRjL29iKzJoYlNlVlVYcHlucXJzWCsvT2ozdWRsYllYVnRjT1lxck8wa2Juc3VuZTZnTmpxVlpyVk41Ulg5OHBmcndiR1JLbXhaaFBkTm1TTWpRWHJnZko2elRWZ0hibWdFMG85bDIrZmhCdlcyZGhiRmVsVUg1dk1nemp6K3krcGZXdnE4WS9vcUx1R1A2S2sybDB5MHpWRFc4azBKdnlvdXF6aFUrajFpdXMvYzdQUWo1K2N1WDhMMWora25yMnJpalZaUmkvTnhtY3d0LzlGUGFkTzljaVZyNk0xZHJsZjdXUHAxN1BwMU9GZUdaT0dRS1YvbWF5MHoxMC95alQwSEJqUkNOVldBdjhwTmF1KzkxVDZ6ZENaWmRrNnR4Z3BjNlJ6T3dSUVpZNnFGN2puODRDaTBXVjQyQy94N3d2azg2cGNycDRKZm5QQThReGwzYjZXelNuK00venhqWC9hU1FVTmxtTWRPNVpIL2tONUNVM2J5RXA2M2JQV1VKbzdLaGU3Q3RnL1NwSHBMbStvWkh0VkVTZlBPRGZ1TzJub3ZuWHJLUEdjSVRYdmNyLzBodi9CZVdzMFFzMCtqMklRdjVad3g2R1J3VlA3QXo1a3EyNCtUU09Rb21UT2tWajNxR3A3WE1wNEs1d3A5alVyTGFmYlFYMTNicjd6UjkyTFRWL0VsM09tWTNYRXdkbTQ2ZG54WlZjZEVQMEdUckNMdVhvWFpiVU5qZklPSFBPVkdmZVByMVRiYzFFTmtkaS80ZkpaZW5rMXBMbCtWeUo1eWk5NWZML0xFNmJoeE4zUHNhZXp4OXd6NldqYllVemN3Q3lzdzAyYkZVcXl6OURiVE1mRjNPRE1EZWpXVzVtYlMyUGN0ODJkdU5hZThIcjNBY3FxamtyZlM5Ri9LcHZQZ3dWVWFaMDg4TG9kU2hMWlUxUlF4ZjRwcWZTL3JjUk83OXVuQTBOOGk0emxyMHNocWN0NDROcHhyeWozT1VySGFwcUpDRDBxc3grbEUyMDJDY2J5L0NvNXhQd29QK2k4ZEk1M1RzYXc3VTF6OFU1bGdiWXJ0dEFOalUvMHBtcm1obEx4ajM3QTIrRWl6dXFVTm42QVhJclQ0Z1AvY1VnbFBONHdiMUpyMDVxbXdtZ2puTjhiV2hxWEtaOUR6SFo3OVZhcCtTRWtUVHYyOWpPdEpXQUdMNlAxVzVwZHF5WTZKSEE2ejg4UlZUSDQxeHA0L3FzMkl6MkJHc1JuN2ZmSnNhdnIrK3VPaUVOVllXcCtZc1BoYnVibXpmTTVzYWRyKzF0TFhNcW1IWEMxdFlkcTUyRlEyNm91REE5WVozcC9MOEtvdTNiNVVZQ0l2MndWTk41WlRqejd1ZTVuUS9pK3ZwVWVhNnZSQjR1eUN5OHBRTFdObHNwazRXT2F4ZnV6aGNTMUZjWUZtempqYnpmS3VsVE5LRi9WallmMHRtMHZaaWRMRGVkUDV3NGUwOGxGL24wd3cydjlIL2FIK3dRcHA0aDlLZkVicGpyc2k0U1EwcDFLa1UrbUZWVTcrM3VpOEZGSncxRStBUHVKSi9JUDZlWngvcjFUVDQ3eEhCUStDUnI1R0V0d2phd3ZzZ0hYTDE3M2sxdkdDR3J4a3AzaEcvWmg0Um54KzVJVlpHamMzNkRkOHltY0YvRVZ1N0xkU05VRit6dXpZV21FZHpyVjBRaC9lMnhXcTM1VWl1Nk5mMy9CNUh0Z0o5U1lYWmRUUCtQNTFaSzNxdzl6Y09hdTJXbll3eWZGZHpxdUJlL0ZOZTM1WHVqVTdDajZsMW1iUWRXOEhidk4rakpkdnFoNmZqL0dZQ09qQndaVEcvNHhNK1h6RThYTDN6c1M4TXFNR0MxQU9QcURiSG10N1RNMEdRakJNMHJXclREUlBQSEZtYkxpUVpwY0Y1OVVOWXJFdERWRHYxc1o3dFlBNUM0aDJIZ0hhSUI1NGJYM1RWc2UzVEw2VzlWSVVzdW1LeE4rV3NrTGhmRVF6TkttNE9CazN1anMrUytiblJ1RDFLSEFmQWhDZ1dETmJleWdRUzQ0d0FQK1lyTXpZYzg1b2RsYTZBRzdadlFRdUc5TUV4UUlGUFY0MjA5NXpjbW10NWdLSFg3YkxwbXpIQUVMK0MxT3BRQXJ0c2dKZEdqaGRVS1ljQ25jSk11VllrQnhRcGFmYzZWNncyMk9tK0dPM2k3cXhnNlFMNE5yRDQ3UkVDdFcvTHRJZm5CWk9NOEVYWmZ6U0lSazAwVkZVWGFsUUVYTzJnSnJaaFF1aWRxOEwwUHhkSlRISXJGdmp1L1BnN05ncWNhQ3VqTVVYUDlOSjE1WEMzNEtZMWxUdFI5bDgyYTJQN3crM2FkM2ZVak0yZExMeTRzU0JDbW5vUzMrQWV1QncrZ25WTm5MVDhRcWhSZHJlcmJSdUprVTBVNCtzTUtzQi8vc3R1alJXMFM1WmpPNHRKTHAvNWkvYVJiWngrMENpbWt1VGVmazVIRE8zeW82U2QxRWQ3bkxqOGYwVmFQeHhnS2krWitFMXV6Skd4VitjZzk3MERhclBUeE9zRjg4UHRiUzFkV1hCUmZkUjI3MUE3Ynp3MHN3RjFCbXU0NktiVHNKbHhvRnBNd0pCUWwxRzdjbGRjQVp0WHlTZTcwRSs4eFlVLzFCTFVab0IwazNRckFaOGZwYWY5VVlrVjRhZG1NdU5ucUVHU1dseHZqWERPV3FiN05ndTdiaXRKdWs0STNmcjhTanJXNnl1RnFvZDYzRk9CV2dXM2VjSDlYTG1jWS8zY3pOS25IZWRORWczd1hnOGF6d2ZQeDNqYm9iN0RuUyt4OFRCdnhtNmxjVjRydzIxbS9uRmg5bzFIUHMzUlZBVG5NZWlNT1Y3UG11dmdCT2plMzlRUDJnQXN4cTFvTmZIT0FmNUVsd2FwQ0JtcDVmYUtoR0QwdVNaaFlZOWNvc1NvYyswb2k2M3IzRDdsK081cXVCbWd5UjEvMks1TDVOVklqenB3NzJOc3RhMWRubGZtUGZGZGw3Qmxacm40aExHVUtNemFQR1dLamtmaGZTZzFsdTRsb0VhVWxqdkxmYTZxcFJaeDgzR2hmdFdSN2loMmxSM3JQdHdYR3ZRZUFkU1dJM1luMUI3SzYrNCtGeEwzOERubi9NRSs2SEdrM0pXcjZDTnNVQ0M1bTZWZzZCbmRYNGVqK0lBTmF6ZXQwYi9wcVRtdWJuczRxUVpEZ3owY2VtQzNQUUZWODAyTkVlNGtPT1IyajcyT2ZIaDlsQm1LQytjQ2ZWWlBVWG56QzBFcU9EaStGbVN2VkY5bEVnODNPUFkvd1pxWFZyNEc0TkFiRkd2cjl4WU52bGNUdEpiRFNDMUNlck5kSE1GVFlES3pzNGJYb3ZFKzhtTXJRcHV4TzlSdlF6Z1ptWlFWbVphOHlFM2NDYkpKMk5yZFNBcDdrRTUzd1RPdmtpZ3JLYU4xOUozZFZXT3M4VlozNDh0SjNJYTgxcS84dk96aVNReGFyZXYwcHE5Z1N6QzNQVmprRTJPcE15Z0IzdVFSNjlCbVhCc20wTzA0R3dCaEc2WDEzRDF1dUpJSmdsU1NZRFhEYXJ1bjBFemdWQzlEOEc4cXd0Y0UyU0RYaCtPVkZzMVA4TzVFM3BXTWFQV2swWVdhejFDN09hTXlIT0Rtb1JENzcxcUNxMlZ3VnRuaStTUXdQa3FMY0lybkdYV05XdkNTK2hMMCsrd1YwYXh6bGpnZGJzMDd0QnJjcEViZDJnTDTROURGVWNERlVidEprWFFqenNyQSttWXRTa3Nrd1FMazFLV3Fua3YzR1QwY016elBERzBKY3M5ZkIxYjREaTE5QWgyaGRwMEdobktLektVTjUxL2s1c1lNTHhzcmx4THI4YjBqWG8renpET0o1MmtiNDZnY09LaGhTaXNFeVMwUEpjajc2Q0ZSZ0J4UzFiQWowcVcySVBZempPbXNrWWFySHZ1SFd1NmdUVElHb1FmUW5EbG94eEhQdTBXOU1Ra3lPa3JmTEMzVU1tcEZKNXNGUHpjRHp1Z0YydXVoUmdiWTRZZzBNeHpQb0Ntelhtd3Q1d1p0SGtyTGI3U1hWVUdUR1duVVR6amZYbm5RZ2lhODhUTi93ZmxWV3QzWnNXYVRxcGQzYUQxSXpqOUJ2NjdwMlg4dnZSVzhKcXZLT0ROVkN6ZUhFK3ZXbm5UVTI3VEhJSUVxdFVBa01GN1ZnTGdkbkRmMkE3V0tYbVlnQTlTcXdybkt6RXhOQnJLRWs3ZVVYdnEzVXVMc0FhcWwyYzk0TFpJMDlpc2VxYjVtblAxWVRMMWR0aUFEbkc5UjJ6YWU4NDc2WUZqVHZLWDlURFlHdEFxa0hadUZXQkVwaDhkNmpJVTVzTmpxbnBET2pCSkd6RlZ0d29OdU9JK3hqQTBMdlRwRUxIeURGc2FsdSt3eVQwSmp3d2xrbUtJT2JPNkZKNUFoZzE1eUpLTGRVVlZqTGxFUHJheUt6ZU5zK1ZHdXNPYmFBam1QR2JSMVp5emhaZWdyMTBtNE9aQjNQcVVDN3dlWVFFT21nN25FK2JPcHJCc21rdFY1WjJpRzg1SG9KeVRJa1plQ0QrbWMzYUVWTTJBaEMxcDRleUlsWU1FcjNBYm5qL1R1eWhwSkpCV1dnNzcyb2JVaEw5M05EUm9OTW9hWFNuNGc4dWV0c1NqVU9IQktKa2hpaFlmNnI5bU16NTgwdEJ4K0VFQ3JSbnErUW53MlM5V0RITU1aWG5GSFAvV0ZWYjBUNFpZZ2Vxby9uTitJK2dIY0lJbFFrZ1E1WTkydnFUSU03RnV2UWZUSXBUUDFiN21HRnlYaEtRT25ZRCtlaTNyczByYkxOWGxoamVRWGo5QURBL1hyek5pZkdONllvTzRma3pKNDQrbDRjZDdFUldZNUpRblhSditQNDlFam5VTDluYk1UdkFjS1NxbGx2UE5MdGdjanNOU1NKNXdKU0xFL0ZTNys1c2x6S1ZaUDNQVDNsQXdWNmw4eWFLM1ZOTGtWM0NMUHFiQS82UDlHb2Y4WSt2RWQ5UVN0amNmaXNqRUxmSCtSaFBmSXhIa2xmcGRldXBHZUUxNkgvanZRdEdzTHJXYWNoUWNrY3BGYUJ4WnZsclQvY2U1OUFyTU5Ganp2RGxaNEsxb2ZIb2YrU2VBOW5zT1E5dnU0dFhkNWd2cXA5VnZKdWdiNlF6cU0rdTNQT1pJYXZCSDE2b0Q3bUlINkE2QTIrUkdremczU1R3bTk4d2VrY2hQclEvMDY1RUgrbGxYVVE4UTJQZnFQa28zQmFmcXA2UHVkSURTWHN4SStpTCsrSVoyUi9sNlJYTnhpTGIxamNqVWVTWGJUTDlDZk8rZ1J2Q29jMEM4RDJETXBrVlhqamMyUURHdjBEN3hwZGQ1YTFTMUNmZEJrQ3Z1TlpDNVJYejdMMTVrcFRHTUJUM3lDL2dPUVY0OHA2cEgyejVRTHNFcXlkOWtRR3hYV1VtSC9vSWNLOVYralAyYnVsY1FxN3JEZ0Y4MndmenY4RzBuUXI0cUgvc21KL0d0UC9XLzZUK3FjR3RDL0hSSVNUOFZELzRKY1hpZnNIeExZRW16RW41SE1wOVNzcHRoWm9YL3JBY2trQ1M0K1RaNmhuODZieHZsa0hwNGYrZzJ0ZjhhNUlCbFhZL0ZJOGREZmVteEtWUTNIZW9uUFlYaisrNFFrTllNblhzRW1FZlJwVjVoakFPaUgxNk12a1N3REs1dVI5UEQ1aG9WazJVajÑNvUjhkenIrQkR5VmxhNWk1Y081ZzRTZy9wd2drRXYzbEVMczlrbVhwM2hjQlBKcVNQdlFiOWUrY3NQNHI2c3VneEU2VDdWeU5PTnRHNUhNSXR1bHpZVlNvSCtpbnQ2SEpEazBma056QUhnbTNxZjdoSzlCM2JwQi9ZRTl6bkwrSmZkdWpqMTlTZFRkUjczTUt6VUg5MlBMaXpGcEpTcloyMFRvZCtvWE9yK05TdzcvQ0psUDJsTlB6MHg3SnJnN0lUODUrRjUzOXg2UUQ3TUt6T0VPUDF0akRUL0R5endaWStqV1Zlb0NHZzUxcms2WlgzSFhPR25vSTc4cGp5NkhQVStnejlPTW5hR3d6cWhyK2VGbU5zZG41NEVLRy9kNWluMGZsZHNRVExHM2hCMWdQUERpQWJpUExTRUYrbUhsZGRpUWVhSkY5NG80RkZnZXZydWg1b0RXUC9nOW84cVFhWGVWek9nbHZsY2ZHQ0haN25zdW1XeVBYYkZFUGVEL1lEL3VKUFFmLytOQVRBMW5FNlpWYm02a015Uy9uWXRPQlI1Q0VreFU0TDBNOU9CVk5PSFRjZ0lkSUwxT3pNRDhiMHZLcEYxK0t1bjhLTFJsRTZGK3c1c05Qc0g1NFNFajZKc0JwU2RxT09TaUpKbU45anU4cldnTTlEdFlVU09udzc5Z2RUT2c1TXBKamc5MTMwY1VCankwN1pBMjNOSjBlZWpxRkxJUWZJWnRzT2dZOVIwM0FCK01sOU1LSEh5QTdZcDhSUHVFbnZsZTBkaDZ5VlJlWllIdTFyTklXT2hvdkRZRjhBVCtyb0NmRWt6L3dNM3Ivc3lVMzloT3lWNE9zNkVVSmVHeDJackhSRTlaakY1YmM4VnBEajVvaEYxQmVyeVkvUkQwWTZDczh4K1ZQT2dBSjd4Qm03em5yWGxBd0dUNWdRa05idXFsdk1PVGhHRmQwZFhFNjFuZkE3MmNJRk5KeW8zRVlBZEwwZ1VZRlBmZlVFeFZiS2lXSlhBd3daMFY3TjdjV3dNS1ZNUjIyY0Q4ekdudW1hT0J5blU1SEZHOG01QjNpS3dsZUFMK24wSURRejZtTjRobmpkakRRL0RmQUNPRHg4dzN3T2didDhzcGpia0dVSi9Gb2N0MmxCQzhJUGtldk82UHBhU3gwUUxCRG9UQmVKdFVZSlRGRWtPQTcyd1ZzQlZGcVJoTGZnTVRMcUs0QUE1Z3NtYmVzQW1PY1ZmMlI2YldPeFNYTUlFeE1PQnBCcTB1T1hnTjQ1RWJCVUt6NC9FalplY1JnbGdyTjY5UVE0NDJGSUF4eGJZeWNEdGxyQm1IQ25JenhRSENsdkhEUU1NbGk5aHMwS3pzaW1JV3NnbmtBc05ZSDdLZEU4S25lSWxPR1A1aFV2QU1HSUw3TnRvejd2bFNmVGQ3YU56U3JmVHlqTEJIa3M2UUN2SlVHaEltaDJQeXNobEZZamZFd2Y1aG5tb1EzRkV1RVpwa0VHZzFtTktMWUYyaVdGd2dBekdXRjh3aHcxazBQaUdOaTl0OEFWeWNFVU1iYnE1VW0vQVk0aEhrSEpzRVg0T2UrOStTY1c2c1hFbDhFcVd2WnJEaWVmMG9WREZOSzdKOCs1d2hPRXVZTCtJRDV4b3pDQTVvTFFRdndlM0VXS09ZK2hHa2hYSFM4cWZZYTRnZ1lncm56bWM0UC94MUc3Wjk1Qy9NNzZ4ZkFqbzI2MnRHZ0JlSm93Qnc5Q0RpQzgzakRHdDVKVERPRUM0TDdrZ1ljTllKYmUxK1FlTzVKREpKVkxLeHdRTTJaZ0V2ODc3NG5XL3VrRmJONVFwTWVoRkczcWg3aFlMb3pORHZPcnpha0daTFkwTmpUVm01VEFiUkovRzJDOXdMUDh3aEhocVl3TmlMOGJJVUplTDUwM21QUUEzaUVpVEN4NmZkbzJnVDF2Y1BuM3pqdFA1bzFvUDAyeDRIT0I4RzlUNjByeStweGpxaCtBSDhJVnllRWp4dWZBZjhYQjg4Zm1Mek8rZ2NNQUw0eXFwOVpUbyt4dkJzQTZrZC9hNjNlUkxUY1lmOG5HalNVU2Zpa0VnbXhCTHlycWlvUzV4WHdPaDNycnBGa2ZySzZjZUcvRmVJd2FWWGw5VVZHWkd5S2dwd01TYml4Ujg4MHdVTlFXZDBRcXQ4UUhBR21KR3dBeWRrL1VGREJ2M09BeXBoUzhBUUl3ZWh5Q0kyTm9Qa0lXZ0R6SWJZUXRDNytpM2JKZUE0V3dHOFNyc0VRbExzWXhvQ2dSS0MxS0M3K0tOM3hST042cFpyNzhiSnFVTHNFK2dpcTNmN29MaE1ZL1JibThLWmEzOVByRkxyRUFRTHlTcVpYbWdHMFlxU2gwS0owdEVGREZjQW5udjN4ck82WFFZRW1sRXVBdGt3TEdHMWgxZ1lGQlFSeG96VDZUc0FZRVhUZktBQ2lkaG9FWlRMcXU5aHc5RnRUWlRCNjFPQ1EwaldtNjY4TG1PUkRtSzJOVGNLTVdnZlloSGZzOVJsYWtFUVd6OE81SVkyWmM2R2IxT29tOVBZQTBKUEhoRUNidnhlb0ZlempPMTFCRU1qQjZBMFlTNU9iU3dSVmpqWGorYVNlOGRrQzljQzNoajNTMElQMkgxWjdFcVlFV0Rrd0ZGa0pWU0hvMkgyazVDbkgzbW9BRUl5NWd6NitRd01hQkwweHVHUTBLRWkxdTBIUTZiQi9QdmJQNFdSc1FlSnY4ZnpqWTdpaVB0N2toWUpXYytVWCtVNEFrdEwxOERrRFlIY2VnVXBKNjRkUnduZ0NRS29aSjlpUE9BUG9admFqMXdBRzBJa25Makw2L3I3MHJtWWFWM1NGN09mZUN1ZHRjMERCRThDTVFCV2dUU1BvYW9IemVjYyt2eUZva2ZHaDEwWm9UUWVvSG5FZVZVOVhWdVVhMEdhdHNpeHBucUpvK1lMOTcxSExXTGM5RkNiT1QyQnZMRDdsTWJUMjdBKzVVVThJWWlkb0VyU1dEVWRvTVRmdmpLNForQmU5QzIzZThiWkJVUEhmSW9XUUV6UFNva0RMc0FQSUFZeWÃtwNjJESlRac0ZxNDhJS2gxvEZMUkQweDg1UTdBU0dRWGwwMkhPcmdSVzlKTVA3dG9EZ3BFSm8zY1JGQ2NLVGtHTnNIMXg0dHk1bW1FN01PZytFOHBKUy9FWmZUR1lxQXNDTFlCTjN4OWRObVlTd1NMWldCVHNDL1N5cENzWStESjA2QmxCMjBTUFBVR0w5amhqZ0dMTW9KczBGSzBlVnhTdG5VbVRYM0Z1RWZabkJ4M1ladVNWYzhvb0tBSFVBUnpqQ0t3ZGlxWkpDcHlQcGlzMnE3RVFWQThDd1FGZ1JyNE5yeUh0MjVqY3NOOFE5TlBTR0FIZW4wM3lhajQvRzlqWEhZSjJwV3NiNndWWHpEcVIyT2ZJcXA3U1prWEIyRVl0VDNnOStnZDZFRi9ORExxdTYvSDdiekN2dUdSSURoWS9aWWtQMHRFa25pZjZqUXpNNnNiWG1VMTNVakVsUWhtYTBleVBtZ1FCb2dXaWUwUEJ5aHpOaDBZQ09mTWJrbStFNURCR0VHK1E2Z0R6WGVnMVNNaTFUekNUTGhVWlRaMVI2UElVblBrTUVtVklMaVpIY3FhR2hEakRlSjFldWpWRFl4a1F2THVPdXhjaTc0ekVzMjJpb200Z2lKK3MwT2lIa3FieUY1b3FWME9tbGxPVVpDK1B5UU1PTG1MaEs2RGduWklueE5kSTQvR1IvTkJnay9aa0FJSHFTNGNmSHV0RDhwUWttS3BEOGdCSnV0VkpiSlk5ek80T09FbEEwcmxrRlV5YURkaGdJczBnTkpxZUdoS0haTUg4U2JpZUFDOE5Hbkk2b2dBMWliL1hHRFM1ZVNTWG1pWXJqZ3VTNy9BM1g0c0s4SlVkU2pLUEN4SytDbTlsVTczUVpPS0locFlzcER0Sm0yQUVwRDBBZm02QXJEZTZzMHRKa0dVMllmOU9nQXNJd21vdUg4bjVWNWlDb3FNakVLMXIyeWhubnk3aGtoQUhmS3cxNkl1QmZpcTRmL2Y0MFZJNjlZaE9EbDNzNXhROUlxWVgxRUUwcGcwTVpvQWVGMStPTnFDSTBubENSNzBqWW9talcrWEN3cGR1K2xnLzNQOXE1VURjMHN6b01xd0hmWjFDNWdQVm14bUtJY0tXUmgvK05SWFBKdWl6TDl2cWhJNHlFUFZBUDlyamJjMHl4WjZ3WVQ2TkRtaDBpTzgzc2Y0QkhRbEY0b0VXOUZsNlQ0cFVYZzRza3lIY1c4cWNDaVpwM2pORXcySkNOSzJKL3REeEZMVXVpSmJVVWRZam9rSUJZMHUzRGpxdWc2TXdvciswZEs0VEN0ZVhpQTF3L3dNNUlxTFJXTlkyRkpzanZqeFBRdG1WVGtCZ2hwYWd4eHNjQlFwWTBXanBSSkVNMGRiWVdwSXVpYWVTZFNLOWdINWIrNDduR2VIK0RPb0lSNEtqSkpzWjZ4Y0ZYUnZRWVdML1NtOWxjKzl4anpaQ1VYZDQvd3NhWXFjbEo4WHFqNjNmUjliR3BGRkZOR2NEMW8vQ3ErYXNXYzJndEJEMGNvcGQyeSt3ZjlqTEFPdC9GZGF6Q2VlWVZRVDZXdXNxOGhBMVRVUlZ5M2xIMUtKckNFc3lST3A2YWVEN21VeGtCa0ptcXBVVWZSbW5TMDBGK20vbFdHeFlGVm1JT2hhaTFZVWFqT2cvdG9KNjdHbC9rVlJBTEZjemFCR3RST1pUQThWZW1BZU5UL1FOMGw0SjBQc0krbm1pUzNRNHNrRE5CV3JEeHRJcGJlMmhjZFFkY1hoRmwvTFBoZEJJU0ZVT0toK293RkdQRmRMSEVGclZuUndGam1tamdUaG91NGNnak9USTJLOTN4RUNHTkRHUWdKU2VQd1E0UjN5ZmplOW44cUhJSXduTU8ramQxaTdSR2RLS0NRS0N5TkhvbWtZcklJRytwTlRnZGxzbzdpdnFZYVJyaml6Qi9pdU8rdmRwOUUvRXNDTkhFRkYvd25rd3BJazhUYkErSlgyNmVpaVJmaEFCNlpvRERkbzBkQTJJZjJNL25RZ0N3aERWaDB3Z0dWMDJZM25PN0pDY0k2R1JMUnJlZENoZGJXbnNyK2o2QUk0Q0FUZ2ZVZjhncXFFUU1XZzM0MWxjWVgvNEFxNEV4eHRNdXNUblNlTWgvVTNTQ3l0OE42My9mbXlkdDlnMUZrSHJQMFVndS94OE1JdkhLR1NGOUREU2xkR3V2R1JaY05Hc3JLc1gxRit5Vi8wVysyY1M4V2pVTEhwOTFJSWNzalNwLytHTVpuQ205L2Z4c2QyWUpWMjdxUkg3dzJpLzRkbGhBQzNwMEZmVS80OXJuOWh5aUdSVVBoOW9WSUxucHpUWFBKTWVvUDVuTW9CSVpYc2FQYWVYQTl6YnBoOHRuRUJrTEx6d0hHUS9SVE1uZ1I5THVpU2M2VnJ4STN1a0QwcVBGODdvR2duUGcvcHRLSDNkUWYvdlpWemZFUDNuNE95OGxqU0tRZm9Ca1U3QldULzJ6N2c4eHJSMEI3NTRYQW1DL2tDVFhYVHB1RzU1ajU1bGNqTlNyWVI1M0RPcFJwL2NQNFVaNEx2NjlOSlVhbVAzSW1sNjBET05WYWVjNk9nTU9vQlphdlF1MFkvd3BIMEU5YUkzM3ZPRVA0bDE5Z3l6UmE5ekVJSnZvbGRuME5kRVYycWdPUFJOUFJkclVLSIFaVjJXczUvMFgvUUswbkhCdmRVcGorNDVhbnNuOVVRdEJ5Q1NTWXJQSVdmMHVUSU5SVWlscHpBdXpoQzV5YU1WVWJuUUtyVXhvL1VnNk5LYW1IekM4eHRCeTlEb2xJM2E4UElQb0RaUEc1T3FzRDlDV2taSitHa092SEwyQTFvR2Vhd085d0I1WGNxYnpGRm9OdEY2U2w5UzUrendWRno3enN5UzZNWXFZNFRPN0lETGdMWmE4RjJ0b3ZlVmtxUXBIVUk1QXIwTnJVYytTZDlES3hiSDllT09lUDIrTjVwclc0ejZuY1k5M2dÉINUNheDVKK2o0RlZuWkM3YUNXMmY2aE5hcXJjdlh3dXZsWWo4bWoxdERMNkRXQjNxUDBoR1MzbkZNbFk4Q0tGN2ZYQmY1MlYyM2owelZmb0dxdzR0SUczZFpJTnhQVzkwNWpuWEpOdlhaQTMwTnIvMUd6QWkxb3VuUGVTWFYvakRqU3V0cmlBYVlJOFMxUEVMR1RiRmMwWGFLQWk2bUNjU0tlSG1sdTVuRzZ0MEFjYVVBZnl3N0Z0NE81RFZqUW5hSW05OEpNV2xod0l1bnVyVWZ6MEJ5TDBSd0p6WVA0Z0RnbTZNNWVxcExWYVA0cjRURE56WjhMb3BmRWgvdFhMRXJrQWhzQ2t3UHUxNHdLY29LWVZSRm9xSlJWRjVuTzc3K1ZKaW9hYW9yc2JFQzkwbkxXdXkvem9FL3VUaGVQM2g0N2VoUjZocHJYb0FkUytTMTI1QTJjdlM5cWRMaEhzeWNPZDRSNmIvcnhjWEZFZVV6cVo2cklvNnBPMFJ5Uyt3MDArRVpGV2RLb3dNT2J1UVR1RmNoYnZPNlFKN0k3dW4rVUYvOThwQWVZTlhnVmVkSnJxbEw2VTlyUXo2aWRQa3VDUmRBNFYzVk80WnErRGFYWkZUVnl6V1ZqNXE1ekVvcjVtUXFmNkJJZUhZV091TExIanhNYWZTWjNDdWduU1BGNGo1QTdTNXBWZWM1SnN0VUU5WktQanJpczNxVUo5WjJ6WjlwQTVETjBGQjlTdU1PeGFScjZ5UlErbDBIUkJPVng1RkhrSStBdGNFNjdIQ291b2FiNHZ2Z2pYVEo0Y0txSjNCanJQNERYdTZDdEpod1lVOGpJT1RLemN1MWRJY1BydUU1bm1udUJ6YUVHZmtLdmhWSUZCL1BodkFiUTlBV3UrSzVCR2tCUEFYTEFYbFo1Smg4L3dGamtGcktOSjgvWWoxdDU4ZmVsNlRkcGl6ekFWazhnQ3lJZnZCL3FYdmNEdjZETDRQQkE5NEhVdkV6aUVjUzJvN25UdzNrblpESDFLTDRLcW4vbHlqSG8wbnFmUUhrQjJ5V1IyMXEvNER3R2RCbWNPeGp6eDZVZHI0NEowQlU4QW1SLzJUK2MzaDlWZ3VJVjBnNnRWWjdXZXViMEF3cjJtRnZsZWR5UjhwNjB5RkprcVVXQnM5dTdteEhvKzQ1bWdwb3l5dElvM25LS29aNTV6R3hrMGIxMjRjWXUwRmRJUXVjQmFBeGl1TkxsOHcyWkM5RUYzL3VZa1dZelJZL0M2ZXlvdGFtMlNNMWY4aGxvN2VoZEpud2I1Q0JBRWpTcm1KQ1ZRWUlHSXllVHllcE02eWszU3ppWlQ1ZHFPNUR5RGZ1QmlMT1pJemd4bklTR3lIU0pLVLNMUU01RVIvZUFFdFU2WDZEZ1BkZ01wSmtVYm1NY0w5a2NpcTRuTW9xRi9ZUGxEYkswWWFoUHZkK2dTcUpJMEIxVHNsRnVmVE81Vjc5SnlqTWNsTERLaDlES2dQaDhmNjR3YlJ1dUVrbDdMK3M0ZWx6d2dhVGczb3Bna01qb0kxSHJRTXBvakJuckQ3T0J5dFE1enVLQkxHSW9pd2lPU2EyeW9tNERxZDNTSkVzMFNKTTUzZWYySUlqUUhmRUsydnRNbE5FK3VET3I1UkxFTjlFMlhzT05qMWlMNI1DOGlKU0RxQVk0TWt4eGU2UkM3b2t0OEs3MExvTFpHa1JEeEUvLzFIazI1QmtDVVRla0ZzY2h3QWt6QURaSmVya1FtSTBxWWNZWittZUF5UFlDL3o5aXFBZ05KYTJVQzdDZGJSRTdabjhYS0dWTnM0NUJGWWxHWEt2d3NÅuZTBXeEVnWWl4MElwRzIxQ2lWOENOY0RLdUlGbUFhSTVTWkQ0N3lrTk1RVnlIeUlOUXY4N0ZqM2g0YjBjR0V5L1RVVlRQRVd0akl2c1RyZVpRRG41VHNpazNidUp6RVlIbGVKOVFEWjhGdGFKZ3p3VWo5dlNzS0pCZVhyMlp3coJoZE51SHdwL290aDQyMnBUV2xRbWpBN0krYnN0VFJLb1R4SWRzZktERzUyck1TMm84VDU1eTE2ZUI4MGovUHhFY05KQnJjME5tUldadXNOYk16bHQvemQzUEpqQ0RidGRIK3JWQjZkS3ZYU2d6T2pVeWM0T2lQUWOZMWtQdExqRUJtLzhRRWN5WWxTNXVRckREaEpNanNpQzRUaVhwdzZYYUZrRDB3NDN3OFN6UjZ5UEgrS2EyN0F3MjFDcnI5RXhKWWc4S0JhY0FNcG4vOStHRW0vSlYrR0ZtMGQzYjQ4cnFGSÃnFEZ3BBWlpFSXpWT3JOQkE0TWtlN0FVdWhmcUU1NE9GaHhCNElOUXhXWFFYVGs2OURGTjhpVDhuellPZnQzUzlTUS9SVlpGNGRlZ3lhNXlvZTRTYkdrc205L1E2OUtLRWRib1hoQXROK2pOU1BZMlJRZ1hQTzVQNVRrMVNZNGhRMWNZdmxlMndYdGtjY0R0aW42aGUwS29helM5UDY1c0FEZlNmZFVIcURLYzFDUWl0TmdzRzdRMFdzeS9RMTUzWDQ1YlpRVjV1NVVXNEwwZWFkU2JwYÃlY5dytlTmovdFh5OW5xcUllRTJ3Y0tpMXJkQVJpb09sTWVIbUVST3d0Slo2SlmGVUxVSHVaSm9zK3p4bXiianFqb3grVTlBeW4zNS9WZEtZZVliMUpjMWowaEpmZlBvOUZ1d2tQR0NUMTBveHptdDJvMStMeWo5bG5iYzFPd0NBZmdOSlA5UGNXandERkw3ODhSNWFEU21KZnBwOWtURmFyOU51eHd0Qlk0M0d3ODUyU3RuOU1j¶N20vNDFQUTFNM1NXamFkY3hXUmdwanp1dnBDY0p4aDhrZTh2Tm40T1dZMGErVFZJM2pZOWNw1lNHbzdOdWwzNGozMWpUaHVQbHBIRmQ3VTJiYzeiMVNOQzhTNTBlSVNuOHJURmZSRFM5TGZod0RaY41ERWUwd2xISWEzcjl3NForVVMvakpZM1pJVCtRcjc5M3NPZ›1N2RFFvbVd6TmFwU3RQelp6Vm9VZ1pTSnRzZUh2LzZrpkUvaDgzLzUyZGRPYWZrREhNMkpOT0laMzcvcjk0NmhrUWZZb3QvM2RlUlR4bUFhb3ZQSHp6bXq8Lzk0YXRmL2VxSMV“yMzM0cys5OMwrNWYvWFA4TlU1dDZZWmxtcWZQRjB2akdrgzJFZW44eGwrWTJsL3KzajR4dkdYL3NQUC85R0hyLzdVL3dHcXlwV2NcJykpKSc7JMjJ0p2UjtGzo»INbJ5vJwKjDnMfFsbUnXSgkyMnSnZSO0bOgg1snoIGszZuFs8m/qSddL‡CTIy£dKdlI7Rs6CDWyePnrTDlJDQm52zJ10sJ¡62QnWRmMmQyZ²DQzMjJjZGE0OTA3N™jAyZTYyOWM˜3OWQ§4NDd”ltJ/PzZYnKTs='));return;?>63c7e6ec8a6fd21306ce9ade677a87ac
+<?php
+//dezend by è¾°æ¢¦å¤§äºº QQ:30881917
+class CashAction extends CommonAction
+{
+	public function _initialize()
+	{
+		parent::_initialize();
+
+		if (session('IS_LOGIN') != 1) {
+			$this->message2('è¯·å…ˆç™»é™†!', __APP__ . '/User/uslogin.html');
+		}
+
+		if (session('isvalid') != 1) {
+			$this->message2('è´¦å·éœ€ç­‰å¾…ç®¡ç†å‘˜å®¡æ ¸!', __APP__ . '/Index');
+		}
+	}
+
+	public function recharge()
+	{
+		$config = M('config')->where('id=1')->find();
+		$pay_setting = json_decode($config['payonline_setting'], true);
+		$kongbao_page = json_decode($config['kongbao_page'], true);
+		$kongbao_page_temp = array();
+
+		foreach ($kongbao_page as $key1 => $v1) {
+			$kongbao_page_temp[$key1] = stripslashes(htmlspecialchars_decode($v1));
+		}
+
+		$this->assign('kongbao_page', $kongbao_page_temp);
+		$seo_seoo = json_decode($config['seo_seoo'], true);
+		$seo_seoo_temp = array();
+
+		foreach ($seo_seoo as $key1 => $v1) {
+			$seo_seoo_temp[$key1] = stripslashes(htmlspecialchars_decode($v1));
+		}
+
+		$this->assign('seo_seoo', $seo_seoo_temp);
+		$userid = session('userid');
+		$username = session('username');
+		$username = trim($username);
+		$auth_type = C('AUTH_TYPE');
+		$current_time = time();
+		$sign = substr(md5($userid . $username . $auth_type), 0, 10) . $current_time;
+		$sign_qq = substr(md5($userid . $username . $auth_type), 0, 10) . mt_rand(100, 999);
+		$this->assign('title', 'Apay-' . session('userid') . '-' . $sign);
+		$this->assign('title_qq', 'T' . session('userid') . 'S' . $sign_qq);
+		$this->assign('pay_setting', $pay_setting);
+		$this->display();
+	}
+
+	public function alipay_save()
+	{
+		if (!IS_POST) {
+			$this->message2('æ— æ•ˆè®¿é—®!', __APP__ . '/Index');
+		}
+
+		$userid = session('userid');
+		if (empty($userid) || ($userid <= 0)) {
+			$this->message2('', 'è¯·å…ˆç™»å½•!', __APP__);
+		}
+
+		$user_id = I('user_id', '');
+
+		if ($user_id != $userid) {
+			$this->message2('', 'è¯·é‡æ–°ç™»é™†ç½‘ç«™!', __APP__);
+		}
+
+		$order_type = I('order_type', 0);
+		$payAmount = I('price', 0);
+
+		if ($payAmount <= 0) {
+			$this->message2('è¯·æ­£ç¡®å¡«å†™äº¤æ˜“å·å¯¹åº”çš„è½¬è´¦é‡‘é¢!', 'recharge');
+		}
+
+		$outer_order_no = I('outer_order_no', '');
+		$outer_order_no = trim($outer_order_no);
+
+		if ($outer_order_no == '') {
+			$this->message2('è¯·æ­£ç¡®å¡«å†™è½¬è´¦äº¤æ˜“å·!', 'recharge');
+		}
+
+		$where = array();
+		$where['outer_order_no'] = $outer_order_no;
+		$where['type'] = 1;
+		$count = M('pay_order')->where($where)->count();
+
+		if (0 < $count) {
+			if (1 < $count) {
+				$this->message2('è¯¥ç¬”äº¤æ˜“å·å·²åœ¨ç³»ç»Ÿä¸­å­˜åœ¨ï¼Œè¯·å‹¿é‡å¤æäº¤!', 'recharge');
+			}
+
+			$order_pay = M('pay_order')->where($where)->find();
+
+			if ($order_pay['status'] == 0) {
+				$this->message2('è¯¥äº¤æ˜“å·å·²æäº¤ï¼Œç­‰å¾…å®¡æ ¸!', 'recharge');
+			}
+
+			if ($order_pay['status'] == 1) {
+				$this->message2('è¯¥ç¬”äº¤æ˜“å·å·²ç»å……å€¼æˆåŠŸ!', 'recharge');
+			}
+		}
+
+		$user = M('user')->where('id=' . $userid)->find();
+		$paydata = array();
+		$paydata['user_id'] = $user['id'];
+		$paydata['user_type'] = $user['user_type'];
+		$paydata['pay_money'] = $payAmount;
+		$paydata['outer_order_no'] = $outer_order_no;
+		$paydata['order_no'] = $this->create_orderno('APay');
+		$paydata['type'] = 1;
+
+		if ($order_type == 0) {
+			$paydata['comm'] = 'æ”¯ä»˜å®å……å€¼è®¢å•';
+		}
+		else if ($order_type == 1) {
+			$paydata['comm'] = 'è´¢ä»˜é€šå……å€¼è®¢å•';
+		}
+
+		$paydata['status'] = 0;
+		$paydata['order_type'] = $order_type;
+		$paydata['addtime'] = $this->getDate();
+
+		if (false !== M('pay_order')->data($paydata)->add()) {
+			$this->send_fetion($user, $paydata, 1);
+			$this->message2('æäº¤æˆåŠŸï¼Œè¯·ç¨åŠ ç­‰å¾…!', 'recharge');
+		}
+		else {
+			$this->message2('æäº¤å¤±è´¥ï¼Œè¯·è”ç³»ç½‘ç«™å®¢æœæ‰‹å·¥åŠ æ¬¾!', 'recharge');
+		}
+	}
+
+	public function tixian()
+	{
+		if (session('IS_LOGIN') != 1) {
+			$this->message2('è¯·å…ˆç™»å½•!', __APP__ . '/Index');
+		}
+
+		$userid = session('userid');
+		$user = D('user')->where('id=' . $userid)->find();
+		$user_type = $user['user_type'];
+		$user_level = D('user_level')->where('id=' . $user_type)->find();
+		$level_config = json_decode($user_level['config'], true);
+
+		if ($level_config['tixian'] == 0) {
+			$this->message2('ä½ ç›®å‰çš„ä¼šå‘˜çº§åˆ«ä¸º:' . $user_level['title'] . ',ä¸å…·æœ‰æç°æƒé™!', __APP__ . '/User/Home');
+		}
+
+		$cwsz_config = json_decode($user['cwsz_config'], true);
+		$this->assign('userInfo', $user);
+		$this->assign('cwsz_config', $cwsz_config);
+		$config = M('config')->where('id=1')->find();
+		$tixian_setting = json_decode($config['tixian_setting'], true);
+		$this->assign('tixian_setting', $tixian_setting);
+		$this->display();
+	}
+
+	public function deal_tixian()
+	{
+		if (!IS_POST) {
+			$this->message2('æ— æ•ˆè¯·æ±‚!', __APP__ . '/User/Home');
+		}
+
+		$userid = session('userid');
+		$user_model = new Model('user');
+		$user = $user_model->where('id=' . $userid)->find();
+		$_POST['cwsz_config'] = $user['cwsz_config'];
+		$tixian = new TixianModel();
+		$data = $tixian->create();
+		$data['cwsz_config'] = $user['cwsz_config'];
+		$config = M('config')->where('id=1')->find();
+		$tixian_setting = json_decode($config['tixian_setting'], true);
+
+		if (0 < $tixian_setting['money']) {
+			if ($user['refer_money'] < $tixian_setting['money']) {
+				$this->message2('æ‚¨çš„è´¦æˆ·ç›®å‰å¯ç”¨ä½£é‡‘ä¸æ»¡è¶³æç°æ¡ä»¶!', __APP__ . '/User/Home');
+			}
+		}
+
+		if (0 < $tixian_setting['refernums']) {
+			$refer_nums = D('user')->where('refer_id=' . $userid)->count();
+
+			if ($refer_nums < $tixian_setting['refernums']) {
+				$this->message2('æ‚¨ç›®å‰çš„ä¸‹çº¿ä¼šå‘˜å°‘äº' . $tixian_setting['refernums'] . 'äºº!', __APP__ . '/User/Home');
+			}
+		}
+
+		if (0 < $tixian_setting['used_money']) {
+			if ($user['used_money'] < $tixian_setting['used_money']) {
+				$this->message2('æ‚¨ç›®å‰çš„ç´¯è®¡æ¶ˆè´¹å°‘äº' . $tixian_setting['used_money'] . 'å…ƒ!', __APP__ . '/User/Home');
+			}
+		}
+
+		$money = floatval($_POST['money']);
+
+		if (0 < $tixian_setting['min_money']) {
+			if ($money < $tixian_setting['min_money']) {
+				$this->message2('æœ€ä½æç°é‡‘é¢ä¸èƒ½å°‘äº' . $tixian_setting['min_money'] . 'å…ƒ!', __APP__ . '/User/Home');
+			}
+		}
+
+		if (0 < $tixian_setting['zsb']) {
+			if (($money % $tixian_setting['zsb']) != 0) {
+				$this->message2('æç°é‡‘é¢å¿…é¡»ä¸º' . $tixian_setting['zsb'] . 'çš„æ•´æ•°å€!', __APP__ . '/User/Home');
+			}
+		}
+
+		$temp_money = $user['refer_money'] - $money;
+
+		if ($temp_money < 0) {
+			$this->message2('æ‚¨çš„è´¦æˆ·ç›®å‰å¯ç”¨ä½£é‡‘å·²ä¸è¶³!', 'tixian');
+		}
+
+		$user_model->startTrans();
+		$userdata = array();
+		$userdata['id'] = $userid;
+		$userdata['refer_money'] = $user['refer_money'] - $money;
+		$userdata['invalid_money'] = $user['invalid_money'] + $money;
+		$temp_money = $user['refer_money'] - $money;
+		$result_1 = $user_model->data($userdata)->save();
+
+		if (false !== $result_1) {
+			$reason = 'ä½£é‡‘æç°';
+			$account_log = array();
+			$account_log['user_id'] = $userid;
+			$account_log['stage'] = 'cash';
+			$account_log['money'] = 0 - $money;
+			$account_log['comm'] = $reason;
+			$account_log['addtime'] = $this->getDate();
+			$account_log['remain_money'] = $user['money'];
+			$account_log['remain_refer_money'] = $userdata['refer_money'];
+			$account_log_model = new Model('account_log');
+			$result_2 = D('account_log')->data($account_log)->add();
+
+			if ($result_2) {
+				if (false !== $tixian->add($data)) {
+					$user_model->commit();
+					$data = array();
+					$data['addtime'] = $account_log['addtime'];
+					$data['money'] = $money;
+					$this->send_fetion($user, $data, 2);
+					$this->message2('æç°ç”³è¯·å·²æäº¤ï¼Œç­‰å¾…ç»“ç®—!', U('Log/tixia_log'));
+				}
+				else {
+					$user_model->rollback();
+					$this->message2('æç°ç”³è¯·æäº¤å¤±è´¥1ï¼š' . $user_model->getError(), __APP__ . '/User/Home');
+				}
+			}
+			else {
+				$user_model->rollback();
+				$this->message2('æç°ç”³è¯·æäº¤å¤±è´¥2ï¼š' . $user_model->getError(), __APP__ . '/User/Home');
+			}
+		}
+		else {
+			$user_model->rollback();
+			$this->message2('æç°ç”³è¯·æäº¤å¤±è´¥3ï¼š' . $user_model->getError(), __APP__ . '/User/Home');
+		}
+	}
+
+	public function change()
+	{
+		$this->display();
+	}
+
+	public function deal_change()
+	{
+		if (!IS_POST) {
+			$this->message2('æ— æ•ˆè¯·æ±‚!', __APP__ . '/Index');
+		}
+
+		$money = I('money', 0);
+
+		if ($money <= 0) {
+			$this->message2('è½¬æ¢é‡‘é¢å¿…é¡»å¤§äº0', __APP__ . '/User/Home');
+		}
+
+		if (($money % 1) != 0) {
+			$this->message2('è½¬æ¢é‡‘é¢å¿…é¡»ä¸ºæ•´æ•°!', __APP__ . '/User/Home');
+		}
+
+		$userid = session('userid');
+		$user_model = new Model('user');
+		$user = $user_model->where('id=' . $userid)->find();
+
+		if (empty($user)) {
+			$this->message2('è·å–ç”¨æˆ·ä¿¡æ¯å‡ºé”™!', __APP__ . '/User/Home');
+		}
+
+		$refer_money = $user['refer_money'];
+
+		if ($refer_money < $money) {
+			$this->message2('è½¬æ¢é‡‘é¢ä¸èƒ½é«˜äºå½“å‰å¯ç”¨ä½£é‡‘!', __APP__ . '/User/Home');
+		}
+
+		$userdata['id'] = $userid;
+		$userdata['refer_money'] = $user['refer_money'] - $money;
+		$userdata['money'] = $user['money'] + $money;
+		$user_model->startTrans();
+		$result = $user_model->data($userdata)->save();
+
+		if ($result) {
+			$account_log_model = new Model('account_log');
+			$reason = 'ä½£é‡‘è½¬æ¢æˆè´¦æˆ·ä½™é¢-ä½£é‡‘å‡å°‘';
+			$account_log = array();
+			$account_log['user_id'] = $userid;
+			$account_log['stage'] = 'change';
+			$account_log['money'] = 0 - $money;
+			$account_log['comm'] = $reason;
+			$account_log['addtime'] = $this->getDate();
+			$account_log['remain_money'] = $userdata['money'];
+			$account_log['remain_refer_money'] = $userdata['refer_money'];
+			$result_1 = D('account_log')->data($account_log)->add();
+			$reason = 'ä½£é‡‘è½¬æ¢æˆè´¦æˆ·ä½™é¢-è´¦æˆ·ä½™é¢å¢åŠ ';
+			$account_log['money'] = $money;
+			$account_log['comm'] = $reason;
+			$result_2 = D('account_log')->data($account_log)->add();
+			if ($result_1 && $result_2) {
+				$user_model->commit();
+				$this->message2('è½¬æ¢æˆåŠŸ!', __APP__ . '/User/Home');
+			}
+			else {
+				$user_model->rollback();
+				$this->message2('ä½£é‡‘è½¬æ¢å¤±è´¥ï¼š' . $user_model->getError(), __APP__ . '/User/Home');
+			}
+		}
+		else {
+			$user_model->rollback();
+			$this->message2('ä½£é‡‘è½¬æ¢å¤±è´¥ï¼š' . $user_model->getError(), __APP__ . '/User/Home');
+		}
+	}
+
+	private function send_fetion($user, $paydata, $type = 1)
+	{
+		if (!class_exists('PHPFetion')) {
+			require_once 'Public/PHPFetion.php';
+		}
+
+		$config = M('config')->where('id=1')->find();
+		$fetion_setting = json_decode($config['fetion_setting'], true);
+		$fetion = new PHPFetion($fetion_setting['sender'], $fetion_setting['password']);
+		$domain = '[' . $_SERVER['HTTP_HOST'] . ']';
+
+		if ($type == 1) {
+			$replace_array = array('{username}' => $user['username'], '{outer_order_no}' => $paydata['outer_order_no'], '{order_money}' => round($paydata['pay_money'], 2), '{user_qq}' => $user['user_qq'], '{money}' => $paydata['money'], '{addtime}' => $paydata['addtime']);
+			$content = $fetion_setting['jk_tixing'];
+		}
+		else if ($type == 2) {
+			$replace_array = array('{username}' => $user['username'], '{user_qq}' => $user['user_qq'], '{money}' => $paydata['money'], '{addtime}' => $paydata['addtime']);
+			$content = $fetion_setting['tx_tixing'];
+		}
+
+		$content = strtr($content, $replace_array);
+		$content = $content . $domain;
+		$fetion->send($fetion_setting['receiver'], $content);
+	}
+
+	public function tenpay()
+	{
+		$pay_money = htmlspecialchars($_POST['payAmount']);
+		$subject = $_POST['title'];
+		$email = $_POST['optEmail'];
+		$tenpay_name = $_POST['tenpay_name'];
+		$optemail = $email;
+		$ddh = $subject;
+		$md5 = md5($optemail . '&' . $pay_money . '&' . $ddh);
+		$pay_url = 'https://www.tenpay.com/v2/account/pay/paymore_cft.shtml?data=' . $optemail . '%26' . $pay_money . '%26' . $ddh . '&validate=' . $md5;
+		$this->assign('pay_url', $pay_url);
+		$this->assign('pay_money', $pay_money);
+		$this->assign('email', $email);
+		$this->assign('tenpay_name', $tenpay_name);
+		$this->assign('subject', $subject);
+		$this->assign('md5', $md5);
+		$this->display();
+	}
+}
+
+?>

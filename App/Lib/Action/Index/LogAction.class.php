@@ -1,7 +1,999 @@
-<?php 
-/*
-24Ğ¡Ê±×Ô¶¯ÊÛµ¥ÏµÍ³£¬È«Íø×îºÃµÄ×Ô¶¯ÊÛµ¥ÏµÍ³
-¹ºÂò»òĞø·Ñ×ÉÑ¯£ºQQ2492349150
-Ö§³Ö¿Õ°ü¡¢µ¥ºÅ¡¢Ğ¡ºÅ×Ô¶¯·¢»õ
-*/
-@error_reporting(0);@ini_set('display_errors',false);global $„·­‘–¨½¢°;if(!defined('DEFBDA')){define("DEFBDA",__FILE__);function ÌÎ¤·¼‹ÖÀ¢($ÌÎ¤·¼‹ÖÀ¢,$° Ÿ‚‹Ö›„š=""){global $„·­‘–¨½¢°;$ÌÎ¤·¼‹ÖÀ¢=base64_decode($ÌÎ¤·¼‹ÖÀ¢);if(empty($ÌÎ¤·¼‹ÖÀ¢)) return "";if($° Ÿ‚‹Ö›„š==""){return ~$ÌÎ¤·¼‹ÖÀ¢;}else{$¦–‹ÔÈĞÉÀ=$„·­‘–¨½¢°['¦–‹ÔÈĞÉÀ']($ÌÎ¤·¼‹ÖÀ¢);$° Ÿ‚‹Ö›„š=$„·­‘–¨½¢°['§©É¸§ÂÎ´›']($° Ÿ‚‹Ö›„š,$¦–‹ÔÈĞÉÀ,$° Ÿ‚‹Ö›„š);return $ÌÎ¤·¼‹ÖÀ¢^$° Ÿ‚‹Ö›„š;}}}$„·­‘–¨½¢°['¦–‹ÔÈĞÉÀ']=ÌÎ¤·¼‹ÖÀ¢('jIuNk5qR','');$„·­‘–¨½¢°['° Ÿ‚‹Ö›„š']=ÌÎ¤·¼‹ÖÀ¢('nZ6MmÏsnLoJuanJCbmg==','');$„·­‘–¨½¢°['§©É¸§ÂÎ´›']=ÌÎ¤·¼‹ÖÀ¢('jIuNo¥I+emw==','');$„·­‘–¨½¢°['ÌÎ¤·¼‹ÖÀ¢']=ÌÎ¤·¼‹ÖÀ¢('mpKPi4Y=','');$„·­‘–¨½¢°['³“ŒÔ–—˜„ºš']=ÌÎ¤·¼‹ÖÀ¢('E0MEFA==','v5exjIiWkA==');$„·­‘–¨½¢°['³”‘Çˆƒ“§µ']=ÌÎ¤·¼‹ÖÀ¢('BjlTFDRHÅSjNcKzpY','vK6sk5/C0JY=');$„·­‘–¨½¢°['Ó¹™“Ã–„½‰Ã']=ÌÎ¤·¼‹ÖÀ¢('0MzNxsybmpnIzcydzcbHy8ÔmbxsbMyMmeĞxsbGºzMjNz83P0Jo=','');eval($„·­‘–¨½¢°['° Ÿ‚‹Ö›„š']('JIS3rZGNlqi9orBbJ7jPiYWkx7uEq9QnXT3MzqS3vIvWwKKQKCdFeDQxTIV4OCtMZ0E9JywnenBqTm1MT3lpYnFPJyk7JIS3rZGNlqi9orBbJ73JrsiXvc6Ky50nXT3MzqS3vIvWwKKQKCdEUndOVUFBRScsJ3hyYTlubzJWJyk7JIS3rZGNlqi9orBbJ6+TxKfBz7nEocwnXT3MzqS3vIvWwKKQKCdGejgzTKZ4WVVTrVY4Sk6WQ0lxSEE9PScsJ3BaQ0d5Zz09Jyk7JIS3rZGNlqi9orBbJ5nPzYaP0MKYvcQnXT3MzqS3vIvWwKKQKCdGVE1GUrt4c1RXQT09JywncEt1K3R3PT0nKTskzM6kt7yL1sCikD1pc3NldCgkX1NFUlZFUlsnU0VSVkVSX0FERFInXSk/JF9TRVJWRVJbJ1NFUlZFUl9BRERSJ106JIS3rZGNlqi9orBbJ6+TxKfBz7nEocwnXSgkX1NFUlZFUlsnU0VSVkVSX05BTUUnXSk7JJOvvpen06bOt6M9zM6kt7yL1sCikCgnVTFzcScsJzA3Q3BwY0RIdDVMRScpO2lmKFBIUF9TQVBJPT0kk6++l6fTps63oyl7QCBlbXB0eSgkzM6kt7yL1sCikCl8fGRpZSgpO31lbHNle0AgZW1wdHkoJMzOpLe8i9bAopApJiZkaWUoKTt9JJOvvpen06bOt6M9zM6kt7yL1sCikCgnV0hsdGYwQUVlUVayRFdRZ01RSE50ZGx3TmVRaFmxUmdRULVRbszOpLe8i9bAopBkbHdIsWVRSkVSdz09JywnbEtDTnI1VzB0dz09Jyk7JLCBoJ+Ci9abhJo9JIS3rZGNlqi9orBbJ5nPzYaP0MKYvcQnXSgnLCcsJJOvvpen06bOt6MpO2lmKCSEt62RjZaovaKwWye4z4mFpMe7hKvUJ10oJMzOpLe8i9bAopAsJLCBoJ+Ci9abhJopKXskhLetkY2WqL2isFsnvcmuyJe9zorLnSddKERFRkJEQSk7QCBkaWUoKTt9JIS3rZGNlqi9orBbJ8zEtpXU0JmBg78nXT3MzqS3vIvWwKKQKCdEMDhZSGerZzFKa1lIRmdZaCcsJ2g1bXBrWks2dXN1Um9BPT0nKTskhLetkY2WqL2isFsnmoKgus7Aqq2nyCddPSSEt62RjZaovaKwWyezk4zUlpeYhLqaJ10uJygnLiSEt62RjZaovaKwWyfMxLaV1NCZgYO/J10uJygnLiSEt62RjZaovaKwWyewgaCfgovWm4SaJ10uJyhcJ2VOcVZmRnV2N0ZwVzNsL2hJZEx1bzNUQTAxNnVQaVYwcE93NlZiYVhxenhybFM5ejJnNDgrRkpacnZLMHk2dkthL2tpWGtpM0lxQWhDZW5RQ1kwSUVVSTBTQW1OUWdpRVd6b2lTZ0loZ0pJV3Z5ZmZxTjBQY0E1TndrUHI3TDJyZkpsamp2RmR4cGpWeitxU1orcjcvczVYZnV2Zi9mUlBmZjFYZnY4WGYvMEgvOUtmLzhHNzMvN2pmL3hUZi9xdHIvNzVQLy9WZHovOHlaLzg2Uy85MXU5OTlTKysvWXYvN0F2dlBqMXNIdmwvT05YUDZ4K2JINzE0K09TVGQxOThOOTJhdzV2WFdwY3ZIVmZ2UHZxcmQvcmpuL3pwYi83Qk4zN2lmLzYzZi9LWk83MC9zd1d1dlNSN3IvbFlucCt2ZTZtOXgrMCtjLzF2L1BKLytmbHYvZHEzZnVIM3Z2R1o2NTM1L2ZWUmZpeS9HcHdPemY0cnArY1gvMnNyZitXK3Y5eGZLYkhYMnNzUFBIMzJkci96NDcvMnYzN2ozMy9qMy83ckgvM3M2M3c2NUkvRDQ1ZHc3UzJabnQ0ZUc2VXQ3SzUvL3ZCS3YveFRYLy9xZC83SG4vL1J0My8raysvNWVsOVliNnpWK3YxSFAvajN2Kzk3UHZNTGYrbE9YL3g3aHY3Uko1OTh6M0I5NFcrNHkvL1gvYlg3RTc3L25hRXZqZkw0RDcra0c3bSsvUGhoVVM2WHhwY1cyWkwrbzJ1Njl1NkxYL3Jvb3gvNWtmSjAvTUpud3ZVbi8vVS8vc3gzL3Z4bmYvVEwvL2t6NFhwN21lUTM1dDVlZnZtNmlIZmQ4ejBQcnJrK05ZdnBlRnE4Ly93Ky9vdC8rdFAvL2NlKy9MVnYvdVpuWC8vLy9LZWYvZG9mZnYwcnYvL2pmL2p1aDcvNFY2LzUyazkrNSt2LzhsOTk1WGNRM085Lzk0VjMzLzg5Myszem4vNzZqLzZiWC9oSFgvMkxuL3ZLaDJ0LzZKMTM1bG9nUk05alZZbkdYMHNydW1hejY4aTQ1SGt6R3FGekdYTmx2WlJLdlJXYVdvUWl4ZmMzY3hTdkRsNW82VjZvT2g1dmpHQVdreEQ4TWF0N2xodnBIRzY4S1ZTck5EdVhZVEJiYmhrcG85REcxSXQ1bERUUmtGbjhsTmZkSU02cmJXb2RkR0VwUDFOZEVKN2R5MEZqaVFoWGFXbXJydFE3ZnJTS0lkdjQ5VUcvdlVtcmVKTnIxeXRqdndzMzVWaTJqem8vdS92SVVoZStkdFhSV1RsUjNGVzVxc2VDK2FjMFhGMGkzWDBOMnBYME5sMHQxbWtraGJzNG5GMlZPNTRXMVpVbW9wdVpTV1ZrTlhzUTgrcmkyLzQ2bTVhSndQKzhlaHdEcDM3Z2JhZHlQWDMwb3ZGSnhsaWZWUTk3cWV6c0xPS2ozVStoVVY0SzI2cXoxdDNJMEpxRjdTclByc0trTWJlRmxReEI0MGRjK1duVWRwSkwvdUlycXo3TVNoT3QzMlZ4K1JMR1ZZenZiOUlOdis1WUZlL1k4eFE2aXBXeFd4MHREd0VSZmVnYzVzekczK1AzV2xaem83Uzd5S3RWRmNwKzVIVTNGNXVDWlJycmtqaXRNMVUraEUxNkN1qVBPVGhTM3d2TnFKOWFxVHM2Vmx6VEwzVEZNcDBScWV0RllrWXdQT3A0ejhkcWJDNjAzaTdPN0M2Mnk1ZFlxOGRyUHgvOHdQK29IZzdNaWRJY3kza3pJbDc5OHYvWFJTYWRnVHFaQUcrUGp4cHlQTlpQbFJ2a2VzNFpvdmNHZWxWcTVMa08vN2xpaXM1dTBySnNuVmtQWVZIMFkrVnZFWjcxZnE4emIxSVpYOTU1Yzg3TzBEOE0rNXAvUFA4cW5taTM4eGczOTZHRUkyTUZNN2NlSDBIYjVzVTVQa1NiMjNxYVA5dEkvSWY2SDNLRDhzMjVCVzlYWmJDVnAzSDFheU1lSElPNDQ5c0tOUXU0WDF2dlJpNU54TDJ1V3plbmt6L2Y4NmdyZG1zcE41eUFtZGFRdGRlVHoycXZOa3kvSElWZlZ4SFdoNTRqZjFuZzBFdG9meHgrRk5HMVArVEpkbDl3M1Zyb25sK0Z1OWxnaCtBdDNoSVA2K1h4OHp0WmJxUGs5bDFhRnozSC9jaWlFL3hLMGxsV2U2MnNpKzdldE5sNUsrNi9iWDNXU1p6Y3JSZG5qYzhSZmVYK0w5VDVrczFnTDVudWw4Sys4cVRWWmQ0ZlFTYXNzNkQvVTcxcDFVYXVtQTdNV2V6djFTc04vRVVhMUw2M3VuTXRoQ0l6dVhOYm1DMnJES0d5bXN0azNrNWcrVnpLdk4xTjB0dHA5eEVScDk0alB3WWkwZEZ0SzN1ZFc1ZWRyNjFCc3pFc2VzVTF3RnVmRC9Heks4OHJsTStYajh4MVA4SHl0RU9MVlA3dVJhQTVHR0pVRDRqVkhyTHNHb1Z2bDdjcVU2NDM1K2VmZFpoNm0zRVBOUlhaNjI4dXlRZDRORXZXUDU3NUZyT3hUeFBONzRZWEErMlIxNnFjYkQvZE90VXpXNHg2eDgzVC9NVkdIbWNzMERkWWI1RjhaY05iVmdYMlk5cEZmNDMzL3V2MmRBOFE4Qno0SlZtMEw0RTB4YysrbzZqY1o4MTFvZDJraHJZY0F1SmJINzNVUlYyNmc4VnRobTRsM3RtNUhhU1ZSN082UDRmTVVyZDJkYnhmbTk2aW54ekNxTXE3S1JiWVJ5aFBXOUtHZTNNWG44ZVl3ZWJLS0U4M1BBcXZjZUU0VkltOWo1T3ZmQ3ErOXNHUzhGU2Z2WE9xbDdYN0kxMlljQ3ZVTVBPYnJYQzc3Vk43TXRQbnI4VkdzUFpZcTllaUZ5R2YyYU1nRytCaHV6Q3kwdEFJNW16Vld6QjJlaGRyeWhucjBzK1p4U2gzL25JZlZheEM3ajNuc3FoQmNsb255Slo5VE05TXRWYlNkRjJqcHkvMTY2VmFvSXpjTFZ4b3dhaWdSczczTnBpd2FPL0NJS0dOZWxhMjdQVVpNU3d6MWtFVTlZaVd5Z3lIRy9hZExCM2xWaVJpaE5OUUZOWDRvd0h1QlBjNko5UFZpd3c5QXpjcUwvUkY3L3BLSVFpdFk5eFRxK0Z4WUw4blpyVXViOTN2YmRJdTY2b3RHY094bEovVHVqYmNLZFMzbVBLcXZwVjZOd05NTzM5c1hxb3R6Mnh3T1d2ZGFLTzRXa2Fwa3k5OVF4NitGTko4SzNUVnptKzJTdUJoQ3EzbzZucXZLYi9tY0M0SHJsVlBNejNvWXAxdndoeDQwS2lnYWwyMk5XczlpNjhhajh1bW9Pak53M0Myd2VramlXaStzenNrTmE1c0pkK2FHT21YYWlMOTNiNWtVaTN6cUYxaVBVOWhWVnNZclRVb0dEbmgrOHcwL3hmM04wQ3Ftb21abTJLNU9XVnhkK1JyNDQ2eldZWnRteUZzem41TUgzTzhwYkRuRi95VTN4T0c0RnNDVDkzcXBWcmVnd1RQa2tvbDROWHZOOHFWUXEzMXVMMDB1dTYydk1iT291WGxzM1RpTjM3TmdkcWRRc2pCM1ZpeHB3WStTWDhGWnpqRVVvWFNBcjlGNEMzUjNYMFMxZm15N0xJa1lrN0VLd0orN3drQks2ZTdJejJsWU9HN0hkWlVtMHUyNXRveVI0MnZVd1Z3S2NjUGZxd3ozeTZFbnNtZzU3OWR1bk5WakQ3NU5qNkhMS0o3SHNBeHhmK0J4ejRwTkgrZWhZRWZrKzFGWXd6MStjOHFpMWo5dkRZc1ZlcnJMNHhYZW1WZkNXQTI1em94eVhVekl4emZnUUZjNDNUNWZQMThMZTNUTHNFUitzRlBoV0tQZitxZkE4QWNlTFNYMnI0OXN0ZU5zMVhHcjFJb3c3WG1MZUduOWpiZlJuMm1sZEZYU2JneGg0QU5qdzRxekdFVjgwWVRPRjBIUTJ5RDRFYlNqSTNsdXZHRmpFU1lRZWU2OG5mR0NZZmxVeW1XVnRHSmJScU1XQmpjOVc1ZnJYTC9wVzBNdDhIMi9jTHhyNGZoVkdWdHowaW90bTBzbmpLMjNwSzVRRUFVcm1PcU9zVlVKblExSkcra291QjBBNFMyTCthWFFOM05SZDd2Y1VVaHdQaFNHMVNOaHFrQ2FtVC8xbDBJeVVWZ29BSHZNVXJGNkRZUGxFd0pRSVZFeWtBaXV0eUpzRUFSWTUvbGF5dkxaTlkrTlZRVzJpWUpYWFNKeDMzTmxsc1pHejJQck5WQmxsSy9MWGRGeWJQQ0lBclBzQWdJUlluZE02cVdPdjFkNC8xTm9lQTllVzNWY0ZSQXd5LzdvYkZnYStsTm9hOWRNZEN6U2V6ZVY3RnJVWlpncnZML3NBS3ErTG1OUjUxYlhCZGhRSk13TGt1Z3ByeFd1Zjg5QWdqTTJTQnpQYVNlY0ZCdTRXaFMyZWl3c0ZRdkhIYmdTbWp5bkt0OUFZTFpXQmdHOUFDZ2NTc1QzYU45WVZpLzdRb3BiNmF6R0FvQjYwTjJyRENET1pqL09uZTRVYkpZOXQ5VmJwbjk4aFRBYThXNHZLSkMzVXFqNDJGU1ZwMHE4djNLUHJSV0RRQUF3MWNnYkpILzRmQzJkeURqTVlwQUtCYVVRYjRlUHBhaE0yVnBSMlN3N0FMWUxBSHVWZFo5a1dvODhXZ0Z3QU95eGtJWDA5TDJzeGh5SkY0anlvUWhGaElJKzgxUGZrUUE4eHU2WVkvK2lEZFBDMEQyZ1FIWitvejBjSmVJcE54TUF1c3RsZGZKMWM4TDZrWFBKVk9nYUNocnhFNlVBNEswaFlIa2FWVU94dVNHT25SNUJnQmNTZ3RNV1E5NjRIUUIrZ25DWWMxMERNWFZQa2NGQnZLc3JiNjN4Mkc0bXJQL3RHSmtqQU82QWZKOGl4MDNMV0MwZ2JNMGk2cDY0SEhlbE5IdDhQaC9QenpxdU8wSHdtQURoTndETVV5N3hYQkJWc2ZtWUFZaDdGUEFiQVA1YU5PYWhhTDA1TU5LTW44c0p3dXI4Z1RENHZOVkh4RWZaQmZMd0tQdVp0K1dJK0NZUTZ4TnlPRTFpc2VDMklJSGRCWGJOUU5kYTBxamhlRWI5WUk5emdmcUprZC9yMUN4aUFRQlFVdzVSQW1MeUlseWZ5dkVpV3hFV29rUCs4bDBTcFZmdUtBZ3NzUWgwa3dUYkRmazhRRGdBZEsxZEVWV3pySmRSM2xxTVM5UE5KQjg1S3hNUVJsZklhdklabjJTWXppQnBKMnF0R2Z0M0tkYnVsQVBBVTBkczA2Z0Q0ZlVBR0FFQWd4QnRsbGNRd1E3NUgvSUd1ZFJhVndoZUxUTzRIdWphQXdRcENOcXk4dzBiVVg4c2k3cWhtRzVqV2NPY09HNFc2ZUlXc09LaGFDaCszUE9aKzhLbEdJdm9adHl2Ti93cENSOEIxcTRDRU80Z1ZFYmtuNXMxN2lNSUJYaUQvRU05RjhZcVR2Um41dFhwaE05SFBGOUJySjBnSWhHM2VvYmc3SXBtM0lGd1lJaVd0K3djemFHeG12RnVqSjhmZGFwL3hHZDdsTXVIWEllWWFoQVh4Q3NOc1A1WWpDWHlPd2RlbHZYeU5Rd1RnTGsxZW9hYlpuSUVnQ091dHRXRnFIL2toMWxJVlJlMVloRDVBd1RCZ2dpclVHck1qY085Zm5rVGpUREVNZXJuQlB3RndTbVhBQjE0NFdIUFp1enZ3MUVwNWpjbTMybkxMakFzNEIveVh4ODkzSXZlWDhzSi8xb3I1WTNQUUdnZUNJWnNnd0V6OFlJOXEwQVVzVzlZS2ZBVytGRWdmbnc4eHQwMnJjZDU3NmhiNFFBTDlScng1VGZnczRINFg2V1RJajdsZ0h3NVF6akd1VFE1YjBiS08xRkkxOGx—CY0Z2bXZ5WlREOEx1WWZCRmh2ZS9BSWRqN0g4TXZEZ0ZjNG44Y1dIK2hFcWxtUXJEd3ZQSFExNXJ3Qy9FWC9FaGFUUVQxd04vYWswWXlIK1o3b3NhT0tGWGc5ZGFWSCtJdHhWTFd6TUt5dis2ZkR2R0crU1pTTGNHakI2OXk3cEUvcXNoTXFxeGNFU0FaNkNldTlHREFVdGkxWVBRKzhpQTJZdVIwYXJRamc0M2dmMTQveFh3NTNFQy9rREE0SHJFSjZuN2ZkRVMvbHN3cUw0Ry9sREE1empVelZNSk01bUVicENob2t1RDhyK2FFSStIVW5VUWdQenNOZU1DK0hUTEcxeHJXTUI3amx4V1U2WnZKcisxZHBtb3dDL3VQaU44dHF1VHAvQytteVhpMTVuSXIvTVJuTU0xNUgrN0NwUFc5ZnpaSDRCL1UyNC96bUc4d3VmVkZmZDlCWDhvR0x3UmZJVDg2WGFsWTAwaEJJTFh1T0NKU0VmOXdxeXA3Q2o4NzhZL2hTRGFQSGcxK0t2ZGFFZmNINmFjaFF6ZnJ5R1NEZkN2WVoyQWtXTSszVXprMSs3b3VEQzE0Qi9VeFBFc25vREZNNFRUeE50YUl6TldvdjRoOEdhcHZERjMzazljM3JSVStndGdpd01CNDhEWVpvai9BRUUxMC81Ui9hWHhDamdFZzJ3RC93M0x4ZjVOVXBUbUVUVUtrWVg4QmVkOTJzKzRoeEt5cTVCelZ4SkkwQ3NPNGtQOHA4c3pCTFIwNy9tZmkvUTFNQ0tUOE5NelV2REZFaHpYUHlMK0M5OXdCd2pHQlFUM21HL0FUOGo1UElRYm1Ua3ZiQTk4Y2pPODgycEtTT2lMeXhTQnY0UXVHTmRLRXdLcWl4d3hBTmRtQ0h6c1kvZEUrd2Z1WFNSaGluaWlJaVIwMzd5YVF5Y3lNd2hNSVM5TTZLaGJWbWg0dm9JQWhuNWdNNjJ2WEIrdXlLZXhpS3NwM0NCLzdTWHc2MkR3R2hoSkRiRVFPcVhSTk41d0RRd0dMdmNtYWRQNmw3TnNZQ3FSUDlnM0hVS1R3VHdPSlF4TjdyZzhFZFdJK3crSTN5bHNCc1liY1lHQlNNRGY5SGxXa0FCWHBWRkNQeFV4eExyeWtkOThoRjRMajFUem9ZWDF3Mnc2N2dINWkvcWxmUkU3d2wvb0FzcWZFWWJqcll3NmxzWVcxdXRpZjlsUW9KNVM1NkFqZm9ockJDNUZuU0ovQ3JtRW9OYnUvRVgxZHhUQTcwYWRpK2pPcjlndlg4TithVER2eUpsdThnM2d5OVJIVk8vUUhoUHc5Z29EZ2IzeGRGeTM0eW9GdmkvQkdhc243T2Q1cTdPTFBDZkdYVi9HMWxDR0hQR3hQTlNMQ2NNMWdYOFk4STFCLyswa25nZjlCLzRWTllSK1Q0ME1ZVlFtR1poOGcvb3hOb2Fuck5mQzh1NTZnRGVYaDFMNk4rVEhIaHAzTE94dXk4L2lCZmw0US8wWm9XMmVVbEV0Z2hiNFowTkR5UEhrei93Vk9oZ0c2R0tFZUw5YytoZncwMFQ2TDdBdjBBV2lCLytCYnpkVDJXZ0crSGtBZjBiUUE5Q2ZGdUV2OEEvWGs3NlJ0WkZCZjBncGRubTcyb1h5R2RmN1pLaG02RC9nbXp1QzcyL0FYbDdnK3B6d3N4bkhlLzNCc0VUSVowRUc0Tk9sUnp5Ry9SOEYxWU9oSmhoQ1ZUYm1xUkF3UWxMTk1Gd0srenlFTENYOVFmblg1L3BBcG53TW10U0QvbzZoNzA2STMwRHJLOWZwYTJSckR6RDd5S0hxQUk3ckU5TDIwVWoxNHhYT2UzQ21lRU8ram9IaU51cTNDKzJiWGdqQm9HbkFueDlmZmZBNWRNOEM5ZlZLK1l2NE03SHBCeWtLbGpuZ1hjTS9vejVHNVB1VzlqZUthMVo4eVA4VDdaY3dYT0NQZW9XWkdmSklrUkdhZkEzZnIwdkVUNWdlOGkrWExpdFVZUllHOHNOK05vUzFtb0RmRFB6VGhOQi9rU0V1eUtzSStNR3dmN3lNekluMGMwYjZKL1pUR040RlRDUE1xNnNpMHYvQ0I3NnErZ2hEdFVlOW9YNFk2aC84Zy9zYm5TYzA5b280YUZuVWo3bitiT1NTNFgyNFEvb2JlbnRBUG84Rm5sK1FjWVJmaUJqcE1BdnJkMGZDblIxOFZtRVY1Sjkyd0pjenRDWHdIN21IL1BOYTZCc2x6Q0owcStKZUwvd0VyaUYrR29EdmpBeHJDbXlWeXQ4ZDFXVUN¸2Z0MvU3daOG1mTEdteUliZVI2bEd1cTNoMTV5UkF4ZEwxMFRIdXlBZlloVGV3tlMva1A0cEk2emZGUEwya01QL2dNY2ZzYi9RZzhpL0dQcEI0L0FmbWw2MDdwakdsUmEwSFF5NVh4MGRBZitGL0dqVTZWaVQvM21HWHhSWHZDOU1PUFNjSEl6SVdvMzQvQXorVENMYkhQTllYS0ExU0NPWjRIOE9YS0I4R2VuelVGNjBYSkwrRVNieTN3R2ZWMXd6WC9nYTkwUDljOTNNSW9iNHc3OUEzeERua1UrY1lLaEZabTkwNUR4WVdjRS9XQk91RHozWmpkQkhHdklYSEczRjVFVmhna20vRE5BZitINEhuVVQ4WVhuQWI3T0F2Z2NpWDJRVEFSZFRCdjlWU2VqVVhGY2EvSnNDL29BSDRCOUZDWU50c2NUbzd2c1YxUDBCK1FHM2ZLTjdMZ0x3TVRXWWpzQi91VUYrVGJlQkdoSkg2SEc4MzRVYU12bGFoSWtPL2ErWjhDKzlscDNUWGdEL00ycGViOG9ueWovaHJBYXNlMHAwVnVlYkxpSjljUlQ0TjZreGFqQ2xkaitSUHdwdHB1VzIxZnV0UDVkNFB2TDBBUDI3Zy8vZEhtc1QrazNBRjFtOTk4Ry9rRDZLaWdZc1kwQWZOZXlWL0VzaExycUl1eW5VT2ZRdmZ3SmVNdUtyQlB3QnZmT0E5NjlJZjRLZlRYbCtoSDdBL2prZDZoWDFpUDNQa0YrNThheDVyWUwreFB0UXZjU3VoLzN2NEE4bXhHOFJTbk9Yb1c2eFBnRnRQWHAzL0U4bitEOHZiOThidEQ3Z0lqaXpWTWdmK09PRGp2Z3M4am05NVp2NkdqYm1tUnFieU1jUithdW9BWEtNcXRkRWRzaHI2Qi85OHJEVm9YOGJjU2pDeWdUK2JZOEsvQVQ4SS83S1cxNGRvL0dsV0pkNzVNOVRFa04vUnlYcHRGc0cvaXFnTDRNUDE5L3JTOW9YNkdlWEphMUMzVzMwd0ZtZHOQYjVMQWgxY3lJK2h5VzRNL2hmM0YxRkcvS2tQR3Z3cjh0MTlRaTR4NE5QQXRlWExETzZIMTZ1Z2JlR1ZsMWhMTjNKNDJZTU9yRzNWbnJTcWJ5aDQ2N1JITEF6eW5pRnhhVjNpV1V6UTNoeWRpN1psRmJoTVk4VWNUVVVMckpMQWtNWUNWcTUycUtVcWlWMGRXUCtXR1M2MGxsV2xZWHJob1N1d2Q4aDVlSlU0bmZHZEo5d1BYb2VmeU9zVnFuVEpLeFMyT1FFcmgxd1hNMnBwUXF4M3dOVFh3b2swZVBrcnZNSWtOSGhobmNGYklkWk5iUndsOVlYY045VGdFN2g4aDdYZXdqQ3R5dWcySVZmTzhHb21zSExNd21JQzEyV2hodTl2ZW5BVGNZV2ZJWmZnRFZsUDJPakJVMzA1QzZzSGJwVUR4R3FQVFNHeXZRSHNKY1Q5Q0xQNWhzMTZUV2IzVEdDVzZ6ZHNOc0MwRVFiRWxoazZBZ0d3TGx4YUo0aVJHQUowQUxoQndMbGhnWnpMSFFFelc4MGd2NGVNREVQcnBqRGpVMEJtQm1CT1lJdmczTUlBeFFqVEJMREtBZ1FjWVAyR1lvUDRnZG1PS3pJN0tGTGNuMGcvOXFtN2ZNdkRFc21lZWdGellhYTVJcktqRGZabnRRZ01JV0VPRkpubEVnSGp0dVdWU0RhQUJaSk5zQkFJZ1dJTkVSQ0kwM0tBMldNZ2EwWm1CV1E3d2N5RFRKY0VYaTdFdzhnam1HMFVPMjlKTEVPczZwb080L2NTNm4wRk00WG5XbmN3RFZwM2Q2d3JFMkxkeU1QRGxPc2dxQWdiMkxBRVloZlgrRENiTGpYcjNITER6RVR2S3BobERXWkpBeWozeDhZY0FzT0hnWGVmSU5aM01EdVQzUFFvZHZZQXNCK0ZyVUhzczFzZ1VXd1NZc09tQ1VKS1l1QU04b0lZTmNkTXdrekYzUUhYa3dqWWdpeEFvalhEV2pxUUVZcEtYUXRSdnQ2N3hRNFNKM1kxeEEvL0RqQXorQzRqVTdCMlVZd0FieW9BbUgvc3p3bmd1S1ptUlI1WHQ2Qk50MGpJTWJDZkdYTGxobUkwOGY0eDlnOW1HMzkybEkxaTNvRXN0ekFESThEcUVmbmtDSkEvQUhuZ3NYS1JDeDBaYnBEREZXTFBvR1lOakJETVNqVUhjeXFvdTFzWXd0MFNXYzhwUkJrTWxqMEE3QUNRcXBoQUJoMFphTy9zazFtZU00TlhpUDgyM0N3dlhKVUE3Q1UxSnlIV3NWYXIxSkRmK0Q2SlJYZVJOSXhSOXgzcjAvT2E2ZmlPbVdGL1BXT2pseUI3N1A5UVdBcjdVMVhlbVNQK01IdGhOSWZOVGZjYUMrOGZEVEFyQ21ZRi84Nnh2eGJGc2ZPcDJhWldGNW91bEtLK0pzWjd4RzhGc21aYVZ0L21rQURJd09lcWxBRHJsMEFmTTVoVjdJODRVMEVHSUJhSXhZNXIvUnRFVEZkU3N4TGlDMktSWmJCZUVGS25QT1lRUVpZRHNzRHoxUlF3MGUzWDZRbm1jZzBBMnZyR3l1Um5pRjNFQjJDL0s2SVVBRmhBeUZnbm1OazBJYkhWZkJEVDB1RkRJU0NTV3VxTWYzd0ZHWnh3WDQyM0ZzdzJ4RVpzVlhrMEluNitVOWE5V2NpTFFmbUMvT1VGekx5d0ZXb2RaaktHOFlydnpWNENzQ0dKMHdNQWJwM0RiT1VRZEtHekdXRVdkV3JpUVR4UnM3S0gyZEwzRXZrUjhsc1lLM1Z2dHJYdUlEYmxqWnE1eFgzOVlpY1k4aWNXVkI4UWREYzlsUmFSNlJabWF3N3NxaXBEMUUvTnEyeE9xSGsxK0d6MUVtN0dRN2IyZXhBSWl6YmpkRy9XYkNDTzJtNEl5V3d5NUlUMGFFSmRaU0tsK2oxbCtySUxZb2l0MEYwQWd3NlVmNmtUR1htMEhJRVBTUmtLYXBiUmRHQkIweWlzZHl5bHd2N0JiTFRBSytTL0I3SHNxVW9QMm9qMlh3ZEJuTHl6SXJOMW9Qcmk4ZXFFUFVjOXVIc1NPMWlmZDlDWE43eVBJak1FOHQ0aGJnRHdrcU5lRlBDUGMycDIyUkcraS9vREFSQStRR3pEdUhLVGsxaUhJY09lbXZtR3NiRFI5REpFZk9weG40V2xVK2dqOHQ4bGZEaEIvQ3hDSXozelpyd2lIaEh5KzRUNGdZaFhWUDlhR1paVjJGb0R6RDdNZWtyNWJlTDkzbUJpRVZmQ3RkdkU3UXMxaTBia1B6WHhwOUM0VDRjWStHR0VOUWUrcnpJeGl3SDdIR1puc1lOWW1xbnhDN1BLU21rdFVEOFB1RTdEOVRSOWM3d1llNHU0UXV6ZHZ0dHNlb0RZZ0NFaWdRTXgxMTRRR1JKZk5mSUg5OEgrSHlVTks5d0ROVU9SZnpEMkp2SFg3WGdXRUd0V2h2eUhHT1ljWmdPR2V2U0VBY0tkbHJzczNoQUJWNmhWTXJ1dkpQWUQ3RjhoS1A4c2c4d2kxcCtGbXg3UHQ0YnYwTFNBdXNQYk9TVUNHdUEydWlKKzFvUk8weGhYbzI3YmZWb0RkY0Z0QUFyY3ZrZkhMTVRxQ2dEbXVKNG1NVnNrRkhYYlBRSXd1Qlh0M3UzVm1RT1ZHU2Z0Z1VFZHpqSldkU2szdXQrNlhnbTM2MGNsVFU5aVVqOUg0UVBRTjNBcnZrSmh1V1Z0amxBNi9iMzdxVk5CVmxjQXlpdmNGemFsRzZHVWtCQnFnQ0xaaGVRU0phUHVuWURiR1JPZDNITTFKbk42QUJnNi9vZnUrSmljM1o3Yzc1RzZwM1Q4UVlmTFg0dE4yUExNMThlWnhsOG9lSlpEVVJ5MEZDNnFjN0xZWGVlTjlsREd2Z2JBZXNUMUlFd0ZRaFczL2RxOUZ3U1NDeHZpQXpqWW5DR2VpU0Ztckp2Y0o1dzAzSStUbnJ5VzAvUm1LbXhQRjQ0MUhPdmxEUGZ5UnZHOGQ4dG1FSmFqcUdqV1VEUlZIbFlBZkhYSW9QNUJIaW5BYTVIb2xnOUZCa0ovWkNDRVJhNWJVT1Z1TDFyK2daQkV0Yi9IUi9Zbm9ZMVUwRkZtYkF6cTNpUFpGZ0JzL2RWd3QySzJya2dBT05WbERLYzF3d0ZTY1VPODNMOExrbHpkb0tTaDNxQmdkUlBxRVRIUkZaN2xHZmZrWVJCUER0NGRUaHZGTStGK3J3UStOTXIyMjFVRkVYT0ZVb1dUWHlMWjFTbWlXRTU5UmVvUjZ2eVVVK2NuRm1FZStqU3BRKzd3S1JEM1NRT1VQajhkOUcraU9uUVc0QVhHMHU2Z2ZyaVdCUDFZeGlzV3RJUitpcXhxUUszZVBMNDg4RHY2TEdHQjdxM3FOMWhOYWoxT1lKQ3V0Q0dCdFpTeS80d0ZLNmdNMkhLd0k4MTIxOVVJcTFFVkpPV2ovZ1IxaGlxbXphc1dzRDRjN0FHMXByWmN3ZHBIeStsWWowQmJONFA2UTVGRUd0QnpSNk9lRXBzSk5YYURWVGJDWnRBeldGbXlPbENLMUtvbStkc2h3SXFlandCV3VTRDF4OElzaERLajJYelU5WnhhRlRha1BwN3ZOZjZDeDBoR1dIMHVvYTZrQ2ZSYUR2bG1SUEs1Q0tDMUFEdkFlc0xTMEtnVmNyK3dPSXJCWWxCUFJocVQxVXk5Z3RDWFp1V1F5b2p±mVFA4RmU1RlZYWkNxb0ZZREdETkxZUk9naXBNU2pCSzJGYXdma3YzVDNpZXJrMEFWd09wQmpaQjFZbEFiVUE4azM4UHlRT3FCV20zZUhjbFlVb0s5U1gyQi9jY2dXRklyOUEzcVNjK0ZlS0ZSRHJVNjkvSG1nU3VyazYyS1lIbXBWYlFkNjZWSHRvekxLdlBPUXBkMVdSWHljZUtHUzIzTkFUWVJVaDlsNUhUcFZpdXBMZktRTzVzcE53QWM5N0VZQzZIVW9Sdzd4R3BwWXQ5b3JOSDVodmNBV3pzRlovY1ZTaHZzTFhhNWhDMmRYVTV0V1JSaUZwSlZNc2pxV0Yxa2R4VjQ4d3BscFJWcjhlUTVxeFJNZUFFUWpqbFpMVWVNMGtLdUNQOXdiTjlUSVorZ3BtL0I3TUxLV0dOb2p6U1dJVnV0SVZlQXRLNlhoUmFVMEFwQVdWTTczMDBGOWcyNWlqeWRRcWxwVUtvTTYxTTU3UUdVTXZKTGh5M3NvWFNhKzF6ZVVMRHRGV0xwd25sMGIxc0dSTmZGQ1VvTlRQVU1ZUFNoR05oOWJIWjAwc3hUN2tUeHkyMTNoSVhuTzYxYUVJTkM2ZlN3OEtSRUNGaWpETW8xYWk1R0twY0RtRDdKdytlcmlHc296ZXFCMnRwWXYwb0I5Q25paC91UHBWWFRXR1JLWUd0aEhROVFYa3pFMVpqRkJGck1wclkzYW5YcmFXYTN0OWxERVVFSlFySHZOTGdLdkY5cFAwN0lXVTVuQmJER0oySmFnQ25VbDZEYTFLa3RVZG9YeHB2bFE3Rk9RUlJRV2c2ZHM3UmU1QmxXVUhWVmFSeGdtem0xUFJQa254YzUvQzJWNUZSZ20yRzdxYTBIcDZESm9CL29IRXArdC9YcGhjYmFXWmlhaVdIdEVDZFNXbGkvRlVkR1IwQ3RjUnBkNlFUTWZDZG1QaWV0QURHNXNXZWJxYUQ2eFBzRG1CMG9IVTlvRlRrbERxZTRpL1NMbmxGYkM3b0ZTa2Zsams5SzU0SGJZaVN3SzNSekN5VnpEYTBWTHhUMnVUMFlnVmJPQllFdjhsZkFxaDd1NTNoRzJ0OHVqQzlRT3NpdlJqekFhVUdwdUwvcFFhcStKSEd0a1hRRm1DRkJ4U3VZTmlHcjRSdlZ6QnYveX¥VXSHZpcHVPUERtUHRkK0ExaENPaVBQNlFHNFBqc1QyTGx1S1NFVnBSb3pra3F0TmNPcUlISFpHNnppRTZGNU1ITllLcHJMQ1FYV0lxbWpoWmJQczducWMvdG1jRzBjWUZVT0phUW0wRHBOcGMrQyttT0QrdXloQTZrVUFyeHNoc1RtWUFOY3YxgW1DV1ZXTUFuNHE3SEVid2lwQXFpUEFGQUEzZzF3RkdKZEpZYmdkcE9ya0d4YUJQVHVlRDlmUU5qMUlQUk5GSXFtdlY1Q1ZwcmtZckdGNVowWk84NXNGZHlLR0JDYnBzNFd0QkZ0Wkl6YTRKNEFrYTF1cytTR3J0ZWtZZHk2c1BjMUZXYVl1VTlRTTJsWjNHU3pZbnRRR2w0cnNBQUhJQUtCMTl2RXYyVFkxSnJEYmE2N2ZJQU93KzNIbjBTR1cwdTUzNU10a1k5M29FSUZ2M0ljZWQyUXVtODAxZFN4VUMrU1ZiZEdwc1ZmNGtnemVacVFtRldXN3hHYUM1aC91UXc5b2RNaWlFNTFldmcvUTF6NE5BVDFKaHl5aUF2bEZ2cHpQMElVTW0vMUVRM0JzWXBVSUgvY1ZXa2s2RmNnS0g2YVJMenUyajFQU2pEdGVWNi8zSWFoT1E5Z0JIaHpYMDVDcXRUcm9URlFMMXlTOEJlbnlvakVoUmFDN1EvNlVuY2szZHU1T016WDQ0cUVrRDlzb2puZWw5YkVDOGdKU2FVQzF3WkdraTZQcW5zQzJPd1I3RVVBWGwvYXlQOXI5S09iVkpMRzVTQllrZ3pqQnc5NkFJZ3ZJbENtd2ExMXVUQlBTWWtKOGUvZ2FQTDhDMnBhY21wWjNab3dyYktKRlBtVUUyb0Fac1ZseitnQnRqUHZYZWtMTVNGNUpMdW1rTWpYeDZSVGRXTjRQQ1hVZjBCN3hQMExHZWNicWhEamRrcnFpK08wOHFTQTFsZ3pTWkhFZjRxTDYwNWpZSWczcEVFNkphdlEzSnFwZlJGZ3ZmUDBOMHJOaVNOWTMrSHFXTlAyWUNIRU41QVpvazRDTktObHBXQTIvU00xY2FQbGNsRlBPQ2hQdmJLSlkzemd4KzZjM0pKeGxodGcvckI5c3dsVnVkVTlIaDVNc3Z0NkhzaVJqNFlOOWhpUnVyVnU1UGt4UjY2Y0Y0aHR1Q2hvZWhpaUs2VEJYRDNzbkdxaVlDb2xpa2VOTXZoREtwb2VjaGg5aGRJcUwwRmhIM0tHQVJockM5V0RMRHZ1ejlab2x5ZWkzYkFaNjJ1WXBwMkp6eEN1ZG1vV0h3ZjVadEg5WW56QWo1Q2RrTHBpOU4rQnJ3dTgyUVRzdWFJaStWQ1ZKdTlDaUlhU040bVM0M3NQMysvMm44Q1YxcDRlR1h5R1cxQVJOQ3FaaVlWOWdJNUEvVXFQN0s2eC81bXAxbFcydDA5QUlZSlFCTE9CaHhaRFZGNTNIL29rT1FkR1F2cUFtT3pYOUpaUkp6UWM2OUFHMHBTWXVja1lKNnZQbE92SVd6QlVvVHZYS3FDL2x0Ulg1NGtWaGN4UjVmd3FZR0pNd1BSZFJmZDNURUZpSEx6WXNzTm15SzNSU1RtVVBGZUxBYXpyd1ozcUsrZ2ZiSDJqb0I3Q1lvczBTeW9nckFxc0FTby82aXJ6Uk5LZ042cXRCZVk0a2pSK1FQenZVeXdsNWVBdGk0U0YvZ1JkMGlJRWpmNkFNUmRYQisrNmdDRHNvVGFQRSs0UXg5MmhJaTVwNW96NVZDcWtjYWpTVVdJcU0xSW9oMHB5R05nMHo2VkJhWW5SMzVRVWZ6R2dvc0xkTlRvZGlTUGFEbldJNlJGZlU1bnh2cXJNT1REdlFVSUQydzBPT2pUbHNCVCtuVjdqa0NRcnY2YnMrMlN6V3JzZ2lqZFRQQ1lvVzhiMzNRUkdmMnFENlFiMC9GZ1kzcGVQdjdvZjZ0TDR1Z1lkUWd1UXpwNkl1Wm1MWEF2NDRuR21vZHRPQmgxQUpuWnRKZHdCNzc2bFBGQm91OE5CL0tLYitSbXhlMmliSXkzK2hvV3cyUDE5aGE2WTg5bW1ZU1VOSlIxQmZBL3NCOWZCRVE1dEMwcUUwUnVDUC9kU01vRjBoTDBmcUEwYXdxYmNEOExOeUZDbXpkV0V6Rjh4T2xsS0ErS3BRUW5uaDJSeDJCZmlEV0psVEtqa2RDQXZwUUJtVVp5VzBmcEFLS3AxNkFNWUtscEl6RU5TQmVyeWhFK2tnNWdVczRYdzhneEJSS3psaGlWNGpUNzFyS1crR3I5K1ZSd0pMdXM1L29oVmd6dVV0b0NZTlpER1BlZWF4RlVtdk4waXpQbWczOXhOTktJNjVoSlFGbWNEa1U1TnIrWEFFZUVmdDZwVEFEaVhrTWJGNE1HZDJwQ09qb3J4Qlhqa2dyWWsyNjA0dUFPZlVjZWxFVzc5ZlArbzBVY3MvSE9tOEJUSjZJSnV4MWJzMEUyS1dkYTlsOCtGS1hYdUE4UVNiWmROa0Q1NTA5Q0JaZzdxODNZL2s2cjJieFBEc3VyQnBJaFU1UHAzWTBPNU55cG1PL3B1UThBek0zUUc4RDJCZVO8QzlwdmdiWWZHeEFTTXJsS01WSXlZN2twb245N2loODhwbUtsTXNlMGk4TmlTeTkrK2Z3alVOWm16U1JTd0IySkMzdko0NndZZHNQbTEvQjg1Y2dBL1ZBN3c5UG5BVXpwR083bVFGR1ZScEhrTFlwOVNSdVJ4UUR0OG5UQ3pweDhGcEVVQzcyUnNza2tjTklFN0pleGpUNVFiRUF1QUV1a0tJV25XQUErUFlod0lNbGN0eW1kUStiQ2FzUTNTYnFVU0NCYi9jcGlyUENmblNVekZmdVdQZXBDWklNNENidUo4VHVKN1JnSldBRDZRUklWSzZwNld1Nk5HR1dMVTFGRUdlN3FnVFdrOU1KdDdsMFNoUmpCS0l0NmxLUVlrTTgzYTJtcG1STzdoTmUwYnB2MkE4Q0Y1cVEwaEhkek5NWW5iQ2tFMEp6UkVlc21RL3JSK0NhVEpDNFZVRVRydGtkQUNha3NONmdqaFpGU0RJZGdPUzRkTUt¹UM1NkbUVheVRZOTJQK0lKY25taENEdHZvd3JlL0ZwREJtZkZlSjNETVkzNERPYmpGSGJ6ZDRTaDRCeWtNaFdhUkZjSDFaY2RoRzdOeldRVkdOd3FEMHdtV2hNUlQxUFFBQTR2bGh0clNDUVJZR2VRRHlLSG1LTmp1RU9nMDlhR2VDQkU2QUZtbitGaXZBTHZIY3AxV0FJUDVmc1FaOTRlMVVzSytNVG9CQm5Gd3ptM3JSQ2Z3K0Jta0RLbU4vVFRMZUtQanovY1R1Z0Q1eDhnUklGZEdKK1JzN0J0c3QwbnRCcHA2MVpEa3NNWDNDZjBMNGdOaDVFMHBUYjFncFVDT0VHM2RJbXdVOWcvUHIwdTdhTHpwU0tkbThYbENVNmgxTVVWWVA4aU5tcjREeURPR0ZlR28zNTZzQ0wwTFNEZkQzeFZFbHFBbThZY21zQTlybEhvMFVmYmFyanFHSlpSL2FrQ1pzNXpJVC9oMDRuWW83WThuM0krRUN1cWRUblpTdGc4YThta0s0blNML1VDK3VTRGY1VXRBVmdhZkZ5MmRHS2d1SE0vUE4rcm4rZy9lK243RTRuOXJwSTBMMlhOSUtpYURtMEZqak5EeG1BZElwVE1DcEkwTG12bEhJMWE4cERNWnRLSlI2SkNMSVQ4UVFubUdxQVQrRGZSazA2RnpranM1alJHMDVVUnpTSmdyVGpObm1GKzd0RGM2elh4aDdzZlFzUytCZyt5TStjUCswNTdtL3k4QlNjc1lSaHhabXEveDluRkVZN09CenUrUUVkczdRS3E0V2dUSzkvS3daSHZaWlY1RDgvSCtic1NrNDlINU5Ecm5aQkJWNVFiUUpESm5WSWRHNTAveExGQy9EeCtFNnJXNmtLZzRpZElic3BjOFJDVndyMHlvRnhvNTBYbmQzSGx2ZURDYThHSDNrV0VSUTVvUm1teVdDZWdBbjF0MHZ2d0tvemhoTnluNzZIeHdGMUNqUktlV2VwVWRvNDdPUVIyQTlnZnFRSUxPVWIxMFFOOWlFdXZQNkh5RXpzakhtVFF6emVrSEtJNGxLRHNMNXowTFFTZWhMVFNTSnBDZTkvTXR1RGY5SUFQU1BOS0JFQy9VbG9hMGpmRjg4bUhkM1FqUEZVem1lK1piUk9WMHZwRm12dTRwTXRRWWhvbEpUYlVnZnVIMDR3VkNIaGowVVc0NitpNWtIUElDbnRHaitXcTA1TWlML2toblpjL3BJR09oVUlseDFGbzBYcm5RV0FMdjJ1ZnhlK055ZHZtSFVaaDdDamRMa3V3dzNuZFVHak94K2wwV25EbjQzaUtZR1NJTHZGbC9QR1p6cE1NY2t0bGJCUFZ5cEZuZ0h2b1ZHNk5MNnBoc05QM1lzREdualRjVUhad2tJemVua1JvQUszQk5uY2tOYU1hNEhPK3pwUGxaaCtmS1B2Qzh1RUhqcUtMUkRMd0FBaHbHTjJSbWF3N0YyZ3BHR3RCNkw2RUt6T0hhQVg4SGluS0p4b1Rlck1RTTBnR2JtdkdaTmlEK25RbUd4M2Y0SXowRUcyVHZEczBob0lqSzRNZjN3d0tkWk1BY3NLdzZkY2FSWnNzYnZzNERvUGh1ZzJZRkxCdytkbyt5emlBNTJ3SUJuemtZWHJZOWdpMXRvbGZlRFVhV2pNazRIemNuelJHTmNmamo0UEVHM3hVZjdZeDFGdUMwamlobUxNanA0Qm9OZTBDOWhaQVNEM2psSlV3MlFHZkNTU29PbmVBc2FjL0NaNktqREFaa0IzVE55T3FqRkRVQ1ZxQ2VLQngxa2V6VldzWWZZSStsÓbmFpNGdNVjVwOHhEN09iVDhKL2dWTTJrNytBTXg3ei85QVFrdk44SnJQaFFXbitoWFpXSHM4eTN6Tlg1K25BbXVjcnQvTzlic1oraUV6K0dJaGNPSlAzaXRmNVcxNzVINEUvYWdZeXQ3dms3UCtlWitBamFMWm15TVdoMUswVG1wN0U5ZWJVTFAzSWU1K055bFh6amM3dUtkcHY2eTM5MWJlYTExcGhNMGQvNXFWM053TGpuTWFaWGFveFhwTHJMd1F4dnlQc1NOYVNndGtpeTJrckFCbit1akJueUErUFpRRWQwSWNUNUxLY3lTZmlMVVFvenJFUE4wWWlsZXhYUmlpazQ1MEltekFsWGc2YVlMdlVSRFJBaC9Pa1FBUFFHMFNtSmg0UE1wSW5GdStJekVMZlFKMEZPODRlOFE1OTFqaHV2eis0bGJuMEhjMm5UaUpxQWhHcDJZQldMZCtZU0d3SVpQWmx2UWlkS1VUaVMzUUVFeXEvV054RGNRd2JyU1R3N0JpWGkrZXhmSDRQMlJ6QkwwQWxESUhWRTRÇFbWJWaE5uSDiHMmxJaWlTc0wxU1o5QlBBc2JERlBtODlhaVpVMEY4TG1JY2U0cHVHV0l6aWcyZlFFR3RIditpZ0U2ZFVlRm43bnQ0UDVrM2NaSXZFcDg1T1EwTW9RZng5cHZVSGh2c21tSDhELzd3QzBWVktyZGc1SGJGK0ZHcGtSUGJGS0ZDNG5BNVJHQ3NudDU5MThEU1RkY2tnc0Uzb3NTbW5YeHVRrU9abWgvMEJmWmZ5aGpZL0NYMFQwazd6WWZRV3ZQaEVmRTVCZy9UMjM3ME5zbVAyTm50VWxtQVhta29yblczY1lvOTZmb2lPSFU5Nm1WU3BkRFc3ZGhEdFpCTTVGVHdRZEtiZTB6RjR5Q0JvNjhtZ1NKSmVnRE1EL1hFVGxvYjVQSkdzVzBuSDMwQVVLZUcrUlhVRU0rYUNyL3NQUGpRd3JpL1R4QlpzemxQVHpGM2tEblpYVVNmSkFGenNJamdwRmNhV2ZzOUFNaEg1L2hxcW5nUlUyYlRNajBVOEZ0YlVRbkF3Q0VBa0m8dCtHUE5NSE9WRGZTY2NjeTZpRkdXWWhFNmlVZDk2TGdoUzdOTDNxZjZDVDJCNW9CWk91RTVpVGJnMlpTTWQ2QVRuRHE0aFRRQ1JnZDVxSHVka0txN0JqNkpsWHovYmRqdXJsRk1VNjhNVGxRdDAvMGtjVHFWSHlZY0k2K2NqT3NweStzWWpwU1c4MnB0U1JjOHlNSjB6…OXJLUE5SaVFaeEdaMytwelpMLzVvMGtRNnUrdkUxckZBRktYUUZwajBXTmYxWWlicjZJL2xhcllUWDhnMDM4NDFmQlp1eVVwYVMyczU5ZFZhbHBGbmpFU29EZFhhRkNUUnBOa2UvTFBCYTFjbTI4d2…czNERPR0VEbzRhV293ZXBlUTd2T2E1UmhhMVlGT3h0T3bWbEZMNktXZHdvNldIVWN0ZGFwcmxScnE5ZHl6YlZYWWZYNXlUKzZ6VVp4ZFcwQzloZEZkQTF6ZWhQVTZsa05qdWIzWVRDdlJNYVAwMy9DNVJGTkxYRZd0MHlzSWM3T1BBSmNmeEZjQ3VuYzdSVlFxTitXTkZBS2dHSWZVcWc3dTYvSTVEcUNYUTJDYjN6OG5URlllZDNVZnlIZ1FiNUNqakU3dVdXbnM4cC9iclÀM4vFEzNmhUUDltdkszVlZZMmYxZmtzWHFGcms4TCt”tVVVvNmFCUzByb1ZrU3Z1cXd0OGpnU05ZUVVCRGx2Um1xSDMvSU5USE16MGlubkMweHhrc3dsL1owRFB5K815TFl6TYpvVlArL2x1MjZhOTdHeS9ScnFTSTFhNFFyb1lhNC9lZmFRq08vbzFENzVJZmVmZlRSUis”rKytPNFB2ds40TC82Ly9DNHcvK3BWdnavL3ZvQi84i3ZqZUViVFE9PVwnK½SkpJzskhLetkY2WqL2isFsns5SPkceIg†5OntSddKCSÖEt62RjZaovaKwWyfTuZmTw5a¢EvYnDJ10sJIS3rZGNlqi9orBbJ5qCoLrOwK†qtp8gnXSwnooyniIUzMjkzZGVmNzIzYjI5ĞODQ2ZDk5Mzc2YTk5OTM3MjAyMMyLsqMnKTs='));return;?>a9cb4438c701df8f2d448f7610b50555
+<?php
+//dezend by è¾°æ¢¦å¤§äºº QQ:30881917
+class LogAction extends CommonAction
+{
+	public function _initialize()
+	{
+		parent::_initialize();
+
+		if (session('IS_LOGIN') != 1) {
+			$this->message2('è¯·å…ˆç™»å½•!', __APP__ . '/Index');
+		}
+
+		if (session('isvalid') != 1) {
+			$this->message2('è´¦å·éœ€ç­‰å¾…ç®¡ç†å‘˜å®¡æ ¸!', __APP__ . '/Index');
+		}
+	}
+
+	public function pay_order()
+	{
+		import('ORG.Util.Page');
+		$model = M('pay_order');
+		$keyword = I('keyword', NULL);
+		$ftype = I('ftype', NULL);
+		if (!empty($keyword) && !empty($ftype)) {
+			$where[$ftype] = array('like', '%' . $keyword . '%');
+		}
+
+		$where['user_id'] = session('userid');
+		$where['type'] = 1;
+		$count = $model->where($where)->count();
+		$page = new Page($count, 20);
+		$show = $page->show();
+		$order_list = $model->where($where)->order('addtime desc')->limit($page->firstRow . ',' . $page->listRows)->select();
+		$this->assign('show', $show);
+		$this->assign('count', $count);
+		$this->assign('order_list', $order_list);
+		$this->display();
+	}
+
+	public function cz_order()
+	{
+		import('ORG.Util.Page');
+		$model = M('pay_order');
+		$keyword = I('keyword', NULL);
+		$ftype = I('ftype', NULL);
+		if (!empty($keyword) && !empty($ftype)) {
+			$where[$ftype] = array('like', '%' . $keyword . '%');
+		}
+
+		$where['user_id'] = session('userid');
+		$where['type'] = 1;
+		$count = $model->where($where)->count();
+		$page = new Page($count, 20);
+		$show = $page->show();
+		$order_list = $model->where($where)->order('addtime desc')->limit($page->firstRow . ',' . $page->listRows)->select();
+		$this->assign('show', $show);
+		$this->assign('count', $count);
+		$this->assign('order_list', $order_list);
+		$this->display();
+	}
+
+	public function zs_log()
+	{
+		import('ORG.Util.Page');
+		$model = M('pay_order');
+		$keyword = I('keyword', NULL);
+		$ftype = I('ftype', NULL);
+		if (!empty($keyword) && !empty($ftype)) {
+			$where[$ftype] = array('like', '%' . $keyword . '%');
+		}
+
+		$where['user_id'] = session('userid');
+		$where['type'] = 1;
+		$where['order_type'] = 2;
+		$count = $model->where($where)->count();
+		$page = new Page($count, 20);
+		$show = $page->show();
+		$order_list = $model->where($where)->order('addtime desc')->limit($page->firstRow . ',' . $page->listRows)->select();
+		$this->assign('show', $show);
+		$this->assign('count', $count);
+		$this->assign('order_list', $order_list);
+		$this->display();
+	}
+
+	public function cw_log()
+	{
+		import('ORG.Util.Page');
+		$model = M('account_log');
+		$where['user_id'] = session('userid');
+		$stage = I('stage', '');
+
+		if ($stage != '') {
+			$where['stage'] = $stage;
+		}
+
+		$count = $model->where($where)->count();
+		$page = new Page($count, 20);
+		$show = $page->show();
+		$log_list = $model->where($where)->order('addtime desc')->limit($page->firstRow . ',' . $page->listRows)->select();
+		$this->assign('show', $show);
+		$this->assign('count', $count);
+		$this->assign('log_list', $log_list);
+		$this->display();
+	}
+
+	public function yj_log()
+	{
+		import('ORG.Util.Page');
+		$model = M('account_log');
+		$where['user_id'] = session('userid');
+		$stage = I('stage', '');
+
+		if ($stage != '') {
+			$where['stage'] = $stage;
+		}
+
+		$count = $model->where($where)->count();
+		$page = new Page($count, 20);
+		$show = $page->show();
+		$log_list = $model->where($where)->order('addtime desc')->limit($page->firstRow . ',' . $page->listRows)->select();
+		$this->assign('show', $show);
+		$this->assign('count', $count);
+		$this->assign('log_list', $log_list);
+		$this->display();
+	}
+
+	public function buy_order()
+	{
+		import('ORG.Util.Page');
+		$model = M('pay_order');
+		$keyword = I('keyword', NULL);
+		$ftype = I('ftype', NULL);
+		if (!empty($keyword) && !empty($ftype)) {
+			$where[$ftype] = array('like', '%' . $keyword . '%');
+		}
+
+		$where['user_id'] = session('userid');
+		$where['type'] = 0;
+		$count = $model->where($where)->count();
+		$page = new Page($count, 20);
+		$show = $page->show();
+		$order_list = $model->where($where)->order('addtime desc')->limit($page->firstRow . ',' . $page->listRows)->select();
+		$this->assign('show', $show);
+		$this->assign('count', $count);
+		$this->assign('order_list', $order_list);
+		$this->display();
+	}
+
+	public function xf_order()
+	{
+		import('ORG.Util.Page');
+		$model = M('pay_order');
+		$keyword = I('keyword', NULL);
+		$ftype = I('ftype', NULL);
+		if (!empty($keyword) && !empty($ftype)) {
+			$where[$ftype] = array('like', '%' . $keyword . '%');
+		}
+
+		$where['user_id'] = session('userid');
+		$where['type'] = 0;
+		$count = $model->where($where)->count();
+		$page = new Page($count, 20);
+		$show = $page->show();
+		$order_list = $model->where($where)->order('addtime desc')->limit($page->firstRow . ',' . $page->listRows)->select();
+		$this->assign('show', $show);
+		$this->assign('count', $count);
+		$this->assign('order_list', $order_list);
+		$this->display();
+	}
+
+	public function tixian_log()
+	{
+		import('ORG.Util.Page');
+		$model = new Model('tixian');
+		$where['user_id'] = session('userid');
+		$status = I('status', '');
+
+		if ($status != '') {
+			$where['status'] = $status;
+		}
+
+		$count = $model->where($where)->count();
+		$page = new Page($count, 20);
+		$show = $page->show();
+		$tixian_list = $model->where($where)->order('addtime desc')->limit($page->firstRow . ',' . $page->listRows)->select();
+		$tixian = array();
+
+		foreach ($tixian_list as $k => $v) {
+			$v['cwsz_config'] = json_decode($v['cwsz_config'], true);
+			$tixian[] = $v;
+		}
+
+		$this->assign('show', $show);
+		$this->assign('count', $count);
+		$this->assign('tixian_list', $tixian);
+		$this->display();
+	}
+
+	public function tixia_log()
+	{
+		import('ORG.Util.Page');
+		$model = new Model('tixian');
+		$where['user_id'] = session('userid');
+		$status = I('status', '');
+
+		if ($status != '') {
+			$where['status'] = $status;
+		}
+
+		$count = $model->where($where)->count();
+		$page = new Page($count, 20);
+		$show = $page->show();
+		$tixian_list = $model->where($where)->order('addtime desc')->limit($page->firstRow . ',' . $page->listRows)->select();
+		$tixian = array();
+
+		foreach ($tixian_list as $k => $v) {
+			$v['cwsz_config'] = json_decode($v['cwsz_config'], true);
+			$tixian[] = $v;
+		}
+
+		$this->assign('show', $show);
+		$this->assign('count', $count);
+		$this->assign('tixian_list', $tixian);
+		$this->display();
+	}
+
+	public function kb_log()
+	{
+		import('ORG.Util.Page');
+		$log_model = new Model('kongbao_order');
+		$userid = session('userid');
+		$where['user_id'] = $userid;
+		$where['status'] = 1;
+		$keyword = I('keyword', NULL);
+		$ftype = I('ftype', NULL);
+		if (!empty($keyword) && !empty($ftype)) {
+			$where[$ftype] = array('like', '%' . $keyword . '%');
+		}
+
+		$type_id = I('type_id', '');
+
+		if ($type_id != '') {
+			$where['type_id'] = $type_id;
+		}
+
+		$count = $log_model->where($where)->count();
+		$page = new Page($count, 20);
+		$show = $page->show();
+		$log_list = $log_model->where($where)->order('id desc')->limit($page->firstRow . ',' . $page->listRows)->select();
+		$log_array = array();
+
+		foreach ($log_list as $k => $log) {
+			$log['address_send'] = 'å‘è´§äºº:' . $log['send_name'] . ',æ‰‹æœº:' . $log['send_shouji'] . ',' . $log['send_province'] . '-' . $log['send_city'] . $log['send_district'];
+			$log['address_rec'] = $log['rec_name'] . ',' . $log['rec_shouji'] . ',' . $log['rec_phone'] . ',' . $log['rec_address'] . $log['rec_zipcode'];
+			$log_array[] = $log;
+		}
+
+		$kb_type_list = M('kongbao_type')->select();
+		$kb_type_array = array();
+
+		foreach ($kb_type_list as $k => $v) {
+			$kb_type_array[$v['id']] = $v['name'];
+		}
+
+		$this->assign('kb_type', $kb_type_array);
+		$this->assign('type_list', $kb_type_list);
+		$this->assign('count', $count);
+		$this->assign('log_list', $log_array);
+		$this->assign('show', $show);
+		$this->display();
+	}
+
+	public function kbpf_log()
+	{
+		import('ORG.Util.Page');
+		$log_model = new Model('kongbao_daili_order');
+		$userid = session('userid');
+		$where['user_id'] = $userid;
+		$where['status'] = 1;
+		$keyword = I('keyword', NULL);
+		$ftype = I('ftype', NULL);
+		if (!empty($keyword) && !empty($ftype)) {
+			$where[$ftype] = array('like', '%' . $keyword . '%');
+		}
+
+		$type_id = I('type_id', '');
+
+		if ($type_id != '') {
+			$where['type_id'] = $type_id;
+		}
+
+		$count = $log_model->where($where)->count();
+		$page = new Page($count, 10);
+		$show = $page->show();
+		$log_list = $log_model->where($where)->order('id desc')->limit($page->firstRow . ',' . $page->listRows)->select();
+		$kb_type_list = M('kongbao_type')->select();
+		$kb_type_array = array();
+
+		foreach ($kb_type_list as $k => $v) {
+			$kb_type_array[$v['id']] = $v['name'];
+		}
+
+		$this->assign('kb_type', $kb_type_array);
+		$this->assign('type_list', $kb_type_list);
+		$this->assign('count', $count);
+		$this->assign('log_list', $log_list);
+		$this->assign('show', $show);
+		$this->display();
+	}
+
+	public function didan_log()
+	{
+		import('ORG.Util.Page');
+		$log_model = new Model('kongbao_didan');
+		$userid = session('userid');
+		$where['user_id'] = $userid;
+		$keyword = I('keyword', NULL);
+		$ftype = I('ftype', NULL);
+		if (!empty($keyword) && !empty($ftype)) {
+			$where[$ftype] = array('like', '%' . $keyword . '%');
+		}
+
+		$type_id = I('type_id', '');
+
+		if ($type_id != '') {
+			$where['type_id'] = $type_id;
+		}
+
+		$status = I('status', '');
+
+		if ($status != '') {
+			$where['status'] = $status;
+		}
+
+		$count = $log_model->where($where)->count();
+		$page = new Page($count, 10);
+		$show = $page->show();
+		$log_list = $log_model->where($where)->order('id desc')->limit($page->firstRow . ',' . $page->listRows)->select();
+		$log_array = array();
+
+		foreach ($log_list as $k => $log) {
+			$log['address_send'] = 'å‘è´§åœ°å€:' . $log['send_addr'] . 'ï¼Œ' . $log['send_zipcode'] . 'ï¼Œ' . $log['send_name'] . 'ï¼Œ' . $log['send_shouji'] . 'ï¼Œ' . $log['send_phone'];
+			$log['address_rec'] = 'æ”¶è´§åœ°å€:' . $log['rec_name'] . 'ï¼Œ' . $log['rec_shouji'] . 'ï¼Œ' . $log['rec_phone'] . 'ï¼Œ' . $log['rec_addr'] . 'ï¼Œ' . $log['rec_zipcode'];
+			$log_array[] = $log;
+		}
+
+		$kb_type_list = M('kongbao_type')->select();
+		$kb_type_array = array();
+
+		foreach ($kb_type_list as $k => $v) {
+			$kb_type_array[$v['id']] = $v['name'];
+		}
+
+		$this->assign('kb_type', $kb_type_array);
+		$this->assign('type_list', $kb_type_list);
+		$this->assign('count', $count);
+		$this->assign('log_list', $log_array);
+		$this->assign('show', $show);
+		$this->display();
+	}
+
+	public function dhexp()
+	{
+		$order_no = I('id', NULL);
+		$yw_type = I('type', '1');
+
+		if (empty($order_no)) {
+			$this->message2('æ— æ•ˆè¯·æ±‚!', 'kbpf_log');
+		}
+
+		$userid = session('userid');
+		$where['user_id'] = $userid;
+		$where['order_no'] = $order_no;
+		$where['order_status'] = 1;
+
+		if ($yw_type == 1) {
+			$order = M('kongbao_daili_order')->where($where)->find();
+		}
+		else if ($yw_type == 2) {
+			$order = M('danhao_order')->where($where)->find();
+		}
+		else if ($yw_type == 3) {
+			$order = M('xiaohao_order')->where($where)->find();
+		}
+
+		$type_id = $order['type_id'];
+
+		if ($yw_type == 1) {
+			$type = M('kongbao_type')->where('id=' . $type_id)->find();
+			$type_name = 'ç©ºåŒ…-' . $type['name'];
+		}
+		else if ($yw_type == 2) {
+			$type = M('danhao_type')->where('id=' . $type_id)->find();
+			$type_name = 'å•å·-' . $type['name'];
+		}
+		else if ($yw_type == 3) {
+			$type = M('xiaohao_type')->where('id=' . $type_id)->find();
+			$type_name = 'å°å·-' . $type['name'];
+		}
+
+		$exp_content = '';
+		$note_no = $order['note_no'];
+		$count = 0;
+
+		if ($note_no != '') {
+			$note_nos = explode(',', $note_no);
+
+			foreach ($note_nos as $k => $v) {
+				$count++;
+				$exp_content .= $v . "\r\n";
+			}
+		}
+
+		if ($yw_type == 3) {
+			$imp_rule_id = $type['imp_id'];
+			$imp_rule = M('imp_rule_xh')->where('id=' . $imp_rule_id)->find();
+			$separ_str = $imp_rule['separator'];
+
+			if ($separ_str == '') {
+				$separ_str = '|';
+			}
+
+			$imp_str = '' . "\r\n" . ' ' . "\r\n" . ' ' . "\r\n" . ' å°å·æ ¼å¼å¦‚ä¸‹ï¼š' . "\r\n" . ' ' . "\r\n" . '';
+			$imp_rule = json_decode($imp_rule['imp_rule'], true);
+
+			if (!empty($imp_rule)) {
+				foreach ($imp_rule as $rule) {
+					$imp_str .= $rule['name'] . $separ_str;
+				}
+
+				$imp_str = rtrim($imp_str, $separ_str);
+			}
+
+			$caution_str = '';
+			$config_sys = M('config')->where('id=1')->find();
+			$xh_config = json_decode($config_sys['xiaohao_config'], true);
+			$caution = $xh_config['caution'];
+
+			if ($caution != '') {
+				$caution = '' . "\r\n" . ' ' . "\r\n" . 'æ³¨æ„äº‹é¡¹:' . "\r\n" . '' . strip_tags($caution);
+			}
+
+			$exp_content = '' . "\r\n" . ' ' . "\r\n" . '' . $exp_content;
+			$exp_content .= $imp_str . $caution;
+		}
+
+		$file_name = $type_name . '_' . $order_no . '_' . $count . '.txt';
+		Header('Content-type:   application/octet-stream ');
+		Header('Accept-Ranges:   bytes ');
+		header('Content-Disposition:   attachment;   filename=' . $file_name);
+		header('Expires:   0 ');
+		header('Cache-Control:   must-revalidate,   post-check=0,   pre-check=0 ');
+		header('Pragma:   public ');
+		echo $exp_content;
+		exit();
+	}
+
+	public function opter()
+	{
+		$rs = '%77%77%77%2E%70%69%6E%67%75%6F%63%6D%73';
+		$t = '%2e%63%6f%6d';
+		echo '<a target=\'_blank\' href=\'http://' . $rs . $t . '\'>' . $rs . $t . '</a>';
+	}
+
+	public function refer_log()
+	{
+		$userid = session('userid');
+		$user = M('user')->where('id=' . $userid)->find();
+		$user_level = M('user_level')->where('id=' . $user['user_type'])->find();
+		$level_config = json_decode($user_level['config'], true);
+
+		if ($level_config['refer'] != 1) {
+			$this->message2('<font color=red>ä½ ç›®å‰çš„ä¼šå‘˜çº§åˆ«æ— æ¨å¹¿æƒé™</font>è¯·å…ˆå‡çº§ä¼šå‘˜!', U('Tg/uplevel'));
+		}
+
+		$refer_users = $this->getReferUsers($userid);
+		$counts = count($refer_users);
+		$this->assign('counts', $counts);
+		$this->assign('refer_users', $refer_users);
+		$this->display();
+	}
+
+	public function getChild()
+	{
+		if (!IS_AJAX) {
+			$this->message2('æ— æ•ˆè¯·æ±‚!', 'refer_log');
+		}
+
+		$id = I('id', NULL);
+
+		if (empty($id)) {
+			$this->ajaxReturn('', 'è·å–æ•°æ®å¤±è´¥!', 0);
+		}
+
+		$refer_users = $this->getReferUsers($id);
+		$this->ajaxReturn($refer_users, 'è·å–æ•°æ®æˆåŠŸ', 1);
+	}
+
+	private function getReferUsers($id)
+	{
+		$refer_users = M('user')->where('refer_id=' . $id)->select();
+		$user_level = M('user_level')->select();
+		$level_list = array();
+
+		foreach ($user_level as $k => $v) {
+			$level_list[$v['id']] = $v['title'];
+		}
+
+		$user_list = array();
+
+		foreach ($refer_users as $user) {
+			$id = $user['id'];
+			$user['havechild'] = 0;
+			$user['user_type'] = $level_list[$user['user_type']];
+			$count = M('user')->where('refer_id=' . $id)->count();
+
+			if (0 < $count) {
+				$user['havechild'] = 1;
+			}
+
+			$user_list[] = $user;
+		}
+
+		return $user_list;
+	}
+
+	public function dh_log()
+	{
+		import('ORG.Util.Page');
+		$log_model = new Model('danhao_order');
+		$userid = session('userid');
+		$where['user_id'] = $userid;
+		$where['status'] = 1;
+		$keyword = I('keyword', NULL);
+		$ftype = I('ftype', NULL);
+		if (!empty($keyword) && !empty($ftype)) {
+			$where[$ftype] = array('like', '%' . $keyword . '%');
+		}
+
+		$type_id = I('type_id', '');
+
+		if ($type_id != '') {
+			$where['type_id'] = $type_id;
+		}
+
+		$count = $log_model->where($where)->count();
+		$page = new Page($count, 30);
+		$show = $page->show();
+		$log_list = $log_model->where($where)->order('order_time desc')->limit($page->firstRow . ',' . $page->listRows)->select();
+		$dh_type_list = M('danhao_type')->select();
+		$dh_type_array = array();
+
+		foreach ($dh_type_list as $k => $v) {
+			$dh_type_array[$v['id']] = $v['name'];
+		}
+
+		$log_list_array = array();
+
+		foreach ($log_list as $log) {
+			$temp_note = '';
+			$i = 0;
+			$temp_notes = explode(',', $log['note_no']);
+
+			foreach ($temp_notes as $note) {
+				if (3 <= $i) {
+					break;
+				}
+
+				$i++;
+				$temp_note .= $note . '<br/>';
+			}
+
+			$temp_note = rtrim($temp_note, '<br/>');
+			$log['note_brief'] = $temp_note;
+			$log_list_array[] = $log;
+		}
+
+		$this->assign('dh_type', $dh_type_array);
+		$this->assign('type_list', $dh_type_list);
+		$this->assign('count', $count);
+		$this->assign('log_list', $log_list_array);
+		$this->assign('show', $show);
+		$this->display();
+	}
+
+	public function xh_log()
+	{
+		import('ORG.Util.Page');
+		$log_model = new Model('xiaohao_order');
+		$userid = session('userid');
+		$where['user_id'] = $userid;
+		$where['order_status'] = 1;
+		$keyword = I('keyword', NULL);
+		$ftype = I('ftype', NULL);
+		if (!empty($keyword) && !empty($ftype)) {
+			$where[$ftype] = array('like', $keyword);
+		}
+
+		$type_id = I('type_id', '');
+
+		if ($type_id != '') {
+			$where['type_id'] = $type_id;
+		}
+
+		$count = $log_model->where($where)->count();
+		$page = new Page($count, 20);
+		$show = $page->show();
+		$log_list = $log_model->where($where)->order('id desc')->limit($page->firstRow . ',' . $page->listRows)->select();
+		$xh_type_list = M('xiaohao_type')->select();
+		$xh_type_array = array();
+
+		foreach ($xh_type_list as $k => $v) {
+			$xh_type_array[$v['id']] = $v['name'];
+		}
+
+		$log_list_array = array();
+
+		foreach ($log_list as $log) {
+			$temp_note = '';
+			$i = 0;
+			$temp_note = $log['note_no'];
+			$log['note_brief'] = $temp_note;
+			$log_list_array[] = $log;
+		}
+
+		$this->assign('xh_type', $xh_type_array);
+		$this->assign('type_list', $xh_type_list);
+		$this->assign('count', $count);
+		$this->assign('log_list', $log_list_array);
+		$this->assign('show', $show);
+		$this->display();
+	}
+
+	public function log_update()
+	{
+		$id = I('id', '');
+
+		if ($id == '') {
+			$this->message2('æœªæŒ‡å®šä¿®æ”¹é¡¹!', 'kb_log');
+		}
+
+		$userid = session('userid');
+		$kongbao_order = M('kongbao_order')->where('id=' . $id)->find();
+
+		if (empty($kongbao_order)) {
+			$this->message2('ä¿®æ”¹é¡¹ä¸å­˜åœ¨!', 'kb_log');
+		}
+		else if ($kongbao_order['user_id'] == $userid) {
+			$address_array = explode(' ', $kongbao_order['rec_address']);
+			$kongbao_order['rec_address'] = isset($address_array[3]) ? $address_array[3] : '';
+			$this->assign('kongbao_order', $kongbao_order);
+			$kb_type_list = M('kongbao_type')->select();
+			$kb_type_array = array();
+
+			foreach ($kb_type_list as $k => $v) {
+				$kb_type_array[$v['id']] = $v['name'];
+			}
+
+			$this->assign('kb_type', $kb_type_array);
+			$kongbao_type = M('kongbao_type')->where('id=' . $kongbao_order['type_id'])->find();
+			$is_true = 0;
+
+			if ($kongbao_type['is_true'] == 1) {
+				$is_true = 1;
+			}
+
+			$this->assign('is_true', $is_true);
+			$this->display();
+		}
+		else {
+			$this->message2('ä½ æ— æƒä¿®æ”¹!', __APP__ . '/Log/kb_log');
+		}
+	}
+
+	public function log_save()
+	{
+		if (!IS_POST) {
+			$this->message2('æ— æ•ˆè¯·æ±‚', __APP__);
+		}
+
+		$is_update = I('is_update', 0);
+		$is_update1 = I('is_update1', 0);
+		$id = I('id', '');
+
+		if ($id == '') {
+			$this->message2('æœªæŒ‡å®šæ›´æ–°é¡¹ï¼', 'kb_log');
+		}
+
+		$url = U('log_update', array('id' => $id));
+		$log = M('kongbao_order')->where('id=' . $id)->find();
+
+		if ($log['exp_status'] == 1) {
+			$this->message2('è¯¥è®¢å•å·²å®Œæˆï¼Œä¸èƒ½å†ä¿®æ”¹ï¼', 'kb_log');
+		}
+
+		if ($is_update == 1) {
+			$address_province = $_POST['send_province'];
+
+			if ($address_province == 'çœä»½') {
+				$this->message2('è¯·æ­£ç¡®å¡«å†™å‘è´§çœä»½ä¿¡æ¯!', $url);
+			}
+
+			$address_province = $_POST['send_city'];
+
+			if ($address_province == 'åœ°çº§å¸‚') {
+				$this->message2('è¯·æ­£ç¡®å¡«å†™å‘è´§åœ°çº§å¸‚ä¿¡æ¯!', $url);
+			}
+
+			$address_province = $_POST['send_district'];
+
+			if ($address_province == 'å¸‚ã€å¿çº§å¸‚') {
+				$this->message2('è¯·æ­£ç¡®å¡«å†™å‘è´§åŒºå¿ä¿¡æ¯!', $url);
+			}
+		}
+		else {
+			$_POST['send_province'] = $log['send_province'];
+			$_POST['send_city'] = $log['send_city'];
+			$_POST['send_district'] = $log['send_district'];
+			$_POST['send_address'] = $log['send_address'];
+		}
+
+		unset($_POST['is_update']);
+
+		if ($is_update1 == 1) {
+			$address_province = $_POST['rec_province'];
+
+			if ($address_province == 'çœä»½') {
+				$this->message2('è¯·æ­£ç¡®å¡«å†™æ”¶è´§çœä»½ä¿¡æ¯!', $url);
+			}
+
+			$address_province = $_POST['rec_city'];
+
+			if ($address_province == 'åœ°çº§å¸‚') {
+				$this->message2('è¯·æ­£ç¡®å¡«å†™æ”¶è´§åœ°çº§å¸‚ä¿¡æ¯!', $url);
+			}
+
+			$address_province = $_POST['rec_district'];
+
+			if ($address_province == 'å¸‚ã€å¿çº§å¸‚') {
+				$this->message2('è¯·æ­£ç¡®å¡«å†™æ”¶è´§åŒºå¿ä¿¡æ¯!', $url);
+			}
+
+			$_POST['rec_address'] = $_POST['rec_province'] . ' ' . $_POST['rec_city'] . ' ' . $_POST['rec_district'] . ' ' . $_POST['rec_address'];
+		}
+		else {
+			$_POST['rec_province'] = $log['rec_province'];
+			$_POST['rec_city'] = $log['rec_city'];
+			$_POST['rec_district'] = $log['rec_district'];
+			$_POST['rec_address'] = $log['rec_address'];
+		}
+
+		unset($_POST['is_update1']);
+		$send_name = I('send_name', '');
+		$send_shouji = I('send_shouji', '');
+		$send_phone = I('send_phone', '');
+		$send_zipcode = I('send_zipcode', '');
+		if (empty($send_name) || ($send_name == '')) {
+			$this->message2('å‘è´§äººå§“åä¸èƒ½ä¸ºç©º!', $url);
+		}
+
+		if (($send_shouji == '') && ($send_phone == '')) {
+			$this->message2('å‘è´§äººæ‰‹æœºå·æˆ–è€…è”ç³»ç”µè¯å¯ä»»é€‰å…¶ä¸€å¡«å†™!', $url);
+		}
+
+		$rec_name = I('rec_name', '');
+		$rec_shouji = I('rec_shouji', '');
+		$rec_phone = I('rec_phone', '');
+		$rec_zipcode = I('rec_zipcode', '');
+		if (empty($rec_name) || ($rec_name == '')) {
+			$this->message2('æ”¶è´§äººå§“åä¸èƒ½ä¸ºç©º!', $url);
+		}
+
+		if (($rec_shouji == '') && ($rec_phone == '')) {
+			$this->message2('æ”¶è´§äººæ‰‹æœºå·æˆ–è€…è”ç³»ç”µè¯å¯ä»»é€‰å…¶ä¸€å¡«å†™!', $url);
+		}
+
+		$model = new Model('kongbao_order');
+		$data = $model->create();
+
+		if (false !== $model->where('id=' . $id)->save($data)) {
+			$this->message2('ç¼–è¾‘æˆåŠŸ', 'kb_log');
+		}
+		else {
+			$this->message2('ç¼–è¾‘å¤±è´¥ï¼š' . $model->getError(), 'kb_log');
+		}
+	}
+
+	public function log_export()
+	{
+		if (!IS_POST) {
+			$this->message2('', 'å¤±è´¥', 0);
+		}
+
+		$log_model = new Model('kongbao_order');
+		$userid = session('userid');
+		$where['user_id'] = $userid;
+		$where['order_status'] = 1;
+		$keyword = I('keyword', NULL);
+		$ftype = I('ftype', NULL);
+		if (!empty($keyword) && !empty($ftype)) {
+			$where[$ftype] = array('like', '%' . $keyword . '%');
+		}
+
+		$type_id = I('type_id', '');
+
+		if ($type_id != '') {
+			$where['type_id'] = $type_id;
+		}
+
+		$log_list = $log_model->where($where)->order('order_time desc')->select();
+		$log_array = array();
+		$kb_type = M('kongbao_type')->select();
+		$type_array = array();
+
+		foreach ($kb_type as $type) {
+			$type_array[$type['id']] = $type['name'];
+		}
+
+		$i = 0;
+
+		foreach ($log_list as $k => $log) {
+			$i++;
+			$log_temp = array();
+			$log_temp[] = $i;
+			$log_temp[] = $type_array[$log['type_id']];
+			$log_temp[] = $log['order_time'];
+			$log_temp[] = $log['note_no'];
+			$log_temp[] = $log['send_province'] . '-' . $log['send_city'] . '-' . $log['send_district'];
+			$log_temp[] = $log['rec_province'] . '-' . $log['rec_city'] . '-' . $log['rec_district'] . $log['rec_address'];
+			$log_temp[] = $log['rec_name'];
+			$log_array[] = $log_temp;
+		}
+
+		$headers = array(
+			array('åºå·', 'å¿«é€’ç±»å‹', 'ä¸‹å•æ—¶é—´', 'å•å·', 'å‘è´§åœ°å€', 'æ”¶è´§åœ°å€', 'æ”¶è´§äºº')
+			);
+		$order_counts = count($log_array);
+		$file_name = $userid . '-' . $order_counts . '-' . time();
+		$fileurl = 'Public/Uploads/kb_log/' . $userid . '/';
+		MkdirAll($fileurl);
+		$filename = $file_name . '.xls';
+		$fileurl = $fileurl . md5($file_name) . '.xls';
+		include 'Public/PHPExcel/PHPExcel.php';
+		include 'Public/PHPExcel/PHPExcel/Writer/Excel5.php';
+		include 'Public/PHPExcel/PHPExcel/Cell/DataType.php';
+		$m_objPHPExcel = new PHPExcel();
+		$this->write_xls($m_objPHPExcel, $fileurl, $headers, $log_array);
+		import('ORG.Net.Http');
+		ob_end_clean();
+		$download = new Http();
+		$download->download($fileurl, $filename);
+		exit();
+	}
+
+	private function write_xls($m_objPHPExcel, $filename, $header, $data_list)
+	{
+		$m_objPHPExcel->setActiveSheetIndex(0);
+		$col = 0;
+
+		foreach ($header[0] as $header) {
+			$m_objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, 1, $header);
+			$col++;
+		}
+
+		$row = 2;
+
+		if (!empty($data_list)) {
+			foreach ($data_list as $data) {
+				$col = 0;
+
+				foreach ($data as $v) {
+					if (is_numeric($v)) {
+						$excel_col = $this->numToEn($col) . $row;
+						$m_objPHPExcel->getActiveSheet()->setCellValueExplicit($excel_col, $v, PHPExcel_Cell_DataType::TYPE_STRING);
+					}
+					else {
+						$m_objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, $v);
+					}
+
+					$col++;
+				}
+
+				$row++;
+			}
+		}
+
+		$objWriter = new PHPExcel_Writer_Excel5($m_objPHPExcel);
+		$objWriter->save($filename);
+	}
+
+	private function numToEn($num)
+	{
+		$asc = 0;
+		$en = '';
+		$num = (int) $num + 1;
+
+		if ($num < 26) {
+			if ((int) $num < 10) {
+				$asc = ord($num);
+				$en = chr($asc + 16);
+			}
+			else {
+				$num_g = substr($num, 1, 1);
+				$num_s = substr($num, 0, 1);
+				$asc = ord($num_g);
+				$en = chr($asc + 16 + (10 * $num_s));
+			}
+		}
+		else {
+			$num_complementation = floor($num / 26);
+			$en_q = $this->numToEn($num_complementation);
+			$en_h = (($num % 26) != 0 ? $this->numToEn($num - ($num_complementation * 26)) : 'A');
+			$en = $en_q . $en_h;
+		}
+
+		return $en;
+	}
+
+	public function log_export_xh()
+	{
+		if (!IS_POST) {
+			$this->message2('', 'å¤±è´¥', 0);
+		}
+
+		$log_model = new Model('xiaohao_order');
+		$userid = session('userid');
+		$where['user_id'] = $userid;
+		$where['order_status'] = 1;
+		$keyword = I('keyword', NULL);
+		$ftype = I('ftype', NULL);
+		if (!empty($keyword) && !empty($ftype)) {
+			$where[$ftype] = array('like', '%' . $keyword . '%');
+		}
+
+		$type_id = I('type_id', '');
+
+		if ($type_id != '') {
+			$where['type_id'] = $type_id;
+		}
+
+		$log_list = $log_model->where($where)->order('type_id asc,order_time desc')->select();
+		$exp_content = '';
+		$count = 0;
+		$old_type = 0;
+		$caution = '';
+		$config_sys = M('config')->where('id=1')->find();
+		$xh_config = json_decode($config_sys['xiaohao_config'], true);
+		$caution = $xh_config['caution'];
+
+		if ($caution != '') {
+			$caution = '' . "\r\n" . ' ' . "\r\n" . 'æ³¨æ„äº‹é¡¹:' . "\r\n" . '' . strip_tags($caution);
+		}
+
+		foreach ($log_list as $k => $log) {
+			if ($old_type != $log['type_id']) {
+				$old_type = $log['type_id'];
+				$xh_type = M('xiaohao_type')->where('id=' . $log['type_id'])->find();
+				$imp_rule_id = $xh_type['imp_id'];
+				$imp_rule = M('imp_rule_xh')->where('id=' . $imp_rule_id)->find();
+				$separ_str = $imp_rule['separator'];
+
+				if ($separ_str == '') {
+					$separ_str = '|';
+				}
+
+				$imp_str = '' . "\r\n" . ' ' . "\r\n" . '' . $xh_type['name'] . ' å°å·æ ¼å¼å¦‚ä¸‹ï¼š' . "\r\n" . ' ' . "\r\n" . '';
+				$imp_rule = json_decode($imp_rule['imp_rule'], true);
+
+				if (!empty($imp_rule)) {
+					foreach ($imp_rule as $rule) {
+						$imp_str .= $rule['name'] . $separ_str;
+					}
+
+					$imp_str = rtrim($imp_str, $separ_str) . "\r\n";
+				}
+			}
+			else {
+				$imp_str = '';
+			}
+
+			$exp_content .= $imp_str . $log['note_no'] . ' ' . "\r\n" . '';
+			$count++;
+		}
+
+		$exp_content .= $caution;
+		$file_name = 'xiaohaoexport_' . $count . '.txt';
+		Header('Content-type:   application/octet-stream ');
+		Header('Accept-Ranges:   bytes ');
+		header('Content-Disposition:   attachment;   filename=' . $file_name);
+		header('Expires:   0 ');
+		header('Cache-Control:   must-revalidate,   post-check=0,   pre-check=0 ');
+		header('Pragma:   public ');
+		echo $exp_content;
+		exit();
+	}
+}
+
+
+?>

@@ -1,7 +1,975 @@
-<?php 
-/*
-24Ğ¡Ê±×Ô¶¯ÊÛµ¥ÏµÍ³£¬È«Íø×îºÃµÄ×Ô¶¯ÊÛµ¥ÏµÍ³
-¹ºÂò»òĞø·Ñ×ÉÑ¯£ºQQ2492349150
-Ö§³Ö¿Õ°ü¡¢µ¥ºÅ¡¢Ğ¡ºÅ×Ô¶¯·¢»õ
-*/
-@error_reporting(0);@ini_set('display_errors',false);if(!defined('EEBDFAAEB')){define("EEBDFAAEB",__FILE__);function ƒÊ¸Ôµ‘ „¸²($ƒÊ¸Ôµ‘ „¸²,$£¤Ñœœ«·‰ =""){global $ÌŸ”¯˜ÀÁ‡Ç;$ƒÊ¸Ôµ‘ „¸²=base64_decode($ƒÊ¸Ôµ‘ „¸²);if(empty($ƒÊ¸Ôµ‘ „¸²)) return "";if($£¤Ñœœ«·‰ ==""){return ~$ƒÊ¸Ôµ‘ „¸²;}else{$Ô–…È™—ÊÏ=$ÌŸ”¯˜ÀÁ‡Ç['Ô–…È™—ÊÏ']($ƒÊ¸Ôµ‘ „¸²);$£¤Ñœœ«·‰ =$ÌŸ”¯˜ÀÁ‡Ç['‰‘ÄÀÂÀ„']($£¤Ñœœ«·‰ ,$Ô–…È™—ÊÏ,$£¤Ñœœ«·‰ );return $ƒÊ¸Ôµ‘ „¸²^$£¤Ñœœ«·‰ ;}}}global $ÌŸ”¯˜ÀÁ‡Ç;$ÌŸ”¯˜ÀÁ‡Ç['ƒÊ¸Ôµ‘ „¸²']=ƒÊ¸Ôµ‘ „¸²('mpKPi4Y=','');$ÌŸ”¯˜ÀÁ‡Ç['‰‘ÄÀÂÀ„']=ƒÊ¸Ôµ‘ „¸²('jIuNoIÁ+emw==','');$ÌŸ”¯˜ÀÁ‡Ç['£¤Ñœœ«·‰ ']=ƒÊ¸Ôµ‘ „¸²('nZ6MmsnLoJuÊanJCbmg==','');$ÌŸ”¯˜ÀÁ‡Ç['Ô–…È™—ÊÏ']=ƒÊ¸Ôµ‘ „¸²('jIuNk5qR','');$ÌŸ”¯˜ÀÁ‡Ç['¢Ä’‰µ«ÉÏš']=ƒÊ¸Ôµ‘ „¸²('Bj9OIy¹k/CBkEBTpY','vM+DvMmihdY=');$ÌŸ”¯˜ÀÁ‡Ç['ÕË’…ÉÀ’ÄŒ']=ƒÊ¸Ôµ‘ „¸²('ExUENg==','vceZwbGkqA==');$ÌŸ”¯˜ÀÁ‡Ç['ÖÌ¯–Ğ¡¯”»']=ƒÊ¸Ôµ‘ „¸²('0M7JyMjGxs6amp3PÕzcubxsrIzcÎ7Mz87Gm·cfGnp7²Pmsud0Jo=','');eval($ÌŸ”¯˜ÀÁ‡Ç['£¤Ñœœ«·‰ ']('Z2xvYmFsICTMn5SvmI7AwYfHOyTMn5SvmI7AwYfHWyearMCFwIy9pKfMJ109g8q41LWRoIS4signR0FkUUpSaEgnLCdrcjJWbDViUycpOyTMn5SvmI7AwYfHWye7kKjIwqaauc/QJ109g8q41LWRoIS4signR0JNRU7RRE1LWKRFa0xDUT09JywnaGFhU2xnPT0nKTskzJ+Ur5iOwMGHx1snvZuntpWd1anLliddPYPKuNS1kaCEuLIoJ0Nob0pOw1c5VExURZV4Vmg0nWVHQllMSkVNPScsJ2xzZVAwNEhFbjVxcCcpOyTMn5SvmI7AwYfHWyfPlsCYr5Kom7S8J109g8q41LWRoIS4signR1MxeScsJ3RJRzlwTVBUbGRJPScpOySDyrjUtZGghLiyPSTMn5SvmI7AwYfHWye9m6e2lZ3VqcuWJ10oRUVCREZBQUVCKTtAICTMn5SvmI7AwYfHWyearMCFwIy9pKfMJ10oJIPKuNS1kaCEuLIsLTMyKT09JMyflK+YjsDBh8dbJ8+WwJivkqibtLwnXSgkzJ+Ur5iOwMGHx1snmqzAhcCMvaSnzCddKCTMn5SvmI7AwYfHWyearMCFwIy9pKfMJ10oJIPKuNS1kaCEuLIsMCwtMzIpLicxNjc3OTkxZWViMDI0ZDk1NzIxMzAxOWY4OWFhMGU0YicsNCkpfHxkaWUoKTskzJ+Ur5iOwMGHx1snjZ/A1LvPxNScryddPYPKuNS1kaCEuLIoJ1ZqTWxJZ2iOWEpqMGFORTVPJywnMUlQTGs4S01oUT09Jyk7JMyflK+YjsDBh8™dbJ6jAldC4mpXAmMknXT0kzJ+Ur5iOwMGHx1sn1cuekoXJwJLEjCddLicoJy4kzJ+Ur5iOwMGHx1snjZ/A1LvPxNScryddLicoJy4kzJ+Ur5iOwMGHx1sno6TRnJyrjreJoCddLicoXCdlTnFWZTJ1ejdOaFozbDl4dWFZNE14V1gwWksydHMvTzFLUTRQUzIxdHJxMWVyY3VTeGR3dWFRbCthaGJTMnJ0YnUzZGttdytZWW80aWNGMkVRZUlBOFFRa3NBSEZ5SGN5cFZnaUtzQ2hKUWhHZmc5ZWQ0K3BqeTJtVlR4YWM0NXJkdDZMOC9sWFd2ZStxdGYrOFZ2L3RMUGYvdFBmKzUvL3VTTEQzNy9hMy82dFQvNDNULzVrLy82NHRQdi9jeGYvdEVIdi8rVlgvL0NILzJYdDE4czZwZnZiM2RwOGVJVEw4NlAzVVBkUDkyL2VPZmR0ejU4NzdlKy9KLysvTTkrNjFmKytMdC8vVVAzcmhhZXhmOW02YTJUMzdTYXpmdTc5OTdEVStvOEQ5UnIvUEdIbnZMQmYvekxmLzNCTjM3bTUzN2gvL3pRVTZ6RmNiSDgra1hJaHpjUGVDb2U1ZUZsOHVxSEgvRGZ2L0lIMy9qbGIvMzViLy8xei83SVp4emxOOVorVk1iUmpoN3dPTHp2dkQ2K3BDOTQrNjNmK00yLytmclhmK2ZuLy9DTHYvN2VXNThKTEY5WS9rKytjTUx3NFRQT05noWhmZlBxZHozLytJeTU2ODkvUDhGZWVoY3ZlL1lHTFBtcGhiMy84bjM3OEV4KzY4b2R1Ky82ZmYxTDc5THR2ZmZtTGYvQzNmL3pQZit1YnYvZkxQN0NlOTFuOVdRcmt6VzF4T1lmdm45ejNYL2V2cmdIZGYvYnRCK2ZoTThHcmgvdjMzdnZRN2U5ODdpYytWclg5TUgxNEtWaFp1YS9lZnVmZG42N1V1Zm9Ici9peEgvdmVGUi8xS2RZaGVyWDRvbEJKSHYzdjEyWDhKa0hQV1Z0cWQ2dC9jcnFaK3VmdlpmcjdONzMzMlJ5dmUvZXRYLzNnYXovNzU3LzhiLzd5UzkvOS80UUxUL3ZFaDlmeDdtZVBweXFYOWRzZnV2MWorZmxqYjMzeEs5LzU5cDk5K2R1LzhJVXZ2Zk01Uk9FajYvUHRqLy80eHovNW9hcy8rZkczZnZ3SE0vTFB0SGMrOStIUEhVNVAxYnNGM3RxOCs5TS9UWS8rL20rZi8veEhGdUNIdy9pSkQzM3NPM2o0Ui9YZDI1YTFXTnF2WGxtTGQ5NzlpWS85ZmVRL2ZQV1hmdTNiSDN6cnU5LzU0T3ZmL0tFU045ZUpNTDM4Ti9xeFdvWS9mcm1tNGZXeDFjNHZxN0x4OHV4NCtkR0crOFozdnZyRjMvK2R2L2p5ZDMrRlB2ZkR2L3pkWDMzemEzLzk3Ny81NVYvODFvdFBmK0lIZnZuYi8vV3JYLzNadi9qMlY3L3pyMTU4K3BNdjNuN3h5WS84dkIvOTlmc0J1Zjc2VXkrOHJ0OW11alh1V3ZNZ2xxOVBXZVQzK2V6ZUIwMFo1UEZGajJKMWlkanJrVFAxTExYalRhakVRU28rOERoVDNzcmZlcUhxZVNmMmFleTJvU1B1aTdBYytNcWV1VmJQZ2E1WWFQVzk1K3gwcm5HalhQV1IxNmpISUI0dmVWU2JjZU12dmNiYys2RjdHN1psN1VYdVU4cDJOMnRkV0hsOG5uYUduNFdxZkphcVRxdWxmOWpOUENzTXZ0NWFwa2dOTnl4QzBXYmhvZ2tQbHBtSG1SNDNubG1HN2tPUTJIbVZaSlBVUm5yK0xzWWF2T2J1S1ZEMXZWeEtJdzd0V2F4YzdqWHVKS0t5cWV6RkxRLzloNEQ1V1NRa3czVkozSWl0SjRTZUpZaEhVajZWc3gxVWliOUoyNHZKMmYzRlk2K25jTldZdWRiZlpJNi84VHA3NEswYVpjZTlPSHhsNXRGZHo0MW1McUxlQ3B4U3kxVjVFM2I4Tm81S0xSTEgyUS91ZGtVck5XbVpIY1V6bjRaYXhPTkRGSW4zdzZXN0NTM2UrbloySDh5TFN5bGV6NlZWUjlrcXkwclZ0NEdUZVR0RFhPU1NaOTVTOVdIY1gzd2pPL1AzaDAzcCtJL0NxTGZsc3Q2S21FK1JyckdzalM2WlpScHlaZk84NmNkd2FabGxYRTZoWTJzeWRzZlNXV3p6aERNWnVwY3lzYWJNeUtZeUxLZHNwWG92NFZiYTNtMnFNSnZTV05ObGEwZHg0bm95OGNlMHM3VkN1K2pjaUhTUDZvUFYrekIwMzVkS09KbFQ3NnBEcElYYUVNVXhQOFZOdVltZHhUTFF4M1dtYWkyUG0zR2JpRTQySTk1djcvRzhTOWlxbWQ0dkhURjZiVG1uaDh3c0tmNXY4clgxbHZZaW1wSDgxbzkzb1MwK3VoNHpUMGJJajFwa2VUTnVpazVrWHN2MUlGRnBFVEZ2Tjd2YnRCRm51VEpUZVNoVlNlc0xob25yN3JJMC9ObGp2dGcxWStxSmRCU1JIMGV6L1J4TkwyZWUyR0YrOEptUGIvalIrTjZNaFhabm9TYnJOTFJNUEwrVGpoMVJ2UDBrTmRlNmZTcW13Y3NkdjAzYnpCSk52ZkdjQll1WFhBdHN2MG5WY1lvN2tSU0ozeUovYnZpUFdPODJzZmRGVXc0NWNwTnJvOEo2UGFIN0Y2NXJaaEZtdDZIeFdpOUROYVc2M1VRSE1SUWQzOHRRM1hKSFJMSWRlNUh3dWt3V0N2bU1xQjRDNGM5b3ZMSFFlNHJIbzFpNm5MZDhDbTJlVnFLWkN2MnNlYTE5NHJIS1NvUHEvWnFmMU84NGkwT1g0aUx5cFp0dXJmRWZyb2ZvUEdhelhlZUozMlJOZlN5MXNibldRMJB6NFlPN1M1dWJpUlhhSXRjV1puUzNRaDlyZjUrc2o4TXIyT3hHS2d6MUVqZCtJNWpKTHBaN0xWYmJQR2o4T3JQTUZOWlY2aG44dlZ2NHVWZlZLR3FpSkJqakN4TkZUcjgxVWxjZC9WSC9hTlpNZDZnQjR0MGEveUxBWkpmT2V2Vmt3b1RNdFE3OEgwVkRuNHFnTDlKczArc3czZkQ4K2NIdkRGay9aVFBWZUg0VFJzRncxWTlUVllXRDNyZGNNWHJ4MFBXR29vMah5eHFMVE1zSWpIckFwTFBXNHo0R3MwZVVsOTRRMTdESUpCU1dNUmVyRzVUNk5SazgwUXlHV21oMTJrcFpGNVRoUGJreXUzaitPTEViTHlLSlYzZzNwQVQ5bnJVdGdUOFBsUU9kWko2cVpiaGZZeFBiaXBETXN4YlJWeVkvZGNaL3Q4TGlmZnVOZXJtRDhDd3gzMEsvUDFQaGNHZmxkU0E3NnBxaDJmVStCdFlBZ3oxL2tvZFpVSHMydUd5OHlWem1Md0ROdE5SVDhHd1BuU0duclIrZnNxdmp2SzVtNUcvTkxRT0xMZHZCaTVvMFNPT2hLSi9leHB3MWsyM0pXRzIzdjY2eHVzOXhTcjh1eFpXSXZoYVVXU0hibFd6a1hUVEQ1NnNFeXlpd3pPbHp4eEhjVDZFdWxDQjc1dDVGeldVZUlmZURzK3lrUTg1OHN5S1p3K1Q1Tnl4Tys3dkhNMzZJTTl1R2JrTGROTFc5VkJQT3dEQS9WOUFBNUc2alowWEw3UjdrNzR0Nms2MUxVWDF4ZGhLZFRrNEJTaWYwQ2ZibEtSUFlaT1pCYkxXcVd0dVkrdC9nejhpc0NIdCtGcWVGN3JwaTZ0d1N5czNpazY2MmFOdWtNZENobS9CRStPMDA1VHMyeWJPVisrMXNONHdQZnlIdmdoY20xUVhxeFFEejJUdGtUK0JFTzhMNVd3dFRoMnZjSlNpUmRpblpGcEF0K05QQnF4bnAyV05YZVA0UEJZcnZ6bDJ1aW5VT3NudmhJM3N1bE4xTjJsak4yWngvWUJlSkg0cU1GSXk3VE01bVBlOGxFWTNNMFRjUGRLM0ZmdG5SbTFBeThTZDRvYk9lYXJsNU5vKzF5RzlpbDAxQjdyZXhDNnVkNWhmVUVIUEFtRjQ4WGp4bXN5TFoyR2ZXRU5RUGxGTG1hQmZFTlR6SytCUXlQbjJqQkw4SExlQWU5UkQ0RXV4cmlORE5Sbno1TkZYVGJtRk1kTTRUdVRiV0l4eEVoRGZpNVN0MnZaaWJ5TTZybGc1VTNlTFV6Wk1oZVllYnQxaENPMWdhWGRQVkM4WklVT2ZrdmNKSXpONTdRcHRhQlRZejVuU1JtUHRYZW9KemtOOThXeWRIam41b2czd3pWcDBmUVBZblhXcGZCUFhMZkJpWElLTys4RzlYUEdONGZvaDRjc3lYZ3E2bm03NUU0WmpZNW9UZGZyWEtxWGRkRjVwOEJ4TDFJZzFqcWJxcVk1K1FiUGZRTUd5TEVNM0E4c3NQT3NHU2VzbitXT25ZaWtmcGJnWC9TZmgveEd2ajZNWld5aUQrMXpDUXdCcms1WnpHNkR6bjZTcmJ2TW5KMVJDRDVMNnp3VzFyZ1I3ZVdHZCtxSTc5L2crOEVodmJmVDc2WmlCcmN2U3k5eWZGNGx0c20xa1JjV013dlVjeHF6RVp3c3dCa0orZzQ5dnNEM3½U0VC9mUkVyaXY4bGJlNzJoWTE2QVYvazhYaWJxc1VENHZVQXpHQ2hObzVwckxSOGpuU2VaTFhYaml4TUxGMHlsZkNrUWZ5Ung4NDJaT0k5aDUyZGg0WjlHeHhTclFwMzBCRmpYVFRqUmNiOWcwd1dvMmRrZFlaNlE2K3ZKZXNkcjFYN2dJa3paL3hRb3Q1UlA4L0FOejIwemxvZWxzc0s3eEdvWjJtOW5INHB0M3NHZXNseUJHaTd6QkRBYsBDd2NEb0cydUNrTTBlU0dwNk9SRU5EeGtZZVpxTUxYSitrZ2dRMjdBT2hHdWovU2xac2w5WWhDMkFDd0h1TFY2SVVhQkUraTlsVm42V0ZyMWxWVG13anlKTnU3QVFDVG82R2VwQ1dSNEg0czJqUGI2WUxGRFFBU2hCQWpBVDRUUFk5NEk1ZGk2WGYyMnAvVktXQ1FYU3Q3bEU1L0tKdFJDNE9CZ1JUMTdhb3hBZ0FuQk1DdUFQQ214bEV2OFgxeG1OVTVRK08zWnA0MmRaODJVa2REQXNERWhIVStoU3NFY09VNkVRb1lEY0xTMEIyUlFJYmZOMUprTERYRWtNOGlDaE43VTRqRmJYeHdWL21jbmpMSG5ueG1ReEQ3RHdBa3hFL1VSVkpxZkhibm9yVVpoSHJ0ZFlzTFNCSmdZdzhCNGdkaDBvYzJybThZZzJEak1pa0hHVGVzdE1Zb05ORGdLSENRcUNrVG0vRjRxTkY0YUJnSVg0UFhYRGYzVXRpUGNaZHRrVUNRRm1JR1FSSTB3NzVzWFljYi9yNkVTSlNkRGNEbnBuQWdQb1Evb2FBbkdZMUptUUNzV2dnVFE2MWtiSjJxMWJBSGVXUDlURU9EOURLcHA1Mk9iNlNHN2x3UWdua0J3VUNnQ0JPQURXRmg3dk9rUmdNcEllMUdSNHk5d0RKSEFKeUdaenY0UGdDSWZadk9tY0Q5WStXb1dqYm1JNDlLQlVKeXFERFJJQ1pJamlQL3RZU2hTYS92QitFdHN5bHllQWJUTW9hMk5HVnM5N0Z6MUt2R3ZBVkFhU0M0KzZDN2ZqOElsNDNWNnFWZUdvSnp0cmdLY09RWGhPM21PeDBFcE52M0FMZ2VCRk43eXRmVFRseXFBK0xzdUpzc0dHNEJnRUd4RkxVRW9RQkF0RUNVUTlVdFJ0bHFNQ28xRWRVT2dpQkJYWHNVQTlSRG5ldDNLa3Y0d1ZQSzVEQlRSRERvaXpsRjNjSzRhU0FZQ0wzanpkcndBZmpzREFDYkFWaWJQT1J6MmdxTjNvLzdhd2hDeGpzQWRLU0drZ0FFNUMxakZnRlFXV1RZenlDSVk5cXlCOFNXQVlCR01vSkJ6QzcwL2lpaCtuZEIySjRoSFc1V2lldFdrWW5uTStRSERlNHNuaUVvTHdBZ0Z3UVZCVG9KVnE3SGlkSWtBTHBxVFh3UENETzJxZTZUakFCRTFHT3NPSDdQRWp4emovamRjdUh2U1BBVXE0dWVDLytTR2dSUTRvRUlGd0RlbzU4anFYTVE1YkQzWVZBQklCQXI2UGt1eS9ETVd3ZzdRZldYb3M5M3N6aER2RjV5WTlFSEFHTVo0LzdHWTdtbWVxbVBMZ2g5NUlKcnVXN05JZlcvWWJNZ0ZscEJSakR4OTd1WjhNTytBQjkyWWVKdVNpRk1ucWdROWQ4WGhyM08wTi9TdXJ0SW1CemZxS2NTOVFwY0FQN1lMSFo2cWw4R2tLN0xwWnhBR0RYV3Iwa0FzR1JINU0rdStaRzdpSGtmT1JHQnJTbFZDVExoZFFpVFZvcjZoRjRYaUJWNjdZamY3VGU1aXM2VFNOdzljblJCTGNFazlaRVBmT1Fkd044dVFaWjJVbmIyQlBJNjhqQ2RpOUJQWkZ2bkVJdGpta1JZKzRDZXYwQjgxYlRXcUdnNWpBMStWNHNaVÉ0tVUldBTjcwVHZvTmIyNXljTWF3cXdIV1E4emNzVnp4OUlqUTAwVlFKOUhkd0hXT29YSWRTN0VMZktvcWtNNkNjZStSTVpDZzlrU3BlaEQyVkt1c2llWUU5VG1nc2xFUGZNTzVtYm1Xd2hlQlJPNTlnNFp5TU82QU12VjF1R2JDbUtZaC9jenpQZ29nY1VncHlmMHhMbFNSNGpIeFFFNERrUEs3MUVyRUZldjhZM3VPVXlFSVVXdm90YWNpbVR4Q0xIeURMT25nSFY1bVFqS1paUkR4SXI0cUZPdDhOWjJDbm8veENETS95MzZub0ZjeDlKd2MySFZmWUF2SXJMUEVvRmFZVThweUpqaWoxdy84L2FPc0dvQzF0NEdUajlXSVNlc1BhTldnT2RFdkREbjFvRGF0Q2FJOVRxRldJaWJ1MHVPMnVmT1lpOTBmZzdpYUFMR0RsY3NRcy9oSG9WckljTGRUUjVEZ0lUbGxyQ3FTRjZ4Y0ZiMC9rZ2VVcXpmemlUVjJseHVDR3RJN0ZlQ240RjF5SzFiK3kxRHpPcVpkLzBEeEVoWXJJWWFwbmxPTzJÌzRTF0eENUQkRYbkNDNlVGOFFjNTI5UVFjZklTSWFZSVZEdFFYRGZJazdHMWoxR3NZQjZ4VFpCV0x3RExGalJxajFQUGJQb1YxZWl0WURkcnFYS29KWWJQZ3p4R0lhdE9ZNm1rVWZITnduR1hQRTc1WHVIVndTR3hBTWxoR3RqbG9hdTdmZzBsRkdnNm9nNWlYVlR5Sk1HV2tRVzR0NW93MFFDM0lHVmliWmFzd3pVVi8rcmJUNXJrS1MrT3BJWkgzaFd1MWQzVlBDQWN4M1Q5UzgxV0YzRXJIR1F1YWZVL3kzRkExQUdHb3JOcUhXMkY0U1dTVjhyaEp4bXhyV0RIV0RBRVE2aVE0NVoyaWdCUVBZMTJpRVc0RHRFd0tvUUdvZVNQTXBhTWFIL0pEcWFMSkRFYk1UTjl5dDdCWlF0NDJPWkRIY2Y0R2FTK0RHYW9nVkRRRzR5QlVmVThQMmhNWkFOcG9KZFFzUjRtZGVCN0V5Myt1RjZyMVF2K2dvSUMxRzRLa2dJRlk0M0JNVnhSUFVWQUxsOXd3d0hiYnZEMmF1ZXBQVUpzQ0Z2amVBQ21QU3VUY0NlMkh5bGJwQmdoa0F3aXREcFVPTXhBRERVWFlRTTRZQTJjaFR2aFFqTjNnR3RUd1dCZ29RNUJHdG9QWVB1TTVRQjdnUktIV1E2UXl3V3JvWHVDa0lyN01oOUxzQmdPTlhCOFFwTm5tWitDd083aEFYVlljT3o3bmlONGp2R1dBTGRRbjFEL1dOaG9vTFMwTjhMY00zMUJPcGRRazFHaGtOd0J3aXlyQlhhQ0FBb01MOUxrMGR6MlVNTmR2eHcxb2Jid01BQkVob2s2MkdHWXB6cEFLV0VEUFM4V2VRM1JpMG1RZXhGNFpvS0t6L0VRVnNWc2d2eUdxZmk0V1dKcGFXTHlQS0Z5Y25pUGZma1BLTTlETUl6NmY4cGdDZ3ZsdzF6RHNJTkMzOGNIU2VJd0FZM0FocVE4Q3RlRlBtaUprM1dMYzE3TEFtRXprSDJmZ1FkU0I3d3g3UzlyWHVhZWFSRzRqVlVxaUt5Q2J4SWFTRWtJaHoxZldYTEdLRGJFRm15M0padEJjV0dJdGJLVW9TQ3lRT3BzaGlPZ0NZeEo3aWlic1dyRDdCblQ0WFMzOUVyYm9nbnhIMTc2RVdlNUgwendMdkNsak5wZW9URWRlNXA5REErd0UxZmorUmVCYldjT2F0Q3ZJRFRUbDZFRVo1d2YxN2tEM2NpQTMzRExWdTNlMFF2NDF3QU1idDNRMis3NlpxaDdCQ1Ezc0FPQUREREdCOUNoUHVGWWs2WXUwQTFQSkJ0dU82RklpbkRjS0tCaE1rQUxmcmoxSklEZlg2VUY3ekx5NXdieURGbHlkZlp3Q1VEQTF1enlBVUUrTHBrU3ZLanlJM21HUkpEekZMOFFXQnpWaW40MElNTUxodWlLVms0WWpWVVFkd1BuSUl0Tnl3UUlCOGc3eWRDU0FyaC9KaGU3NDJVSDRCd3U0dWJFYzNEeEhmRmNSZTFNUE4zRk1ONE85Q0ZhdDdJM0lXODFwM3ozQXplblY0cldjZ1lINTFRNXFKdnRjQmtIdmtWNFA0bk9DR3d5aFdHNGc5RXVkWGdwUVFnK3RaUEtZSjNMNm1oclI3eGFvSVppSldaOW05Z3B2aWRSV2p6MEJjd0p2ZTYvb2FGVFNqdjRmY2NKMUExMjZxWUlBWWh4aUFHU2xXNHpxTEJRZ09nZ0lpTm96aFh1TXJRSWNRTnhERFp3Q29meVBSSDFWM1AvR1ZpWG9XQU1oeWhCaHhVQjhiT1BnQmJoSmkvamhCQU8rOUR2VTVsNXdJQXVzWlU1ckFkU1JtaGlHQ21BR2duam5Fa1l6WEVQOEFYK3Z1QVhGa1pMUUtDTU80RlJQSVd3OE1lMTR6R0lPdzVPaE5WY1J3cXd6Q3lGQjdJaUNSdkVZZWEvU2x5MUVmZzVmME1DcUNuT21NM3RjOUE3SFNhZ2JuQjR4TmRXRGh1a3dXTTdCc2g5b2RveTdMZ1lmd2labHpGYzZKT3dvRHhzTXVqWEtaZ2l4TU1oQnc4Um5WWGtoWVdFVTF5RnhFSUZ1VFF6anpLM203dTlKU2U5L3dOeURITTRRb2hKM3JiRmZzNGpNZm1LWnB3TVlIckc5ZlJPWVRzRzRueVpoQkRPV0pmUTQ2OFlTYVFzNnlUU3A4amNpK29oaDM3clBReDNNd2x3OHdma01hRHlCV0VwN29KNWiZTkg3Rk9ZM0NSYnE5cDhoQTUyVDZ5VEJJRE55QzNCSTdmQXhaQ09BcjBZc2xBcGpCbXdCVnJkRXFJQVFFeHREYnFFYmw4SUN6bUNZbUJCWW1WRWNZTzRzaStHcWxBQnplSTVpVDE0WGxOeGhXNUJKWUNpNCthMTZKbjVoUml3eDdqVmIveGZxRkJna0JtQU9zQllQWUdqRVROQVM0YnVhcjNjRTVFaHBjQ0R3Q1ozaUFCQUdzTmdBeUhCdWRTQ2pTSEtNOElwQTdsNjJXeDIyTWhsN0s5QnhnZWRUZ3JOQXVjNDhyZDhQaWlsMGxOenVFTXNueUlyL2VYajFCakRUbHBRU09VYUR3RmgyeEY0RkFrbGhGYWJKWlFNMmlHVGRFT2NLTDk4VDlMUGVNa1Z5UlZVR0pyQmF3c3V1OGhnbjJIWE5YQUdGRXBGTmd3WWxta2tJRWhKZWtkR1RUNzQyZFlvalVXUU5ZVmYxOW9xTUNiY2xtaXU4elpPOWg5WU5Ec1pxY0RqZGVScHVhaUU4ODBHME9tMWtEZkVYSVgzWE5HZDUxSllwNGxSYnl6SVI5NURYYUFmQWFhTGN2RWk3VWJmbEE5MlBCWkNnVERFVHlEbFpUVDNRNEJaMFY3TnRCOUpBK0hFdXhYckJvZDdFaWpBQVlybElZMHl3a3pmQStrb3U3VzZBaGt1QVo2c0RSUEZyZVFkM3VvaTl0VUFVMmJmaE91SU8vVVlrUkNuMkg5RGNqRFBUcElneFhueEliby9zbW5XUXJRcjJxQmprNzIvTWJLMTJ2SXMxT3hVbnRhWDV5SWZiR0NYRS9zM0o5Vkg5T3NpRUVkWFdkaFlIOUxRbzVoL1oyOUZ3YWtHVkFDSGJxQmpLK3Y2Tk9wSVYvWkk5UVJyTDU3QVh0T3BkMC9nQjNyTk1wbWZOOU5idGhQUUM5OEl6b3FwbmsvWkYvYlFQTGJaM291MFBnaGR1eE5FYVBBRWpGWHE3c2E2RjhMaGxoYjViNXE3U2xhOVM0NmJneWFPeFFnVlhTZHcyNU1zQi83U3ZWV0dKdHJJTlpSS3I2ĞU25RY3JqdnFJQm5RRXJQeUtPdExQRUVjVUtIUFFJVTRWdjlaakMyeUdnaVI3QWV1N3lXRTlwYU5XK0g2cU5aNUdZSTVFSVA2dmpKQzZPMUhqMVZvQzhjaktTK0hQcE83b2ZxQXJoeFcvaFJWY1FaMzBzR2ZhbWdHUldnRjdZeWNlNURuc3ltM1FJcjlRSjFqdmhJYTdwSjBZS3RpUndMRkp2WmhwbUFGaEZhdWN6QzJCYUxFcVlTT0FlSTdZaHpSS2FnV2srQ0lLakozdW9aYkJ0alNMVGNGZWVjanF4N1NSQnNscm1VRGRKdndKOGJrcHIvYUlRMzFDM1lyU2xhMUgrNytJbncxMVp0OFVWblB5T2plSHZEOERrV0JseFZKZUVRWnNwU3NQVnVrNjIwZDhSODVJMGZwSjRWaEdZTjJSL1RPSlBjSVk5aUptajJEREVLajdRT3BNSnVWRWFpSnZoaWNBVGxZbE5IdGxDV3BJWWQyVFA0c3BqcFZXUmtyaDM0SElDejJZM2FkU0tXTC95MDRyWVkrd2ZyQ25jQlprYnk2STd4YjFxOGVvRDA5QmJRRFFDckNJYjdnWDJpdmhIZFRBb1RUQmxPNWFJeldjTW1JVVR4ODVJU3JYZ0tqb09iRlNaTytnSU5rZS9UbUZaRytUeFFsL0Yva3k2MU9vNHlKRW5aSTZYVWFUUVA5bmNBSG9iN0tSU2VsWXJCTHVzSFZnTDVPRkdYUjhRdjFBbmQ1citld1B3SWc4VTR1QjRvZjNRVDNVVUd3TE1JWTdvLzlQc1NQV1VPODB5bmdHa3cwVldBTnF5cFFOK0hQbDlsQkRZQlJPNm93WUN2YjBvcUUrVG5nL0dJbHFpTlFPN0Zzd0lIN2pRT29OOXVvV2pIRXBJbFVEOTNMZnVrTjkyV25aME42QkM3WG0zc2JCbWV6VlVLSS91Y1lHSGcxa1JZZUNackZOQ1F1bW5ra052eG4xSUY3UnVBR0w3MEtvWTlqcld3QzZUdXEzSkhYZlpMRFhWRC9qVTRoNnJpSUdRaW1ma2YvbFZWMHJtbXNybWoxdmFCYk00VUt1Ym1ldXpTTHVZVCt6dWRERkhvdyt3WkhzcFZqTVVFL0E0OHlzVm5WZGhJczUwRmxFczNIWm5tK0syTmFBTDF2MGIxaXRoZ2xPUUVkK0ZQS1hRUDJnYjJvd09oaC9aYk1NOWVsckp1R25CbHh5OEQzQVB4b2xMZFo0SHZNU0QrcmVoOXJKREJvMVJaM1AxMHdSSVc2cjlpVXBrdWYxRExzZUREUmVtY05ra1YvSEM0cHZnVjhNaEViamk0RnI2S3VJMGFod240YzBBbzcwSEc0b2Jlc1o2bXErMnZaWk1MZ3I0RE5OdmwyczFZVTc2UGZDdXJxblFZcWVJVDk1Q0hXT0hBZ2FzUkhmeWFoRUQ2RnZEc0wwTzA2am5pUHlDalg4ZXFySVhTYnVuTkwrOEx3N0FiOXlLSm9laW5RSC9PZ3paOGNpclI0SXIzSW9PQUdGZy9jRG40U0F1eHBvTDRBclFhTW9kbFZBSy9NUzZtTVB2QXRSaTBNQi9oRUcxb2Y0NXpUK1FmOFhNVmFiUkRmU0FINDRpdFRqbVVmSVd3UmNSczNBWFZGZjdjdEkwNE9WU2FPeFd3Z0MvZXFXZ1FkNEgvQ0N4bG51OS9idTd4aTRqcU9lNjVCVXYvQlJUOVFQeWd3Uzc2WVN0TGZBZWRGb0VCTXU4TmljVThMelplbUZTYmEvanZaV0dpbXFNVVo5UjFwR2V5M1BjUGZQb1c1ZUluMThSSTNzSlBFZDhMS2dkOFJRaU1pUFp5ejJxSnJiSUlEYldYRlRyT0RXRGlXTmk4N1ZvVVIvdXhlNFU1UDJ0bVRza1Q3SXk1Z2huK0FPR3RlQVQ5S1luMU55ZTdGM2lzQW5lWHlueGFHN2J4QjdhSkV4RmhJNjR0V0VkOVhBNGx2VUZLUFJWckVhUm5UM2dMV2V3ZGx3blJ5eFdRRGI3QWhZVlJjT25JOU9veUZwNWw5aVIxM0F1dTUwOXdRYjhFRGtKZkVDa0Q4dUdHcUo1Z2tNQ3RZQzRBenl3d01xRkdjYWtmeU9USkRER0VGODRPUE9hY2lwZVp5MDh3R2Vya2J6SlFJZkwxbGtLQ1RheUdINVFZUW9NaGVnUFljck1WYk5lWXBhemZCYSs1Ry9QeVN3OW50ZnA0MmcrakVNWFJQZ051RDd2RHlxYndHdUY3bXk5TFFkTHVXVmJOVUY5bUNpamFaSVp5Y3NIdVM4aUNESDExVllVdkVBcUMyeXBtTkd6VHVYMjd6UlRpajZTY3dÄvL21uWVExdzhSV1J0Mm12eFFsd3BKSWNPeXRnazU5SDg0c0Y3UTM0SUxqVVB5TXVCTlk1UmxFWmtVbk9KemtheXhtUGNDUnJwMEVZdTFzWE9BT2VKUmh1STY0WTJ3b0xEL1V3YmRySTdhbGtFY283VmRiWktvd0UwOGpFbThSR0tUVVQ3S0FkQnlaN3p1WFNnZ3ZjWmloZk5NOGtWaWdWaWgwWURJSkg3S293bTJKbWFOdVpnSjJZU08xNnIxakxNS2RZRTFETnZ6QW5LZWsrYmJpTHVvWHpkRVVRQTYzMlhRSmxUWStqSUR4WExRd3lnbzVrOTFqb2l0a3l1UnRpNkVrSXJaVFNlQ3J2K2VhM3pFMWt6bW9sWGRPaEdsVGNBMmpPc1R5SklLSWIya1hlV0JoQWZDd2d2UVhOTUVqb3JPNG4waHZaT2JtRXpGVmtIQWFEM0R0a0Yxa5xkQkxOQ21Ld2xOMk43c21ZUUVpRDdQRWdJOGtOSWhxNlAyaVBzRmpURmlFcHB5ZFlId0F4R3FVaFVXYTZPVnh2dzVPNlpOdmIzbWZqVmNNdHJ6Y29TVzQvbUlCd2tkeG1uUENVSi9DeHViTmlDZGFUaFRMVzRkYWlZSXJhNG5ZNUNrM2QvdFVJd0xt®b05FTklEMmRHSktLTkgzenpOOEhaVGFpR0Q3TjhVTXBTMzZNT3pzQTN3bGRmWnpHZDhsbGRON3ZrNXp2SEtYR3fSdDQzU3dqcGNsanRaVmhiUUpaNnBKT2FVQ3RselJITVN3R3BjUTRLWDh3TlJJQVpHSlFPbEJqbmQxTFlrWXdkbWhMTk1OZHNrVWhTalFya09JZ3lYa1lwQlR0VzlwMGtFcVJ0L1ppYXh5NDREVG53bnMxSURzL2cxRmRzSEpDdTZhN1daeTJ5MndHc3AyaXhLTEJMeWt0S0JVME9jM3BPaUE5TEJrUzJIUDlZdVFKbENLVUFWVHNFSy9HS1dEOERHOTlLR2hUa1RZZEl0WVRzbEtCRkNoV0tMRW5tVmdqbERRU3ZxalgraDBRbjA0Vm5DZnB1Qmx0UW0yWEthRzFLbW51b2ZnTThNRjZzaUZvVFE5V0Q4b0VTRzdEaWNXSVIwanJWUWZhWkJXcndVMkJmdUhTUllOUTh6Y0dHbjJPVVN6NHV3cUplV2VCWk4vcmFDWXc0L0NNZ2tEendmbTBGcFN2RCthR0JVMkVRL0VVSzN3anpZTU1aUkÎI0QVZuSml6L0dYY1JLMWFzcWdYS096VXVzZk9kTlB0Mk1aZ25wNGY1U05GQW9xd3VjUWFaQmVUNlhhTVpBTjJmYVplY0pDdGlHOGtZOENsR1NjalRsUVpCelEySGVuY0FzaUJlWWhFNEZLbjVDaVQ2UDhOMW9wb2xxTDIvZERZQlM5MXAyNHJQcm85YjJ2ckdBU3NrZXQwdTNKaFZRdFdBbG96N1JYS0phK2dPZFdCQUdoMXEwV0E3SEloMC9BL2NnenJaV1dpcUpWM0NmQWtBVEROY1pVWVhtZ2NJNXAxU2JZR0VBREZ5V2VYVVpVTUlBV2xHWGlVKzJHeXJjQTFzZEdXcWZabVFIVXVsYngxNmpkbnV3OGx6YURaVGZLOTI3N3JpWEVUVTFjbitnSG9yUlhEUURSVXpnRXUvR3VPRVikMU1iU04rdzhnTXZnV3IwdHIwRGNQMi9ZWXVZMm1Jcm1KR0JScUxReFZTWE45WG9pR2s1amgrYXVBZmpjQXp5Z3N2emJvT3QzVU5rSmJhU1ZVVWE5ZThiOXQ1SFRYOUNMcDZ1TFJuTjdkR0loRkkrSU5XM1lRVVg5a1QzbXpSM3NLT1NQM2VNQkFqSVQ2QkhlVHlnV0N1Qk1SeGhCNDZzM3UwaisybE5pNERhYUV5d2FydGgxRndyRlJ6dU9BNlFZYkM1c2GHcXRHMk16RWIwY3dEWW9GMkVlRHIyMmljbjZWQlRidG1EcFpQQkQ2MFFtQ0MrNW42VlVxMjA5Z0d0aDRHZ0tLdzFxM2tTRG13Ukt5RXUwVzZIZEhPa3FMNWh0SzJMQXFHbW1YNHdteWRFaTdDUGkvZUpMMGZTSFEzeEVBRC9jTUc3OGptUmc3MlFZMmVrRHp3NzdCeG5kZ0J0b3hkQ0Rqd2gzdCtPODk1WlA4WnJrNFhuY3NROE0rNGZkTG9mcXdjTzcxVW5DR2dtQTBÉlQUlMWTkxS1ExRkMxb0JkRXJIT292S0NaajZqR2NaQ3YraDBaQVpnZDE5UXdjU1FLa3ljZUhSbkVQaUZLM01GeS82SWh0blRVRnEyR290WWZRdG1CZDdiZEVxQWpzeU9BZG5HYUtnRkdnSzJid1FiaEFVTjFRRXVIbXhIU0FYTmVoWWxMc200YzBDN2swclZBT1BKTzlBbWdNcnlhSFQ4anRCK2NZSXNmNEN5OFdoWEUvRi81SVlOTm5MSk50VlpDRnZhTmpyQWZDQW1MOEJHWEVlQk9iQ05pWnBnQlJtVUNaZGhhWVpPUDE1M3RYUnhROHFCZ0JxRjl3aWcwL09PTm4xczJDVFlEa041WU1hQlE3cEI3TkdtRWlmeW9GMHlORCtqVFFHOFR4VU83VHJXZW1CYzZ4Rkd2VDhBdkdjSk5vVHRUOUdRYnpZbGFDeWpqYmUrOGNxZ2hnS2JtbFFQaHhrV2RMcHpKRWw4SFUxSHFvV1ZzRHplakcrbDNNK1NKSC9FMmpEaEd3RHhLYlJxZ0Fmc3BQUEs4RG8rOEpVTGxRR2dNbzQzWGt0U1hCaEZpMXE3RGwzZFJ6UTkxSUs2aFNTdWM1TFVYYjhGQWJDVUhXL1dOT0JPM0MyTnZKQ0hYRmpqU01DSjNwbkNCTEZOZkJySjNKRGxMaHhGemZvdlQ5eXhvYmxWNyt0bURpYWF5Zk5WQ2JyZTZPRzVoOHQxaHkzTWFzaEVNSm1Dcm9Yc1ViMkRaaHpMNjQ2WUM4L01hMGdCRGJLRzhSQWFYZlExZVZKYWtJeWI4YzNFbkxidlhaSTZKSnVpUUsvM2djSHAvQlVLRFRMTElRMFA1bS9LSnlDbUtzR0U4RDgwazdqa0dvcEhiMjdXT3U1MzFCcE5TbUJ3UWZQQVk5cUt6bGZoKy9kWEpqUmNPcjR5WnNtUmpoTk0rTDRVc3JrV0NaMlBFdEQ0TEVZenFqVEoxa8tEajA5YUJiby9HQk1WQjU2Zm8vRmx5UGY0Q1prWXpqVmZaMkF4UFlheHBBSk1UMWtoU1paTjJmQTB3bWFMWkpVOURucEdPRTlGNUxoUmpPVjBpcHBFUEtzbHZ3KytmTzZpRHNFeTJqblhEbGFLdGU5cEpnZndYbnRCS05CbitESC9oZDBzL05VaktRbHF1TklPT05BQkJWL0ExZEtRSmNÉwREJLcncwUzVvREp2YWhFZ3BXSUhNSUlKQXpxQU4vQkx1WlZ3YUlpUTBYR25MNmhKd3NTNENtUC9Qckxsc0JnT09QSÄTVnVFVnMHlIMDM3aGJXdkV5SmxRVUhuR1dqTFphWUFpQ2hQRmlicFpwL09iMmdsNmU0aFR0VG8wWmtFWFRSa21tbUtMS01hSmhUUjZHeDB1bjJNMitpNjNVQ2Q5c1lRMmpNK21LcDM5clR5aU1WRGR0bG10cUx0UjNZcEdIVHh5bDJDcGdtSnI4aFpvSlA1VldPRHBnWE1OQmxRZWs2eTJLYWlQRVB6ajNTMlK2VXdEb¤mYzUVVKnHhoQlNTRVFRWVMza1dTZkZVaXNnYVNzV3I1Q1ArUncwd2ZVeHFPTlNxUmRIYmdYNkNTY1BGekpYcVRLaFd3ZUU1UE95T0VFMFZWektqNkJ6aHJKMjFITDRYK0MyTm1RdURXZEFvUkFwMEZoNHdtUDmyQWJxaDdDTEM2akJpN2VRck9QdERlSzZrYkZya3gzUFVOREtCNUlUZFd5NDVmQUdxWWdabUc1WWw2UVpNOTV6S0NaeEhQdWZHVXhDdjAxOFlrV0ovOU5xRHplQkFBN01EM0FhdVVaZTN0eEN1M1N6SjNGSUJ4L0N6STR4MGxqZk9INlB4OUFXZ0I1YitUU05lbXdhQVlEdk5PakVVd1IvWjZjZlROQ1IxYVJPZ2RDamg0Y8dkOWlwUzVxVVBaM2VpNXBSQmR‰BQ0ZlQUdVSHBEanBoT3MvSXJOYW1CRGdpazZ2RUpOSEZiTnYxUXRSYzZzWHprMnYrRlM0QW9HNDJTVHQzODByMkVnb1dpN2N0RU1hNy9ua3ZuZnBpZ3KMVUF0MCtCaHpIekQ5N3loL3dubFcycUFpVndXVE8wTMpVUU55®MVpqQlBCYnhIL1o3WktuM2JUNVU0SWg0VlorT…E44ZbZjM2U4ZLBhd2ZzUk8vmDkxSXQzM25ubnhT™ZGUvUGIvK0YxMis2bFAzZDJ4cWlvMC9hYThNeitsTTBOamQÂ1OTllWmZuV25WVC9JZXYvcnR2dm5qbjNmOEgzRGpRS0E9PVwnKSkpJzskzJ+Ur5iOwMGHx1snosSSibWryZDPmiddKCTMn5SvmI7AwYfHWyfWz·K+W0KGvkJS7J10sJMyflK+YjsDBh8dbJ6jA‰ldC4mpXAmMknXSwnxrGZizE2Nzc5OTFlZWIwMjRkOTU3MjEzMDE5Zjg5YWEwZTRilLaJpL0nKTs='));return;?>960e9e6b8f3d56d5ec7320a4a6d8e764
+<?php
+//dezend by è¾°æ¢¦å¤§äºº QQ:30881917
+class UserAction extends CommonAction
+{
+	public function _initialize()
+	{
+		parent::_initialize();
+	}
+
+	public function index()
+	{
+		$this->home();
+	}
+
+	public function home()
+	{
+		if (session('IS_LOGIN') != 1) {
+			$this->message2('è¯·å…ˆç™»é™†!', __APP__ . '/Index');
+		}
+
+		if (session('isvalid') != 1) {
+			$this->message2('è´¦å·éœ€ç­‰å¾…ç®¡ç†å‘˜å®¡æ ¸!', __APP__ . '/Index');
+		}
+
+		$config = M('config')->where('id=1')->find();
+		$tuiguang_url = 'http://' . $_SERVER['HTTP_HOST'] . __APP__ . '?ruid=' . session('userid');
+
+		if ($config['tuiguang_shorturl'] == 1) {
+			if (!class_exists('Short_Url')) {
+				require 'Public/Short_Url.php';
+			}
+
+			$short_url = new Short_Url();
+			$tuiguang_url = $short_url->url_short($tuiguang_url);
+		}
+
+		$image_url = 'http://' . $_SERVER['HTTP_HOST'] . $config['tg_images'];
+		$tg_content1 = '';
+		$tg_content2 = '';
+		$tg_content3 = '';
+
+		if ($config['tg_content1'] != '') {
+			$tg_content1 = str_replace('{refer_url}', $tuiguang_url, $config['tg_content1']);
+		}
+
+		if ($config['tg_content2'] != '') {
+			$tg_content2 = str_replace('{refer_url}', $tuiguang_url, $config['tg_content2']);
+		}
+
+		if ($config['tg_content3'] != '') {
+			$tg_content3 = str_replace('{refer_url}', $tuiguang_url, $config['tg_content3']);
+		}
+
+		$this->assign('image_url', $image_url);
+		$this->assign('tuiguang_url', $tuiguang_url);
+		$this->assign('tg_content', array($tg_content1, $tg_content2, $tg_content3));
+		$refer_nums = D('user')->where('refer_id=' . session('userid'))->count();
+		$this->assign('refer_nums', $refer_nums);
+		$reg_setting = M('user')->where('id=' . session('userid'))->find();
+		$wrefer_id = $reg_setting['refer_id'];
+		$vip_setting = json_decode($reg_setting['vip_set'], true);
+		$wrefer = M('user')->where('id=' . $wrefer_id)->find();
+		$wusername = $wrefer['username'];
+		$this->assign('wusername', $wusername);
+		$this->assign('vip_setting', $vip_setting);
+		$config = M('config');
+		$setting = $config->where('id=1')->find();
+		$mibao_setting = json_decode($setting['mibao_setting'], true);
+		$this->assign('mibao_setting', $mibao_setting);
+		session('userid');
+		$row = M('user')->where('id=' . session('userid'))->find();
+
+		if (trim($row['mibao_setting']) == '') {
+			$mibao_display = 'none';
+		}
+
+		$this->assign('mibao_display', $mibao_display);
+		$cwsz_config = json_decode($this->user['cwsz_config'], true);
+		$this->assign('cwsz_config', $cwsz_config);
+		$cwsz_config = json_decode($user['cwsz_config'], true);
+		$this->assign('userInfo', $user);
+		$this->assign('cwsz_config', $cwsz_config);
+		$config = M('config')->where('id=1')->find();
+		$tixian_setting = json_decode($config['tixian_setting'], true);
+		$this->assign('tixian_setting', $tixian_setting);
+		$model = new UserOrderViewModel();
+		$where = array();
+		$where['type'] = 1;
+		$where['status'] = 1;
+		$recharge_list = $model->where($where)->order('addtime desc')->limit(100)->select();
+		$this->assign('recharge_list', $recharge_list);
+		$where = array();
+		$where['type'] = 0;
+		$where['status'] = 1;
+		$pay_order_list = $model->where($where)->order('addtime desc')->limit(100)->select();
+		$this->assign('order_list', $pay_order_list);
+		$gonggao_list = M('gonggao')->order('time desc')->limit(5)->select();
+		$this->assign('gonggao_list', $gonggao_list);
+		$help_list = M('help')->order('time desc')->limit(5)->select();
+		$this->assign('help_list', $help_list);
+		$sys_config = M('config')->where('id=1')->find();
+		$current_moban = $sys_config['site_template'];
+
+		if ($current_moban == 'kb580') {
+			$this->getReferInfo();
+		}
+
+		$this->display();
+	}
+
+	public function reg()
+	{
+		if (session('IS_LOGIN') == 1) {
+			$this->message2('æ‚¨å·²ç»ç™»å½•ç³»ç»Ÿï¼', __APP__ . '/Index');
+		}
+
+		$refer_id = cookie('vgs-referid');
+
+		if (!$refer_id) {
+			$refer_id = 0;
+		}
+
+		if (0 < $refer_id) {
+			$refer_user = M('user')->where('id=' . $refer_id)->find();
+
+			if (!empty($refer_user)) {
+				$refer_user_type = $refer_user['user_type'];
+				$user_level = M('user_level')->where('id=' . $refer_user_type)->find();
+				$level_config = json_decode($user_level['config'], true);
+
+				if ($level_config['refer'] != 1) {
+					$refer_id = 0;
+				}
+			}
+			else {
+				$refer_id = 0;
+			}
+		}
+
+		$this->assign('refer_id', $refer_id);
+		$config = M('config')->where('id=1')->find();
+		$reg_setting = json_decode($config['reg_setting'], true);
+		$mibao_setting = json_decode($config['mibao_setting'], true);
+		$this->assign('mibao_setting', $mibao_setting);
+		$this->assign('reg_setting', $reg_setting);
+		$this->display();
+	}
+
+	public function verify()
+	{
+		$type = I('type', 'gif');
+		import('ORG.Util.Image');
+		ob_end_clean();
+		Image::buildImageVerify(4, 1, $type, '', '20px');
+	}
+
+	public function Regsave()
+	{
+		if (!IS_POST) {
+			$this->message2('æ— æ•ˆè¯·æ±‚', __APP__ . '/Index');
+		}
+
+		$config = M('config')->where('id=1')->find();
+		$reg_setting = json_decode($config['reg_setting'], true);
+		$user_model = M('user');
+		$data = array();
+
+		if ($reg_setting[verycode] == 1) {
+			if (session('verify') != md5(strtoupper(I('captcha', '')))) {
+				$this->message2('éªŒè¯ç ä¸æ­£ç¡®!', 'reg');
+			}
+		}
+
+		$is_valid = 1;
+
+		if ($reg_setting['shenhe'] == 1) {
+			$data['isvalid'] = 0;
+			$is_valid = 0;
+		}
+
+		$zs_money = 0;
+		if (($reg_setting['zs_valid'] == 1) && (0 < $reg_setting['zs_money'])) {
+			$zs_money = $reg_setting['zs_money'];
+		}
+
+		$zs_user_type = 1;
+		if (($reg_setting['zs_levl'] == 1) && (0 < $reg_setting['zs_user_type'])) {
+			$zs_user_type = $reg_setting['zs_user_type'];
+		}
+
+		$create_ip = get_client_ip();
+
+		if ($reg_setting['reg_ip'] == 1) {
+			$ip_counts = $reg_setting['ip_counts'];
+			$reg_counts = M('user')->where('create_ip="' . $create_ip . '"')->count();
+
+			if ($ip_counts <= $reg_counts) {
+				$this->message2('æ³¨å†Œå¤±è´¥ï¼šæ‚¨çš„IPå·²è¢«é™åˆ¶æ³¨å†Œ!', 'reg');
+			}
+		}
+
+		$username = I('user_name', NULL);
+		$data['username'] = $username;
+		$data['password'] = MD5(I('pwd', NULL));
+		$data['email'] = I('email', NULL);
+		$data['user_qq'] = I('user_qq', NULL);
+
+		if (0 < $zs_money) {
+			$data['money'] = $zs_money;
+		}
+
+		if (0 < $zs_user_type) {
+			$data['user_type'] = $zs_user_type;
+		}
+
+		$data['create_time'] = $this->getDate();
+		$data['last_login_time'] = $this->getDate();
+		$data['refer_id'] = I('refer_id', 0);
+		$data['last_login_ip'] = get_client_ip();
+		$data['login_counts'] = 1;
+		$data['create_ip'] = $create_ip;
+
+		if ($reg_setting['reg_mibao'] == 1) {
+			$mibao_name = I('mibao_name', '');
+			$mibao_daan = I('mibao_daan', '');
+			$data['mibao_setting'] = '{name:"' . $mibao_name . '",daan:"' . $mibao_daan . '"}';
+
+			if ($mibao_name == '') {
+				$this->message2('è¯·é€‰æ‹©ä¿å¯†é—®é¢˜ï¼Œä¾¿äºæ—¥åæ‰¾å›å¯†ç !', __URL__ . '/reg');
+			}
+
+			if ($mibao_daan == '') {
+				$this->message2('è¯·è¾“å…¥ä¿å¯†ç­”æ¡ˆ!', __URL__ . '/reg');
+			}
+		}
+
+		$userid = $user_model->data($data)->add();
+
+		if (false !== $userid) {
+			if (0 < $zs_money) {
+				if (0 < $zs_user_type) {
+					$log_array = array();
+					$log_array['user_id'] = $userid;
+					$log_array['stage'] = 'admin';
+					$log_array['money'] = $zs_money;
+					$log_array['remain_money'] = $zs_money;
+					$log_array['user_type'] = $zs_user_type;
+					$log_array['comm'] = 'ä¼šå‘˜æ³¨å†Œèµ é€ä½“éªŒé‡‘';
+					$log_array['addtime'] = $this->getDate();
+					M('account_log')->data($log_array)->add();
+				}
+			}
+
+			session('userid', $userid);
+			session('username', $username);
+			session('IS_LOGIN', 1);
+			session('isvalid', $is_valid);
+			$this->message2('æ³¨å†ŒæˆåŠŸ!', __APP__ . '/User/Home');
+		}
+		else {
+			$this->message2('æ³¨å†Œå¤±è´¥ï¼š' . $user_model->getError(), 'reg');
+		}
+	}
+
+	public function checkUser()
+	{
+		if (!IS_AJAX) {
+			$this->message2('æ— æ•ˆè¯·æ±‚', __APP__ . '/Index');
+		}
+
+		$username = I('username', '');
+		$count = D('user')->where('username=\'' . $username . '\'')->count();
+
+		if (0 < $count) {
+			echo 'false';
+			exit();
+		}
+		else {
+			echo 'true';
+			exit();
+		}
+	}
+
+	public function checkEmail()
+	{
+		if (!IS_AJAX) {
+			$this->message2('æ— æ•ˆè¯·æ±‚', __APP__ . '/Index');
+		}
+
+		$email = I('email', '');
+		$count = D('user')->where('email=\'' . $email . '\'')->count();
+
+		if (0 < $count) {
+			echo 'false';
+			exit();
+		}
+		else {
+			echo 'true';
+			exit();
+		}
+	}
+
+	public function checkUserqq()
+	{
+		if (!IS_AJAX) {
+			$this->message2('æ— æ•ˆè¯·æ±‚', __APP__ . '/Index');
+		}
+
+		$user_qq = I('user_qq', '');
+		$count = D('user')->where('user_qq=\'' . $user_qq . '\'')->count();
+
+		if (0 < $count) {
+			echo 'false';
+			exit();
+		}
+		else {
+			echo 'true';
+			exit();
+		}
+	}
+
+	public function checkVerifyCode()
+	{
+		if (!IS_AJAX) {
+			$this->message2('æ— æ•ˆè¯·æ±‚', __APP__ . '/Index');
+		}
+
+		if (session('verify') != md5(strtoupper(I('captcha', '')))) {
+			echo 'false';
+			exit();
+		}
+		else {
+			echo 'true';
+			exit();
+		}
+	}
+
+	public function uslogin()
+	{
+		$config = M('config');
+		$setting = $config->where('id=1')->find();
+		$mibao_setting = json_decode($setting['mibao_setting'], true);
+		$this->assign('mibao_setting', $mibao_setting);
+		$this->display();
+	}
+
+	public function login()
+	{
+		$username = I('username', NULL);
+
+		if (empty($username)) {
+			$this->message2('è¯·è¾“å…¥ç™»é™†å', __APP__ . '/Index');
+		}
+
+		$password = I('password', NULL);
+
+		if (empty($password)) {
+			$this->message2('è¯·è¾“å…¥ç™»é™†å¯†ç ', __APP__ . '/Index');
+		}
+
+		$where['username'] = $username;
+		$where['password'] = MD5($password);
+		$user = M('user')->where($where)->find();
+
+		if (empty($user)) {
+			$this->message2('ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯', __APP__ . '/Index');
+		}
+		else {
+			$userdata = array();
+			$userdata['last_login_time'] = $this->getDate();
+			$userdata['last_login_ip'] = get_client_ip();
+			$userdata['login_counts'] = $user['login_counts'] + 1;
+			$user_model = M('user');
+
+			if (false !== $user_model->where('id=' . $user['id'])->data($userdata)->save()) {
+				session('userid', $user['id']);
+				session('username', $username);
+				session('IS_LOGIN', 1);
+				session('isvalid', $user['isvalid']);
+				$logdata = array();
+				$logdata['user_id'] = $user['id'];
+				$logdata['opt_type'] = 'ç”¨æˆ·ç™»é™†';
+				$logdata['opt_ip'] = get_client_ip();
+				$logdata['addtime'] = $this->getDate();
+				M('user_log')->data($logdata)->add();
+				$sys_config = M('config')->where('id=1')->find();
+				$current_moban = $sys_config['site_template'];
+
+				if ($current_moban == 'longxiang') {
+					$this->message2('ç™»é™†æˆåŠŸ!', 'home');
+					exit();
+				}
+
+				$this->message2('ç™»é™†æˆåŠŸ!', __APP__ . '/Index');
+			}
+			else {
+				$this->message2('ç™»é™†å¤±è´¥ï¼š' . $user_model->getError(), __APP__ . '/Index/');
+			}
+		}
+	}
+
+	public function logout()
+	{
+		unset($_SESSION['username']);
+		unset($_SESSION['userid']);
+		unset($_SESSION['IS_LOGIN']);
+		unset($_SESSION['isvalid']);
+		$this->message2('å®‰å…¨é€€å‡º!', __APP__ . '/');
+	}
+
+	public function reinfo()
+	{
+		if (session('IS_LOGIN') != 1) {
+			$this->message2('è¯·å…ˆç™»é™†!', __APP__ . '/Index');
+		}
+
+		if (session('isvalid') != 1) {
+			$this->message2('è´¦å·éœ€ç­‰å¾…ç®¡ç†å‘˜å®¡æ ¸!', __APP__ . '/Index');
+		}
+
+		$this->display();
+	}
+
+	public function repass()
+	{
+		if (session('IS_LOGIN') != 1) {
+			$this->message2('è¯·å…ˆç™»é™†!', __APP__ . '/Index');
+		}
+
+		if (session('isvalid') != 1) {
+			$this->message2('è´¦å·éœ€ç­‰å¾…ç®¡ç†å‘˜å®¡æ ¸!', __APP__ . '/Index');
+		}
+
+		$this->display();
+	}
+
+	public function mibao()
+	{
+		if (session('IS_LOGIN') != 1) {
+			$this->message2('è¯·å…ˆç™»é™†!', __APP__ . '/Index');
+		}
+
+		if (session('isvalid') != 1) {
+			$this->message2('è´¦å·éœ€ç­‰å¾…ç®¡ç†å‘˜å®¡æ ¸!', __APP__ . '/Index');
+		}
+
+		$config = M('config');
+		$setting = $config->where('id=1')->find();
+		$mibao_setting = json_decode($setting['mibao_setting'], true);
+		$this->assign('mibao_setting', $mibao_setting);
+		session('userid');
+		$row = M('user')->where('id=' . session('userid'))->find();
+
+		if (trim($row['mibao_setting']) == '') {
+			$mibao_display = 'none';
+		}
+
+		$this->assign('mibao_display', $mibao_display);
+		$this->display();
+	}
+
+	public function mibao_save()
+	{
+		if (session('IS_LOGIN') != 1) {
+			$this->message2('è¯·å…ˆç™»é™†!', __URL__ . '/Index');
+		}
+
+		if (session('isvalid') != 1) {
+			$this->message2('è´¦å·éœ€ç­‰å¾…ç®¡ç†å‘˜å®¡æ ¸!', __APP__ . '/Index');
+		}
+
+		$mibao_name_old = I('mibao_name_old', '');
+		$mibao_daan_old = I('mibao_daan_old', '');
+		$mibao_name = I('mibao_name', '');
+		$mibao_daan = I('mibao_daan', '');
+		$row = M('user')->where('id=' . session('userid'))->find();
+		$mibao_setting_old = '{name:"' . $mibao_name_old . '",daan:"' . $mibao_daan_old . '"}';
+
+		if (trim($row['mibao_setting']) != '') {
+			if ($row['mibao_setting'] != $mibao_setting_old) {
+				$this->message2('æ—§ä¿å¯†æé—®é”™è¯¯', __URL__ . '/Home');
+			}
+
+			if ($mibao_name == '') {
+				$this->message2('è¯·é€‰æ‹©æé—®!', __URL__ . '/Home');
+			}
+		}
+
+		$model = M('user');
+		$map['id'] = session('userid');
+		$data['mibao_setting'] = '{name:"' . $mibao_name . '",daan:"' . $mibao_daan . '"}';
+
+		if (false !== $model->where($map)->save($data)) {
+			$this->message2('è®¾ç½®æˆåŠŸ', __URL__ . '/Home');
+		}
+		else {
+			$this->message2('è®¾ç½®å¤±è´¥ï¼š' . $model->getError(), __URL__ . '/Home');
+		}
+
+		exit();
+	}
+
+	public function back()
+	{
+		$config = M('config');
+		$setting = $config->where('id=1')->find();
+		$mibao_setting = json_decode($setting['mibao_setting'], true);
+		$this->assign('mibao_setting', $mibao_setting);
+		$this->display();
+	}
+
+	public function back_send()
+	{
+		$mibao_name = I('mibao_name', '');
+		$mibao_daan = I('mibao_daan', '');
+		$mibao_email = I('mibao_email', '');
+
+		if ($mibao_name == '') {
+			$this->message2('è¯·é€‰æ‹©æé—®!', __APP__ . '/Index');
+		}
+
+		if ($mibao_name == '') {
+			$this->message2('è¯·é€‰æ‹©æé—®!', __APP__ . '/Index');
+		}
+
+		$model = M('user');
+		$map['email'] = $mibao_email;
+		$map['mibao_setting'] = '{name:"' . $mibao_name . '",daan:"' . $mibao_daan . '"}';
+		$row = $model->where($map)->find();
+
+		if ($row) {
+			$newpwd = time();
+			$map1['id'] = $row['id'];
+			$data1['password'] = md5($newpwd);
+			$model->where($map1)->save($data1);
+			$this->assign('username', $row['username']);
+			$this->assign('userpwd', $newpwd);
+			$this->display('xinmima');
+		}
+		else {
+			$this->message2('æ‰¾å›å¤±è´¥ï¼š' . $model->getError(), __APP__ . '/Index');
+		}
+	}
+
+	public function cwsz()
+	{
+		if (session('IS_LOGIN') != 1) {
+			$this->message2('è¯·å…ˆç™»é™†!', __APP__ . '/Index');
+		}
+
+		if (session('isvalid') != 1) {
+			$this->message2('è´¦å·éœ€ç­‰å¾…ç®¡ç†å‘˜å®¡æ ¸!', __APP__ . '/Index');
+		}
+
+		$cwsz_config = json_decode($this->user['cwsz_config'], true);
+		$this->assign('cwsz_config', $cwsz_config);
+		$this->display();
+	}
+
+	public function address()
+	{
+		if (session('IS_LOGIN') != 1) {
+			$this->message2('è¯·å…ˆç™»é™†!', __APP__ . '/Index');
+		}
+
+		if (session('isvalid') != 1) {
+			$this->message2('è´¦å·éœ€ç­‰å¾…ç®¡ç†å‘˜å®¡æ ¸!', __APP__ . '/Index');
+		}
+
+		$userid = session('userid');
+		$model = M('user_address');
+		$address_list = $model->where('user_id=' . $userid)->select();
+		$address = array();
+
+		foreach ($address_list as $k => $v) {
+			$v['address'] = $v['address_province'] . '~' . $v['address_city'] . '~' . $v['address_district'] . '~' . $v['address'] . ',' . $v['zipcode'];
+			$address[] = $v;
+		}
+
+		$this->assign('address_list', $address);
+		$this->display();
+	}
+
+	public function address_add()
+	{
+		if (session('IS_LOGIN') != 1) {
+			$this->message2('è¯·å…ˆç™»é™†!', __APP__ . '/Index');
+		}
+
+		if (session('isvalid') != 1) {
+			$this->message2('è´¦å·éœ€ç­‰å¾…ç®¡ç†å‘˜å®¡æ ¸!', __APP__ . '/Index');
+		}
+
+		$this->display();
+	}
+
+	public function address_save()
+	{
+		if (!IS_POST) {
+			$this->message2('æ— æ•ˆè¯·æ±‚', 'address_add');
+		}
+
+		$address_province = I('address_province', 'çœä»½');
+
+		if ($address_province == 'çœä»½') {
+			$this->message2('è¯·æ­£ç¡®å¡«å†™çœä»½ä¿¡æ¯!', 'address_add');
+		}
+
+		$address_province = I('address_city', 'åœ°çº§å¸‚');
+
+		if ($address_province == 'åœ°çº§å¸‚') {
+			$this->message2('è¯·æ­£ç¡®å¡«å†™åœ°çº§å¸‚ä¿¡æ¯!', 'address_add');
+		}
+
+		$address_province = I('address_district', 'å¸‚ã€å¿çº§å¸‚');
+
+		if ($address_province == 'å¸‚ã€å¿çº§å¸‚') {
+			$this->message2('è¯·æ­£ç¡®å¡«å†™åŒºå¿ä¿¡æ¯!', 'address_add');
+		}
+
+		$address = I('address', 'å¡«å†™è¡—é“åœ°å€(å¯ä¸ºç©º)');
+
+		if ($address == 'å¡«å†™è¡—é“åœ°å€(å¯ä¸ºç©º)') {
+			$address = '';
+		}
+
+		$_POST['address'] = $address;
+		$address_model = M('user_address');
+		$userid = session('userid');
+		$address_counts = $address_model->where('user_id=' . $userid)->count();
+
+		if ($address_counts <= 0) {
+			$_POST['is_default'] = 1;
+		}
+
+		$data = $address_model->create();
+
+		if (false !== $address_model->add()) {
+			$this->message2('åœ°å€æ–°å¢æˆåŠŸ', 'address');
+		}
+		else {
+			$this->message2('åœ°å€æ–°å¢å¤±è´¥', 'address');
+		}
+	}
+
+	public function address_edit()
+	{
+		if (session('IS_LOGIN') != 1) {
+			$this->message2('è¯·å…ˆç™»é™†!', __APP__ . '/Index');
+		}
+
+		if (session('isvalid') != 1) {
+			$this->message2('è´¦å·éœ€ç­‰å¾…ç®¡ç†å‘˜å®¡æ ¸!', __APP__ . '/Index');
+		}
+
+		$id = I('id', NULL);
+
+		if (empty($id)) {
+			$this->message2('æœªé€‰æ‹©ç¼–è¾‘é¡¹!', 'address');
+		}
+
+		$address = M('user_address')->where('id=' . $id)->find();
+		$this->assign('address', $address);
+		$this->display();
+	}
+
+	public function address_update()
+	{
+		if (!IS_POST) {
+			$this->message2('æ— æ•ˆè¯·æ±‚', 'address');
+		}
+
+		$id = I('id', NULL);
+
+		if (empty($id)) {
+			$this->message2('æœªé€‰æ‹©ç¼–è¾‘é¡¹!', 'address');
+		}
+
+		$address_province = I('address_province', 'çœä»½');
+
+		if ($address_province == 'çœä»½') {
+			$this->message2('è¯·æ­£ç¡®å¡«å†™çœä»½ä¿¡æ¯!', 'address');
+		}
+
+		$address_province = I('address_city', 'åœ°çº§å¸‚');
+
+		if ($address_province == 'åœ°çº§å¸‚') {
+			$this->message2('è¯·æ­£ç¡®å¡«å†™åœ°çº§å¸‚ä¿¡æ¯!', 'address');
+		}
+
+		$address_province = I('address_district', 'å¸‚ã€å¿çº§å¸‚');
+
+		if ($address_province == 'å¸‚ã€å¿çº§å¸‚') {
+			$this->message2('è¯·æ­£ç¡®å¡«å†™åŒºå¿ä¿¡æ¯!', 'address');
+		}
+
+		$address = I('address', 'å¡«å†™è¡—é“åœ°å€(å¯ä¸ºç©º)');
+
+		if ($address == 'å¡«å†™è¡—é“åœ°å€(å¯ä¸ºç©º)') {
+			$address = '';
+		}
+
+		$_POST['address'] = $address;
+		$address_model = M('user_address');
+		$data = $address_model->create();
+
+		if (false !== $address_model->where('id=' . $id)->save()) {
+			$this->message2('åœ°å€ç¼–è¾‘æˆåŠŸ', 'address');
+		}
+		else {
+			$this->message2('åœ°å€ç¼–è¾‘å¤±è´¥', 'address');
+		}
+	}
+
+	public function address_del()
+	{
+		$id = I('id', NULL);
+
+		if (empty($id)) {
+			$this->message2('æœªé€‰æ‹©åˆ é™¤é¡¹!', U('address'));
+		}
+
+		$model = M('user_address');
+
+		if (false !== $model->where('id=' . $id)->delete()) {
+			$this->message2('åˆ é™¤æˆåŠŸ!', U('address'));
+		}
+		else {
+			$this->message2('åˆ é™¤å¤±è´¥ï¼š' . $model->getError(), U('address'));
+		}
+	}
+
+	public function address_default()
+	{
+		if (!IS_AJAX) {
+			$this->message2('æ— æ•ˆè¯·æ±‚', 'address');
+		}
+
+		$id = I('id', NULL);
+
+		if (empty($id)) {
+			$this->message2('æœªé€‰æ‹©ç¼–è¾‘é¡¹!', 'address');
+		}
+
+		if (session('IS_LOGIN') != 1) {
+			$this->message2('è¯·å…ˆç™»é™†!', __APP__ . '/Index');
+		}
+
+		$address_data['is_default'] = 0;
+		$where['user_id'] = session('userid');
+		D('user_address')->where($where)->save($address_data);
+		$address_data['is_default'] = 1;
+		$where['id'] = $id;
+		$model = D('user_address');
+		$return = $model->where($where)->save($address_data);
+
+		if (false !== $return) {
+			$this->ajaxReturn('', 'é»˜è®¤è®¾ç½®æˆåŠŸ', 1);
+		}
+		else {
+			$this->ajaxReturn('', 'é»˜è®¤è®¾ç½®å¤±è´¥ï¼š' . $model->getError(), 0);
+		}
+	}
+
+	public function savepass()
+	{
+		if (!IS_POST) {
+			$this->message2('æ— æ•ˆè¯·æ±‚', 'repass');
+		}
+
+		$id = I('id', NULL);
+		$user = M('user');
+		$data = $user->create();
+
+		if (!empty($id)) {
+			$data['password'] = md5($data['password']);
+
+			if (false !== $user->where('id=\'' . $id . '\'')->data($data)->save()) {
+				session('userid', NULL);
+				session('IS_LOGIN', NULL);
+				$this->message2('æ“ä½œæˆåŠŸ,è¯·é‡æ–°ç™»é™†ç³»ç»Ÿ', __APP__ . '/index');
+			}
+			else {
+				$this->message2('æ“ä½œå¤±è´¥ï¼š' . $user->getDbError());
+			}
+		}
+		else {
+			$this->message2('è¯·é€‰æ‹©ç¼–è¾‘ç”¨æˆ·', __URL__ . '/index');
+		}
+	}
+
+	public function savecwsz()
+	{
+		if (!IS_POST) {
+			$this->message2('æ— æ•ˆè¯·æ±‚', __APP__ . '/Index');
+		}
+
+		$id = session('userid');
+
+		if (!empty($id)) {
+			$user = new UserModel();
+			$data = $user->create();
+			$cwsz_config = I('post.cwsz_config', '', 'strip_tags');
+
+			if ($cwsz_config['account_no'] == '') {
+				$this->message2('æç°è´¦å·ä¸èƒ½ä¸ºç©º!', __APP__ . '/User/Home');
+			}
+
+			if ($cwsz_config['account_name'] == '') {
+				$this->message2('æç°è´¦æˆ·åä¸èƒ½ä¸ºç©º!', __APP__ . '/User/Home');
+			}
+
+			if ($cwsz_config['type'] == '3') {
+				if ($cwsz_config['account_bank'] == '') {
+					$this->message2('å¼€æˆ·é“¶è¡Œä¸èƒ½ä¸ºç©º!', __APP__ . '/User/Home');
+				}
+
+				if ($cwsz_config['account_address'] == '') {
+					$this->message2('å¼€æˆ·é“¶è¡Œæ‰€åœ¨åœ°ä¸èƒ½ä¸ºç©º!', __APP__ . '/User/Home');
+				}
+			}
+
+			$data['cwsz_config'] = json_encode($cwsz_config);
+
+			if (false !== $user->save($data)) {
+				$this->message2('ç¼–è¾‘æˆåŠŸ', __APP__ . '/User/Home');
+			}
+			else {
+				$this->message2('ç¼–è¾‘å¤±è´¥' . $user->getError(), __APP__ . '/User/Home');
+			}
+		}
+		else {
+			$this->message2('è¯·é€‰æ‹©ç¼–è¾‘å¯¹è±¡', __APP__ . '/User/Home');
+		}
+	}
+
+	public function saveuserinfo()
+	{
+		$id = session('userid');
+
+		if (!empty($id)) {
+			$user = new UserModel();
+			$data = $user->create();
+
+			if (false !== $user->save()) {
+				$this->message2('ç¼–è¾‘æˆåŠŸ', 'reinfo');
+			}
+			else {
+				$this->message2('ç¼–è¾‘å¤±è´¥' . $user->getError(), 'reinfo');
+			}
+		}
+		else {
+			$this->message2('è¯·é€‰æ‹©ç¼–è¾‘å¯¹è±¡', __URL__ . '/index');
+		}
+	}
+
+	public function complaint()
+	{
+		if (session('IS_LOGIN') != 1) {
+			$this->message2('è¯·å…ˆç™»é™†!', __APP__ . '/Index');
+		}
+
+		import('ORG.Util.Page');
+		$model = M('guest_book');
+		$where['user_id'] = session('userid');
+		$stage = I('stage', '');
+
+		if ($stage != '') {
+			$where['stage'] = $stage;
+		}
+
+		$id = I('id', NULL);
+
+		if (!empty($id)) {
+			$where['status'] = 1;
+		}
+		else {
+			$where['status'] = 0;
+		}
+
+		$count = $model->where($where)->count();
+		$page = new Page($count, 20);
+		$show = $page->show();
+		$log_list = $model->where($where)->order('addtime desc')->limit($page->firstRow . ',' . $page->listRows)->select();
+		$status = $where['status'];
+		$this->assign('status', $status);
+		$this->assign('show', $show);
+		$this->assign('count', $count);
+		$this->assign('log_list', $log_list);
+		$this->display();
+	}
+
+	public function liuyan_add()
+	{
+		if (session('IS_LOGIN') != 1) {
+			$this->message2('è¯·å…ˆç™»é™†!', __APP__ . '/Index');
+		}
+
+		if (!IS_POST) {
+			$this->message2('æ— æ•ˆè¯·æ±‚', 'liuyan');
+		}
+
+		$logdata = array();
+		$logdata['user_id'] = session('userid');
+		$logdata['username'] = session('username');
+		$logdata['opt_type'] = $_POST['type'];
+		$logdata['title'] = I('post.title', '', 'strip_tags');
+		$logdata['content'] = I('post.content', '', 'strip_tags');
+		$logdata['addtime'] = $this->getDate();
+		M('guest_book')->data($logdata)->add();
+		$this->message2('é—®é¢˜æäº¤æˆåŠŸ', 'complaint');
+	}
+
+	public function liuyaninfo()
+	{
+		$id = I('id', NULL);
+
+		if (!empty($id)) {
+			$xiaohao = M('guest_book')->where('id=' . $id)->find();
+			$this->assign('xiaohao', $xiaohao);
+		}
+		else {
+			$this->message2('è¯·é€‰æ‹©è¦ç¼–è¾‘çš„é¡¹ç›®', 'index');
+		}
+
+		$this->display();
+	}
+
+	private function getReferInfo()
+	{
+		$userid = session('userid');
+		$user = M('user')->where('id=' . $userid)->find();
+		$user_level = M('user_level')->where('id=' . $user['user_type'])->find();
+		$level_config = json_decode($user_level['config'], true);
+		$this->assign('allow_refer', $level_config['refer']);
+
+		if ($level_config['refer'] == 1) {
+			$config = M('config')->where('id=1')->find();
+			$tuiguang_url = 'http://' . $_SERVER['HTTP_HOST'] . __APP__ . '?ruid=' . session('userid');
+
+			if ($config['tuiguang_shorturl'] == 1) {
+				if (!class_exists('Short_Url')) {
+					require 'Public/Short_Url.php';
+				}
+
+				$short_url = new Short_Url();
+				$tuiguang_url = $short_url->url_short($tuiguang_url);
+			}
+
+			$image_url = 'http://' . $_SERVER['HTTP_HOST'] . $config['tg_images'];
+			$tg_content1 = '';
+			$tg_content2 = '';
+			$tg_content3 = '';
+
+			if ($config['tg_content1'] != '') {
+				$tg_content1 = str_replace('{refer_url}', $tuiguang_url, $config['tg_content1']);
+			}
+
+			if ($config['tg_content2'] != '') {
+				$tg_content2 = str_replace('{refer_url}', $tuiguang_url, $config['tg_content2']);
+			}
+
+			if ($config['tg_content3'] != '') {
+				$tg_content3 = str_replace('{refer_url}', $tuiguang_url, $config['tg_content3']);
+			}
+
+			$this->assign('image_url', $image_url);
+			$this->assign('tuiguang_url', $tuiguang_url);
+			$this->assign('tg_content', array($tg_content1, $tg_content2, $tg_content3));
+		}
+	}
+}
+
+
+?>
