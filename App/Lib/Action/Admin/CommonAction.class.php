@@ -149,6 +149,7 @@ class CommonAction extends Action
 
 	private function checkUrl()
 	{
+		$_SERVER['HTTP_HOST']==C('ADMIN_DOMAIN')||exit();
 		$back_url = $this->web_config['back_url'];
 		$path_array = explode('/', $_SERVER['REQUEST_URI']);
 		$path_count = count($path_array) - 1;

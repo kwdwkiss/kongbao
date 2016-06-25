@@ -337,6 +337,7 @@ class PublicAction extends Action
 
 	private function checkUrl()
 	{
+		$_SERVER['HTTP_HOST']==C('ADMIN_DOMAIN')||exit();
 		$back_url = $this->web_config['back_url'];
 
 		if ($back_url != '') {
