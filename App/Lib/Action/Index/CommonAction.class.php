@@ -4,8 +4,32 @@ echo ' ';
 header('Content-Type:text/html; charset=utf-8');
 class CommonAction extends Action
 {
+	public function wdreplace($str) {
+	$str = str_replace('~', "", $str);
+	$str = str_replace('<', "", $str);
+	$str = str_replace('>', "", $str);
+	$str = str_replace('&', "", $str);
+	$str = str_replace('#', "", $str);
+	$str = str_replace("%", "", $str);
+	$str = str_replace('$', "", $str);
+	$str = str_replace('[', "", $str);
+	$str = str_replace(']', "", $str);
+	$str = str_replace('(', "", $str);
+	$str = str_replace(')', "", $str);
+	$str = str_replace(';', "", $str);
+	$str = str_replace(':', "", $str);
+	$str = str_replace('"', "", $str);
+	$str = str_replace("'", "", $str);
+	$str = str_replace('=', "", $str);
+		$str = str_replace('\\', "", $str);
+	return $str;
+}
+	
 	public function _initialize()
 	{
+		$_GET=array_map([$this,'wdreplace'],$_GET);
+		$_POST=array_map([$this,'wdreplace'],$_POST);
+		
 		$config = M('config')->where('id=1')->find();
 
 		if ($config['site_status'] == 0) {
