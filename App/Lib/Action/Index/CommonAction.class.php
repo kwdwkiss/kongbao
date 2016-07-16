@@ -27,7 +27,7 @@ class CommonAction extends Action
 
 	public function _initialize()
 	{
-        $frequency=10;
+        /*$frequency=10;
         $period=60;
         $limitTime=600;
         $now=time();
@@ -48,7 +48,7 @@ class CommonAction extends Action
         $limitActions=M('access_statistics')->query("select * from access_statistics group by ip,`action` having count(*)>{$frequency}");
         foreach ($limitActions as $item){
             M('access_deny')->add(['ip'=>$item['ip'],'time'=>$now+$limitTime],[],true);
-        }
+        }*/
 
 		$_GET=array_map([$this,'wdreplace'],$_GET);
 		$_POST=array_map([$this,'wdreplace'],$_POST);

@@ -113,7 +113,7 @@ class IndexAction extends CommonAction
 		$model = new Model('about');
 		$about = $model->order('time desc')->limit(8)->select();
 		$this->assign('about_list', $about);
-		$model = new UserOrderViewModel();
+		/*$model = new UserOrderViewModel();
 		$where = array();
 		$where['type'] = 1;
 		$where['status'] = 1;
@@ -137,7 +137,7 @@ class IndexAction extends CommonAction
 				$this->display('index_login');
 				exit();
 			}
-		}
+		}*/
 
 		$this->display();
 	}
