@@ -32,6 +32,7 @@ class CommonAction extends Action
         $limitTime=600;
         $now=time();
         $userId=session('userid');
+		$userId=$userId?:0;
         $clientIP = get_client_ip();
         M('access_statistics')->where("time+$period<$now")->delete();
 		M('access_statistics')->add([
