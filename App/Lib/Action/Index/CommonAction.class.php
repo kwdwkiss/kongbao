@@ -24,12 +24,32 @@ class CommonAction extends Action
 		$str = str_replace('\\', "", $str);
 	return $str;
 }
-	
+
 	public function _initialize()
 	{
+        $frequency=10;
+        $period=60;
+        $limitTime=600;
+        $now=time();
+        $clientIP = get_client_ip();
+        $deny=M('access_deny')->where(['ip'=>$clientIP,"time>$now"])->find();
+        if($deny){
+            exit('deny');
+        }
+        M('access_statistics')->where("time+$period<$now")->delete();
+		M('access_statistics')->add([
+			'ip'=> $clientIP,
+            'time'=>time(),
+            'action'=>ACTION_NAME
+		]);
+        $limitActions=M('access_statistics')->query("select * from access_statistics group by action having count(*)>$frequency");
+        foreach ($limitActions as $item){
+            M('access_deny')->add(['ip'=>$clientIP,'time'=>$now+$limitTime],[],true);
+        }
+
 		$_GET=array_map([$this,'wdreplace'],$_GET);
 		$_POST=array_map([$this,'wdreplace'],$_POST);
-		
+
 		$config = M('config')->where('id=1')->find();
 
 		if ($config['site_status'] == 0) {
