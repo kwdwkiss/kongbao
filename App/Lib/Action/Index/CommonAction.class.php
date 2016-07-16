@@ -36,7 +36,7 @@ class CommonAction extends Action
         M('access_statistics')->where("time+$period<$now")->delete();
 		M('access_statistics')->add([
 			'ip'=> $clientIP,
-            'time'=>time(),
+            'time'=>$now,
             'action'=>ACTION_NAME,
             'user_id'=>$userId
 		]);
