@@ -32,16 +32,16 @@ class CommonAction extends Action
         $limitTime=600;
         $now=time();
         $clientIP = get_client_ip();
-        $deny=M('access_deny')->where(['ip'=>$clientIP,"time>$now"])->find();
-        if($deny){
-            exit('deny');
-        }
         M('access_statistics')->where("time+$period<$now")->delete();
 		M('access_statistics')->add([
 			'ip'=> $clientIP,
             'time'=>time(),
             'action'=>ACTION_NAME
 		]);
+        $deny=M('access_deny')->where(['ip'=>$clientIP,"time>$now"])->find();
+        if($deny){
+            exit('deny');
+        }
         $limitActions=M('access_statistics')->query("select * from access_statistics group by action having count(*)>{$frequency}");
         foreach ($limitActions as $item){
             M('access_deny')->add(['ip'=>$clientIP,'time'=>$now+$limitTime],[],true);
