@@ -31,12 +31,14 @@ class CommonAction extends Action
         $period=60;
         $limitTime=600;
         $now=time();
+        $userId=session('userid');
         $clientIP = get_client_ip();
         M('access_statistics')->where("time+$period<$now")->delete();
 		M('access_statistics')->add([
 			'ip'=> $clientIP,
             'time'=>time(),
-            'action'=>ACTION_NAME
+            'action'=>ACTION_NAME,
+            'user_id'=>$userId
 		]);
         $deny=M('access_deny')->where(['ip'=>$clientIP,"time>$now"])->find();
         if($deny){
