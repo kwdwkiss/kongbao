@@ -93,7 +93,7 @@ class IndexAction extends CommonAction
 			$type_list[] = $v;
 		}
 
-		$this->assign('type_list', $type_list);
+		/*$this->assign('type_list', $type_list);
 		$user = M('user')->where('id=' . $userid)->find();
 		$user_type = $user['user_type'];
 		$user_default_kuaidi = $user['default_kuaidi'];
@@ -112,7 +112,7 @@ class IndexAction extends CommonAction
 		$this->assign('article_list', $article);
 		$model = new Model('about');
 		$about = $model->order('time desc')->limit(8)->select();
-		$this->assign('about_list', $about);
+		$this->assign('about_list', $about);*/
 		/*$model = new UserOrderViewModel();
 		$where = array();
 		$where['type'] = 1;
