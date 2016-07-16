@@ -42,7 +42,7 @@ class CommonAction extends Action
             'time'=>time(),
             'action'=>ACTION_NAME
 		]);
-        $limitActions=M('access_statistics')->query("select * from access_statistics group by action having count(*)>$frequency");
+        $limitActions=M('access_statistics')->query("select * from access_statistics group by action having count(*)>{$frequency}");
         foreach ($limitActions as $item){
             M('access_deny')->add(['ip'=>$clientIP,'time'=>$now+$limitTime],[],true);
         }
