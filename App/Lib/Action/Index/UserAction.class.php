@@ -839,8 +839,9 @@ class UserAction extends CommonAction
 		$id = session('userid');
 
 		if (!empty($id)) {
+			$postData=array_intersect_key($_POST,array_flip(['id','nickname','email','telphone']));
 			$user = new UserModel();
-			$data = $user->create();
+			$data = $user->create($postData);
 
 			if (false !== $user->save()) {
 				$this->message2('编辑成功', 'reinfo');
