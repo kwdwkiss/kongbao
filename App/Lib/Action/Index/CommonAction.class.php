@@ -5,7 +5,7 @@ header('Content-Type:text/html; charset=utf-8');
 class CommonAction extends Action
 {
 	public function wdreplace($str) {
-	$str = str_replace('~', "", $str);
+	//$str = str_replace('~', "", $str);
 	$str = str_replace('<', "", $str);
 	$str = str_replace('>', "", $str);
 	$str = str_replace('&', "", $str);
