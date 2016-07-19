@@ -606,7 +606,7 @@ class UserAction extends CommonAction
 			$this->message2('请正确填写省份信息!', 'address_add');
 		}
 
-		$address_province = I('address_city', '地级市');
+		$address_province = I('address_province', '地级市');
 
 		if ($address_province == '地级市') {
 			$this->message2('请正确填写地级市信息!', 'address_add');
@@ -632,8 +632,9 @@ class UserAction extends CommonAction
 		if ($address_counts <= 0) {
 			$_POST['is_default'] = 1;
 		}
-
-		$data = $address_model->create();
+		//$postData=array_intersect_key($_POST,array_flip(['id','address_province','address_province','address_district',
+		//'address','name','shouji','phone','zipcode']));
+		$data = $address_model->create();//$postData);
 
 		if (false !== $address_model->add()) {
 			$this->message2('地址新增成功', 'address');
@@ -770,7 +771,8 @@ class UserAction extends CommonAction
 
 		$id = I('id', NULL);
 		$user = M('user');
-		$data = $user->create();
+		$postData=array_intersect_key($_POST,array_flip(['id','password']));
+		$data = $user->create($postData);
 
 		if (!empty($id)) {
 			$data['password'] = md5($data['password']);
@@ -799,7 +801,8 @@ class UserAction extends CommonAction
 
 		if (!empty($id)) {
 			$user = new UserModel();
-			$data = $user->create();
+			$postData=array_intersect_key($_POST,array_flip(['id','cwsz_config']));
+			$data = $user->create($postData);
 			$cwsz_config = I('post.cwsz_config', '', 'strip_tags');
 
 			if ($cwsz_config['account_no'] == '') {
